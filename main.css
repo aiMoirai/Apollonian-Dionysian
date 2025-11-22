@@ -1,0 +1,108 @@
+/* Font section --------------------*/
+
+@font-face {
+    font-family: "Agrandir";
+    src: url("https://db.onlinewebfonts.com/t/1dc7840abb13fcda12aa8d1cb21fb832.woff2") format("woff2");
+}
+
+/* ---------------------------------*/
+
+
+/* Navbar section --------------------*/
+
+.dropdown-menu {
+    background-color: #2a2422;
+    border-width: 1px;
+    color: #B8ADA7;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23B8ADA7' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    transition: background-image 0.2s ease;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon,
+.navbar-toggler:focus .navbar-toggler-icon,
+.navbar-toggler:active .navbar-toggler-icon,
+.navbar-toggler.collapsed~.navbar-collapse.show+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23F4C430' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar {
+    background-color: #2a2422;
+    border-bottom: 4px solid #641527;
+    color: #B8ADA7;
+    position: fixed;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: #F4C430;
+}
+
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link[aria-current="page"] {
+    color: #F4C430;
+}
+
+.navbar-nav .dropdown-item:hover,
+.navbar-nav .dropdown-item:focus {
+    background-color: #F4C430;
+    color: #2a2422;
+}
+
+.navbar-nav .dropdown-item:active {
+    background-color: #F4C430;
+    color: #2a2422;
+}
+
+/* -------------------------------*/
+
+/* ------General doc--------------*/
+body {
+    background-color: #2a2422;
+    color: #B8ADA7;
+    margin: 0;
+    padding: 0;
+    font-family: "Inter", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+div.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+div.flex-container>div {
+    margin: 10px;
+}
+
+/* ------------------------------*/
+
+
+/* -------Footer-------------*/
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #641527;
+    padding: 8px;
+    text-align: center;
+    z-index: 1000;
+}
+
+/* -------------------------*/
+
+h1 {
+    color: #F4C430;
+    font-family: Agrandir;
+}
+
+p {
+    color: #B8ADA7
+}

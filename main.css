@@ -14,7 +14,11 @@ p {
     color: #B8ADA7
 }
 
-/* ---------------------------------*/
+#museum-h1 {
+    color: #641527;
+}
+
+/* --------------------------------*/
 
 
 /* Navbar section --------------------*/
@@ -82,11 +86,12 @@ body {
 
 /* -------Footer-------------*/
 footer {
-    position: fixed;
+    margin-top: 1.5rem;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #2a2422;
+    background-color: #000000;
     padding: 8px;
     text-align: center;
     z-index: 1000;
@@ -97,25 +102,57 @@ footer {
     height: 100vh;
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(42, 36, 34, 0.8)), url('imgs/hero-bacco.jpg');
     background-size: cover;
-    /* l’immagine si adatta riempiendo tutto */
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    /* centra contenuto verticalmente */
-    justify-content: center;
-    /* centra contenuto orizzontalmente */
     text-align: center;
     padding: 20px;
-    color: white;
 }
 
 .wine_button {
-    max-width: 10vh;
+    max-width: 12vw;
     clip-path: circle(50%);
     transition: transform 0.2s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
-.wine_button:hover {
+.wine_button:hover,
+.card-img:hover,
+#narratives,
+#museum {
     transform: scale(1.1);
+}
+
+.title {
+    font-size: 10vw;
+    margin-top: 3vw;
+}
+
+.subtitle {
+    font-size: 3vw;
+    margin-top: 3vw;
+}
+
+#quote {
+    margin-top: 5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+}
+
+#narratives {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border: 1px solid #F4C430;
+    border-radius: 10px;
+    background-color: #641527;
+}
+
+#museum {
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #F4C430;
+    border-radius: 10px;
+    border: 2px solid #641527;
 }

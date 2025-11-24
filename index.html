@@ -61,30 +61,111 @@
             </div>
         </div>
     </nav>
-
     <!--Hero section-->
     <div class="hero">
         <div class="hero-content">
-            <h1>TITOLO DEL WEBSITE</h1>
-            <p>Hello, visitor.<br> Take a glass of wine, the Symposium is about to start.</p>
-            <a href=""> <img src="imgs/wine_button.png" alt="wine" class="wine_button"> </a>
+            <h1 class="title">TITOLO DEL WEBSITE</h1>
+            <p class="subtitle">Hello, visitor.<br> Take a glass of wine, the Symposium is about to start.</p>
+            <a href="#separator"> <img src="imgs/wine_button.png" alt="wine" class="wine_button"> </a>
+        </div>
+    </div>
+    <div id="separator"></div>
+    <!--Introduction section-->
+    <div class="container text-center" id="quote">
+        <div class="row">
+            <div class="col">
+                <p><i>"After human nature was split in two, each half, longing for the other, tried to come
+                        together;
+                        and, embracing and clinging to one another, they began to die of hunger and lethargy, unwilling
+                        to
+                        do anything apart from each other."</i></p>
+                <p>Plato, <i>Simposium</i>.</p>
+            </div>
         </div>
     </div>
 
-    <!--Introduction section-->
+    <div class="container" id="intro">
+        <div class="row">
+            <div class="col">
+                <p>Between <b>light and shadow</b>, <b>order and ecstasy</b>, the human spirit dances. Here, where
+                    <b>the Apollonian
+                        meets the Dionysian</b>, reason bows to rapture and form dissolves into frenzy. <br>Within this
+                    <b>museum
+                        exhibition</b>, you are invited to explore these forces in motion: wander freely through the
+                    <b>galleries</b>,
+                    follow the <b>thematic paths</b> that trace their dialogue across time, or delve into <b>the full
+                        collection</b>
+                    at your own pace. <br>Each way of visiting reveals a different melody in the ancient tension between
+                    harmony and passion, waiting for you to step closer and let it awaken your senses.
+                </p>
+            </div>
+        </div>
+    </div>
+
     <!--The narratives section-->
-    <!--Browse the collection -->
-    <!--The museum section-->
 
+    <div class="container" id="narratives" href="">
+        <div class="row">
+            <div class="col">
+                <img src="" alt="Tragic mask" class="img-fluid">
+            </div>
+            <div class="col">
+                <div class="row">
+                    <h1>The Narratives</h1>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!--The museum section -->
+    <div class="container" id="museum" href="">
+        <div class="row">
+            <div class="col">
+                <img src="" alt="Comedy mask" class="img-fluid">
+            </div>
+            <div class="col">
+                <div class="row">
+                    <h1 id="museum-h1">The Museum</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Browse the collection-->
+    <div class="container" id="collection-scroller">
+        <h1>Browse the collection</h1>
+
+        <div class="d-flex flex-row overflow-auto gap-3 p-3" style="scroll-snap-type: x mandatory;">
+
+            <div class="card" style="min-width: 18rem; scroll-snap-align: start;">
+                <img src="imgs/apollo_e_le_muse.jpg" class="card-img" alt="" href="">
+            </div>
+
+            <div class="card" style="min-width: 18rem; scroll-snap-align: start;">
+                <img src="imgs/img2.jpg" class="card-img" alt="">
+            </div>
+
+            <div class="card" style="min-width: 18rem; scroll-snap-align: start;">
+                <img src="imgs/img3.jpg" class="card-img" alt="">
+            </div>
+
+        </div>
+    </div>
     <!--Footer section-->
     <footer>
-        <p>This project was made for the exam of Information Modeling and Web Technology at the University of Bologna.
-            <br> All the images and resources taken from external sources are solely used for study purposes. No
-            commercial use intended.<br>
-            All the rights related to the website are property of *name of the site*. <br>© 2025.
-        </p>
+        <div class="container">
+            <div class="row">
+                <p>This project was made for the exam of Information Modeling and Web Technology at the University of
+                    Bologna.
+                    <br> All the images and resources taken from external sources are solely used for study purposes. No
+                    commercial use intended.<br>
+                    All the rights related to the website are property of *name of the site*. <br>© 2025.
+                </p>
+            </div>
+        </div>
     </footer>
+    </div>
+
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"

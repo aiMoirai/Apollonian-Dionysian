@@ -27,7 +27,8 @@
     <!--Navigation bar-->
     <nav class="navbar fixed-top navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><img src="/imgs/logo_giallo.png" alt="Logo" width="30" height="24"></a>
+            <a class="navbar-brand" href="#">
+                <img src="imgs/logo_grigio_con_nome.png" class="logo" alt="Logo" width="30" height="24"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
                 aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -63,13 +64,17 @@
     </nav>
     <!--Hero section-->
     <div class="hero">
-        <div class="hero-content">
-            <h1 class="title">TITOLO DEL WEBSITE</h1>
+        <div class="hero-content container-fluid">
+            <h1 class="title">TYRSOS & LYRE</h1>
             <p class="subtitle">Hello, visitor.<br> Take a glass of wine, the Symposium is about to start.</p>
-            <a href="#separator"> <img src="imgs/wine_button.png" alt="wine" class="wine_button"> </a>
+            <a href="#break"> <img src="imgs/wine_button.png" alt="wine" class="wine_button"> </a>
         </div>
     </div>
-    <div id="separator"></div>
+
+    <div id="break">
+        <br>
+    </div>
+
     <!--Introduction section-->
     <div class="container text-center" id="quote">
         <div class="row">
@@ -83,7 +88,6 @@
             </div>
         </div>
     </div>
-
     <div class="container" id="intro">
         <div class="row">
             <div class="col">
@@ -102,28 +106,34 @@
         </div>
     </div>
 
-    <!--The narratives section-->
 
-    <div class="container" id="narratives" href="">
+    <div class="container-fluid">
         <div class="row">
-            <div class="col">
-                <img src="" alt="Tragic mask" class="img-fluid">
-            </div>
-            <div class="col">
-                <div class="row">
-                    <h1>The Narratives</h1>
-                </div>
-            </div>
+            <img class="sep-centro" src="imgs/centro colonna.png">
         </div>
     </div>
 
     <!--The museum section -->
-    <div class="container" id="museum" href="">
+    <div class="container-fluid" id="narratives" href="">
         <div class="row">
-            <div class="col">
-                <img src="" alt="Comedy mask" class="img-fluid">
+            <div class="col d-flex justify-content-center align-items-center">
+                <div class="row">
+                    <h1 id="narratives-h1">The Narratives</h1>
+                </div>
             </div>
-            <div class="col">
+            <div class="col d-flex justify-content-center align-items-center">
+                <img src="imgs/maschera_comica.jpg" alt="Comedy mask" class="img-fluid">
+            </div>
+        </div>
+    </div>
+
+    <!--The narratives section-->
+
+    <div class="container-fluid" id="museum" href="">
+        <div class="row">
+            <div class="col d-flex justify-content-center align-items-center"> <img src="imgs/maschera_tragica.jpg"
+                    alt="Tragic mask" class="img-fluid"> </div>
+            <div class="col d-flex justify-content-center align-items-center">
                 <div class="row">
                     <h1 id="museum-h1">The Museum</h1>
                 </div>
@@ -131,26 +141,40 @@
         </div>
     </div>
 
-    <!--Browse the collection-->
+
+    <!--The collection -->
     <div class="container" id="collection-scroller">
         <h1>Browse the collection</h1>
-
-        <div class="d-flex flex-row overflow-auto gap-3 p-3" style="scroll-snap-type: x mandatory;">
-
-            <div class="card" style="min-width: 18rem; scroll-snap-align: start;">
-                <img src="imgs/apollo_e_le_muse.jpg" class="card-img" alt="" href="">
+        <div class="scroller-wrapper">
+            <div class="scroller" id="scroller">
+                <img src="imgs/apollo_e_dafne.jpg" class="scroller-img">
+                <img src="imgs/apollo_e_le_muse.jpg" class="scroller-img">
+                <img src="imgs/Apollo_of_the_Belvedere.jpg" class="scroller-img">
+                <img src="imgs/baccanti.jpg" class="scroller-img">
+                <img src="imgs/bacco_statue.jpg" class="scroller-img">
+                <img src="imgs/bach.png" class="scroller-img">
+                <img src="imgs/caravaggio.jpg" class="scroller-img">
+                <img src="imgs/città_chesale.jpg" class="scroller-img">
+                <img src="imgs/città_ideale.jpg" class="scroller-img">
+                <img src="imgs/coppadionisio.jpg" class="scroller-img">
+                <img src="imgs/Fedro.jpeg" class="scroller-img">
+                <img src="imgs/maschera_comica.jpg" class="scroller-img">
+                <img src="imgs/maschera_tragica.jpg" class="scroller-img">
+                <img src="imgs/pacioli.png" class="scroller-img">
+                <img src="imgs/Simposio.jpg" class="scroller-img">
+                <img src="imgs/wagner.jpg" class="scroller-img">
+                <img src="imgs/kylix.jpg" class="scroller-img">
+                <img src="imgs/" class="scroller-img">
             </div>
-
-            <div class="card" style="min-width: 18rem; scroll-snap-align: start;">
-                <img src="imgs/img2.jpg" class="card-img" alt="">
-            </div>
-
-            <div class="card" style="min-width: 18rem; scroll-snap-align: start;">
-                <img src="imgs/img3.jpg" class="card-img" alt="">
-            </div>
-
         </div>
     </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <img class="separator" src="imgs/fine colonne.png">
+        </div>
+    </div>
+
     <!--Footer section-->
     <footer>
         <div class="container">
@@ -159,7 +183,7 @@
                     Bologna.
                     <br> All the images and resources taken from external sources are solely used for study purposes. No
                     commercial use intended.<br>
-                    All the rights related to the website are property of *name of the site*. <br>© 2025.
+                    All the rights related to the website are property of <i>Tyrsos & Lyre</i>. <br>© 2025.
                 </p>
             </div>
         </div>

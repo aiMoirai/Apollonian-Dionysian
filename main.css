@@ -70,7 +70,7 @@ p {
 .logo {
     height: 5vw;
     width: 7vw;
-    object-fit: cover;
+    object-fit: contain;
 }
 
 /* -------------------------------*/
@@ -96,12 +96,11 @@ body {
     display: flex;
     align-items: center;
     text-align: center;
-    padding: 20px;
 }
 
 .wine_button {
-    margin-top: 4vw;
-    max-width: 12vw;
+    margin-top: 2vw;
+    max-width: 10vw;
     clip-path: circle(50%);
     transition: transform 0.2s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -120,8 +119,7 @@ body {
 }
 
 .subtitle {
-    font-size: clamp(1.5em, 4vw, 3eem);
-    margin-top: 3vw;
+    font-size: 1.5em;
 }
 
 /* -----------Intro + narratives and museum cards--------------*/
@@ -141,7 +139,6 @@ body {
     margin-bottom: 5rem;
     padding: 1rem;
     border: 3px solid #641527;
-    border-radius: 10px;
     background-color: #F4C430;
     max-width: 80vw;
     max-height: 50vw;
@@ -156,7 +153,6 @@ body {
     margin-bottom: 5rem;
     padding: 1rem;
     background-color: #641527;
-    border-radius: 10px;
     border: 2px solid #F4C430;
     max-width: 80vw;
     max-height: 50vw;
@@ -170,7 +166,7 @@ body {
 
 #museum-h1,
 #narratives-h1 {
-    font-size: 1.5em;
+    font-size: 3vw;
 }
 
 /* -----------The collection--------------*/
@@ -199,9 +195,8 @@ body {
 }
 
 .scroller-img {
-    border: 2px;
     width: 30vw;
-    height: 18vw;
+    height: 30vw;
     object-fit: cover;
 }
 
@@ -222,9 +217,9 @@ body {
 }
 
 .text {
-    white-space: wrap;
+    white-space: nowrap;
     color: #B8ADA7;
-    font-size: 1em;
+    font-size: 0.8em;
     position: absolute;
     overflow: hidden;
     top: 50%;

@@ -5,15 +5,29 @@
     src: url("https://db.onlinewebfonts.com/t/1dc7840abb13fcda12aa8d1cb21fb832.woff2") format("woff2");
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Belleza&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.belleza-regular {
+    font-family: "Belleza", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
 h1 {
     color: #F4C430;
     font-family: Agrandir;
 }
 
 p {
-    color: #B8ADA7
+    color: #B8ADA7;
+    text-align: justify;
 }
 
+a:hover,
+span {
+    color: #F4C430;
+}
 
 /* --------------------------------*/
 
@@ -82,6 +96,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Inter", sans-serif;
+    text-align: justify;
 }
 
 /* ------------------------------*/
@@ -100,7 +115,7 @@ body {
 
 .wine_button {
     margin-top: 2vw;
-    max-width: 10vw;
+    max-width: 8vw;
     clip-path: circle(50%);
     transition: transform 0.2s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -116,10 +131,11 @@ body {
 .title {
     font-size: 6vw;
     margin-top: 3vw;
+    font-family: "Belleza", sans-serif;
 }
 
 .subtitle {
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 /* -----------Intro + narratives and museum cards--------------*/
@@ -131,7 +147,7 @@ body {
 }
 
 #intro {
-    background-color: #2a2422
+    background-color: #2a2422;
 }
 
 #museum {
@@ -257,4 +273,9 @@ footer {
     z-index: -1;
     pointer-events: none;
     top: 30vh;
+}
+
+.info,
+.about {
+    text-align: justify;
 }

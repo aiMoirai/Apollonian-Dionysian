@@ -80,10 +80,11 @@
         </div>
     </div>
 
-    <div id="break">
-        <br> <!--This is for the button-->
+    <div class="container-fluid">
+        <div class="row">
+            <img class="separator" id="break" src="imgs/sopra colonna.png">
+        </div>
     </div>
-
     <!--Introduction section-->
     <div class="container text-center" id="quote">
         <div class="row">
@@ -155,12 +156,14 @@
     <div class="container browse">
         <h1>Browse the collection</h1>
         <div class="scroller">
-            <div class="container slide">
-                <img src="imgs/apollo_e_dafne.jpg" class="scroller-img">
-                <div class="overlay">
-                    <div class="text">Apollo and Daphne</div>
+            <a role="button" data-bs-toggle="modal" data-bs-target="#firstModal">
+                <div class="container slide">
+                    <img src="imgs/apollo_e_dafne.jpg" class="scroller-img">
+                    <div class="overlay">
+                        <div class="text">Apollo and Daphne</div>
+                    </div>
                 </div>
-            </div>
+            </a>
             <div class="container slide">
                 <img src="imgs/apollo_e_le_muse.jpg" class="scroller-img">
                 <div class="overlay">
@@ -252,15 +255,15 @@
                 </div>
             </div>
             <div class="container slide">
-                <img src="/imgs/" class="scroller-img">
+                <img src="imgs/lorenzo.png" class="scroller-img">
                 <div class="overlay">
-                    <div class="text">Il Trionfo di Bacco e Arianna</div>
+                    <div class="text">Il Trionfo di Bacco e d'Arianna</div>
                 </div>
             </div>
             <div class="container slide">
                 <img src="imgs/kylix.jpg" class="scroller-img">
                 <div class="overlay">
-                    <div class="text">Kylix</div>
+                    <div class="text">Kylix with Apollo</div>
                 </div>
             </div>
         </div>
@@ -270,6 +273,60 @@
     <div class="container-fluid">
         <div class="row">
             <img class="separator" src="imgs/fine colonne.png">
+        </div>
+    </div>
+
+    <!--Modals-->
+    <div class="modal fade" id="firstModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <p class="modal-title fs-5" id="exampleModalLabel"><b style="color:B8ADA7;">Apollo and Daphne</b>
+                    </p>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="media-area">
+                        <a href="imgs/apollo_e_dafne.jpg" target="_blank">
+                            <img class="modal-img" src="imgs/apollo_e_dafne.jpg">
+                        </a>
+
+                        <div class="modal-info">
+                            <p>
+                                <b>Title:</b> Apollo e Dafne<br>
+                                <b>Attribution:</b> Bernini Gian Lorenzo (Naples 1598 - Rome
+                                1680)
+                                <br>
+                                <b>Type:</b> Sculpture <br>
+                                <b>Materials and Techniques:</b> Carrara marble <br>
+                                <b>Measurements</b> 243
+                                cm height
+                                <br>
+                                <b>Current Location:</b> Galleria Borghese, Rome <br>
+                                <b>Creation Date:</b> 1622-1625<br>
+                                <b>Online Location:</b> <a
+                                    href="https://www.collezionegalleriaborghese.it/opere/apollo-e-dafne">Galleria
+                                    Borghese Collection</a>
+                                <br>
+                            </p>
+                        </div>
+                    </div>
+
+                    <p class="modal-text" style="margin-top:1em;">Bernini’s sculpture depicts the
+                        climax of Ovid’s Metamorphoses (I, 450–567): Apollo, struck by Cupid’s golden arrow, falls in
+                        love with the nymph Daphne, who, pierced by a leaden arrow, rejects him and calls upon her
+                        father, the river god Peneus, for protection. The work captures the moment of her transformation
+                        into a laurel tree, with her feet turning to roots and her hands and hair into branches, as
+                        Apollo reaches her. The laurel becomes sacred to Apollo and a lasting symbol for artists and
+                        poets.
+                    </p>
+
+                    <p><a class="modal-more" style="margin-top:1em; text-align:right;" href="">See more
+                        </a></p>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -329,3 +386,7 @@
 </body>
 
 </html>
+
+<!--Cose da fare-->
+<!--Le modal per le carte-->
+<!--Aggiungere loghi al footer-->

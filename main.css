@@ -8,25 +8,56 @@
 @import url('https://fonts.googleapis.com/css2?family=Belleza&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 .belleza-regular {
-    font-family: "Belleza", sans-serif;
+    font-family: var(--beleza);
     font-weight: 400;
     font-style: normal;
 }
 
+/* ------General doc--------------*/
 
-h1 {
-    color: #F4C430;
-    font-family: Agrandir;
+:root {
+    --bg: #2a2422;
+    --text: #B8ADA7;
+    --yellow: #F4C430;
+    --general_font: "Inter", sans-serif;
+    --h1_font: Agrandir;
+    --linkred: #9c2844;
+    --textred: #641527;
+    --beleza: "Belleza", sans-serif;
+    --blackbg: black;
+
 }
 
-p {
-    color: #B8ADA7;
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    font-family: var(--general_font);
     text-align: justify;
 }
 
-a:hover,
+
+h1 {
+    color: var(--yellow);
+    font-family: var(--h1_font);
+}
+
+p {
+    color: var(--text);
+    text-align: justify;
+}
+
+a:hover {
+    color: var(--yellow);
+}
+
+a {
+    color: var(--linkred);
+}
+
 span {
-    color: #F4C430;
+    color: var(--yellow);
 }
 
 /* --------------------------------*/
@@ -35,9 +66,8 @@ span {
 /* Navbar section --------------------*/
 
 .dropdown-menu {
-    background-color: #2a2422;
+    background-color: var(--bg);
     border-width: 1px;
-    color: #B8ADA7;
 }
 
 .navbar-toggler-icon {
@@ -53,32 +83,31 @@ span {
 }
 
 .navbar {
-    background-color: #2a2422;
-    border-bottom: 4px solid #641527;
-    color: #B8ADA7;
+    background-color: var(--bg);
+    border-bottom: 4px solid var(--textred);
+    font-size: 1.5em;
     position: fixed;
+    color: var(--text) !important;
 }
 
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link:focus {
-    color: #F4C430;
+    color: var(--yellow);
 }
 
 .navbar-nav .nav-link:active,
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link[aria-current="page"] {
-    color: #F4C430;
+    color: var(--yellow);
 }
 
 .navbar-nav .dropdown-item:hover,
 .navbar-nav .dropdown-item:focus {
-    background-color: #F4C430;
-    color: #2a2422;
+    background-color: var(--yellow);
 }
 
 .navbar-nav .dropdown-item:active {
-    background-color: #F4C430;
-    color: #2a2422;
+    background-color: var(--yellow);
 }
 
 .logo {
@@ -89,17 +118,56 @@ span {
 
 /* -------------------------------*/
 
-/* ------General doc--------------*/
-body {
-    background-color: #2a2422;
-    color: #B8ADA7;
-    margin: 0;
-    padding: 0;
-    font-family: "Inter", sans-serif;
-    text-align: justify;
+/* -------Dark/light mode button--------*/
+
+.theme-switch {
+    position: fixed;
+    top: 10rem;
+    right: 2rem;
+    z-index: 9999;
+    width: 80px;
+    height: 40px;
 }
 
-/* ------------------------------*/
+.theme-switch input {
+    display: none;
+}
+
+.theme-switch label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--text);
+    border-radius: 40px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.theme-switch label::after {
+    content: "☽";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 20px;
+    background-color: var(--blackbg);
+    border-radius: 50%;
+    transition: 0.3s ease, transform 0.3s ease;
+}
+
+.theme-switch input:checked+label {
+    background-color: var(--yellow);
+}
+
+.theme-switch input:checked+label::after {
+    content: "☼";
+    transform: translateX(40px);
+}
+
 
 
 /* -----------Hero section (with button)--------------*/
@@ -115,7 +183,7 @@ body {
 
 .wine_button {
     margin-top: 2vw;
-    max-width: 8vw;
+    max-width: 100px;
     clip-path: circle(50%);
     transition: transform 0.2s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -131,11 +199,11 @@ body {
 .title {
     font-size: 6vw;
     margin-top: 3vw;
-    font-family: "Belleza", sans-serif;
+    font-family: var(--beleza);
 }
 
 .subtitle {
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 /* -----------Intro + narratives and museum cards--------------*/
@@ -144,32 +212,36 @@ body {
     margin-top: 5rem;
     margin-bottom: 3rem;
     padding: 1rem;
+    font-size: 1.5em;
+    text-align: center;
+    color: var(--yellow);
 }
 
 #intro {
-    background-color: #2a2422;
+    background-color: var(--bg);
+    font-size: 1.5em;
 }
 
 #museum {
     margin-top: 5rem;
     margin-bottom: 5rem;
     padding: 1rem;
-    border: 3px solid #641527;
-    background-color: #F4C430;
+    border: 3px solid var(--textred);
+    background-color: var(--yellow);
     max-width: 80vw;
     max-height: 50vw;
 }
 
 #museum-h1 {
-    color: #641527;
+    color: var(--textred);
 }
 
 #narratives {
     margin-top: 5rem;
     margin-bottom: 5rem;
     padding: 1rem;
-    background-color: #641527;
-    border: 2px solid #F4C430;
+    background-color: var(--textred);
+    border: 2px solid var(--yellow);
     max-width: 80vw;
     max-height: 50vw;
 }
@@ -192,7 +264,8 @@ body {
     margin-top: 5rem;
     margin-bottom: 5rem;
     padding: 1rem;
-    background-color: #2a2422;
+    background-color: var(--bg);
+    max-width: 80vw;
 }
 
 .scroller {
@@ -207,29 +280,25 @@ body {
 
 .slide {
     position: relative;
-    width: 250px;
-    max-height: 350px;
+    width: 200px;
     flex: 0 0 auto;
     overflow: hidden;
 }
 
 .scroller-img {
     width: 100%;
-    height: 250px;
+    height: 350px;
     object-fit: cover;
     display: block;
 }
 
-.modal-img {
-    object-fit: cover;
-}
 
 .overlay {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: black;
+    background-color: var(--blackbg);
     overflow: hidden;
     width: 0;
     height: 100%;
@@ -242,7 +311,7 @@ body {
 
 .text {
     white-space: nowrap;
-    color: #B8ADA7;
+    color: var(--text);
     font-size: 0.8em;
     position: absolute;
     overflow: hidden;
@@ -256,7 +325,7 @@ body {
 :root {
     --modal-border-radius: 1%;
     --modal-bg: rgba(42, 36, 34, 0.95);
-    --modal-header-border-color: #641527;
+    --modal-header-border-color: var(--textred);
     --modal-header-border-width: 3px;
 }
 
@@ -294,6 +363,12 @@ body {
     align-items: flex-start;
     width: 250px;
     flex-shrink: 0;
+    transition: transform 0.2s ease;
+    object-fit: cover;
+}
+
+.modal-img:hover {
+    transform: scale(1.03);
 }
 
 .modal-info {
@@ -310,7 +385,7 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #000000;
+    background-color: var(--blackbg);
     padding: 8px;
     text-align: center;
     z-index: 1000;

@@ -168,6 +168,27 @@ span {
     transform: translateX(40px);
 }
 
+@media (max-width: 600px) {
+    .theme-switch {
+        width: 60px;
+        height: 30px;
+    }
+
+    .theme-switch label {
+        border-radius: 30px;
+    }
+
+    .theme-switch label::after {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 16px;
+    }
+
+    .theme-switch input:checked+label::after {
+        transform: translateX(30px);
+    }
+}
 
 
 /* -----------Hero section (with button)--------------*/
@@ -335,17 +356,6 @@ span {
     align-items: flex-start;
 }
 
-@media (max-width: 768px) {
-    .media-area {
-        flex-direction: column;
-    }
-
-    ;
-
-    footer {
-        flex-direction: row;
-    }
-}
 
 .modal-content {
     border-radius: var(--modal-border-radius);
@@ -380,6 +390,7 @@ span {
 /* -------Footer-------------*/
 footer {
     display: flex;
+    flex-direction: column;
     margin-top: 0;
     position: relative;
     bottom: 0;
@@ -391,6 +402,33 @@ footer {
     z-index: 1000;
 }
 
+footer .footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .footer .col {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px;
+    text-align: left;
+}
+
+/* Media query for mobile */
+@media (max-width: 600px) {
+    footer .footer .row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer .footer .col {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* -------Temple separators-------------*/
 .separator {
     position: relative;
     max-height: 20vw;

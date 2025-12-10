@@ -1,32 +1,36 @@
 /* General Typography section --------------------*/
 
-@font-face {
-    font-family: "Agrandir";
-    src: url("https://db.onlinewebfonts.com/t/1dc7840abb13fcda12aa8d1cb21fb832.woff2") format("woff2");
-}
-
-@import url('https://fonts.googleapis.com/css2?family=Belleza&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
-.belleza-regular {
-    font-family: var(--beleza);
-    font-weight: 400;
-    font-style: normal;
-}
 
 /* ------General doc--------------*/
 
 :root {
+    --bgimg: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(42, 36, 34, 0.8)), url('imgs/hero-bacco.jpg');
     --bg: #2a2422;
     --text: #B8ADA7;
     --yellow: #F4C430;
-    --general_font: "Inter", sans-serif;
-    --h1_font: Agrandir;
+    --general_font: "Cardo", serif;
+    --h1_font: Cinzel, serif;
     --linkred: #9c2844;
     --textred: #641527;
-    --beleza: "Belleza", sans-serif;
     --blackbg: black;
+    --nav: #2a2422;
 
 }
+
+/* :lightmode {
+    --bgimg: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(230, 220, 205, 0.9)), url('imgs/apollo_e_le_muse.jpg');
+    --bg: #F3E9DA;
+    --text: #4A3C35;
+    --yellow: #D4A74E;
+    --general_font: "Cardo", serif;
+    --h1_font: Cinzel, serif;
+    --linkred: #8B3A2F;
+    --textred: #5D261C;
+    --blackbg: #E5D6C4;
+    --nav: #E5D6C4;
+} */
+
+
 
 body {
     background-color: var(--bg);
@@ -34,6 +38,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--general_font);
+    font-size: 1.5em;
     text-align: justify;
 }
 
@@ -43,12 +48,17 @@ h1 {
     font-family: var(--h1_font);
 }
 
+h4 {
+    font-size: 1.2em;
+}
+
 p {
     color: var(--text);
     text-align: justify;
 }
 
-a:hover {
+a:hover,
+span {
     color: var(--yellow);
 }
 
@@ -56,9 +66,8 @@ a {
     color: var(--linkred);
 }
 
-span {
-    color: var(--yellow);
-}
+
+
 
 /* --------------------------------*/
 
@@ -66,7 +75,7 @@ span {
 /* Navbar section --------------------*/
 
 .dropdown-menu {
-    background-color: var(--bg);
+    background-color: var(--nav);
     border-width: 1px;
 }
 
@@ -83,11 +92,15 @@ span {
 }
 
 .navbar {
-    background-color: var(--bg);
+    background-color: var(--nav);
     border-bottom: 4px solid var(--textred);
-    font-size: 1.5em;
+    font-size: 1em;
     position: fixed;
-    color: var(--text) !important;
+    color: var(--text);
+}
+
+.nav-link {
+    color: var(--text);
 }
 
 .navbar-nav .nav-link:hover,
@@ -99,6 +112,14 @@ span {
 .navbar-nav .nav-link.active,
 .navbar-nav .nav-link[aria-current="page"] {
     color: var(--yellow);
+}
+
+.dropdown-menu {
+    border: 3px solid #641527;
+}
+
+.dropdown-item {
+    color: var(--text);
 }
 
 .navbar-nav .dropdown-item:hover,
@@ -194,7 +215,7 @@ span {
 /* -----------Hero section (with button)--------------*/
 .hero {
     height: 100vh;
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(42, 36, 34, 0.8)), url('imgs/hero-bacco.jpg');
+    background-image: var(--bgimg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -206,7 +227,7 @@ span {
     margin-top: 2vw;
     max-width: 100px;
     clip-path: circle(50%);
-    transition: transform 0.2s ease;
+    transition: transform 0.2s ease-in-out;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -220,27 +241,31 @@ span {
 .title {
     font-size: 6vw;
     margin-top: 3vw;
-    font-family: var(--beleza);
 }
 
 .subtitle {
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 /* -----------Intro + narratives and museum cards--------------*/
 
 #quote {
-    margin-top: 5rem;
-    margin-bottom: 3rem;
+    margin-top: 4rem;
+    margin-bottom: 10rem;
     padding: 1rem;
-    font-size: 1.5em;
+    font-size: 3rem;
     text-align: center;
     color: var(--yellow);
 }
 
+.quote {
+    margin-bottom: 15rem;
+}
+
 #intro {
-    background-color: var(--bg);
-    font-size: 1.5em;
+    font-size: 1.5rem;
+    text-align: center;
+    max-width: 90vw;
 }
 
 #museum {
@@ -250,7 +275,7 @@ span {
     border: 3px solid var(--textred);
     background-color: var(--yellow);
     max-width: 80vw;
-    max-height: 50vw;
+    max-height: 25vw;
 }
 
 #museum-h1 {
@@ -264,7 +289,7 @@ span {
     background-color: var(--textred);
     border: 2px solid var(--yellow);
     max-width: 80vw;
-    max-height: 50vw;
+    max-height: 25vw;
 }
 
 .img-fluid {
@@ -277,6 +302,7 @@ span {
 #narratives-h1 {
     font-size: 3vw;
 }
+
 
 /* -----------The collection--------------*/
 
@@ -345,7 +371,7 @@ span {
 /* -------Modals-------------*/
 :root {
     --modal-border-radius: 1%;
-    --modal-bg: rgba(42, 36, 34, 0.95);
+    --modal-bg: var(--bg);
     --modal-header-border-color: var(--textred);
     --modal-header-border-width: 3px;
 }
@@ -423,7 +449,7 @@ footer .footer .col {
     }
 
     footer .footer .col {
-        width: 100%;
+        width: 90%;
         margin-bottom: 20px;
     }
 }

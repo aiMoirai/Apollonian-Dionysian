@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tyrsos & Lyre</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+
+    <!--------------------Fonts---------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
+    <!--Inter-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!--Cinzel-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Belleza&family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+
+    <!---------Favicon---------->
+
+    <link rel="icon" href="imgs/logo_grigio_con_nome.png" type="image/png">
+
+
+</head>
+
+<body>
+    <!--Navigation bar-->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="imgs/logo_grigio_con_nome.png" class="logo" alt="Logo" width="30" height="24"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">The Museum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Exhibition</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Narratives</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Choose your theme
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Documentation</a></li>
+                            <li><a class="dropdown-item" href="#">Disclaimer</a></li>
+                            <li><a class="dropdown-item" href="#">The Team</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Dark/light button-->
+    <div class="theme-switch">
+        <input type="checkbox" id="theme-toggle" />
+        <label for="theme-toggle"></label>
+    </div>
+    <div class="container" id="disclaimer">
+        <div class="row">
+            <div class="col">
+                <h1>Disclaimer</h1>
+                <p>This website has been created exclusively for academic purposes as part of a university project. All
+                    content
+                    presented herein — including texts, images, narratives, names, locations, and descriptions of
+                    exhibitions or
+                    institutions — is entirely fictional unless otherwise stated.</p>
+
+                <p>Any resemblance to real museums, persons, places, or events is purely coincidental. Images and
+                    external
+                    resources, where used, are intended solely for study, educational, and non-commercial purposes. No
+                    copyright
+                    infringement is intended.</p>
+
+                <p>This project does not represent a real institution and should not be considered an official source
+                    of
+                    information.</p>
+                <p>
+                    If you would like to learn more about the academic context in which this project was developed,
+                    please visit
+                    <a href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2024/454464"
+                        target="_blank" rel="noopener">
+                        this course page
+                    </a>
+                    at the University of Bologna.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        <div class="photo-box p-3">
+            <div class="row g-3">
+                <div class="col-12 col-md-4">
+                    <img src="imgs/kylix.jpg" alt="Photo 1" class="img-fluid rounded">
+                    <div class="overlay-text">The Museum</div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <img src="imgs/coppadionisio.jpg" alt="Photo 2" class="img-fluid rounded">
+                    <div class="overlay-text">Exhibition</div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <img src="imgs/maschera_comica.jpg" alt="Photo 3" class="img-fluid rounded">
+                    <div class="overlay-text">Narratives</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!--Footer section-->
+    <footer>
+        <div class="footer container">
+            <div class="row" id="footer">
+                <div class="col info">
+                    <h4><b>Free Entry</b></h4>
+                    <p>Diagon Alley 18, London</p>
+                    <h4><b>Box Office</b></h4>
+                    <p>+11 2233445566</p>
+                    <h4><b>Opening Hours</b></h4>
+                    <p>Daily: 00.00–24.00 (Fridays: 23:30)<br>Last entry: Anytime (Fridays: 23:29)</p>
+                </div>
+                <div class="col about" style="line-height: 2.5;">
+                    <h4><b>About</b></h4>
+                    <a href="URL">The Museum</a><br>
+                    <a href="URL">The Narratives</a><br>
+                    <a href="URL">The Themes</a><br>
+                    <a href="URL">The Team</a><br>
+                    <a href="URL">The Documentation</a><br>
+                    <a href="URL">Disclaimer</a>
+                </div>
+                <div class="col exam">
+                    <h4 style="text-align: left;"><b>The Project</b></h4>
+                    <p>This project was created for the <a
+                            href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2024/454464"><i>Information
+                                Modeling and Web Technologies</i></a> exam (2024/2025)
+                        at the University
+                        of Bologna, taught by <a href="https://www.unibo.it/sitoweb/fabio.vitali">Fabio Vitali</a> in
+                        the Master’s program in <a
+                            href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge"><i>Digital Humanities and
+                                Digital Knowledge</i></a>. All museum information is
+                        fictional.</p>
+                    <p><b> Alma Mater Studiorum <br>Università di Bologna <br>
+                            Via Zamboni 34 <br>
+                            40126 BO Bologna </b></p>
+                </div>
+            </div>
+            <div class="row rights">
+                <p style="text-align: center;">All the images and resources taken from external sources are solely used
+                    for study purposes. No
+                    commercial use is intended.<br>
+                    <i>Tyrsos & Lyre</i> © 2025
+                </p>
+            </div>
+        </div>
+    </footer>
+    </div>
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

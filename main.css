@@ -30,7 +30,10 @@
     --nav: #E5D6C4;
 } */
 
-
+html,
+body {
+    height: 100%;
+}
 
 body {
     background-color: var(--bg);
@@ -40,6 +43,8 @@ body {
     font-family: var(--general_font);
     font-size: 1.5em;
     text-align: justify;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -251,9 +256,9 @@ a {
 
 #quote {
     margin-top: 4rem;
-    margin-bottom: 10rem;
+    margin-bottom: 5rem;
     padding: 1rem;
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
     color: var(--yellow);
 }
@@ -359,7 +364,7 @@ a {
 .text {
     white-space: nowrap;
     color: var(--text);
-    font-size: 0.8em;
+    font-size: 0.5em;
     position: absolute;
     overflow: hidden;
     top: 50%;
@@ -371,7 +376,7 @@ a {
 /* -------Modals-------------*/
 :root {
     --modal-border-radius: 1%;
-    --modal-bg: var(--bg);
+    --modal-bg: rgba(42, 36, 34, 0.95);
     --modal-header-border-color: var(--textred);
     --modal-header-border-width: 3px;
 }
@@ -410,6 +415,7 @@ a {
 .modal-info {
     flex: 1;
     min-width: 0;
+    background-color: var(--modal-bg);
 }
 
 
@@ -418,6 +424,7 @@ footer {
     display: flex;
     flex-direction: column;
     margin-top: 0;
+    margin-bottom: 0;
     position: relative;
     bottom: 0;
     left: 0;
@@ -475,4 +482,10 @@ footer .footer .col {
 .info,
 .about {
     text-align: justify;
+}
+
+/* -------Disclaimer-------------*/
+#disclaimer {
+    padding-top: 10em;
+    padding-bottom: 2em;
 }

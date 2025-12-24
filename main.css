@@ -32,7 +32,7 @@
 
 html,
 body {
-    height: 100%;
+    min-height: 100vh;
 }
 
 body {
@@ -40,6 +40,7 @@ body {
     color: var(--text);
     margin: 0;
     padding: 0;
+    padding-top: 80px;
     font-family: var(--general_font);
     font-size: 1.5em;
     text-align: justify;
@@ -418,6 +419,11 @@ a {
     background-color: var(--modal-bg);
 }
 
+.overlay>.text {
+    font-size: 0.8em;
+}
+
+
 
 /* -------Footer-------------*/
 footer {
@@ -486,6 +492,5 @@ footer .footer .col {
 
 /* -------Disclaimer-------------*/
 #disclaimer {
-    padding-top: 10em;
     padding-bottom: 2em;
 }

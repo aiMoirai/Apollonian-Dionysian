@@ -44,7 +44,7 @@ body {
     padding: 0;
     padding-top: 60px;
     font-family: var(--general_font);
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-align: justify;
     display: flex;
     flex-direction: column;
@@ -429,7 +429,7 @@ a {
     font-size: 0.8em;
 }
 
-/* Ticket section */
+/* --------Ticket section --------*/
 .tickets {
     display: flex;
     flex-direction: column;
@@ -455,12 +455,10 @@ select {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
-    /* consente ai campi di andare a capo */
 }
 
 .field-row>div {
     flex: 1 1 200px;
-    /* larghezza minima per responsive */
 }
 
 .book {
@@ -481,10 +479,10 @@ select {
     background: var(--linkred);
 }
 
-/* Media query per schermi piccoli */
 @media (max-width: 600px) {
     .field-row {
         flex-direction: column;
+        gap: 6px;
     }
 }
 
@@ -492,7 +490,6 @@ select {
 /* -------Footer-------------*/
 footer {
     border-top: 4px solid var(--textred);
-    display: flex;
     flex-direction: column;
     margin-top: 0;
     margin-bottom: 0;

@@ -14,21 +14,23 @@
     --textred: #641527;
     --blackbg: black;
     --nav: #2a2422;
+    --title: #F4C430;
 
 }
 
-/* :lightmode {
-    --bgimg: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(230, 220, 205, 0.9)), url('imgs/apollo_e_le_muse.jpg');
+body.lightmode {
+    --bgimg: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(230, 220, 205, 0.9)), url('imgs/apollo_e_le_muse.jpg');
     --bg: #F3E9DA;
-    --text: #4A3C35;
-    --yellow: #D4A74E;
+    --text: #2a2422;
+    --yellow: #ab770e;
     --general_font: "Cardo", serif;
     --h1_font: Cinzel, serif;
     --linkred: #8B3A2F;
     --textred: #5D261C;
-    --blackbg: #E5D6C4;
-    --nav: #E5D6C4;
-} */
+    --blackbg: #afa292;
+    --nav: #afa292;
+    --title: #eba311;
+}
 
 html,
 body {
@@ -40,7 +42,7 @@ body {
     color: var(--text);
     margin: 0;
     padding: 0;
-    padding-top: 80px;
+    padding-top: 60px;
     font-family: var(--general_font);
     font-size: 1.5em;
     text-align: justify;
@@ -247,6 +249,7 @@ a {
 .title {
     font-size: 6vw;
     margin-top: 3vw;
+    color: var(--title)
 }
 
 .subtitle {
@@ -256,6 +259,7 @@ a {
 /* -----------Intro + narratives and museum cards--------------*/
 
 #quote {
+    background-color: var(--bg);
     margin-top: 4rem;
     margin-bottom: 5rem;
     padding: 1rem;
@@ -269,6 +273,7 @@ a {
 }
 
 #intro {
+    background-color: var(--bg);
     font-size: 1.5rem;
     text-align: center;
     max-width: 90vw;
@@ -313,7 +318,8 @@ a {
 /* -----------The collection--------------*/
 
 
-.browse {
+.browse,
+.tickets {
     margin-top: 5rem;
     margin-bottom: 5rem;
     padding: 1rem;
@@ -423,10 +429,69 @@ a {
     font-size: 0.8em;
 }
 
+/* Ticket section */
+.tickets {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+label {
+    font-size: 0.8em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.field-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    /* consente ai campi di andare a capo */
+}
+
+.field-row>div {
+    flex: 1 1 200px;
+    /* larghezza minima per responsive */
+}
+
+.book {
+    width: 100%;
+    padding: 14px;
+    margin-top: 30px;
+    background: var(--textred);
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.book:hover {
+    background: var(--linkred);
+}
+
+/* Media query per schermi piccoli */
+@media (max-width: 600px) {
+    .field-row {
+        flex-direction: column;
+    }
+}
 
 
 /* -------Footer-------------*/
 footer {
+    border-top: 4px solid var(--textred);
     display: flex;
     flex-direction: column;
     margin-top: 0;
@@ -450,7 +515,6 @@ footer .footer .row {
 footer .footer .col {
     flex: 1;
     min-width: 200px;
-    margin: 10px;
     text-align: left;
 }
 
@@ -474,14 +538,13 @@ footer .footer .col {
     object-fit: cover;
 }
 
-.sep-centro {
+.centro {
     position: fixed;
     left: 0;
-    width: 110%;
+    max-width: 100%;
     max-height: 100vw;
     object-fit: cover;
     z-index: -1;
-    pointer-events: none;
     top: 30vh;
 }
 
@@ -490,7 +553,9 @@ footer .footer .col {
     text-align: justify;
 }
 
+
 /* -------Disclaimer-------------*/
 #disclaimer {
+    padding-top: 6em;
     padding-bottom: 2em;
 }

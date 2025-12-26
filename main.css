@@ -342,7 +342,7 @@ a {
     margin-top: 4rem;
     margin-bottom: 5rem;
     padding: 1rem;
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
     color: var(--yellow);
 }
@@ -352,14 +352,19 @@ a {
 }
 
 #intro {
+<<<<<<< HEAD
+    background-color: var(--bg);
+    font-size: 1.3rem;
+=======
     font-size: 1.5rem;
+>>>>>>> 058b90ac6ade8ed4d9f9c96ab0cc46cc52421129
     text-align: center;
     max-width: 90vw;
 }
 
 #museum {
     margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     padding: 1rem;
     border: 3px solid var(--textred);
     background-color: var(--yellow);
@@ -373,8 +378,8 @@ a {
 
 #narratives {
     margin-top: 5rem;
-    margin-bottom: 5rem;
-    padding: 1rem;
+    margin-bottom: 3rem;
+    padding: 0.5rem;
     background-color: var(--textred);
     border: 2px solid var(--yellow);
     max-width: 80vw;
@@ -385,11 +390,13 @@ a {
     height: 18vw;
     width: 30vw;
     object-fit: cover;
+    padding: 0.3rem;
 }
 
 #museum-h1,
 #narratives-h1 {
     font-size: 3vw;
+    object-position: center;
 }
 
 
@@ -506,6 +513,75 @@ a {
     font-size: 0.8em;
 }
 
+<<<<<<< HEAD
+/* --------Ticket section --------*/
+.tickets {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+label {
+    font-size: 0.8em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    width: 90%;
+    max-width: 20vh;
+    box-sizing: border-box;
+}
+
+.field-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.field-row>div {
+    flex: 1 1 200px;
+}
+
+.book {
+    width: 100%;
+    padding: 14px;
+    margin-top: 30px;
+    background: var(--textred);
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.book:hover {
+    background: var(--linkred);
+}
+
+@media (max-width: 600px) {
+    .field-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .field-row>div {
+        flex: 1 1 auto;
+    }
+
+    input,
+    select {
+        margin-bottom: 8px;
+    }
+}
+=======
+>>>>>>> 058b90ac6ade8ed4d9f9c96ab0cc46cc52421129
 
 
 /* -------Footer-------------*/

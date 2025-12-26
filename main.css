@@ -14,23 +14,21 @@
     --textred: #641527;
     --blackbg: black;
     --nav: #2a2422;
-    --title: #F4C430;
 
 }
 
-body.lightmode {
-    --bgimg: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(230, 220, 205, 0.9)), url('imgs/apollo_e_le_muse.jpg');
+/* :lightmode {
+    --bgimg: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(230, 220, 205, 0.9)), url('imgs/apollo_e_le_muse.jpg');
     --bg: #F3E9DA;
-    --text: #2a2422;
-    --yellow: #ab770e;
+    --text: #4A3C35;
+    --yellow: #D4A74E;
     --general_font: "Cardo", serif;
     --h1_font: Cinzel, serif;
     --linkred: #8B3A2F;
     --textred: #5D261C;
-    --blackbg: #afa292;
-    --nav: #afa292;
-    --title: #eba311;
-}
+    --blackbg: #E5D6C4;
+    --nav: #E5D6C4;
+} */
 
 html,
 body {
@@ -42,9 +40,9 @@ body {
     color: var(--text);
     margin: 0;
     padding: 0;
-    padding-top: 60px;
+    padding-top: 80px;
     font-family: var(--general_font);
-    font-size: 1.2em;
+    font-size: 1.5em;
     text-align: justify;
     display: flex;
     flex-direction: column;
@@ -197,6 +195,89 @@ a {
     transform: translateX(40px);
 }
 
+/* ===============================
+   Narratives page
+   =============================== */
+
+.narratives-hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.narratives-hero-img {
+    border: 3px solid var(--textred);
+    border-radius: 12px;
+    max-height: 320px;
+    width: 100%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.narratives-grid {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+}
+
+.narrative-card {
+    background: rgba(0, 0, 0, 0.15);
+    border: 3px solid var(--textred);
+    border-radius: 16px;
+    padding: 1.5rem;
+    height: 100%;
+}
+
+.narrative-card__header {
+    margin-bottom: 1rem;
+}
+
+.narrative-title {
+    color: var(--yellow);
+    font-family: var(--h1_font);
+    font-size: 1.6em;
+    margin: 0;
+}
+
+.narrative-subtitle {
+    margin: 0.25rem 0 0;
+    font-size: 0.95em;
+}
+
+.narrative-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.narrative-pill {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 0.6rem 1rem;
+    border: 2px solid var(--text);
+    color: var(--text);
+    transition: 0.2s ease;
+    font-size: 0.95em;
+}
+
+.narrative-pill:hover,
+.narrative-pill:focus {
+    border-color: var(--yellow);
+    color: var(--yellow);
+    transform: translateY(-1px);
+}
+
+.narrative-note {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(184, 173, 167, 0.35);
+    font-size: 0.9em;
+}
+
+.narratives-footnote {
+    font-size: 0.95em;
+}
+
 @media (max-width: 600px) {
     .theme-switch {
         width: 60px;
@@ -249,7 +330,6 @@ a {
 .title {
     font-size: 6vw;
     margin-top: 3vw;
-    color: var(--title)
 }
 
 .subtitle {
@@ -259,7 +339,6 @@ a {
 /* -----------Intro + narratives and museum cards--------------*/
 
 #quote {
-    background-color: var(--bg);
     margin-top: 4rem;
     margin-bottom: 5rem;
     padding: 1rem;
@@ -273,7 +352,6 @@ a {
 }
 
 #intro {
-    background-color: var(--bg);
     font-size: 1.5rem;
     text-align: center;
     max-width: 90vw;
@@ -318,8 +396,7 @@ a {
 /* -----------The collection--------------*/
 
 
-.browse,
-.tickets {
+.browse {
     margin-top: 5rem;
     margin-bottom: 5rem;
     padding: 1rem;
@@ -429,67 +506,11 @@ a {
     font-size: 0.8em;
 }
 
-/* --------Ticket section --------*/
-.tickets {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-label {
-    font-size: 0.8em;
-    display: block;
-    margin-bottom: 5px;
-}
-
-input,
-select {
-    padding: 10px 12px;
-    margin-bottom: 10px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.field-row {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.field-row>div {
-    flex: 1 1 200px;
-}
-
-.book {
-    width: 100%;
-    padding: 14px;
-    margin-top: 30px;
-    background: var(--textred);
-    border: none;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 500;
-    color: white;
-    cursor: pointer;
-    transition: 0.2s;
-}
-
-.book:hover {
-    background: var(--linkred);
-}
-
-@media (max-width: 600px) {
-    .field-row {
-        flex-direction: column;
-        gap: 6px;
-    }
-}
 
 
 /* -------Footer-------------*/
 footer {
-    border-top: 4px solid var(--textred);
+    display: flex;
     flex-direction: column;
     margin-top: 0;
     margin-bottom: 0;
@@ -512,6 +533,7 @@ footer .footer .row {
 footer .footer .col {
     flex: 1;
     min-width: 200px;
+    margin: 10px;
     text-align: left;
 }
 
@@ -535,13 +557,14 @@ footer .footer .col {
     object-fit: cover;
 }
 
-.centro {
+.sep-centro {
     position: fixed;
     left: 0;
-    max-width: 100%;
+    width: 110%;
     max-height: 100vw;
     object-fit: cover;
     z-index: -1;
+    pointer-events: none;
     top: 30vh;
 }
 
@@ -550,9 +573,7 @@ footer .footer .col {
     text-align: justify;
 }
 
-
 /* -------Disclaimer-------------*/
 #disclaimer {
-    padding-top: 6em;
     padding-bottom: 2em;
 }

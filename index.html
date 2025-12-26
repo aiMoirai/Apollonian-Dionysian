@@ -54,18 +54,7 @@
                         <a class="nav-link" href="#">Exhibition</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Narratives</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            About
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">The Team</a></li>
-                            <li><a class="dropdown-item" href="#">The Documentation</a></li>
-                            <li><a class="dropdown-item" href="Disclaimer.html">Disclaimer</a></li>
-                        </ul>
+                        <a class="nav-link" href="./narratives">Narratives</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -73,9 +62,9 @@
                             Choose your theme
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">First Theme</a></li>
-                            <li><a class="dropdown-item" href="Disclaimer.html">Second</a></li>
-                            <li><a class="dropdown-item" href="#">Third</a></li>
+                            <li><a class="dropdown-item" href="#">Documentation</a></li>
+                            <li><a class="dropdown-item" href="Disclaimer.html">Disclaimer</a></li>
+                            <li><a class="dropdown-item" href="#">The Team</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -85,8 +74,8 @@
 
     <!--Dark/light button-->
     <div class="theme-switch">
-        <input type="checkbox" id="switch" />
-        <label for="switch"></label>
+        <input type="checkbox" id="theme-toggle" />
+        <label for="theme-toggle"></label>
     </div>
 
     <!--Hero section-->
@@ -95,16 +84,15 @@
             <h1 class="title">TYRSOS <span style="color:var(--text); font-size:1.5em;">&</span> LYRE</h1>
             <p class="subtitle" style="text-align: center;">Hello, visitor.<br> Take a glass of wine, the Symposium is
                 about to start.</p>
-            <a href="#break1"> <img src="imgs/wine_button.png" alt="wine" class="wine_button"> </a>
+            <a href="#break"> <img src="imgs/wine_button.png" alt="wine" class="wine_button"> </a>
         </div>
     </div>
 
     <div class="container-fluid">
         <div class="row">
-            <img class="separator" id="break1" src="imgs/sopra colonna.png">
+            <img class="separator" id="break" src="imgs/sopra colonna.png">
         </div>
     </div>
-
     <!--Introduction section-->
     <div class="container text-center" id="quote">
         <div class="row">
@@ -144,7 +132,7 @@
 
     <div class="container-fluid">
         <div class="row">
-            <img class="separator centro" id="break2" src="imgs/centro colonna.png">
+            <img class="sep-centro" src="imgs/centro colonna.png">
         </div>
     </div>
 
@@ -295,6 +283,11 @@
     </div>
 
 
+    <div class="container-fluid">
+        <div class="row">
+            <img class="separator" src="imgs/fine colonne.png">
+        </div>
+    </div>
 
     <!--Modals-->
     <div class="modal fade" id="firstModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -350,47 +343,6 @@
         </div>
     </div>
 
-    <!--Ticket section-->
-    <div class="container tickets">
-        <form action="/booking" method="POST">
-            <h1>Book Your Ticket</h1>
-            <p>Entry is free. Ticket booking is required for visitor number tracking and space management. </p>
-            <div class="field-row">
-                <div>
-                    <label for="date">Visit Date</label>
-                    <input type="date" id="date" name="date" required>
-                </div>
-                <div>
-                    <label for="time">Time Slot</label>
-                    <select id="time" name="time" required>
-                        <option value="">Select</option>
-                        <option value="10:00">10:00 AM</option>
-                        <option value="12:00">12:00 PM</option>
-                        <option value="14:00">2:00 PM</option>
-                        <option value="16:00">4:00 PM</option>
-                    </select>
-                </div>
-            </div>
-            <div class="field-row">
-                <div> <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div> <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-            </div>
-
-            <button class="book" type="submit">Book Now</button>
-        </form>
-    </div>
-
-    <div class="container-fluid">
-        <div class="row">
-            <img class="separator" id="break3" src="imgs/fine colonne.png">
-        </div>
-    </div>
-
     <!--Footer section-->
     <footer>
         <div class="footer container">
@@ -441,40 +393,9 @@
 
 
 
-    <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-
-    <!-- my JS -->
-    <script>
-        const toggle = document.getElementById("switch");
-        const separators = [
-            document.getElementById("break1"),
-            document.getElementById("break2"),
-            document.getElementById("break3")
-        ];
-
-        toggle.addEventListener("change", () => {
-            document.body.classList.toggle("lightmode", toggle.checked);
-
-            separators.forEach((img, index) => {
-                switch (index) {
-                    case 0:
-                        img.src = toggle.checked ? "" : "imgs/sopra colonna.png";
-                        break;
-                    case 1:
-                        img.src = toggle.checked ? "" : "imgs/centro colonna.png";
-                        break;
-                    case 2:
-                        img.src = toggle.checked ? "" : "imgs/fine colonne.png";
-                        break;
-                }
-            });
-        });
-
-    </script>
-
 
 </body>
 

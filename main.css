@@ -567,17 +567,26 @@ footer .footer .col {
 }
 
 .narratives-hero-img {
+    margin-top: 2rem;
     border: 3px solid var(--textred);
     border-radius: 12px;
     max-height: 320px;
-    width: 100%;
+    width: 80%;
     object-fit: cover;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-.narratives-grid {
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+
+.narratives-grid{
+  margin-top: -7rem !important;
+  padding-top: 0 !important;
+}
+
+.sep-centro{
+  display: block;
+  margin-bottom: 0 !important;
+  max-height: 120px;
+  object-fit: contain;
 }
 
 .narrative-card {

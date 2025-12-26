@@ -592,7 +592,7 @@ footer .footer .col {
 }
 
 .narrative-card {
-    background: rgba(0, 0, 0, 0.15);
+    background: var(--bg);
     border: 3px solid var(--textred);
     border-radius: 16px;
     padding: 1.5rem;
@@ -671,4 +671,21 @@ footer .footer .col {
     .theme-switch input:checked+label::after {
         transform: translateX(30px);
     }
+}
+
+/* =========================
+   ARTWORKS
+   ========================= */
+
+.artwork-card {
+  background: var(--bg) !important;
+}
+
+.desc-short,
+.desc-long {
+    font-size: 1.2rem;      /* più piccolo ma leggibile */
+    line-height: 1.5;        
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem; 
+    padding-right: 0.5rem;  
 }

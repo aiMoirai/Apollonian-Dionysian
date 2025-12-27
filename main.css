@@ -16,6 +16,10 @@
     --nav: #2a2422;
     --title: #F4C430;
     --border: 3px solid var(--textred);
+    --modal-border-radius: 1%;
+    --modal-bg: rgba(42, 36, 34, 0.95);
+    --modal-header-border-color: var(--textred);
+    --modal-header-border-width: 3px;
 
 }
 
@@ -32,6 +36,10 @@ body.lightmode {
     --nav: #afa292;
     --title: #eba311;
     --border: 3px solid var(--textred);
+    --modal-border-radius: 1%;
+    --modal-bg: rgba(175, 162, 146, 0.90);
+    --modal-header-border-color: var(--textred);
+    --modal-header-border-width: 3px;
 }
 
 html,
@@ -382,12 +390,6 @@ a {
 }
 
 /* -------Modals-------------*/
-:root {
-    --modal-border-radius: 1%;
-    --modal-bg: rgba(42, 36, 34, 0.95);
-    --modal-header-border-color: var(--textred);
-    --modal-header-border-width: 3px;
-}
 
 .media-area {
     display: flex;

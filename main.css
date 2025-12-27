@@ -15,6 +15,7 @@
     --blackbg: black;
     --nav: #2a2422;
     --title: #F4C430;
+    --border: 3px solid var(--textred);
 
 }
 
@@ -30,6 +31,7 @@ body.lightmode {
     --blackbg: #afa292;
     --nav: #afa292;
     --title: #eba311;
+    --border: 3px solid var(--textred);
 }
 
 html,
@@ -101,7 +103,7 @@ a {
 
 .navbar {
     background-color: var(--nav);
-    border-bottom: 4px solid var(--textred);
+    border-bottom: var(--border);
     font-size: 1em;
     position: fixed;
     color: var(--text);
@@ -123,7 +125,7 @@ a {
 }
 
 .dropdown-menu {
-    border: 3px solid #641527;
+    border: var(--border);
 }
 
 .dropdown-item {
@@ -260,10 +262,10 @@ a {
 
 #quote {
     background-color: var(--bg);
-    margin-top: 4rem;
+    margin-top: 3rem;
     margin-bottom: 5rem;
-    padding: 1rem;
-    font-size: 2rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
     text-align: center;
     color: var(--yellow);
 }
@@ -280,10 +282,9 @@ a {
 }
 
 #museum {
-    margin-top: 5rem;
     margin-bottom: 5rem;
     padding: 1rem;
-    border: 3px solid var(--textred);
+    border: var(--border);
     background-color: var(--yellow);
     max-width: 80vw;
     max-height: 25vw;
@@ -295,10 +296,10 @@ a {
 
 #narratives {
     margin-top: 5rem;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     padding: 1rem;
     background-color: var(--textred);
-    border: 2px solid var(--yellow);
+    border: 2.5px solid var(--yellow);
     max-width: 80vw;
     max-height: 25vw;
 }
@@ -371,7 +372,7 @@ a {
 .text {
     white-space: nowrap;
     color: var(--text);
-    font-size: 0.5em;
+    font-size: 0.3em;
     position: absolute;
     overflow: hidden;
     top: 50%;
@@ -466,7 +467,6 @@ select {
     padding: 14px;
     margin-top: 30px;
     background: var(--textred);
-    border: none;
     border-radius: 12px;
     font-size: 1rem;
     font-weight: 500;
@@ -489,7 +489,7 @@ select {
 
 /* -------Footer-------------*/
 footer {
-    border-top: 4px solid var(--textred);
+    border-top: var(--border);
     flex-direction: column;
     margin-top: 0;
     margin-bottom: 0;
@@ -498,7 +498,7 @@ footer {
     left: 0;
     width: 100%;
     background-color: var(--blackbg);
-    padding: 8px;
+    padding: 30px;
     text-align: center;
     z-index: 1000;
 }
@@ -570,7 +570,7 @@ footer .footer .col {
 
 .narratives-hero-img {
     margin-top: 2rem;
-    border: 3px solid var(--textred);
+    border: var(--border);
     border-radius: 12px;
     max-height: 320px;
     width: 80%;
@@ -579,21 +579,21 @@ footer .footer .col {
 }
 
 
-.narratives-grid{
-  margin-top: -7rem !important;
-  padding-top: 0 !important;
+.narratives-grid {
+    margin-top: -7rem !important;
+    padding-top: 0 !important;
 }
 
-.sep-centro{
-  display: block;
-  margin-bottom: 0 !important;
-  max-height: 120px;
-  object-fit: contain;
+.sep-centro {
+    display: block;
+    margin-bottom: 0 !important;
+    max-height: 120px;
+    object-fit: contain;
 }
 
 .narrative-card {
     background: var(--bg);
-    border: 3px solid var(--textred);
+    border: var(--border);
     border-radius: 16px;
     padding: 1.5rem;
     height: 100%;
@@ -627,7 +627,7 @@ footer .footer .col {
     text-decoration: none;
     border-radius: 999px;
     padding: 0.6rem 1rem;
-    border: 2px solid var(--text);
+    border: var(--border);
     color: var(--text);
     transition: 0.2s ease;
     font-size: 0.95em;
@@ -678,14 +678,15 @@ footer .footer .col {
    ========================= */
 
 .artwork-card {
-  background: var(--bg) !important;
+    background: var(--bg) !important;
 }
 
 .desc-short,
 .desc-long {
-    font-size: 1.2rem;      /* più piccolo ma leggibile */
-    line-height: 1.5;        
+    font-size: 1.2rem;
+    /* più piccolo ma leggibile */
+    line-height: 1.5;
     margin-top: 0.5rem;
-    margin-bottom: 1.25rem; 
-    padding-right: 0.5rem;  
+    margin-bottom: 1.25rem;
+    padding-right: 0.5rem;
 }

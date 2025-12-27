@@ -556,3 +556,136 @@ footer .footer .col {
     padding-top: 6em;
     padding-bottom: 2em;
 }
+
+/* ===============================
+   Narratives page
+   =============================== */
+
+.narratives-hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 120px;
+}
+
+
+.narratives-hero-img {
+    margin-top: 2rem;
+    border: 3px solid var(--textred);
+    border-radius: 12px;
+    max-height: 320px;
+    width: 80%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+.narratives-grid{
+  margin-top: -7rem !important;
+  padding-top: 0 !important;
+}
+
+.sep-centro{
+  display: block;
+  margin-bottom: 0 !important;
+  max-height: 120px;
+  object-fit: contain;
+}
+
+.narrative-card {
+    background: var(--bg);
+    border: 3px solid var(--textred);
+    border-radius: 16px;
+    padding: 1.5rem;
+    height: 100%;
+}
+
+.narrative-card__header {
+    margin-bottom: 1rem;
+}
+
+.narrative-title {
+    color: var(--yellow);
+    font-family: var(--h1_font);
+    font-size: 1.6em;
+    margin: 0;
+}
+
+.narrative-subtitle {
+    margin: 0.25rem 0 0;
+    font-size: 0.95em;
+}
+
+.narrative-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.narrative-pill {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 0.6rem 1rem;
+    border: 2px solid var(--text);
+    color: var(--text);
+    transition: 0.2s ease;
+    font-size: 0.95em;
+}
+
+.narrative-pill:hover,
+.narrative-pill:focus {
+    border-color: var(--yellow);
+    color: var(--yellow);
+    transform: translateY(-1px);
+}
+
+.narrative-note {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(184, 173, 167, 0.35);
+    font-size: 0.9em;
+}
+
+.narratives-footnote {
+    font-size: 0.95em;
+}
+
+@media (max-width: 600px) {
+    .theme-switch {
+        width: 60px;
+        height: 30px;
+    }
+
+    .theme-switch label {
+        border-radius: 30px;
+    }
+
+    .theme-switch label::after {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 16px;
+    }
+
+    .theme-switch input:checked+label::after {
+        transform: translateX(30px);
+    }
+}
+
+/* =========================
+   ARTWORKS
+   ========================= */
+
+.artwork-card {
+  background: var(--bg) !important;
+}
+
+.desc-short,
+.desc-long {
+    font-size: 1.2rem;      /* più piccolo ma leggibile */
+    line-height: 1.5;        
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem; 
+    padding-right: 0.5rem;  
+}

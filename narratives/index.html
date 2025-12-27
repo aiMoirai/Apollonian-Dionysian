@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="it">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -40,7 +40,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href=../index.html">Home</a>
+                        <a class="nav-link" href="../index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">The Museum</a>
@@ -49,7 +49,7 @@
                         <a class="nav-link" href="#">Exhibition</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Narratives</a>
+                        <a class="nav-link active" aria-current="page" href="#">Narratives</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
@@ -67,7 +67,7 @@
         </div>
     </nav>
 
-    <!--Dark/light button (kept for coherence, even if not wired yet)-->
+    <!--Dark/light button-->
     <div class="theme-switch">
         <input type="checkbox" id="theme-toggle" />
         <label for="theme-toggle"></label>
@@ -90,28 +90,22 @@
         </div>
     </header>
 
-    <div class="container-fluid">
-        <div class="row">
-            <img class="sep-centro" src="../imgs/centro colonna.png" alt="separator">
-        </div>
-    </div>
 
     <main class="container narratives-grid">
         <div class="row g-4">
-            <!-- PERSONAGGI -->
+            <!-- CHARACTERS -->
             <div class="col-12 col-lg-6">
-                <section class="narrative-card" aria-label="Personaggi">
+                <section class="narrative-card" aria-label="Characters">
                     <div class="narrative-card__header">
                         <h2 class="narrative-title">Characters</h2>
                         <p class="narrative-subtitle">Browse by figures and archetypes.</p>
                     </div>
 
                     <div class="narrative-actions">
-                        <!-- Sostituisci questi href con le tue destinazioni reali (es. pagina exhibition filtrata) -->
-                        <a class="narrative-pill" href="./apollo.html" aria-label="Personaggi Apollineo">
+                        <a class="narrative-pill" href="./apollo.html">
                             Apollo
                         </a>
-                        <a class="narrative-pill" href="./dionysus.html" aria-label="Personaggi Dionisiaco">
+                        <a class="narrative-pill" href="./dionysus.html">
                             Dionysus
                         </a>
                     </div>
@@ -123,23 +117,22 @@
                 </section>
             </div>
 
-            <!-- TEMI -->
+            <!-- THEMES -->
             <div class="col-12 col-lg-6">
-                <section class="narrative-card" aria-label="Temi">
+                <section class="narrative-card" aria-label="Themes">
                     <div class="narrative-card__header">
                         <h2 class="narrative-title">Themes</h2>
                         <p class="narrative-subtitle">Browse by artistic fields.</p>
                     </div>
 
                     <div class="narrative-actions">
-                        <!-- Sostituisci questi href con le tue destinazioni reali -->
-                        <a class="narrative-pill" href="#" aria-label="Temi Arti performative">
+                        <a class="narrative-pill" href="#">
                             Performing arts
                         </a>
-                        <a class="narrative-pill" href="#" aria-label="Temi Arti visive">
+                        <a class="narrative-pill" href="#">
                             Visual arts
                         </a>
-                        <a class="narrative-pill" href="#" aria-label="Temi Letteratura">
+                        <a class="narrative-pill" href="#">
                             Literature
                         </a>
                     </div>
@@ -152,20 +145,16 @@
             </div>
         </div>
 
-        <div class="row mt-4">
+        <div class="row mt-5">
             <div class="col">
                 <p class="narratives-footnote">
-                    To view all the works in the exhibition click <a href="exhibition.html">here</a>.
+                    To view all the works in the exhibition click
+                    <a href="exhibition.html">here</a>.
                 </p>
             </div>
         </div>
     </main>
 
-    <div class="container-fluid">
-        <div class="row">
-            <img class="separator" src="imgs/fine colonne.png" alt="separator">
-        </div>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
@@ -217,8 +206,7 @@
             </div>
         </div>
     </footer>
+    </div>
 </body>
-
-
 
 </html>

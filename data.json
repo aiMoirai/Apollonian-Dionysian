@@ -1,0 +1,272 @@
+[
+    {
+        "title": "Apollo and Dafne",
+        "image": "imgs/apollo_e_dafne.jpg",
+        "attribution": "Bernini Gian Lorenzo (Naples 1598 - Rome 1680)",
+        "type": "Sculpture",
+        "materials_techniques": "Carrara marble",
+        "measurements": "243 cm height",
+        "current_location": "Galleria Borghese, Rome",
+        "creation_date": "1622-1625",
+        "online_location": {
+            "text": "Galleria Borghese Collection",
+            "url": "https://www.collezionegalleriaborghese.it/opere/apollo-e-dafne"
+        },
+        "description": "Bernini’s sculpture depicts the climax of Ovid’s Metamorphoses (I, 450–567): Apollo, struck by Cupid’s golden arrow, falls in love with the nymph Daphne, who, pierced by a leaden arrow, rejects him and calls upon her father, the river god Peneus, for protection. The work captures the moment of her transformation into a laurel tree, with her feet turning to roots and her hands and hair into branches, as Apollo reaches her. The laurel becomes sacred to Apollo and a lasting symbol for artists and poets."
+    },
+    {
+        "title": "Apollo of the Belvedere",
+        "image": "imgs/Apollo_of_the_Belvedere.jpg",
+        "attribution": "After Leochares",
+        "type": "Sculpture",
+        "materials_techniques": "Marble",
+        "measurements": "224 cm (88 in)",
+        "current_location": "Vatican Museums, Vatican City",
+        "creation_date": "c. AD 120–140",
+        "online_location": {
+            "text": "Vatican Museums Collection",
+            "url": "https://www.museivaticani.va/content/museivaticani/it/collezioni/musei/museo-pio-clementino/Cortile-Ottagono/apollo-del-belvedere.html"
+        },
+        "description": "The statue was discovered in Rome in 1489 and acquired by Cardinal Giuliano della Rovere, later Pope Julius II, who moved it to the Vatican. Originally missing only the left hand and some fingers, it was partially restored in 1532–1533 by Giovannangelo Montorsoli. Created by a Roman workshop in the early 2nd century AD, it replicates a Greek bronze masterpiece from around 330 BC by Leochares. Recent structural issues led to a carbon fiber support and replacement of the left hand with a cast from the “Baia hand.” Admired since its placement in the Belvedere, it was praised by Winckelmann as the highest ideal of ancient Greek art."
+    },
+    {
+        "title": "Plato's Phaedrus Fragment",
+        "image": "imgs/Fedro.jpeg",
+        "attribution": "Unknown",
+        "type": "Manuscript papyrus",
+        "materials_techniques": "India ink on papyrus",
+        "measurements": "maximum: 10 13/16 × 22 13/16 in. (27.5 × 57.9 cm)",
+        "current_location": "Toledo Museum of Art",
+        "creation_date": "Mid-3rd century CE",
+        "online_location": {
+            "text": "Toledo Museum of Art",
+            "url": "https://emuseum.toledomuseum.org/objects/60018/oxyrhynchus-papyrus-fragment-with-platos-phaedrus"
+        },
+        "description": "This papyrus, written in Greek on both sides, features on the reverse (Oxyrhynchus no. 1016) six columns of the surviving introduction to Plato's Phaedrus, and on the obverse (Oxyrhynchus no. 1044), a tax list (dated 235 CE). It consists of four joined sheets, each made from smaller fragments measuring approximately 27 cm in height and 20 cm in width, with three collemata (text columns) per sheet."
+    },
+    {
+        "title": "Tragedy Mask",
+        "image": "imgs/maschera_tragica.jpg",
+        "attribution": "Unknown",
+        "type": "Plaque",
+        "materials_techniques": "worked bone",
+        "measurements": "Length: 4.3 cm, Width: 4.1 cm",
+        "current_location": "Villa Giulia",
+        "creation_date": "I sec. b.C.",
+        "online_location": {
+            "text": "General Catalogue of Cultural Heritage",
+            "url": "https://catalogo.beniculturali.it/detail/ArchaeologicalProperty/1200789636"
+        },
+        "description": "Plaque depicting a female tragic theatrical mask with hair bound by a diadem. Tragic masks in ancient Greek theater were essential tools for performance, allowing actors to embody gods, heroes, and mythic figures while heightening emotional expression. Carved or molded with exaggerated features, wide, open mouths, deeply contoured brows, dramatic eyes, they made gestures and feelings visible even to spectators seated far from the stage."
+    },
+    {
+        "title": "Divina Proportione Book",
+        "image": "imgs/pacioli.png",
+        "attribution": "Pacioli, Luca, approx. 1445-1517. Capella, Antonio, Leonardo, da Vinci, 1452-1519",
+        "type": "Book",
+        "materials_techniques": "Printed book",
+        "measurements": "[6], 33, [1] (blank), 27 (i.e., 26), [25], LXI [i.e., LIX], [2] (1 blank) leaves : ill. (woodcuts) ; 31 cm. (fol.)",
+        "current_location": "National Gallery of Art (Washington, USA)",
+        "creation_date": "1509",
+        "online_location": {
+            "text": "NGA Library",
+            "url": "https://library.nga.gov/discovery/fulldisplay?docid=alma991346193504896&vid=01NGA_INST:NGA"
+        },
+        "description": "De Divina Proportione by Luca Pacioli explores mathematical proportions in art and architecture. The work is divided into three parts and illustrated with geometrical figures, many by Leonardo da Vinci. Title and final leaves are in red and black, with occasional misnumbered or missing plates. Colophons confirm the printer, date, and oversight, while the text demonstrates the harmony of regular solids. This edition showcases the Renaissance fusion of mathematics and visual art."
+    },
+    {
+        "title": "The Well-Tempered Clavier ",
+        "image": "imgs/bach.png",
+        "attribution": "Bach, Johann Sebastian",
+        "type": "Manuscript",
+        "materials_techniques": "Manuscript",
+        "measurements": "Unknown",
+        "current_location": "Royal Private Music Collection Digital Music",
+        "creation_date": "1760-1787",
+        "online_location": {
+            "text": "SLUB Digital Collections",
+            "url": "https://digital.slub-dresden.de/werkansicht/dlf/109685/10?tx_dlf_navigation%5Bcontroller%5D=Navigation&cHash=2b7eef6229ba85ff2b6ec7ffb9f4c277"
+        },
+        "description": "The Well-Tempered Clavier by Johann Sebastian Bach, first published in 1722 (Book I) and 1742 (Book II), is a landmark collection of preludes and fugues in all 24 major and minor keys. The work systematically explores the possibilities of equal temperament tuning, enabling music in every key. Each prelude and fugue pair demonstrates contrapuntal mastery and expressive depth. The collection influenced generations of composers and remains central to keyboard repertoire. Original manuscripts and early editions show Bach’s careful notation and occasional revisions, reflecting his meticulous compositional process."
+    },
+    {
+        "title": "Apollo and the Muses",
+        "image": "imgs/apollo_e_le_muse.jpg",
+        "attribution": "Nicolas Poussin (French, 1594 - 1665)",
+        "type": "Drawing",
+        "materials_techniques": "Pen and brown ink, brush with brown wash; small, irregular section at right margin added",
+        "measurements": "Unframed: 17.6 × 24.6 cm (6 15/16 × 9 11/16 in.)",
+        "current_location": "J. Paul Getty Museum",
+        "creation_date": "about 1626–1628",
+        "online_location": {
+            "text": "Getty Museum Collection",
+            "url": "https://www.getty.edu/art/collection/object/103QW9#full-artwork-details"
+        },
+        "description": "Nicolas Poussin’s drawing depicts Apollo playing a lira di braccio, surrounded by the nine Muses and figures like Homer and Virgil along the Castalian spring at Mount Parnassus. Inspired by Raphael’s Vatican fresco via Raimoni’s engraving, Apollo is placed slightly left of center, with the Muses arranged semi-circularly to guide the viewer’s eye. The combination of soft washes and fine pen lines creates a lively, three-dimensional sense of movement and depth."
+    },
+    {
+        "title": "The Ideal City",
+        "image": "imgs/cittaideale.jpg",
+        "attribution": "Laurana Luciano 1420 ca./ 1479",
+        "type": "Painting",
+        "materials_techniques": "panel/tempera painting",
+        "measurements": "Depth: 6 UNR, Height: 67 UNR, Width: 239 UNR",
+        "current_location": "National Gallery of the Marche",
+        "creation_date": "1470 - 1479",
+        "online_location": {
+            "text": "General catalogue of Cultural Heritage",
+            "url": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/1100264131"
+        },
+        "description": "The Ideal City panel, originally from the Monastery of Santa Chiara in Urbino, entered museum collections at the end of the 19th century. Likely painted for the Ducal Palace and later moved by Elisabetta Feltria, it is a masterpiece of Italian Renaissance perspective and mathematics, reflecting Federico’s court. The work is often compared to similar “perspective views” in Baltimore and Berlin. Its authorship is debated, with candidates including architect Luciano Laurana, Francesco di Giorgio Martini, Giuliano da Sangallo, Leon Battista Alberti, and painters like Fra’ Carnevale, Ghirlandaio, Rosselli, Franciabigio, and Piero della Francesca."
+    },
+    {
+        "title": "Kylix with Apollo and cithara",
+        "image": "imgs/kylix.jpg",
+        "attribution": "",
+        "type": "Kylix",
+        "materials_techniques": "Painted pottery: red-figured kylix",
+        "measurements": "Diameter: 22.86 centimetres, Height: 8.89 centimetres",
+        "current_location": "The British Museum",
+        "creation_date": "480BC-470BC (circa)",
+        "online_location": {
+            "text": "The British Museum",
+            "url": "https://www.britishmuseum.org/collection/object/G_1893-1115-1"
+        },
+        "description": "The interior shows Apollo, beardless with wavy hair and a laurel wreath, seated on a diphros, playing a kithara and holding a fluted phiale, with an altar visible on the right. The exterior depicts a woman holding an oinochoe, facing a bearded man with a phiale, while a wreathed youth stands nearby with a sceptre and phiale. Only parts of the figures are preserved, along with columns, sandals, and tablets. Decorative details include purple lyre pegs, flames, wreaths, and cords, with a transitional eye style and a band of running meander inside, complemented by red lines, a palmette, and a red exergue."
+    },
+    {
+        "title": "Bacchus and satyr statue",
+        "image": "imgs/bacco_statue.jpg",
+        "attribution": "Buonarroti Michelangelo (1475/ 1564)",
+        "type": "Sculpture",
+        "materials_techniques": "white marble/sculpture",
+        "measurements": "Height: 207 cm",
+        "current_location": "National Museum of Bargello",
+        "creation_date": "1496 - 1497",
+        "online_location": {
+            "text": "General Catalogue of Cultural Heritage",
+            "url": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900286601"
+        },
+        "description": "The Bacchus is one of Michelangelo’s early works, created during his first stay in Rome between 1496 and 1497, commissioned by Cardinal Raffaello Riario. Dissatisfied, the patron sold it to the collector Jacopo Galli, who displayed it in his villa garden until 1572, when it was acquired by the Medici and later moved to Florence (Uffizi). The sculpture depicts an adolescent Bacchus, reflecting classical perfection inspired by Hellenistic statues. While no exact prototype has been identified, its antique character led it to be considered an “excavated piece” in the Codex Cantabrigensis (1550-1556)."
+    },
+    {
+        "title": "Plato's Symposium Fragment",
+        "image": "imgs/Simposio.jpg",
+        "attribution": "Unknown",
+        "type": "Papyrus Fragment",
+        "materials_techniques": "Not Specified",
+        "measurements": "Not Specified",
+        "current_location": "Cairo Museum",
+        "creation_date": "3rd century",
+        "online_location": {
+            "text": "Wikimedia Commons",
+            "url": "https://commons.wikimedia.org/wiki/File:Papyrus_Oxyrhynchus_843_-_Plato,_Symposium_%28Cairo_Museum_41082%29.jpg"
+        },
+        "description": "Plato’s Symposium, written around 385–370 BCE, is a philosophical dialogue exploring the nature of love (eros). Set at a drinking party in Athens, it features speeches by prominent figures, including Socrates, Aristophanes, and Alcibiades, each reflecting on love from different perspectives—ranging from physical desire to the pursuit of beauty and wisdom. Through these discourses, Plato presents love as a motivating force that leads the soul toward higher knowledge and the contemplation of the divine. The work combines literary elegance, dramatic interplay, and philosophical depth, making it a key text in both Western philosophy and the study of classical Greek culture."
+    },
+    {
+        "title": "Theatrical mask",
+        "image": "imgs/maschera_comica.jpg",
+        "attribution": "Unknown",
+        "type": "Terracotta mask",
+        "materials_techniques": "Polychrome terracotta",
+        "measurements": "15.5 cm (height); 24 cm (width); 25.5 cm (length)",
+        "current_location": "National Archaeological Museum of Taranto",
+        "creation_date": "2nd-1st century B.C",
+        "online_location": {
+            "text": "Google Arts & Culture",
+            "url": "https://artsandculture.google.com/asset/figured-terracotta/NAHrFhcLSJLcxw?hl=it"
+        },
+        "description": "A theatrical mask from Italian farce, a popular and licentious genre, representing the features of a man with a deformed, bald face. It likely follows the model of a real mask for stage performances, originally made of canvas or another perishable material. It comes from a cremation tomb and testifies to the strong connection between the world of the dead, entertainment, and Dionysian cults."
+    },
+    {
+        "title": "Euripides' Bacchae Fragments",
+        "image": "imgs/baccanti.jpg",
+        "attribution": "Unknown",
+        "type": "Papyri",
+        "materials_techniques": "1 column (4 lines) written on recto along the fiber. Large schoolboy hand. Papyrus has been used before, probably for an account.",
+        "measurements": "4 fragments in various sizes",
+        "current_location": "The Bancroft Library",
+        "creation_date": "332-30 B.C",
+        "online_location": {
+            "text": "Berkeley Library - University of California",
+            "url": "https://digicoll.lib.berkeley.edu/record/133018?utm_source=chatgpt.com&v=uv#?xywh=798%2C-187%2C541%2C372"
+        },
+        "description": "Fragments on which the beginning of the 1st line of Euripides' Bacchae has been written 3 or 4 times. Euripides’ Bacchae (late 5th century BCE) is a tragic drama centered on the arrival of Dionysus in Thebes and the city’s refusal to acknowledge his divinity. King Pentheus attempts to suppress the god’s cult, but Dionysus drives the women of Thebes into ecstatic frenzy and leads Pentheus to his brutal death at the hands of his own mother. The play explores themes of divine power, human arrogance, identity, and the tension between reason and instinct. Its blend of psychological depth, ritual, and violence has made it one of the most striking and unsettling works of Greek tragedy."
+    },
+    {
+        "title": "Tristan und Isolde Autograph",
+        "image": "imgs/wagner.jpg",
+        "attribution": "Wagner, Richard, 1813-1883.",
+        "type": "Notated Music",
+        "materials_techniques": "Holograph sketches in pencil and ink",
+        "measurements": "Extent: [2] p. ; 18 x 27 cm.",
+        "current_location": "New York Public Library",
+        "creation_date": "850 - 1859 (Approximate)",
+        "online_location": {
+            "text": "The New York Public Library - Digital Collections",
+            "url": "https://digitalcollections.nypl.org/items/f0696b70-ceb0-0133-4d24-00505686a51c?canvasIndex=0"
+        },
+        "description": "Piano scoring (sketch?) for first 19 bars of the prelude to act one, followed by various themes from that act. Tristan und Isolde (premiered 1865) is an opera by Richard Wagner that tells a tragic medieval love story. After Tristan kills Isolde’s fiancé in battle, he escorts her by ship to marry King Mark. On the voyage, they mistakenly drink a love potion and fall into an overwhelming and forbidden passion. Their love defies duty, loyalty, and social order, driving them toward death as the only realm where union is possible. Wagner’s revolutionary music, marked by unresolved harmonies and emotional intensity, made this opera a landmark of Western music, deeply influencing later composers and the development of modernism."
+    },
+    {
+        "title": "Carnival songs",
+        "image": "imgs/lorenzo.png",
+        "attribution": "Medici, Lorenzo : de', 1449-1492",
+        "type": "Book",
+        "materials_techniques": "Printed book",
+        "measurements": "447 p. ; 18 cm",
+        "current_location": "Leonardo Lagorio Civic Library - Imperia",
+        "creation_date": "15th-16th century.",
+        "online_location": {
+            "text": "OPAC SBN",
+            "url": "https://opac.sbn.it/risultati-ricerca-avanzata/-/opac-adv/index/2/ITICCULIG0108409?monocampo=canti+carnascialeschi+lorenzo+de+medici&_cacheid=1761928698943"
+        },
+        "description": "Lorenzo de’ Medici’s Trionfo di Bacco e Arianna is a poetic celebration of love, revelry, and the fleeting nature of life. Written in the late 15th century for Carnival festivities in Florence, it evokes a festive procession led by Bacchus and Ariadne, accompanied by satyrs, nymphs, and joyful dancers. The rhythm and language were meant to be sung and performed publicly, reinforcing its social role at court. Beneath the lively atmosphere lies a reminder of life's impermanence, expressed in the famous closing lines urging readers to seize the present moment, an early Renaissance echo of carpe diem."
+    },
+    {
+        "title": "Bacchus",
+        "image": "imgs/caravaggio.jpg",
+        "attribution": "Merisi Michelangelo Called Caravaggio (1571/ 1610)",
+        "type": "Painting",
+        "materials_techniques": "canvas/oil painting",
+        "measurements": "95x85 cm",
+        "current_location": "Uffizi Square, Florence (FI)",
+        "creation_date": "ca. 1595 - ca. 1597",
+        "online_location": {
+            "text": "General Catalogue of Cultural Heritage",
+            "url": "https://catalogo.beniculturali.it/detail/HistoricOrArtisticProperty/0900289176"
+        },
+        "description": "Caravaggio’s Bacchus was rediscovered in 1913 and later dated to around 1596, during the artist’s years under Cardinal del Monte. It belongs to his early half-length figure paintings and shows a young Bacchus offering wine and fruit. Critics have read irony in the depiction, suggesting Bacchus resembles a languid Roman tavern boy rather than a classical god. The still life elements (especially the fruit basket) carry symbolic weight, possibly alluding to a Horatian invitation to moderation, conviviality, and friendship. Some scholars also emphasize the sensual and homoerotic undertones of the scene, linking the work to ancient rites and ideas of physical freedom."
+    },
+    {
+        "title": "Drinking cup",
+        "image": "imgs/coppadionisio.jpg",
+        "attribution": "Nikosthenes",
+        "type": "Kylix",
+        "materials_techniques": "Terracotta; black-figure",
+        "measurements": "H. 6 1/4 in. (15.9 cm), diameter 15 in. (38.1 cm)",
+        "current_location": "The Metropolitan Museum of Art",
+        "creation_date": "ca. 530 BCE",
+        "online_location": {
+            "text": "The MET Collection",
+            "url": "https://www.metmuseum.org/art/collection/search/248906"
+        },
+        "description": "A terracotta kylix, also called an eye-cup, is a shallow ancient Greek drinking vessel characterized by its broad bowl, looping handles, and painted decoration. When lifted to drink, the painted eyes on the exterior aligned with the drinker’s face, creating the playful illusion of wearing a mask. This particular kylix features a Gorgoneion, the face of a Gorgon, on the interior, meant to surprise or “protect” the drinker when the wine lowered. On the exterior, Dionysos, god of wine, appears alongside satyrs and maenads, linking the object directly to ritual drinking and festive gatherings. The cup is attributed to Nikosthenes, a prominent Athenian ceramic producer around 530 B.C., known for exporting large quantities of pottery to Etruria and marking many of his works with his signature."
+    },
+    {
+        "title": "The City Rises",
+        "image": "imgs/cittachesale.jpg",
+        "attribution": "Boccioni, Umberto, 1882-1916",
+        "type": "Painting",
+        "materials_techniques": "Oil on canvas",
+        "measurements": "6' 6 1/2 x 9' 10 1/2 (199.3 x 301 cm)",
+        "current_location": "Museum of Modern Art- New York",
+        "creation_date": "1910",
+        "online_location": {
+            "text": "MOMA collection",
+            "url": "https://www.moma.org/collection/works/79865"
+        },
+        "description": "Umberto Boccioni’s La città che sale (1910–1911) is a key Futurist painting that captures the energy and transformation of a modernizing city. Dominated by vibrant color and diagonal movement, it depicts workers, horses, and construction in a chaotic, dynamic scene that conveys progress, industry, and urban expansion. Rather than representing reality in a static way, the work seeks to express speed, power, and the collective force of human labor. Considered one of Boccioni’s early masterpieces, it marks the beginning of his mature Futurist style."
+    }
+]

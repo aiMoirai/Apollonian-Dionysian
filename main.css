@@ -433,6 +433,7 @@ a {
     flex-shrink: 0;
     transition: transform 0.2s ease;
     object-fit: cover;
+    margin-bottom: 15px;
 }
 
 .modal-img:hover {
@@ -448,6 +449,7 @@ a {
 .overlay>.text {
     font-size: 0.8em;
 }
+
 
 /* --------Ticket section --------*/
 .tickets {

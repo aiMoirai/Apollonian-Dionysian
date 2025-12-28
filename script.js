@@ -1,4 +1,4 @@
-// script for the light mode switch
+// script for the light mode switch and related bg images 
 const toggle = document.getElementById("switch");
 const separators = [
     document.getElementById("break1"),

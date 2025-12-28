@@ -60,10 +60,14 @@ body {
     flex-direction: column;
 }
 
+.title {
+    text-align: center;
+}
 
 h1 {
     color: var(--yellow);
     font-family: var(--h1_font);
+    text-align: left;
 }
 
 h4 {
@@ -84,6 +88,19 @@ a {
     color: var(--linkred);
 }
 
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+}
 
 
 
@@ -461,7 +478,7 @@ select {
 }
 
 .field-row>div {
-    flex: 1 1 200px;
+    flex: 1 1 20px;
 }
 
 .book {
@@ -493,14 +510,13 @@ select {
 footer {
     border-top: var(--border);
     flex-direction: column;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin: 0;
     position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
     background-color: var(--blackbg);
-    padding: 30px;
+    padding-top: 10px;
     text-align: center;
     z-index: 1000;
 }
@@ -509,6 +525,7 @@ footer .footer .row {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding-top: 1em;
 }
 
 footer .footer .col {

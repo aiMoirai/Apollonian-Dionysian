@@ -306,7 +306,6 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-
                     <div class="media-area">
                         <a href="imgs/apollo_e_dafne.jpg" target="_blank">
                             <img class="modal-img" src="imgs/apollo_e_dafne.jpg">
@@ -387,8 +386,30 @@
                 </div>
 
             </div>
+            <a role="button" data-bs-toggle="modal" data-bs-target="#emailSent">
+                <button class="book" type="submit" data-bs-toggle="modal" data-bs-target="#emailSent">Book
+                    Now</button></a>
 
-            <button class="book" type="submit">Book Now</button>
+
+            <!-- Book now button modal -->
+            <div class="modal fade" id="emailSent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Thank you</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Your reservation has been completed. <br>A copy of your ticket has been sent to your
+                                e-mail.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <a href="imgs/ticket.png" target="_blank"><button type="button" class="book">Download
+                                    here</button></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
 

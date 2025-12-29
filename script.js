@@ -109,3 +109,82 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 //-----------------------------------------------
+
+// ====================
+// Some animations :)
+// ====================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+const sections = [
+    document.querySelector('.hero'),
+    document.getElementById('intro'),
+    document.getElementById('quote'),
+    document.getElementById('narratives'),
+    document.getElementById('museum'),
+    document.querySelector('.tickets'),
+    document.querySelector('.browse')
+];
+
+sections.forEach(sec => {
+    if (sec) {
+        sec.style.opacity = '0';
+        sec.style.transform = 'translateY(50px)';
+        sec.style.transition = 'all 0.8s ease-out';
+    }
+});
+
+
+// Observer animates when they enter in the viewport
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        } else {
+            // Initial state when leaving viewport
+            entry.target.style.opacity = '0';
+            entry.target.style.transform = 'translateY(50px)';
+        }
+    });
+}, { threshold: 0.2 });
+
+
+sections.forEach(sec => {
+    if (sec) observer.observe(sec);
+});
+
+// ====================
+// Animation wine button
+// ====================
+const wineButton = document.getElementById('wineButton');
+
+if (wineButton) {
+    // Initial state of the button
+    wineButton.style.opacity = '0';
+    wineButton.style.transform = 'translateY(-30px) scale(0.9)';
+    wineButton.style.transition = 'all 0.8s ease-out';
+
+    // When the page is loading
+    window.addEventListener('load', () => {
+        wineButton.style.opacity = '1';
+        wineButton.style.transform = 'translateY(0) scale(1)';
+
+        setInterval(() => {
+            wineButton.style.transform = 'scale(1.15)';
+            setTimeout(() => {
+                wineButton.style.transform = 'scale(1)';
+            }, 300);
+        }, 2000);
+    });
+}
+
+// ====================
+
+

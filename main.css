@@ -3,6 +3,29 @@
 
 /* ------General doc--------------*/
 
+/*Legenda dei colori:
+    --bgimg: insieme di proprietà della foto nella pagina iniziale
+    --bg: colore dello sfondo della pagina
+    --text: colore grigio per il testo in generale
+    --yellow: giallo per testo pià speciale
+    --general_font: font del testo base
+    --h1_font: font dei titoli
+    --linkred: rosso più chiaro dei link perchè più leggibile
+    --textred: testo rosso speciale
+    --blackbg: nero (serviva un colore scuro per il footer)
+    --nav: background color della navbar
+    --title: colore del titolo
+    --border: proprietà dei bordi
+
+    questi sotto non servono per la pagina ma sono più specifiche delle mie carte degli oggetti:
+
+    --modal-border-radius: cose delle modal (preso da bootstrap)
+    --modal-bg: colore delle modal (preso da bootstrap)
+    --modal-header-border-color: colore delle modal (preso da bootstrap)
+    --modal-header-border-width: relativo alle modal (preso da bootstrap)
+*/
+
+
 :root {
     --bgimg: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(42, 36, 34, 0.8)), url('imgs/hero-bacco.jpg');
     --bg: #2a2422;
@@ -48,6 +71,7 @@ body {
 }
 
 body {
+    height: 100%;
     background-color: var(--bg);
     color: var(--text);
     margin: 0;
@@ -595,7 +619,6 @@ footer .footer .col {
 
     footer .footer .col {
         width: 90%;
-        margin-bottom: 20px;
     }
 }
 

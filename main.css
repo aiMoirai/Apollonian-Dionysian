@@ -704,6 +704,10 @@ footer .footer .col {
     margin: 0;
 }
 
+.section-title {
+  color: var(--text);
+}
+
 .narrative-subtitle {
     margin: 0.25rem 0 0;
     font-size: 0.95em;

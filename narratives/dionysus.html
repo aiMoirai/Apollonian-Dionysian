@@ -11,19 +11,90 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
   <title>Characters · Dionysus</title>
+
+  <style>
+    .click-to-view {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: #fff;
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .click-to-view:hover {
+      color: var(--yellow);
+    }
+
+    .artwork-thumb {
+      cursor: pointer;
+    }
+
+    .modal-artwork-img {
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 
 <body>
+
+  <!-- Navigation bar -->
+  <nav class="navbar fixed-top navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../imgs/logo_grigio_con_nome.png" class="logo" alt="Logo" width="30" height="24">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">The Museum</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Exhibition</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">Narratives</a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Choose your theme
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Documentation</a></li>
+              <li><a class="dropdown-item" href="../Disclaimer.html">Disclaimer</a></li>
+              <li><a class="dropdown-item" href="#">The Team</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <div class="container py-5" id="quote">
 
     <!-- Title + back -->
     <div class="d-flex justify-content-between align-items-center mb-4">
-      <h1 class="h4 mb-0" style="color: var(--textred);">
-        Characters: Dionysus
-      </h1>
+      <h1 class="h4 mb-0 section-title">Characters: Dionysus</h1>
 
-      <a href="index.html" class="btn btn-outline-secondary btn-sm">
+      <!-- robust link (same folder) -->
+      <a href="./index.html" class="btn btn-outline-secondary btn-sm">
         ← Back to Narratives
       </a>
     </div>
@@ -34,36 +105,43 @@
 
         <!-- ITEM 1 -->
         <div class="carousel-item active">
-          <div class="card bg-dark text-light p-4"
-               style="min-height: 420px; border: 2px solid var(--textred);">
-
+          <div class="card bg-dark text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <img src="../imgs/bacco_statue.jpg"
-                   class="d-block"
-                   alt="Bacchus and Satyr by Michelangelo"
-                   style="max-height:320px; width:auto; object-fit:contain;">
+              <div class="text-center">
+                <img src="../imgs/bacco_statue.jpg"
+                  class="d-block artwork-thumb"
+                  alt="Bacchus and Satyr by Michelangelo"
+                  style="max-height:320px; width:auto; object-fit:contain;"
+                  data-bs-toggle="modal"
+                  data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/bacco_statue.jpg"
+                  data-title="Bacchus and Satyr by Michelangelo">
+
+                <span class="click-to-view"
+                  data-bs-toggle="modal"
+                  data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/bacco_statue.jpg"
+                  data-title="Bacchus and Satyr by Michelangelo">
+                  Click to view
+                </span>
+              </div>
 
               <div style="max-width: 520px;">
-
                 <h2 class="h4">Bacchus and Satyr by Michelangelo</h2>
 
-                <!-- SHORT -->
                 <p class="desc-short mb-3 small">
                   bla bla
                 </p>
 
-                <!-- LONG -->
                 <p class="desc-long mb-3 d-none">
                   bla bla bla bla
                 </p>
 
                 <button class="btn btn-sm js-toggle-desc"
-                        style="background-color: var(--textred);
-                               border-color: var(--textred);
-                               color: var(--text);"
-                        data-see-more="See more"
-                        data-see-less="See less">
+                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                  data-see-more="See more"
+                  data-see-less="See less">
                   See more
                 </button>
 
@@ -74,117 +152,137 @@
 
         <!-- ITEM 2 -->
         <div class="carousel-item">
-        <div class="card bg-dark text-light p-4"
-            style="min-height: 420px; border: 2px solid var(--textred);">
-
+          <div class="card bg-dark text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-            <img src="../imgs/lorenzo.png"
-                class="d-block"
-                alt="The Triumph of Bacchus and Ariadne"
-                style="max-height:320px; width:auto; object-fit:contain;">
+              <div class="text-center">
+                <img src="../imgs/lorenzo.png"
+                  class="d-block artwork-thumb"
+                  alt="The Triumph of Bacchus and Ariadne"
+                  style="max-height:320px; width:auto; object-fit:contain;"
+                  data-bs-toggle="modal"
+                  data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/lorenzo.png"
+                  data-title="The Triumph of Bacchus and Ariadne">
 
-            <div style="max-width: 520px;">
-
-                <h2 class="h4">The Triumph of Bacchus and Ariadne</h2>
-
-                <!-- SHORT (smaller text) -->
-                <p class="desc-short mb-3 small">
-                In The Triumph of Bacchus and Ariadne, taken from Lorenzo de’ Medici’s Carnival Songs, the poet brings to life the mythical procession of Bacchus and Ariadne: Ariadne, abandoned on the island of Naxos, is found and taken as bride by the god of wine. The myth becomes a celebration of youth, pleasure, and festivity, but also an invitation to seize the moment, aware of life’s fleeting nature.
-                </p>
-
-                <!-- LONG -->
-                <p class="desc-long mb-3 d-none">
-                The Triumph of Bacchus and Ariadne, written by Lorenzo de’ Medici probably for the Carnival of 1490, belongs to his Carnival Songs (Canti Carnascialeschi), poems meant to be sung collectively during Florentine festivities.
-                <br>
-                In the text, the myth of Ariadne, the Cretan princess abandoned by the hero Theseus on the island of Naxos, is revisited and transformed: Ariadne is rescued and exalted by the god Bacchus, who parades triumphantly with his procession of satyrs, nymphs, and maenads. The tone is festive and playful, yet beneath it lies a deeper reflection: “How beautiful is youth, / which yet so quickly flies away!” («Quant’è bella giovinezza, / che si fugge tuttavia!») the refrain that becomes a moral lesson to live the present fully.
-                <br>
-                The use of myth here goes far beyond simple storytelling: Bacchus and Ariadne are not merely mythological figures, but symbols of beauty, love, sensuality, and vitality, all to be savored before time consumes them. The triumph of Bacchus is thus the triumph of pleasure, youth, and life itself, but also a reminder of their fragility and impermanence.
-                <br>
-                In the humanist culture of Lorenzo’s Florence, the myth takes on an allegorical meaning. The carnival becomes not just a time of revelry, but a reflection on transience and the human condition: Bacchus embodies the joy of living and the power of desire, while Ariadne, once abandoned and then redeemed, represents renewal through love. Together they express a Renaissance carpe diem: an invitation to embrace life joyfully, with both awareness and passion, before it fades away.
-                </p>
-
-                <button class="btn btn-sm js-toggle-desc"
-                        style="background-color: var(--textred);
-                            border-color: var(--textred);
-                            color: var(--text);"
-                        data-see-more="See more"
-                        data-see-less="See less">
-                See more
-                </button>
-
-            </div>
-            </div>
-        </div>
-        </div>
-
-
-        <!-- ITEM 3 -->
-        <div class="carousel-item">
-        <div class="card bg-dark text-light p-4"
-            style="min-height: 420px; border: 2px solid var(--textred);">
-
-            <div class="d-flex justify-content-evenly align-items-start gap-4">
-
-            <img src="../imgs/Simposio.jpg"
-                class="d-block"
-                alt="Plato’s Symposium, Oxyrhynchus Papyrus 843"
-                style="max-height:320px; width:auto; object-fit:contain;">
-
-            <div style="max-width: 520px;">
-
-                <h2 class="h4">Plato’s Symposium, Oxyrhynchus Papyrus 843</h2>
-
-                <!-- SHORT (smaller text) -->
-                <p class="desc-short mb-3 small">
-                This papyrus fragment from Oxyrhynchus preserves a portion of Plato’s Symposium, a dialogue set in the context of a banquet and centered on eros as a disruptive and transformative force. The manuscript reflects the Dionysian dimensions of desire, intoxication, and emotional excess embedded in the text.
-                </p>
-
-                <!-- LONG -->
-                <p class="desc-long mb-3 d-none">
-                This papyrus fragment, discovered at Oxyrhynchus and now preserved in the Cairo Museum, transmits part of Plato’s Symposium. Produced in the Roman period, the manuscript provides material evidence for the circulation of Platonic dialogues in antiquity and their reception within performative and convivial contexts.<br>
-                The Symposium is structured around a drinking party in which participants engage in speeches on eros, a force that destabilizes rational control and opens the subject to transformation. In this fragmentary witness, love emerges primarily through its Dionysian aspects: desire, intoxication, emotional intensity, and the temporary suspension of social and intellectual order.<br>
-                Although the dialogue ultimately moves toward philosophical articulation, the preserved text foregrounds the experiential dimension of eros, aligning the Symposium with the Dionysian principle of excess and collective experience. As a material object, the papyrus echoes this instability: its fragmentary state and organic medium underscore the tension between ephemeral experience and textual permanence.
-                </p>
-
-                <button class="btn btn-sm js-toggle-desc"
-                        style="background-color: var(--textred);
-                            border-color: var(--textred);
-                            color: var(--text);"
-                        data-see-more="See more"
-                        data-see-less="See less">
-                See more
-                </button>
-
-            </div>
-            </div>
-        </div>
-        </div>
-
-
-
-        <!-- ITEM 3 -->
-        <div class="carousel-item">
-          <div class="card bg-dark text-light p-4"
-               style="min-height: 420px; border: 2px solid var(--textred);">
-
-            <div class="d-flex justify-content-evenly align-items-start gap-4">
-
-              <img src="../imgs/dionysian_ritual.jpg"
-                   class="d-block"
-                   alt="Dionysian Ritual"
-                   style="max-height:320px; width:auto; object-fit:contain;">
+                <span class="click-to-view"
+                  data-bs-toggle="modal"
+                  data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/lorenzo.png"
+                  data-title="The Triumph of Bacchus and Ariadne">
+                  Click to view
+                </span>
+              </div>
 
               <div style="max-width: 520px;">
+                <h2 class="h4">The Triumph of Bacchus and Ariadne</h2>
 
+                <p class="desc-short mb-3 small">
+                  In The Triumph of Bacchus and Ariadne, taken from Lorenzo de’ Medici’s Carnival Songs, the poet brings to life the mythical procession of Bacchus and Ariadne: Ariadne, abandoned on the island of Naxos, is found and taken as bride by the god of wine. The myth becomes a celebration of youth, pleasure, and festivity, but also an invitation to seize the moment, aware of life’s fleeting nature.
+                </p>
+
+                <p class="desc-long mb-3 d-none">
+                  The Triumph of Bacchus and Ariadne, written by Lorenzo de’ Medici probably for the Carnival of 1490, belongs to his Carnival Songs (Canti Carnascialeschi), poems meant to be sung collectively during Florentine festivities.
+                  <br>
+                  In the text, the myth of Ariadne, the Cretan princess abandoned by the hero Theseus on the island of Naxos, is revisited and transformed: Ariadne is rescued and exalted by the god Bacchus, who parades triumphantly with his procession of satyrs, nymphs, and maenads. The tone is festive and playful, yet beneath it lies a deeper reflection: “How beautiful is youth, / which yet so quickly flies away!” («Quant’è bella giovinezza, / che si fugge tuttavia!») the refrain that becomes a moral lesson to live the present fully.
+                  <br>
+                  The use of myth here goes far beyond simple storytelling: Bacchus and Ariadne are not merely mythological figures, but symbols of beauty, love, sensuality, and vitality, all to be savored before time consumes them. The triumph of Bacchus is thus the triumph of pleasure, youth, and life itself, but also a reminder of their fragility and impermanence.
+                  <br>
+                  In the humanist culture of Lorenzo’s Florence, the myth takes on an allegorical meaning. The carnival becomes not just a time of revelry, but a reflection on transience and the human condition: Bacchus embodies the joy of living and the power of desire, while Ariadne, once abandoned and then redeemed, represents renewal through love. Together they express a Renaissance carpe diem: an invitation to embrace life joyfully, with both awareness and passion, before it fades away.
+                </p>
+
+                <button class="btn btn-sm js-toggle-desc"
+                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                  data-see-more="See more"
+                  data-see-less="See less">
+                  See more
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="carousel-item">
+          <div class="card bg-dark text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+            <div class="d-flex justify-content-evenly align-items-start gap-4">
+
+              <div class="text-center">
+                <img src="../imgs/Simposio.jpg"
+                  class="d-block artwork-thumb"
+                  alt="Plato’s Symposium, Oxyrhynchus Papyrus 843"
+                  style="max-height:320px; width:auto; object-fit:contain;"
+                  data-bs-toggle="modal"
+                  data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/Simposio.jpg"
+                  data-title="Plato’s Symposium, Oxyrhynchus Papyrus 843">
+
+                <span class="click-to-view"
+                  data-bs-toggle="modal"
+                  data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/Simposio.jpg"
+                  data-title="Plato’s Symposium, Oxyrhynchus Papyrus 843">
+                  Click to view
+                </span>
+              </div>
+
+              <div style="max-width: 520px;">
+                <h2 class="h4">Plato’s Symposium, Oxyrhynchus Papyrus 843</h2>
+
+                <p class="desc-short mb-3 small">
+                  This papyrus fragment from Oxyrhynchus preserves a portion of Plato’s Symposium, a dialogue set in the context of a banquet and centered on eros as a disruptive and transformative force. The manuscript reflects the Dionysian dimensions of desire, intoxication, and emotional excess embedded in the text.
+                </p>
+
+                <p class="desc-long mb-3 d-none">
+                  This papyrus fragment, discovered at Oxyrhynchus and now preserved in the Cairo Museum, transmits part of Plato’s Symposium. Produced in the Roman period, the manuscript provides material evidence for the circulation of Platonic dialogues in antiquity and their reception within performative and convivial contexts.<br>
+                  The Symposium is structured around a drinking party in which participants engage in speeches on eros, a force that destabilizes rational control and opens the subject to transformation. In this fragmentary witness, love emerges primarily through its Dionysian aspects: desire, intoxication, emotional intensity, and the temporary suspension of social and intellectual order.<br>
+                  Although the dialogue ultimately moves toward philosophical articulation, the preserved text foregrounds the experiential dimension of eros, aligning the Symposium with the Dionysian principle of excess and collective experience. As a material object, the papyrus echoes this instability: its fragmentary state and organic medium underscore the tension between ephemeral experience and textual permanence.
+                </p>
+
+                <button class="btn btn-sm js-toggle-desc"
+                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                  data-see-more="See more"
+                  data-see-less="See less">
+                  See more
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div class="carousel-item">
+          <div class="card bg-dark text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+            <div class="d-flex justify-content-evenly align-items-start gap-4">
+
+              <div class="text-center">
+                <img src="../imgs/dionysian_ritual.jpg"
+                  class="d-block artwork-thumb"
+                  alt="Dionysian Ritual"
+                  style="max-height:320px; width:auto; object-fit:contain;"
+                  data-bs-toggle="modal"
+                  data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/dionysian_ritual.jpg"
+                  data-title="Dionysian Ritual">
+
+                <span class="click-to-view"
+                  data-bs-toggle="modal"
+                  data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/dionysian_ritual.jpg"
+                  data-title="Dionysian Ritual">
+                  Click to view
+                </span>
+              </div>
+
+              <div style="max-width: 520px;">
                 <h2 class="h4">Dionysian Ritual</h2>
 
-                <!-- SHORT -->
                 <p class="desc-short mb-3 small">
                   A visual evocation of ritual ecstasy, collective trance, and loss of control.
                 </p>
 
-                <!-- LONG -->
                 <p class="desc-long mb-3 d-none">
                   Dionysian rituals suspend social and individual boundaries, allowing participants
                   to merge into a shared emotional experience. Music, dance, and intoxication
@@ -192,11 +290,61 @@
                 </p>
 
                 <button class="btn btn-sm js-toggle-desc"
-                        style="background-color: var(--textred);
-                               border-color: var(--textred);
-                               color: var(--text);"
-                        data-see-more="See more"
-                        data-see-less="See less">
+                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                  data-see-more="See more"
+                  data-see-less="See less">
+                  See more
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 5 -->
+        <div class="carousel-item">
+          <div class="card bg-dark text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+            <div class="d-flex justify-content-evenly align-items-start gap-4">
+
+              <div class="text-center">
+                <img src="../imgs/coppadionisio.jpg"
+                  class="d-block artwork-thumb"
+                  alt="Eye-cup with Dionysus"
+                  style="max-height:320px; width:auto; object-fit:contain;"
+                  data-bs-toggle="modal"
+                  data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/coppadionisio.jpg"
+                  data-title="Eye-cup with Dionysus">
+
+                <span class="click-to-view"
+                  data-bs-toggle="modal"
+                  data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/coppadionisio.jpg"
+                  data-title="Eye-cup with Dionysus">
+                  Click to view
+                </span>
+              </div>
+
+              <div style="max-width: 520px;">
+                <h2 class="h4">Eye-cup with Dionysus</h2>
+
+                <p class="desc-short mb-3 small">
+                  Drinking cup created by the renowned potter and vase painter Exekias around 530 BC. Inside, it depicts Dionysus, the god of wine, reclining on a ship with a billowing white sail. Vines climb up the mast, while dolphins leap and dance around the vessel. On the exterior are the characteristic features that gave this type of cup its name: the eye-cup. Two large painted eyes decorate the surface; when drinking from the cup, they align with the drinker’s own, creating the illusion that the person has taken on new, typically Dionysian traits.
+                </p>
+
+                <p class="desc-long mb-3 d-none">
+                  The black-figure drinking kylix (cup), created by the potter and vase painter Exekias around 530 BC, is one of the most famous ancient vessels of all time.<br>
+                  Inside you can see Dionysus, the god of wine, lying on a ship with a swelled white sail. Along the mast, vines climb up and dolphins dance around the ship. With this picture, the beholder is to be reminded of a well-known myth about the god: Dionysus had been captured by Etruscan pirates and abducted aboard their ship. On the high seas, however, the god appeared to the men in his true form, after which they were seized with panic and they plunged into the sea where Dionysus transformed them into dolphins.<br>
+                  Whoever drank from this bowl had a rather peculiar experience: for him, the god emerged from the sea of red wine, he floated on the waves for a brief moment and then he sailed his ship into the drinker’s open mouth. The bowl was therefore much more than just an extravagant drinking vessel. Through each sip, the user came closer to the god Dionysus, as it were.<br>
+                  Furthermore, on the exterior there are the characteristic features that gave this type of cup its name: the eye-cup. Two large painted eyes decorate the surface; when drinking from the cup, they align with the drinker's own, creating the illusion that the person has taken on new, typically Dionysian traits.<br>
+                  Exekias was well aware of the outstanding quality of the vessel he had created.<br>
+                  He signed his work on the outside on the edge of the foot of the vessel:"Exekias epoiese” - Exekias made it.
+                </p>
+
+                <button class="btn btn-sm js-toggle-desc"
+                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                  data-see-more="See more"
+                  data-see-less="See less">
                   See more
                 </button>
 
@@ -207,71 +355,39 @@
 
       </div>
 
-
-      <!-- ITEM 9 -->
-        <div class="carousel-item">
-        <div class="card bg-dark text-light p-4"
-            style="min-height: 420px; border: 2px solid var(--textred);">
-
-            <div class="d-flex justify-content-evenly align-items-start gap-4">
-
-            <img src="../imgs/coppadionisio.jpg"
-                class="d-block"
-                alt="Eye-cup with Dionysus"
-                style="max-height:320px; width:auto; object-fit:contain;">
-
-            <div style="max-width: 520px;">
-
-                <h2 class="h4">Eye-cup with Dionysus</h2>
-
-                <!-- SHORT (smaller text) -->
-                <p class="desc-short mb-3 small">
-                Drinking cup created by the renowned potter and vase painter Exekias around 530 BC. Inside, it depicts Dionysus, the god of wine, reclining on a ship with a billowing white sail. Vines climb up the mast, while dolphins leap and dance around the vessel. On the exterior are the characteristic features that gave this type of cup its name: the eye-cup. Two large painted eyes decorate the surface; when drinking from the cup, they align with the drinker’s own, creating the illusion that the person has taken on new, typically Dionysian traits.
-                </p>
-
-                <!-- LONG -->
-                <p class="desc-long mb-3 d-none">
-                The black-figure drinking kylix (cup), created by the potter and vase painter Exekias around 530 BC, is one of the most famous ancient vessels of all time.<br>
-                Inside you can see Dionysus, the god of wine, lying on a ship with a swelled white sail. Along the mast, vines climb up and dolphins dance around the ship. With this picture, the beholder is to be reminded of a well-known myth about the god: Dionysus had been captured by Etruscan pirates and abducted aboard their ship. On the high seas, however, the god appeared to the men in his true form, after which they were seized with panic and they plunged into the sea where Dionysus transformed them into dolphins.<br>
-                Whoever drank from this bowl had a rather peculiar experience: for him, the god emerged from the sea of red wine, he floated on the waves for a brief moment and then he sailed his ship into the drinker’s open mouth. The bowl was therefore much more than just an extravagant drinking vessel. Through each sip, the user came closer to the god Dionysus, as it were.<br>
-                Furthermore, on the exterior there are the characteristic features that gave this type of cup its name: the eye-cup. Two large painted eyes decorate the surface; when drinking from the cup, they align with the drinker's own, creating the illusion that the person has taken on new, typically Dionysian traits.<br>
-                Exekias was well aware of the outstanding quality of the vessel he had created.<br>
-                He signed his work on the outside on the edge of the foot of the vessel:"Exekias epoiese” - Exekias made it.
-                </p>
-
-                <button class="btn btn-sm js-toggle-desc"
-                        style="background-color: var(--textred);
-                            border-color: var(--textred);
-                            color: var(--text);"
-                        data-see-more="See more"
-                        data-see-less="See less">
-                See more
-                </button>
-
-            </div>
-            </div>
-        </div>
-        </div>
-
-
       <!-- ARROWS -->
-      <button class="carousel-control-prev" type="button"
-              data-bs-target="#carouselExample" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Previous</span>
       </button>
 
-      <button class="carousel-control-next" type="button"
-              data-bs-target="#carouselExample" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
 
     </div>
   </div>
 
-  <!-- JS: replace short/long text + reset -->
+  <!-- Image Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content" style="background: var(--bg); border: 3px solid var(--textred);">
+        <div class="modal-header" style="border-bottom: 1px solid rgba(184, 173, 167, 0.35);">
+          <h5 class="modal-title" id="imageModalTitle" style="color: var(--textred); margin: 0;">Artwork</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="filter: invert(1);"></button>
+        </div>
+        <div class="modal-body">
+          <img id="imageModalImg" class="modal-artwork-img" src="" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
   <script>
+    // Toggle short/long description
     document.querySelectorAll('.js-toggle-desc').forEach(btn => {
       const moreText = btn.dataset.seeMore;
       const lessText = btn.dataset.seeLess;
@@ -295,6 +411,7 @@
       });
     });
 
+    // Reset toggles when sliding carousel
     document.getElementById('carouselExample')
       .addEventListener('slide.bs.carousel', () => {
         document.querySelectorAll('.desc-long').forEach(el => el.classList.add('d-none'));
@@ -303,6 +420,31 @@
           btn.textContent = btn.dataset.seeMore;
         });
       });
+
+    // Modal: set image dynamically from clicked thumbnail / "Click to view"
+    const imageModal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('imageModalImg');
+    const modalTitle = document.getElementById('imageModalTitle');
+
+    function openArtworkModalFrom(el) {
+      const fullSrc = el.getAttribute('data-fullsrc');
+      const title = el.getAttribute('data-title') || 'Artwork';
+      if (!fullSrc) return;
+
+      modalImg.src = fullSrc;
+      modalImg.alt = title;
+      modalTitle.textContent = title;
+    }
+
+    document.querySelectorAll('[data-bs-target="#imageModal"]').forEach(el => {
+      el.addEventListener('click', () => openArtworkModalFrom(el));
+    });
+
+    imageModal.addEventListener('hidden.bs.modal', () => {
+      modalImg.src = '';
+      modalImg.alt = '';
+      modalTitle.textContent = 'Artwork';
+    });
   </script>
 
 </body>

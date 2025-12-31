@@ -787,3 +787,73 @@ footer .footer .col {
     margin-bottom: 1.25rem;
     padding-right: 0.5rem;
 }
+
+/* =========================
+   ARTWORK ACCORDION (Apollo/Dionysus pages)
+   ========================= */
+
+/* Accordion container: keep it "invisible" on bg */
+.artwork-accordion {
+  --bs-accordion-bg: transparent;
+  --bs-accordion-border-color: rgba(184, 173, 167, 0.25);
+  --bs-accordion-border-width: 1px;
+  --bs-accordion-border-radius: 12px;
+
+  --bs-accordion-btn-bg: transparent;
+  --bs-accordion-btn-color: var(--text);
+  --bs-accordion-btn-padding-x: 0.9rem;
+  --bs-accordion-btn-padding-y: 0.75rem;
+
+  --bs-accordion-active-bg: transparent;
+  --bs-accordion-active-color: var(--yellow);
+
+  --bs-accordion-body-padding-x: 0.9rem;
+  --bs-accordion-body-padding-y: 0.75rem;
+}
+
+/* Button look */
+.artwork-accordion .accordion-button {
+  font-family: var(--general_font);
+  letter-spacing: 0.2px;
+  box-shadow: none !important;
+  border-bottom: 1px solid rgba(184, 173, 167, 0.18);
+}
+
+.artwork-accordion .accordion-button:focus {
+  box-shadow: none !important;
+  border-color: rgba(244, 196, 48, 0.45); /* yellow glow */
+}
+
+/* "+" / chevron color (bootstrap uses SVG mask) */
+.artwork-accordion .accordion-button::after {
+  filter: invert(83%) sepia(7%) saturate(279%) hue-rotate(334deg) brightness(92%) contrast(89%);
+  /* approximates var(--text) */
+}
+
+.artwork-accordion .accordion-button:not(.collapsed)::after {
+  filter: invert(82%) sepia(45%) saturate(990%) hue-rotate(358deg) brightness(103%) contrast(104%);
+  /* approximates var(--yellow) */
+}
+
+/* Body text smaller + compact (metadata) */
+.artwork-accordion .accordion-body {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+/* Links inside accordion */
+.artwork-accordion .accordion-body a {
+  color: var(--linkred);
+  text-decoration: underline;
+}
+
+.artwork-accordion .accordion-body a:hover {
+  color: var(--yellow);
+}
+
+/* Download link spacing */
+.meta-download-link {
+  display: inline-block;
+  margin-top: 0.25rem;
+}

@@ -22,13 +22,16 @@
       text-decoration: underline;
       cursor: pointer;
     }
+
     .click-to-view:hover {
       color: var(--yellow);
     }
+
     /* Make the thumbnail feel clickable */
     .artwork-thumb {
       cursor: pointer;
     }
+
     /* Ensure modal image fits nicely */
     .modal-artwork-img {
       width: 100%;
@@ -71,8 +74,7 @@
           </li>
 
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-              aria-expanded="false">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               Choose your theme
             </a>
             <ul class="dropdown-menu">
@@ -105,29 +107,108 @@
 
         <!-- ITEM 1 -->
         <div class="carousel-item active">
-          <div class="card artwork-card text-light border border-warning p-4" style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card text-light border border-warning p-4"
+              style="min-height: 420px; border-width: 2px;">
+
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <div class="text-center">
-                <img src="../imgs/Apollo_of_the_Belvedere.jpg"
-                  class="d-block artwork-thumb"
-                  alt="Apollo of the Belvedere"
-                  style="max-height:320px; width:auto; object-fit:contain;"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/Apollo_of_the_Belvedere.jpg"
-                  data-title="Apollo of the Belvedere">
+              <!-- LEFT COLUMN: IMAGE + METADATA -->
+              <div class="d-flex flex-column align-items-center" style="width: 400px;">
 
-                <span class="click-to-view"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/Apollo_of_the_Belvedere.jpg"
-                  data-title="Apollo of the Belvedere">
-                  Click to view
-                </span>
+                <!-- IMAGE + CLICK TO VIEW -->
+                <div class="text-center">
+                  <img src="../imgs/Apollo_of_the_Belvedere.jpg"
+                      class="d-block artwork-thumb"
+                      alt="Apollo of the Belvedere"
+                      style="max-height:320px; width:auto; object-fit:contain;"
+                      data-bs-toggle="modal"
+                      data-bs-target="#imageModal"
+                      data-fullsrc="../imgs/Apollo_of_the_Belvedere.jpg"
+                      data-title="Apollo of the Belvedere">
+
+                  <span class="click-to-view"
+                        data-bs-toggle="modal"
+                        data-bs-target="#imageModal"
+                        data-fullsrc="../imgs/Apollo_of_the_Belvedere.jpg"
+                        data-title="Apollo of the Belvedere">
+                    Click to view
+                  </span>
+                </div>
+
+                <!-- ACCORDION -->
+                <div class="accordion accordion-flush artwork-accordion mt-3"
+                    id="accordion-item1"
+                    style="width: 100%;">
+
+                  <!-- GENERAL INFORMATION -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-item1-info">
+                      <button class="accordion-button collapsed"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapse-item1-info"
+                              aria-expanded="false"
+                              aria-controls="collapse-item1-info">
+                        General information
+                      </button>
+                    </h2>
+
+                    <div id="collapse-item1-info"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading-item1-info"
+                        data-bs-parent="#accordion-item1">
+                      <div class="accordion-body">
+                        <p class="text-start mb-0">
+                          <b>Title:</b> Apollo of the Belvedere<br>
+                          <b>Attribution:</b> After Leochares<br>
+                          <b>Type:</b> Sculpture<br>
+                          <b>Materials and Techniques:</b> Marble<br>
+                          <b>Measurements:</b> 224 cm (88 in)<br>
+                          <b>Current Location:</b> Vatican Museums, Vatican City<br>
+                          <b>Creation Date:</b> c. AD 120–140<br>
+                          <b>Online Location:</b>
+                          <a href="https://www.museivaticani.va/content/museivaticani/it/collezioni/musei/museo-pio-clementino/Cortile-Ottagono/apollo-del-belvedere.html"
+                            target="_blank">
+                            Vatican Museums Collection
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- DOWNLOAD METADATA -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-item1-download">
+                      <button class="accordion-button collapsed"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapse-item1-download"
+                              aria-expanded="false"
+                              aria-controls="collapse-item1-download">
+                        Download metadata
+                      </button>
+                    </h2>
+
+                    <div id="collapse-item1-download"
+                        class="accordion-collapse collapse"
+                        aria-labelledby="heading-item1-download"
+                        data-bs-parent="#accordion-item1">
+                      <div class="accordion-body">
+                        <a class="text-decoration-underline meta-download-link"
+                          href="../csv_files/apollo_del_belvedere.csv"
+                          download="Apollo_of_the_Belvedere.csv">
+                          Download (CSV)
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
               </div>
 
+              <!-- RIGHT COLUMN: TEXT -->
               <div style="max-width: 520px;">
+
                 <h2 class="h4">Apollo of the Belvedere</h2>
 
                 <p class="desc-short mb-3 small">
@@ -142,36 +223,34 @@
                 </p>
 
                 <button class="btn btn-warning btn-sm js-toggle-desc"
-                  data-see-more="See more"
-                  data-see-less="See less">
+                        data-see-more="See more"
+                        data-see-less="See less">
                   See more
                 </button>
+
               </div>
 
             </div>
           </div>
         </div>
 
+
+
         <!-- ITEM 2 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4" style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card text-light border border-warning p-4"
+            style="min-height: 420px; border-width: 2px;">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
               <div class="text-center">
-                <img src="../imgs/Fedro.jpeg"
-                  class="d-block artwork-thumb"
+                <img src="../imgs/Fedro.jpeg" class="d-block artwork-thumb"
                   alt="Plato’s Phaedrus, Oxyrhynchus Papyrus Fragment"
-                  style="max-height:320px; max-width:400px; width:auto; object-fit:contain;"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/Fedro.jpeg"
+                  style="max-height:320px; max-width:400px; width:auto; object-fit:contain;" data-bs-toggle="modal"
+                  data-bs-target="#imageModal" data-fullsrc="../imgs/Fedro.jpeg"
                   data-title="Plato’s Phaedrus, Oxyrhynchus Papyrus Fragment">
 
-                <span class="click-to-view"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/Fedro.jpeg"
-                  data-title="Plato’s Phaedrus, Oxyrhynchus Papyrus Fragment">
+                <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/Fedro.jpeg" data-title="Plato’s Phaedrus, Oxyrhynchus Papyrus Fragment">
                   Click to view
                 </span>
               </div>
@@ -180,18 +259,27 @@
                 <h2 class="h4">Plato’s Phaedrus, Oxyrhynchus Papyrus Fragment</h2>
 
                 <p class="desc-short mb-3 small">
-                  This papyrus fragment from Oxyrhynchus preserves a portion of Plato’s Phaedrus, a dialogue concerned with the rational ordering of speech and the discipline of the soul. The manuscript emphasizes the Apollonian principles of measure, clarity, and structured discourse.
+                  This papyrus fragment from Oxyrhynchus preserves a portion of Plato’s Phaedrus, a dialogue concerned
+                  with the rational ordering of speech and the discipline of the soul. The manuscript emphasizes the
+                  Apollonian principles of measure, clarity, and structured discourse.
                 </p>
 
                 <p class="desc-long mb-3 d-none">
-                  This papyrus fragment, originating from Oxyrhynchus and now held at the Toledo Museum of Art, preserves part of Plato’s Phaedrus. Dating to the Roman period, the manuscript testifies to the transmission of Platonic philosophy through carefully copied textual artifacts.
-                  The Phaedrus reflects on the nature of rhetoric, the structure of discourse, and the proper guidance of the soul. While the dialogue famously acknowledges mania - divine inspiration - as a source of insight, this fragment foregrounds the Apollonian effort to impose order, balance, and rational control upon inspired speech. Language is treated not as a spontaneous outburst but as a measured art governed by rules and ethical responsibility.
-                  As a material object, the papyrus mirrors this Apollonian orientation. Its organized layout and deliberate execution embody the classical aspiration toward form and intelligibility. The fragment thus stands as both a carrier of philosophical content and a visual expression of the ideal of order that underpins the Phaedrus.
+                  This papyrus fragment, originating from Oxyrhynchus and now held at the Toledo Museum of Art,
+                  preserves part of Plato’s Phaedrus. Dating to the Roman period, the manuscript testifies to the
+                  transmission of Platonic philosophy through carefully copied textual artifacts.
+                  The Phaedrus reflects on the nature of rhetoric, the structure of discourse, and the proper guidance
+                  of the soul. While the dialogue famously acknowledges mania - divine inspiration - as a source of
+                  insight, this fragment foregrounds the Apollonian effort to impose order, balance, and rational
+                  control upon inspired speech. Language is treated not as a spontaneous outburst but as a measured art
+                  governed by rules and ethical responsibility.
+                  As a material object, the papyrus mirrors this Apollonian orientation. Its organized layout and
+                  deliberate execution embody the classical aspiration toward form and intelligibility. The fragment
+                  thus stands as both a carrier of philosophical content and a visual expression of the ideal of order
+                  that underpins the Phaedrus.
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc"
-                  data-see-more="See more"
-                  data-see-less="See less">
+                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="See more" data-see-less="See less">
                   See more
                 </button>
               </div>
@@ -202,24 +290,17 @@
 
         <!-- ITEM 3 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4" style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card text-light border border-warning p-4"
+            style="min-height: 420px; border-width: 2px;">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
               <div class="text-center">
-                <img src="../imgs/maschera_tragica.jpg"
-                  class="d-block artwork-thumb"
-                  alt="Tragic mask"
-                  style="max-height:320px; width:auto; object-fit:contain;"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/apollo_e_dafne.jpg"
-                  data-title="Tragic Mask">
+                <img src="../imgs/maschera_tragica.jpg" class="d-block artwork-thumb" alt="Tragic mask"
+                  style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
+                  data-bs-target="#imageModal" data-fullsrc="../imgs/apollo_e_dafne.jpg" data-title="Tragic Mask">
 
-                <span class="click-to-view"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/maschera_tragica.jpg"
-                  data-title="Tragic mask">
+                <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/maschera_tragica.jpg" data-title="Tragic mask">
                   Click to view
                 </span>
               </div>
@@ -232,12 +313,10 @@
                 </p>
 
                 <p class="desc-long mb-3 d-none">
-                 Bla bla bla più lungo
+                  Bla bla bla più lungo
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc"
-                  data-see-more="See more"
-                  data-see-less="See less">
+                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="See more" data-see-less="See less">
                   See more
                 </button>
               </div>
@@ -248,24 +327,18 @@
 
         <!-- ITEM 4 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4" style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card text-light border border-warning p-4"
+            style="min-height: 420px; border-width: 2px;">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
               <div class="text-center">
-                <img src="../imgs/pacioli.png"
-                  class="d-block artwork-thumb"
-                  alt="De Divina Proportione by Luca Pacioli"
-                  style="max-height:320px; width:auto; object-fit:contain;"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/pacioli.png"
+                <img src="../imgs/pacioli.png" class="d-block artwork-thumb" alt="De Divina Proportione by Luca Pacioli"
+                  style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
+                  data-bs-target="#imageModal" data-fullsrc="../imgs/pacioli.png"
                   data-title="De Divina Proportione by Luca Pacioli">
 
-                <span class="click-to-view"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/pacioli.png"
-                  data-title="De Divina Proportione by Luca Pacioli">
+                <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/pacioli.png" data-title="De Divina Proportione by Luca Pacioli">
                   Click to view
                 </span>
               </div>
@@ -281,9 +354,7 @@
                   Bla bla bla bla lungo
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc"
-                  data-see-more="See more"
-                  data-see-less="See less">
+                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="See more" data-see-less="See less">
                   See more
                 </button>
               </div>
@@ -294,24 +365,19 @@
 
         <!-- ITEM 5 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4" style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card text-light border border-warning p-4"
+            style="min-height: 420px; border-width: 2px;">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
               <div class="text-center">
-                <img src="../imgs/apollo_e_le_muse.jpg"
-                  class="d-block artwork-thumb"
+                <img src="../imgs/apollo_e_le_muse.jpg" class="d-block artwork-thumb"
                   alt="Apollo and the Muses on Mount Parnassus"
-                  style="max-height:320px; width:auto; object-fit:contain;"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/apollo_e_le_muse.jpg"
+                  style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
+                  data-bs-target="#imageModal" data-fullsrc="../imgs/apollo_e_le_muse.jpg"
                   data-title="Apollo and the Muses on Mount Parnassus">
 
-                <span class="click-to-view"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/apollo_e_le_muse.jpg"
-                  data-title="Apollo and the Muses on Mount Parnassus">
+                <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/apollo_e_le_muse.jpg" data-title="Apollo and the Muses on Mount Parnassus">
                   Click to view
                 </span>
               </div>
@@ -327,9 +393,7 @@
                   Bla bla bla bla lungo.
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc"
-                  data-see-more="See more"
-                  data-see-less="See less">
+                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="See more" data-see-less="See less">
                   See more
                 </button>
               </div>
@@ -340,24 +404,18 @@
 
         <!-- ITEM 6 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4" style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card text-light border border-warning p-4"
+            style="min-height: 420px; border-width: 2px;">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
               <div class="text-center">
-                <img src="../imgs/bach.png"
-                  class="d-block artwork-thumb"
-                  alt="The Well-Tempered Clavier, BWV 846-893"
-                  style="max-height:320px; width:auto; object-fit:contain;"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/bach.png"
+                <img src="../imgs/bach.png" class="d-block artwork-thumb" alt="The Well-Tempered Clavier, BWV 846-893"
+                  style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
+                  data-bs-target="#imageModal" data-fullsrc="../imgs/bach.png"
                   data-title="The Well-Tempered Clavier, BWV 846-893">
 
-                <span class="click-to-view"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/bach.png"
-                  data-title="The Well-Tempered Clavier, BWV 846-893">
+                <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/bach.png" data-title="The Well-Tempered Clavier, BWV 846-893">
                   Click to view
                 </span>
               </div>
@@ -373,9 +431,7 @@
                   Bla bla bla lungo.
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc"
-                  data-see-more="See more"
-                  data-see-less="See less">
+                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="See more" data-see-less="See less">
                   See more
                 </button>
               </div>
@@ -386,24 +442,17 @@
 
         <!-- ITEM 7 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4" style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card text-light border border-warning p-4"
+            style="min-height: 420px; border-width: 2px;">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
               <div class="text-center">
-                <img src="../imgs/apollo_e_dafne.jpg"
-                  class="d-block artwork-thumb"
-                  alt="Apollo and Daphne"
-                  style="max-height:320px; width:auto; object-fit:contain;"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/apollo_e_dafne.jpg"
-                  data-title="Apollo and Daphne">
+                <img src="../imgs/apollo_e_dafne.jpg" class="d-block artwork-thumb" alt="Apollo and Daphne"
+                  style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
+                  data-bs-target="#imageModal" data-fullsrc="../imgs/apollo_e_dafne.jpg" data-title="Apollo and Daphne">
 
-                <span class="click-to-view"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/apollo_e_dafne.jpg"
-                  data-title="Apollo and Daphne">
+                <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/apollo_e_dafne.jpg" data-title="Apollo and Daphne">
                   Click to view
                 </span>
               </div>
@@ -412,19 +461,35 @@
                 <h2 class="h4">Apollo and Daphne</h2>
 
                 <p class="desc-short mb-3 small">
-                  Bernini depicts Apollo in mid-stride, his right foot grounded and his left suspended, the drapery flowing with his motion. As he reaches out to touch Daphne, the nymph, caught in her desperate flight, begins her transformation into a laurel tree: her fingers sprout leaves, her feet take root. Drawn from Ovid’s Metamorphoses, the myth becomes in Bernini’s hands a reflection on the tension between desire and freedom, on metamorphosis as both boundary and salvation, expressed through the vivid theatricality of the Baroque.
+                  Bernini depicts Apollo in mid-stride, his right foot grounded and his left suspended, the drapery
+                  flowing with his motion. As he reaches out to touch Daphne, the nymph, caught in her desperate flight,
+                  begins her transformation into a laurel tree: her fingers sprout leaves, her feet take root. Drawn
+                  from Ovid’s Metamorphoses, the myth becomes in Bernini’s hands a reflection on the tension between
+                  desire and freedom, on metamorphosis as both boundary and salvation, expressed through the vivid
+                  theatricality of the Baroque.
                 </p>
 
                 <p class="desc-long mb-3 d-none">
-                  Gian Lorenzo Bernini’s Apollo and Daphne (1622-1625) captures the climactic moment of the tale told in Ovid’s Metamorphoses. Struck by Cupid’s golden arrow, Apollo is seized with passion for the nymph Daphne, follower of Diana. She, pierced by a lead arrow that inspires aversion, flees his pursuit and calls upon her father, the river god Peneus, to transform her and save her.<br>
-                  Bernini fixes the instant of this transformation: Apollo, running with his right foot touching the ground and his left raised, extends his hand to grasp Daphne. Under his divine touch, her escape freezes — her arms stretch upward, her fingers sprout into leaves, her hair turns to laurel, and her feet sink into the earth as roots.<br>
-                  The sculptor creates a powerfully theatrical scene: Apollo’s flowing drapery accentuates the motion, and the spiral composition compels the viewer to move around the sculpture, witnessing the metamorphosis unfold. Originally placed near the chapel on a lower base, the work was designed to heighten the scenic effect and emotional engagement of the observer.<br>
-                  Beyond its technical mastery and Baroque dynamism, Bernini’s work reads the myth as an allegory of human desire and divine intervention. Apollo’s unfulfilled longing confronts Daphne’s plea for freedom; metamorphosis becomes her redemption. The sculpture thus transforms Ovid’s narrative into a meditation on the limits of passion, the tension between movement and stillness, and the fragile balance between sensuality and transcendence.
+                  Gian Lorenzo Bernini’s Apollo and Daphne (1622-1625) captures the climactic moment of the tale told in
+                  Ovid’s Metamorphoses. Struck by Cupid’s golden arrow, Apollo is seized with passion for the nymph
+                  Daphne, follower of Diana. She, pierced by a lead arrow that inspires aversion, flees his pursuit and
+                  calls upon her father, the river god Peneus, to transform her and save her.<br>
+                  Bernini fixes the instant of this transformation: Apollo, running with his right foot touching the
+                  ground and his left raised, extends his hand to grasp Daphne. Under his divine touch, her escape
+                  freezes — her arms stretch upward, her fingers sprout into leaves, her hair turns to laurel, and her
+                  feet sink into the earth as roots.<br>
+                  The sculptor creates a powerfully theatrical scene: Apollo’s flowing drapery accentuates the motion,
+                  and the spiral composition compels the viewer to move around the sculpture, witnessing the
+                  metamorphosis unfold. Originally placed near the chapel on a lower base, the work was designed to
+                  heighten the scenic effect and emotional engagement of the observer.<br>
+                  Beyond its technical mastery and Baroque dynamism, Bernini’s work reads the myth as an allegory of
+                  human desire and divine intervention. Apollo’s unfulfilled longing confronts Daphne’s plea for
+                  freedom; metamorphosis becomes her redemption. The sculpture thus transforms Ovid’s narrative into a
+                  meditation on the limits of passion, the tension between movement and stillness, and the fragile
+                  balance between sensuality and transcendence.
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc"
-                  data-see-more="See more"
-                  data-see-less="See less">
+                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="See more" data-see-less="See less">
                   See more
                 </button>
               </div>
@@ -435,24 +500,18 @@
 
         <!-- ITEM 8 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4" style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card text-light border border-warning p-4"
+            style="min-height: 420px; border-width: 2px;">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
               <div class="text-center">
-                <img src="../imgs/cittaideale.jpg"
-                  class="d-block artwork-thumb"
-                  alt="The Ideal City of Urbino"
-                  style="max-height:320px; max-width:500px; width:auto; object-fit:contain;"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/cittaideale.jpg"
+                <img src="../imgs/cittaideale.jpg" class="d-block artwork-thumb" alt="The Ideal City of Urbino"
+                  style="max-height:320px; max-width:500px; width:auto; object-fit:contain;" data-bs-toggle="modal"
+                  data-bs-target="#imageModal" data-fullsrc="../imgs/cittaideale.jpg"
                   data-title="The Ideal City of Urbino">
 
-                <span class="click-to-view"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/cittaideale.jpg"
-                  data-title="The Ideal City of Urbino">
+                <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/cittaideale.jpg" data-title="The Ideal City of Urbino">
                   Click to view
                 </span>
               </div>
@@ -468,9 +527,7 @@
                   bla bla bla bla bla lungo.
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc"
-                  data-see-more="See more"
-                  data-see-less="See less">
+                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="See more" data-see-less="See less">
                   See more
                 </button>
               </div>
@@ -481,45 +538,77 @@
 
         <!-- ITEM 9 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4" style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card text-light border border-warning p-4"
+            style="min-height: 420px; border-width: 2px;">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
               <div class="text-center">
-                <img src="../imgs/kylix.jpg"
-                  class="d-block artwork-thumb"
-                  alt="Kylix with Apollo and kithara"
-                  style="max-height:320px; width:auto; object-fit:contain;"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/kylix.jpg"
+                <img src="../imgs/kylix.jpg" class="d-block artwork-thumb" alt="Kylix with Apollo and kithara"
+                  style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
+                  data-bs-target="#imageModal" data-fullsrc="../imgs/kylix.jpg"
                   data-title="Kylix with Apollo and kithara">
 
-                <span class="click-to-view"
-                  data-bs-toggle="modal"
-                  data-bs-target="#imageModal"
-                  data-fullsrc="../imgs/kylix.jpg"
-                  data-title="Kylix with Apollo and kithara">
+                <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                  data-fullsrc="../imgs/kylix.jpg" data-title="Kylix with Apollo and kithara">
                   Click to view
                 </span>
+
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                        Accordion Item #1
+                      </button>
+                    </h2>
+                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                      data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">Placeholder content for this accordion, which is intended to
+                        demonstrate the <code>.accordion-flush</code> class. This is the first item’s accordion body.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
               <div style="max-width: 520px;">
                 <h2 class="h4">Kylix with Apollo and kithara</h2>
 
                 <p class="desc-short mb-3 small">
-                  Attic red-figure kylix (480-470 BC). The interior depicts Apollo, identifiable as the god of music, seated and playing the kithara, his symbolic instrument, beside a flaming altar. The exterior shows libation scenes with male and female figures, sceptres, and phialai, enriched with decorative motifs such as meanders and palmettes.
+                  Attic red-figure kylix (480-470 BC). The interior depicts Apollo, identifiable as the god of music,
+                  seated and playing the kithara, his symbolic instrument, beside a flaming altar. The exterior shows
+                  libation scenes with male and female figures, sceptres, and phialai, enriched with decorative motifs
+                  such as meanders and palmettes.
                 </p>
 
                 <p class="desc-long mb-3 d-none">
-                  Red-figure kylix created circa 480 BC-470 BC. The interior depicts Apollo, beardless, with long wavy hair, a laurel wreath, and a himation around his legs, seated to the right on a diphros. The god plays a large kithara and holds a fluted phiale in his right hand. On the right, half-seen, is a flaming altar, shaped like an Ionic column with necking of egg pattern.<br>
-                  The exterior depicts a woman in a long-sleeved chiton, himation, and saccos, who moves to right with left hand on her hip, holding out in her right an oinochoe, as if to pour into a phiale which a bearded, wreathed man on right holds out to her. He has a long sceptre leaning against his left shoulder, and wears a long-sleeved talaric chiton and himation. On the left, a youth, wreathed, and wearing an himation, holding upright a sceptre in his left, and extending a fluted phiale in his right. Between him and the woman is a slender Ionic column with architrave; behind him hang a pair of sandals. On the left of the bearded man hang a pair of tablets rolled up, with a stylus fastened in the bands: at each of the lower corners hangs a triple tie.<br>
-                  On the other side, apparently the same three figures are engaged, but part of each is missing. Of the youth on left only the feet and the ends of his himation and the legs of the chair in which he is sitting to right are preserved. The woman confronts him, raising both hands apparently, with a gesture of surprise; she wears a fillet with trefoil ends; her face and right arm are missing. Behind her is the column as we can see on the other side. The bearded man on the right stands en face, but looking to left with right hand on hip, left holding sceptre upright; his sceptre is striated. On the right is a trace of an object (a sandal ?) hanging up, which is almost entirely broken away.<br>
-                  Purple tuning pegs of lyre, flames, wreaths in exterior, fillets, cords of tablets and of sandals. Eye in transition stage (in interior, the eyelids are in profile; the eyeball is drawn as a dot in a semicircle). Around the interior, a band of running maeander. Below the exterior, a thin red line. Below the handles a palmette. The exergue in the interior is left red.
+                  Red-figure kylix created circa 480 BC-470 BC. The interior depicts Apollo, beardless, with long wavy
+                  hair, a laurel wreath, and a himation around his legs, seated to the right on a diphros. The god plays
+                  a large kithara and holds a fluted phiale in his right hand. On the right, half-seen, is a flaming
+                  altar, shaped like an Ionic column with necking of egg pattern.<br>
+                  The exterior depicts a woman in a long-sleeved chiton, himation, and saccos, who moves to right with
+                  left hand on her hip, holding out in her right an oinochoe, as if to pour into a phiale which a
+                  bearded, wreathed man on right holds out to her. He has a long sceptre leaning against his left
+                  shoulder, and wears a long-sleeved talaric chiton and himation. On the left, a youth, wreathed, and
+                  wearing an himation, holding upright a sceptre in his left, and extending a fluted phiale in his
+                  right. Between him and the woman is a slender Ionic column with architrave; behind him hang a pair of
+                  sandals. On the left of the bearded man hang a pair of tablets rolled up, with a stylus fastened in
+                  the bands: at each of the lower corners hangs a triple tie.<br>
+                  On the other side, apparently the same three figures are engaged, but part of each is missing. Of the
+                  youth on left only the feet and the ends of his himation and the legs of the chair in which he is
+                  sitting to right are preserved. The woman confronts him, raising both hands apparently, with a gesture
+                  of surprise; she wears a fillet with trefoil ends; her face and right arm are missing. Behind her is
+                  the column as we can see on the other side. The bearded man on the right stands en face, but looking
+                  to left with right hand on hip, left holding sceptre upright; his sceptre is striated. On the right is
+                  a trace of an object (a sandal ?) hanging up, which is almost entirely broken away.<br>
+                  Purple tuning pegs of lyre, flames, wreaths in exterior, fillets, cords of tablets and of sandals. Eye
+                  in transition stage (in interior, the eyelids are in profile; the eyeball is drawn as a dot in a
+                  semicircle). Around the interior, a band of running maeander. Below the exterior, a thin red line.
+                  Below the handles a palmette. The exergue in the interior is left red.
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc"
-                  data-see-more="See more"
-                  data-see-less="See less">
+                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="See more" data-see-less="See less">
                   See more
                 </button>
               </div>
@@ -624,4 +713,5 @@
   </script>
 
 </body>
+
 </html>

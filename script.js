@@ -187,4 +187,30 @@ if (wineButton) {
 
 // ====================
 
+// ======Scripts for Ila's themes==============
 
+document.getElementById('theme-90s').addEventListener('click', function (e) {
+    e.preventDefault(); // evita il comportamento di link
+    const themeLink = document.getElementById('theme-link');
+    themeLink.setAttribute('href', 'Themes/90s.css'); // sostituisce il CSS
+});
+
+const theme90 = document.getElementById("theme-90s");
+const themeLink = document.getElementById("theme-link");
+const temples = [
+    document.getElementById("break1"),
+    document.getElementById("break2"),
+    document.getElementById("break3")
+];
+
+theme90.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    // cambia il CSS
+    themeLink.href = "Themes/90s.css";
+
+    // aggiorna le immagini dei separatori
+    temples[0].src = "imgs/90s-sopra-colonna.png";
+    temples[1].src = "imgs/90s-centro-colonna.png";
+    temples[2].src = "imgs/90s-fine-colonne.png";
+});

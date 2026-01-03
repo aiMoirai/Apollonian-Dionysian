@@ -12,13 +12,13 @@ toggle.addEventListener("change", () => {
     separators.forEach((img, index) => {
         switch (index) {
             case 0:
-                img.src = toggle.checked ? "" : "imgs/sopra colonna.png";
+                img.src = toggle.checked ? "imgs/sopra_col_light.png" : "imgs/sopra colonna.png";
                 break;
             case 1:
-                img.src = toggle.checked ? "" : "imgs/centro colonna.png";
+                img.src = toggle.checked ? "imgs/centro_col_light.png" : "imgs/centro colonna.png";
                 break;
             case 2:
-                img.src = toggle.checked ? "" : "imgs/fine colonne.png";
+                img.src = toggle.checked ? "imgs/fine_col_light.png" : "imgs/fine colonne.png";
                 break;
         }
     });

@@ -215,12 +215,12 @@ a {
 
     50% {
         transform: rotateX(14deg) scale(2.4) translateZ(-150px);
-        bottom: 10%;
+        bottom: 50%;
     }
 
     100% {
-        transform: rotateX(18deg) scale(2.4) translateZ(-150px);
-        bottom: 10%;
+        transform: rotateX(18deg) scale(1.8) translateZ(-150px);
+        bottom: 35%;
     }
 }
 

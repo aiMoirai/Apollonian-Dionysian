@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../main.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+  <title>Themes · Performing arts</title>
+
+  <style>
+    /* Small helper for the "Click to view" link */
+    .click-to-view {
+      display: inline-block;
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    .click-to-view:hover {
+      color: var(--yellow);
+    }
+
+    /* Make the thumbnail feel clickable */
+    .artwork-thumb {
+      cursor: pointer;
+    }
+
+    /* Ensure modal image fits nicely */
+    .modal-artwork-img {
+      width: 100%;
+      height: auto;
+      max-height: 80vh;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation bar -->
+  <nav class="navbar fixed-top navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="../index.html">
+        <img src="../imgs/logo_grigio_con_nome.png" class="logo" alt="Logo" width="30" height="24">
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">The Museum</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="#">Exhibition</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="./index.html">
+              Narratives
+            </a>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              About
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">The Team</a></li>
+              <li><a class="dropdown-item" href="../About/Documentation.html">The Documentation</a></li>
+              <li><a class="dropdown-item" href="../About/Disclaimer.html">Disclaimer</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Choose your theme
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">First Theme</a></li>
+              <li><a class="dropdown-item" href="../About/Disclaimer.html">Second</a></li>
+              <li><a class="dropdown-item" href="#">Third</a></li>
+            </ul>
+          </li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5" id="quote">
+
+    <!-- Title + back -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h1 class="h4 mb-0 section-title">Themes: Performing arts</h1>
+
+      <!-- robust link (same folder) -->
+      <a href="./index.html" class="btn btn-outline-secondary btn-sm">
+        ← Back to Narratives
+      </a>
+    </div>
+
+    <!-- CAROUSEL -->
+    <div id="carouselExample" class="carousel slide w-100" data-bs-ride="false">
+      <div class="carousel-inner">
+
+        <!-- ITEM 1 -->
+        <div class="carousel-item active">
+          <div class="card artwork-card text-light border border-warning p-4" style="min-height: 420px; border-width: 2px;">
+
+            <div class="d-flex justify-content-evenly align-items-start gap-4">
+
+              <!-- LEFT COLUMN: IMAGE + METADATA -->
+              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+
+                <!-- IMAGE + CLICK TO VIEW -->
+                <div class="text-center">
+                  <img src="../imgs/bach.png" class="d-block artwork-thumb" alt="The Well-Tempered Clavier, BWV 846-893"
+                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
+                    data-bs-target="#imageModal" data-fullsrc="../imgs/bach.png"
+                    data-title="The Well-Tempered Clavier, BWV 846-893">
+
+                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/bach.png" data-title="The Well-Tempered Clavier, BWV 846-893">
+                    Click to view
+                  </span>
+                </div>
+
+                <!-- ACCORDION -->
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-1" style="width: 100%;">
+
+                  <!-- GENERAL INFORMATION -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-pa-1-info">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse-pa-1-info" aria-expanded="false" aria-controls="collapse-pa-1-info">
+                        General information
+                      </button>
+                    </h2>
+
+                    <div id="collapse-pa-1-info" class="accordion-collapse collapse" aria-labelledby="heading-pa-1-info"
+                      data-bs-parent="#accordion-pa-1">
+                      <div class="accordion-body">
+                        <p class="text-start mb-0">
+                          <b>Title:</b> The Well-Tempered Clavier <br>
+                          <b>Attribution:</b> Bach, Johann Sebastian<br>
+                          <b>Type:</b> Manuscript<br>
+                          <b>Materials and Techniques:</b> Manuscript<br>
+                          <b>Measurements:</b> Unknown<br>
+                          <b>Current Location:</b> Royal Private Music Collection Digital Music<br>
+                          <b>Creation Date:</b> 1760-1787<br>
+                          <b>Online Location:</b> <a
+                            href="https://digital.slub-dresden.de/werkansicht/dlf/109685/10?tx_dlf_navigation%5Bcontroller%5D=Navigation&amp;cHash=2b7eef6229ba85ff2b6ec7ffb9f4c277"
+                            target="_blank">SLUB Digital Collections</a><br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- DOWNLOAD METADATA -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-pa-1-download">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse-pa-1-download" aria-expanded="false"
+                        aria-controls="collapse-pa-1-download">
+                        Download metadata
+                      </button>
+                    </h2>
+
+                    <div id="collapse-pa-1-download" class="accordion-collapse collapse"
+                      aria-labelledby="heading-pa-1-download" data-bs-parent="#accordion-pa-1">
+                      <div class="accordion-body">
+                        <a class="text-decoration-underline meta-download-link" href="../csv_files/bach.csv"
+                          download="The_Well_Tempered_Clavier_Bach.csv">
+                          Download (CSV)
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN: TEXT -->
+              <div style="max-width: 520px;">
+
+                <h2 class="h4">The Well-Tempered Clavier, BWV 846-893</h2>
+
+                <p class="desc-short mb-3 small">
+                  Bla bla bla breve.
+                </p>
+
+                <p class="desc-long mb-3 d-none">
+                  Bla bla bla lungo.
+                </p>
+
+                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
+                  data-see-less="Less detail">
+                  More detail
+                </button>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 2 -->
+        <div class="carousel-item">
+          <div class="card artwork-card text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+            <div class="d-flex justify-content-evenly align-items-start gap-4">
+
+              <!-- LEFT COLUMN: IMAGE + METADATA -->
+              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+
+                <div class="text-center">
+                  <img src="../imgs/wagner.jpg" class="d-block artwork-thumb"
+                    alt="Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner"
+                    style="max-height:320px; max-width:400px; width:auto; object-fit:contain;" data-bs-toggle="modal"
+                    data-bs-target="#imageModal" data-fullsrc="../imgs/wagner.jpg"
+                    data-title="Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner">
+
+                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/wagner.jpg"
+                    data-title="Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner">
+                    Click to view
+                  </span>
+                </div>
+
+                <!-- ACCORDION -->
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-2" style="width: 100%;">
+
+                  <!-- GENERAL INFORMATION -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-pa-2-info">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse-pa-2-info" aria-expanded="false" aria-controls="collapse-pa-2-info">
+                        General information
+                      </button>
+                    </h2>
+
+                    <div id="collapse-pa-2-info" class="accordion-collapse collapse"
+                      aria-labelledby="heading-pa-2-info" data-bs-parent="#accordion-pa-2">
+                      <div class="accordion-body">
+                        <p class="text-start mb-0">
+                          <b>Title:</b> Tristan und Isolde Autograph<br>
+                          <b>Attribution:</b> Wagner, Richard, 1813-1883.<br>
+                          <b>Type:</b> Notated Music<br>
+                          <b>Materials and Techniques:</b> Holograph sketches in pencil and ink<br>
+                          <b>Measurements:</b> Extent: [2] p. ; 18 x 27 cm.<br>
+                          <b>Current Location:</b> New York Public Library<br>
+                          <b>Creation Date:</b> 850 - 1859 (Approximate)<br>
+                          <b>Online Location:</b> <a
+                            href="https://digitalcollections.nypl.org/items/f0696b70-ceb0-0133-4d24-00505686a51c?canvasIndex=0"
+                            target="_blank">The New York Public Library - Digital Collections</a><br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- DOWNLOAD METADATA -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-pa-2-download">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse-pa-2-download" aria-expanded="false"
+                        aria-controls="collapse-pa-2-download">
+                        Download metadata
+                      </button>
+                    </h2>
+
+                    <div id="collapse-pa-2-download" class="accordion-collapse collapse"
+                      aria-labelledby="heading-pa-2-download" data-bs-parent="#accordion-pa-2">
+                      <div class="accordion-body">
+                        <a class="text-decoration-underline meta-download-link" href="csv_files/wagner.csv"
+                          download="Tristan_und_Isolde.csv">
+                          Download (CSV)
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN: TEXT -->
+              <div style="max-width: 520px;">
+                <h2 class="h4">Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner</h2>
+
+                <p class="desc-short mb-3 small">
+                  bla bla bla breve.
+                </p>
+
+                <p class="desc-long mb-3 d-none">
+                  bla bla bla bla bla lungo.
+                </p>
+
+                <button class="btn btn-sm js-toggle-desc"
+                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                  data-see-more="More detail" data-see-less="Less detail">
+                  More detail
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 3 -->
+        <div class="carousel-item">
+          <div class="card artwork-card text-light border border-warning p-4" style="min-height: 420px; border-width: 2px;">
+
+            <div class="d-flex justify-content-evenly align-items-start gap-4">
+
+              <!-- LEFT COLUMN: IMAGE + METADATA -->
+              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+
+                <!-- IMAGE + CLICK TO VIEW -->
+                <div class="text-center">
+                  <img src="../imgs/maschera_tragica.jpg" class="d-block artwork-thumb" alt="Tragic mask"
+                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
+                    data-bs-target="#imageModal" data-fullsrc="../imgs/maschera_tragica.jpg" data-title="Tragic mask">
+
+                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/maschera_tragica.jpg" data-title="Tragic mask">
+                    Click to view
+                  </span>
+                </div>
+
+                <!-- ACCORDION -->
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-3" style="width: 100%;">
+
+                  <!-- GENERAL INFORMATION -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-pa-3-info">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse-pa-3-info" aria-expanded="false" aria-controls="collapse-pa-3-info">
+                        General information
+                      </button>
+                    </h2>
+
+                    <div id="collapse-pa-3-info" class="accordion-collapse collapse" aria-labelledby="heading-pa-3-info"
+                      data-bs-parent="#accordion-pa-3">
+                      <div class="accordion-body">
+                        <p class="text-start mb-0">
+                          <b>Title:</b> Tragic mask<br>
+                          <b>Attribution:</b> —<br>
+                          <b>Type:</b> —<br>
+                          <b>Materials and Techniques:</b> —<br>
+                          <b>Measurements:</b> —<br>
+                          <b>Current Location:</b> —<br>
+                          <b>Creation Date:</b> —<br>
+                          <b>Online Location:</b> —<br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- DOWNLOAD METADATA -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-pa-3-download">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse-pa-3-download" aria-expanded="false"
+                        aria-controls="collapse-pa-3-download">
+                        Download metadata
+                      </button>
+                    </h2>
+
+                    <div id="collapse-pa-3-download" class="accordion-collapse collapse"
+                      aria-labelledby="heading-pa-3-download" data-bs-parent="#accordion-pa-3">
+                      <div class="accordion-body">
+                        <a class="text-decoration-underline meta-download-link"
+                          href="../csv_files/placchetta_tragic_mask.csv" download="placchetta_tragic_mask.csv">
+                          Download (CSV)
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN: TEXT -->
+              <div style="max-width: 520px;">
+
+                <h2 class="h4">Tragic mask</h2>
+
+                <p class="desc-short mb-3 small">
+                  Plaque depicting a female tragic theatrical mask.
+                </p>
+
+                <p class="desc-long mb-3 d-none">
+                  This small bone plaque comes from late Republican Rome or the early decades of the Empire and depicts a female tragic mask, a central motif in ancient theatre. Masks, in both Greece and Rome, were used to make characters immediately recognizable and to convey strong emotions even to spectators seated far from the stage, turning the face into a universal symbol of pathos and drama. In this sense, tragedy was not merely entertainment, but a moment of reflection on the human condition, on fate, and on the passions that drive action.<br>
+                  The plaque, smaller than a real mask, has a pierced hole suggesting it was used decoratively on furniture or other domestic objects, rather than as an actual stage element. The female face, with gathered hair and a diadem, evokes mythological figures or tragic characters of high status, while the pronounced features – large eyes, downturned mouth, and arched eyebrows – make the suffering and pathos immediately perceptible. The material, carefully worked bone, demonstrates Roman craftsmanship in transforming a commonplace object into a cultural and theatrical symbol: in this way, a small domestic object condensed the essence of theatrical drama, bringing the grandeur and evocative power of the public stage into private life.
+                </p>
+
+                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
+                  data-see-less="Less detail">
+                  More detail
+                </button>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 4 -->
+        <div class="carousel-item">
+          <div class="card artwork-card text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+            <div class="d-flex justify-content-evenly align-items-start gap-4">
+
+              <!-- LEFT COLUMN: IMAGE + METADATA -->
+              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+
+                <div class="text-center">
+                  <img src="../imgs/maschera_comica.jpg" class="d-block artwork-thumb" alt="Comic mask"
+                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
+                    data-bs-target="#imageModal" data-fullsrc="../imgs/maschera_comica.jpg" data-title="Comic mask">
+
+                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/maschera_comica.jpg" data-title="Comic mask">
+                    Click to view
+                  </span>
+                </div>
+
+                <!-- ACCORDION -->
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-4" style="width: 100%;">
+
+                  <!-- GENERAL INFORMATION -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-pa-4-info">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse-pa-4-info" aria-expanded="false" aria-controls="collapse-pa-4-info">
+                        General information
+                      </button>
+                    </h2>
+
+                    <div id="collapse-pa-4-info" class="accordion-collapse collapse"
+                      aria-labelledby="heading-pa-4-info" data-bs-parent="#accordion-pa-4">
+                      <div class="accordion-body">
+                        <p class="text-start mb-0">
+                          <b>Title:</b> Theatrical mask<br>
+                          <b>Attribution:</b> Unknown<br>
+                          <b>Type:</b> Terracotta mask<br>
+                          <b>Materials and Techniques:</b> Polychrome terracotta<br>
+                          <b>Measurements:</b> 15.5 cm (height); 24 cm (width); 25.5 cm (length)<br>
+                          <b>Current Location:</b> National Archaeological Museum of Taranto<br>
+                          <b>Creation Date:</b> 2nd-1st century B.C<br>
+                          <b>Online Location:</b> <a
+                            href="https://artsandculture.google.com/asset/figured-terracotta/NAHrFhcLSJLcxw?hl=it"
+                            target="_blank">Google Arts &amp; Culture</a><br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- DOWNLOAD METADATA -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-pa-4-download">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse-pa-4-download" aria-expanded="false"
+                        aria-controls="collapse-pa-4-download">
+                        Download metadata
+                      </button>
+                    </h2>
+
+                    <div id="collapse-pa-4-download" class="accordion-collapse collapse"
+                      aria-labelledby="heading-pa-4-download" data-bs-parent="#accordion-pa-4">
+                      <div class="accordion-body">
+                        <a class="text-decoration-underline meta-download-link"
+                          href="csv_files/maschera_teatrale_comica.csv" download="maschera_teatrale_comica.csv">
+                          Download (CSV)
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN: TEXT -->
+              <div style="max-width: 520px;">
+                <h2 class="h4">Comic mask</h2>
+
+                <p class="desc-short mb-3 small">
+                  Comic theatrical mask from Magna Graecia, attributed to Italic farce.
+                </p>
+
+                <p class="desc-long mb-3 d-none">
+                  The mask is one of the most significant symbols of ancient Italy’s comic theatre. Italic farces — derived from the Greek phlyakes — were short popular performances of a satirical and grotesque nature, born in Southern Italy during the Magna Graecia period. Through comedy and the exaggeration of features, they staged everyday life, vices, fears, and human weaknesses, serving as an ironic mirror of society.<br>
+                  The mask, preserved in the National Archaeological Museum of Taranto (MArTA), is a terracotta artifact dating to around the 2nd–1st century BCE, originating from a funerary context in the area of Taranto, an ancient city of Magna Graecia. It was discovered during excavations near a necropolis, where it likely formed part of the burial goods of an actor or a theatre enthusiast. The piece depicts a highly expressive male face, with a wide-open mouth, pronounced nose, arched eyebrows, and bulging eyes — features typical of comic and farcical characters. The modelling is lively and deliberately exaggerated, intended to be recognizable even from a distance during performances. From a symbolic perspective, the mask reflects the connection between the world of the living and that of the dead: theatre, a place of fiction and transformation, becomes a metaphor for life itself, always suspended between reality and illusion. This unique artifact bears witness to the importance of the Italic farce as an artistic and social expression in Hellenistic Taranto, a city where Greek and local cultures blended to create one of antiquity’s most refined theatrical traditions.
+                </p>
+
+                <button class="btn btn-sm js-toggle-desc"
+                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                  data-see-more="More detail" data-see-less="Less detail">
+                  More detail
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 5 -->
+        <div class="carousel-item">
+          <div class="card artwork-card text-light border border-warning p-4" style="min-height: 420px; border-width: 2px;">
+
+            <div class="d-flex justify-content-evenly align-items-start gap-4">
+
+              <!-- LEFT COLUMN: IMAGE + METADATA -->
+              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+
+                <!-- IMAGE + CLICK TO VIEW -->
+                <div class="text-center">
+                  <img src="../imgs/kylix.jpg" class="d-block artwork-thumb" alt="Kylix with Apollo and kithara"
+                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
+                    data-bs-target="#imageModal" data-fullsrc="../imgs/kylix.jpg"
+                    data-title="Kylix with Apollo and kithara">
+
+                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/kylix.jpg" data-title="Kylix with Apollo and kithara">
+                    Click to view
+                  </span>
+                </div>
+
+                <!-- ACCORDION -->
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-5" style="width: 100%;">
+
+                  <!-- GENERAL INFORMATION -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-pa-5-info">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse-pa-5-info" aria-expanded="false" aria-controls="collapse-pa-5-info">
+                        General information
+                      </button>
+                    </h2>
+
+                    <div id="collapse-pa-5-info" class="accordion-collapse collapse" aria-labelledby="heading-pa-5-info"
+                      data-bs-parent="#accordion-pa-5">
+                      <div class="accordion-body">
+                        <p class="text-start mb-0">
+                          <b>Title:</b> Drinking cup<br>
+                          <b>Attribution:</b> Nikosthenes<br>
+                          <b>Type:</b> Kylix<br>
+                          <b>Materials and Techniques:</b> Terracotta; black-figure<br>
+                          <b>Measurements:</b> H. 6 1/4 in. (15.9 cm), diameter 15 in. (38.1 cm)<br>
+                          <b>Current Location:</b> The Metropolitan Museum of Art<br>
+                          <b>Creation Date:</b> 480-470 BC<br>
+                          <b>Online Location:</b> <a href="https://www.metmuseum.org/art/collection/search/248906"
+                            target="_blank">The MET Collection</a><br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- DOWNLOAD METADATA -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-pa-5-download">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse-pa-5-download" aria-expanded="false"
+                        aria-controls="collapse-pa-5-download">
+                        Download metadata
+                      </button>
+                    </h2>
+
+                    <div id="collapse-pa-5-download" class="accordion-collapse collapse"
+                      aria-labelledby="heading-pa-5-download" data-bs-parent="#accordion-pa-5">
+                      <div class="accordion-body">
+                        <a class="text-decoration-underline meta-download-link"
+                          href="../csv_files/obj-14_kylix-apollo.csv" download="Kylix_Apollo.csv">
+                          Download (CSV)
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN: TEXT -->
+              <div style="max-width: 520px;">
+                <h2 class="h4">Kylix with Apollo and kithara</h2>
+
+                <p class="desc-short mb-3 small">
+                  Attic red-figure kylix (480-470 BC). The interior depicts Apollo, identifiable as the god of music,
+                  seated and playing the kithara, his symbolic instrument, beside a flaming altar. The exterior shows
+                  libation scenes with male and female figures, sceptres, and phialai, enriched with decorative motifs
+                  such as meanders and palmettes.
+                </p>
+
+                <p class="desc-long mb-3 d-none">
+                  Red-figure kylix created circa 480 BC-470 BC. The interior depicts Apollo, beardless, with long wavy
+                  hair, a laurel wreath, and a himation around his legs, seated to the right on a diphros. The god plays
+                  a large kithara and holds a fluted phiale in his right hand. On the right, half-seen, is a flaming
+                  altar, shaped like an Ionic column with necking of egg pattern.<br>
+                  The exterior depicts a woman in a long-sleeved chiton, himation, and saccos, who moves to right with
+                  left hand on her hip, holding out in her right an oinochoe, as if to pour into a phiale which a
+                  bearded, wreathed man on right holds out to her. He has a long sceptre leaning against his left
+                  shoulder, and wears a long-sleeved talaric chiton and himation. On the left, a youth, wreathed, and
+                  wearing an himation, holding upright a sceptre in his left, and extending a fluted phiale in his
+                  right. Between him and the woman is a slender Ionic column with architrave; behind him hang a pair of
+                  sandals. On the left of the bearded man hang a pair of tablets rolled up, with a stylus fastened in
+                  the bands: at each of the lower corners hangs a triple tie.<br>
+                  On the other side, apparently the same three figures are engaged, but part of each is missing. Of the
+                  youth on left only the feet and the ends of his himation and the legs of the chair in which he is
+                  sitting to right are preserved. The woman confronts him, raising both hands apparently, with a gesture
+                  of surprise; she wears a fillet with trefoil ends; her face and right arm are missing. Behind her is
+                  the column as we can see on the other side. The bearded man on the right stands en face, but looking
+                  to left with right hand on hip, left holding sceptre upright; his sceptre is striated. On the right is
+                  a trace of an object (a sandal ?) hanging up, which is almost entirely broken away.<br>
+                  Purple tuning pegs of lyre, flames, wreaths in exterior, fillets, cords of tablets and of sandals. Eye
+                  in transition stage (in interior, the eyelids are in profile; the eyeball is drawn as a dot in a
+                  semicircle). Around the interior, a band of running maeander. Below the exterior, a thin red line.
+                  Below the handles a palmette. The exergue in the interior is left red.
+                </p>
+
+                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
+                  data-see-less="Less detail">
+                  More detail
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ITEM 4 (Bacchae) -->
+        <div class="carousel-item">
+          <div class="card artwork-card text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+            <div class="d-flex justify-content-evenly align-items-start gap-4">
+
+              <!-- LEFT COLUMN: IMAGE + METADATA -->
+              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+
+                <div class="text-center">
+                  <img src="../imgs/baccanti.jpg" class="d-block artwork-thumb" alt="Euripides' Bacchae Fragments"
+                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
+                    data-bs-target="#imageModal" data-fullsrc="../imgs/baccanti.jpg"
+                    data-title="Euripides' Bacchae Fragments">
+
+                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/baccanti.jpg" data-title="Euripides' Bacchae Fragments">
+                    Click to view
+                  </span>
+                </div>
+
+                <!-- ACCORDION -->
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-6" style="width: 100%;">
+
+                  <!-- GENERAL INFORMATION -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-pa-6-info">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse-pa-6-info" aria-expanded="false" aria-controls="collapse-pa-6-info">
+                        General information
+                      </button>
+                    </h2>
+
+                    <div id="collapse-pa-6-info" class="accordion-collapse collapse"
+                      aria-labelledby="heading-pa-6-info" data-bs-parent="#accordion-pa-6">
+                      <div class="accordion-body">
+                        <p class="text-start mb-0">
+                          <b>Title:</b> Euripides' Bacchae Fragments<br>
+                          <b>Attribution:</b> Unknown<br>
+                          <b>Type:</b> Papyri<br>
+                          <b>Materials and Techniques:</b> 1 column (4 lines) written on recto along the fiber. Large
+                          schoolboy hand. Papyrus has been used before, probably for an account.<br>
+                          <b>Measurements:</b> 4 fragments in various sizes<br>
+                          <b>Current Location:</b> The Bancroft Library<br>
+                          <b>Creation Date:</b> 332-30 B.C<br>
+                          <b>Online Location:</b> <a
+                            href="https://digicoll.lib.berkeley.edu/record/133018?utm_source=chatgpt.com&amp;v=uv#?xywh=798%2C-187%2C541%2C372"
+                            target="_blank">Berkeley Library - University of California</a><br>
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- DOWNLOAD METADATA -->
+                  <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading-pa-6-download">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapse-pa-6-download" aria-expanded="false"
+                        aria-controls="collapse-pa-6-download">
+                        Download metadata
+                      </button>
+                    </h2>
+
+                    <div id="collapse-pa-6-download" class="accordion-collapse collapse"
+                      aria-labelledby="heading-pa-6-download" data-bs-parent="#accordion-pa-6">
+                      <div class="accordion-body">
+                        <a class="text-decoration-underline meta-download-link" href="csv_files/euripides.csv"
+                          download="Bacchae.csv">
+                          Download (CSV)
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN: TEXT -->
+              <div style="max-width: 520px;">
+                <h2 class="h4">Euripides' Bacchae Fragments</h2>
+
+                <p class="desc-short mb-3 small">
+                  bla bla bla breve.
+                </p>
+
+                <p class="desc-long mb-3 d-none">
+                  bla bla bla bla bla lungo.
+                </p>
+
+                <button class="btn btn-sm js-toggle-desc"
+                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                  data-see-more="More detail" data-see-less="Less detail">
+                  More detail
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- ✅ CLOSE carousel-inner BEFORE the arrows -->
+
+      <!-- ARROWS -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
+    </div><!-- /carousel -->
+
+  </div><!-- /container -->
+
+  <!-- Image Modal -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content" style="background: var(--bg); border: 3px solid var(--yellow);">
+        <div class="modal-header" style="border-bottom: 1px solid rgba(184, 173, 167, 0.35);">
+          <h5 class="modal-title section-title" id="imageModalTitle">Artwork</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+            style="filter: invert(1);"></button>
+        </div>
+        <div class="modal-body">
+          <img id="imageModalImg" class="modal-artwork-img" src="" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    // Toggle short/long description
+    document.querySelectorAll('.js-toggle-desc').forEach(btn => {
+      const moreText = btn.dataset.seeMore;
+      const lessText = btn.dataset.seeLess;
+
+      btn.addEventListener('click', () => {
+        const container = btn.parentElement;
+        const shortText = container.querySelector('.desc-short');
+        const longText = container.querySelector('.desc-long');
+
+        const showingLong = !longText.classList.contains('d-none');
+
+        if (showingLong) {
+          longText.classList.add('d-none');
+          shortText.classList.remove('d-none');
+          btn.textContent = moreText;
+        } else {
+          shortText.classList.add('d-none');
+          longText.classList.remove('d-none');
+          btn.textContent = lessText;
+        }
+      });
+    });
+
+    // Reset toggles when sliding carousel
+    document.getElementById('carouselExample')
+      .addEventListener('slide.bs.carousel', () => {
+        document.querySelectorAll('.desc-long').forEach(el => el.classList.add('d-none'));
+        document.querySelectorAll('.desc-short').forEach(el => el.classList.remove('d-none'));
+        document.querySelectorAll('.js-toggle-desc').forEach(btn => {
+          btn.textContent = btn.dataset.seeMore;
+        });
+      });
+
+    // Modal: set image dynamically from clicked thumbnail / "Click to view"
+    const imageModal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('imageModalImg');
+    const modalTitle = document.getElementById('imageModalTitle');
+
+    function openArtworkModalFrom(el) {
+      const fullSrc = el.getAttribute('data-fullsrc');
+      const title = el.getAttribute('data-title') || 'Artwork';
+      if (!fullSrc) return;
+
+      modalImg.src = fullSrc;
+      modalImg.alt = title;
+      modalTitle.textContent = title;
+    }
+
+    document.querySelectorAll('[data-bs-target="#imageModal"]').forEach(el => {
+      el.addEventListener('click', () => openArtworkModalFrom(el));
+    });
+
+    // Clear image on close (optional, avoids flashing old image)
+    imageModal.addEventListener('hidden.bs.modal', () => {
+      modalImg.src = '';
+      modalImg.alt = '';
+      modalTitle.textContent = 'Artwork';
+    });
+  </script>
+
+</body>
+</html>

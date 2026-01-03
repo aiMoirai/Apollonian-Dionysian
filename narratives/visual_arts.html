@@ -29,7 +29,7 @@
 
         /* Make the thumbnail feel clickable */
         .artwork-thumb {
-            cursor: pointer;
+            cursor: zoom-in;
         }
 
         /* Ensure modal image fits nicely */
@@ -1283,130 +1283,176 @@
 
             </div>
 
-                <!-- ARROWS -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
+            <!-- ARROWS -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
 
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
 
-            </div><!-- /carousel -->
-        </div><!-- /container -->
+        </div><!-- /carousel -->
+    </div><!-- /container -->
 
-        <!-- Image Modal -->
-        <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content" style="background: var(--bg); border: 3px solid var(--yellow);">
-                    <div class="modal-header" style="border-bottom: 1px solid rgba(184, 173, 167, 0.35);">
-                        <h5 class="modal-title section-title" id="imageModalTitle">Artwork</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                            style="filter: invert(1);"></button>
-                    </div>
-                    <div class="modal-body">
-                        <img id="imageModalImg" class="modal-artwork-img" src="" alt="">
-                    </div>
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-header" style="border-bottom: 1px solid rgba(184, 173, 167, 0.35);">
+                    <h5 class="modal-title section-title" id="imageModalTitle">Artwork</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="filter: invert(1);"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="imageModalImg" class="modal-artwork-img" src="" alt="">
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- JS -->
-        <script>
-            // =========================
-            // 1) Toggle short/long description
-            // =========================
-            document.querySelectorAll('.js-toggle-desc').forEach(btn => {
-                const moreText = btn.dataset.seeMore || 'See more';
-                const lessText = btn.dataset.seeLess || 'See less';
+    <!--Footer section-->
+    <footer>
+        <div class="footer container">
+            <div class="row" id="footer">
+                <div class="col info">
+                    <h4><b>Free Entry</b></h4>
+                    <p>Diagon Alley 18, London</p>
+                    <h4><b>Box Office</b></h4>
+                    <p>+11 2233445566</p>
+                    <h4><b>Opening Hours</b></h4>
+                    <p>Daily: 00.00–24.00 (Fridays: 23:30)<br>Last entry: Anytime (Fridays: 23:29)</p>
+                </div>
+                <div class="col about" style="line-height: 2.5;">
+                    <h4><b>About</b></h4>
+                    <a href="URL">The Museum</a><br>
+                    <a href="/narratives/index.html">The Narratives</a><br>
+                    <a href="URL">The Themes</a><br>
+                    <a href="URL">The Team</a><br>
+                    <a href="../About/Documentation.html">The Documentation</a><br>
+                    <a href="../About/Disclaimer.html">Disclaimer</a>
+                </div>
+                <div class="col exam">
+                    <h4 style="text-align: left;"><b>The Project</b></h4>
+                    <p>This project was created for the <a
+                            href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2024/454464"><i>Information
+                                Modeling and Web Technologies</i></a> exam (2024/2025)
+                        at the University
+                        of Bologna, taught by <a href="https://www.unibo.it/sitoweb/fabio.vitali">Fabio Vitali</a> in
+                        the Master’s program in <a
+                            href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge"><i>Digital
+                                Humanities and
+                                Digital Knowledge</i></a>. All museum information is
+                        fictional.</p>
+                    <p><b> Alma Mater Studiorum <br>Università di Bologna <br>
+                            Via Zamboni 34 <br>
+                            40126 BO Bologna </b></p>
+                </div>
+            </div>
+            <div class="row rights">
+                <p style="text-align: center;">All the images and resources taken from external sources are solely used
+                    for study purposes. No
+                    commercial use is intended.<br>
+                    <i>Tyrsos & Lyre</i> © 2025
+                </p>
+            </div>
+        </div>
+    </footer>
 
-                btn.addEventListener('click', () => {
-                    const container = btn.parentElement;
-                    const shortText = container.querySelector('.desc-short');
-                    const longText = container.querySelector('.desc-long');
+    <!-- JS -->
+    <script>
+        // =========================
+        // 1) Toggle short/long description
+        // =========================
+        document.querySelectorAll('.js-toggle-desc').forEach(btn => {
+            const moreText = btn.dataset.seeMore || 'See more';
+            const lessText = btn.dataset.seeLess || 'See less';
 
-                    if (!shortText || !longText) return;
+            btn.addEventListener('click', () => {
+                const container = btn.parentElement;
+                const shortText = container.querySelector('.desc-short');
+                const longText = container.querySelector('.desc-long');
 
-                    const showingLong = !longText.classList.contains('d-none');
+                if (!shortText || !longText) return;
 
-                    if (showingLong) {
-                        longText.classList.add('d-none');
-                        shortText.classList.remove('d-none');
-                        btn.textContent = moreText;
-                    } else {
-                        shortText.classList.add('d-none');
-                        longText.classList.remove('d-none');
-                        btn.textContent = lessText;
-                    }
-                });
-            });
+                const showingLong = !longText.classList.contains('d-none');
 
-            // =========================
-            // 2) Reset descriptions when carousel slides
-            // =========================
-            const carouselEl = document.getElementById('carouselExample');
-            if (carouselEl) {
-                carouselEl.addEventListener('slide.bs.carousel', () => {
-                    document.querySelectorAll('.desc-long').forEach(el => el.classList.add('d-none'));
-                    document.querySelectorAll('.desc-short').forEach(el => el.classList.remove('d-none'));
-                    document.querySelectorAll('.js-toggle-desc').forEach(btn => {
-                        btn.textContent = btn.dataset.seeMore || 'See more';
-                    });
-                });
-            }
-
-            // =========================
-            // 3) Modal: open image dynamically + apply theme (apollonian/dionysian)
-            // =========================
-            const imageModal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('imageModalImg');
-            const modalTitle = document.getElementById('imageModalTitle');
-
-            function openArtworkModalFrom(el) {
-                if (!imageModal || !modalImg || !modalTitle) return;
-
-                const fullSrc = el.getAttribute('data-fullsrc');
-                const title = el.getAttribute('data-title') || 'Artwork';
-                const theme = el.getAttribute('data-theme'); // "apollonian" | "dionysian"
-
-                if (!fullSrc) return;
-
-                modalImg.src = fullSrc;
-                modalImg.alt = title;
-                modalTitle.textContent = title;
-
-                // reset themes
-                imageModal.classList.remove('apollonian', 'dionysian');
-
-                // apply theme (fallback = apollonian)
-                if (theme === 'dionysian') {
-                    imageModal.classList.add('dionysian');
+                if (showingLong) {
+                    longText.classList.add('d-none');
+                    shortText.classList.remove('d-none');
+                    btn.textContent = moreText;
                 } else {
-                    imageModal.classList.add('apollonian');
+                    shortText.classList.add('d-none');
+                    longText.classList.remove('d-none');
+                    btn.textContent = lessText;
                 }
-            }
-
-            // Attach click handlers to anything that opens the modal
-            document.querySelectorAll('[data-bs-target="#imageModal"]').forEach(el => {
-                el.addEventListener('click', () => openArtworkModalFrom(el));
             });
+        });
 
-            // =========================
-            // 4) Reset modal on close
-            // =========================
-            if (imageModal) {
-                imageModal.addEventListener('hidden.bs.modal', () => {
-                    modalImg.src = '';
-                    modalImg.alt = '';
-                    modalTitle.textContent = 'Artwork';
-                    imageModal.classList.remove('apollonian', 'dionysian');
+        // =========================
+        // 2) Reset descriptions when carousel slides
+        // =========================
+        const carouselEl = document.getElementById('carouselExample');
+        if (carouselEl) {
+            carouselEl.addEventListener('slide.bs.carousel', () => {
+                document.querySelectorAll('.desc-long').forEach(el => el.classList.add('d-none'));
+                document.querySelectorAll('.desc-short').forEach(el => el.classList.remove('d-none'));
+                document.querySelectorAll('.js-toggle-desc').forEach(btn => {
+                    btn.textContent = btn.dataset.seeMore || 'See more';
                 });
+            });
+        }
+
+        // =========================
+        // 3) Modal: open image dynamically + apply theme (apollonian/dionysian)
+        // =========================
+        const imageModal = document.getElementById('imageModal');
+        const modalImg = document.getElementById('imageModalImg');
+        const modalTitle = document.getElementById('imageModalTitle');
+
+        function openArtworkModalFrom(el) {
+            if (!imageModal || !modalImg || !modalTitle) return;
+
+            const fullSrc = el.getAttribute('data-fullsrc');
+            const title = el.getAttribute('data-title') || 'Artwork';
+            const theme = el.getAttribute('data-theme'); // "apollonian" | "dionysian"
+
+            if (!fullSrc) return;
+
+            modalImg.src = fullSrc;
+            modalImg.alt = title;
+            modalTitle.textContent = title;
+
+            // reset themes
+            imageModal.classList.remove('apollonian', 'dionysian');
+
+            // apply theme (fallback = apollonian)
+            if (theme === 'dionysian') {
+                imageModal.classList.add('dionysian');
+            } else {
+                imageModal.classList.add('apollonian');
             }
-        </script>
+        }
+
+        // Attach click handlers to anything that opens the modal
+        document.querySelectorAll('[data-bs-target="#imageModal"]').forEach(el => {
+            el.addEventListener('click', () => openArtworkModalFrom(el));
+        });
+
+        // =========================
+        // 4) Reset modal on close
+        // =========================
+        if (imageModal) {
+            imageModal.addEventListener('hidden.bs.modal', () => {
+                modalImg.src = '';
+                modalImg.alt = '';
+                modalTitle.textContent = 'Artwork';
+                imageModal.classList.remove('apollonian', 'dionysian');
+            });
+        }
+    </script>
 
 
 </body>

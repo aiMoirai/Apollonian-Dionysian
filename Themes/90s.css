@@ -1,12 +1,13 @@
 /* General Typography section --------------------*/
 
 
+
 :root {
     /* Background */
     --bgimg: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(10, 0, 50, 0.9)), url('../imgs/bacco_man.png');
     --bg: #0A0A50;
 
-    --blackbg: #000000;
+    --blackbg: #1A1A2E;
 
     /* Color palette neon */
     --text: #00FFEA;
@@ -85,7 +86,9 @@ a {
     }
 }
 
-
+.custom-cursor {
+    cursor: url("cursor.png") 16 16, auto;
+}
 
 /* --------------------------------*/
 
@@ -159,15 +162,69 @@ a {
 
 
 /* -----------Hero section (with button)--------------*/
+
 .hero {
     height: 100vh;
     background-image: var(--bgimg);
     background-size: cover;
     background-repeat: no-repeat;
+
     display: flex;
-    align-items: center;
-    text-align: center;
+    justify-content: center;
+    align-items: flex-end;
+
+    perspective: 400px;
+    overflow: hidden;
 }
+
+/* Fade come Star Wars */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.9));
+    z-index: 1;
+}
+
+/* Crawl */
+.hero-content.crawl {
+    position: relative;
+    bottom: -80%;
+    width: 90%;
+    text-align: center;
+
+    transform-origin: 50% 100%;
+    animation: crawl 32s linear forwards;
+    z-index: 2;
+}
+
+
+/* Titolo */
+.hero-content .title {
+    text-shadow: 0 0 25px var(--title);
+}
+
+/* Animazione */
+@keyframes crawl {
+    0% {
+        transform: rotateX(10deg) scale(3.4) translateZ(0);
+        bottom: -80%;
+    }
+
+    50% {
+        transform: rotateX(14deg) scale(2.4) translateZ(-150px);
+        bottom: 10%;
+    }
+
+    100% {
+        transform: rotateX(18deg) scale(2.4) translateZ(-150px);
+        bottom: 10%;
+    }
+}
+
+/* source: https://css-tricks.com/snippets/css/star-wars-crawl-text/ */
 
 .wine_button {
     margin-top: 2vw;
@@ -176,19 +233,11 @@ a {
     transition: transform 0.2s ease-in-out;
 }
 
-.wine_button:hover,
-.card-img:hover,
-#narratives:hover,
-#museum:hover {
-    transform: scale(1.1);
-}
 
 .title {
     font-size: 8vw;
     margin-top: 3vw;
     text-align: center;
-    text-shadow:
-        0 0 25px var(--title);
 }
 
 .subtitle {
@@ -197,19 +246,7 @@ a {
 
 /* -----------Intro + narratives and museum cards--------------*/
 
-.quote,
-#intro,
-#museum,
-#narratives {
-    clip-path: polygon(0% 0%, 0% 4%, 4% 4%, 4% 0%,
-            96% 0%, 96% 4%, 100% 4%, 100% 0%,
-            100% 96%, 96% 96%, 96% 100%, 100% 100%,
-            4% 100%, 4% 96%, 0% 96%, 0% 100%);
 
-
-}
-
-/* source: */
 #quote {
     background-color: var(--bg);
     margin-top: 3rem;
@@ -223,6 +260,18 @@ a {
 
 .quote {
     margin-bottom: 15rem;
+}
+
+.dropcap::first-letter {
+    float: left;
+    font-size: 5em;
+    line-height: 0.9;
+    padding-right: 0.15em;
+    padding-top: 0.05em;
+
+    font-family: serif;
+    /* o il tuo font */
+    font-weight: 700;
 }
 
 #intro {
@@ -265,6 +314,7 @@ a {
 #narratives-h1 {
     font-size: 3vw;
 }
+
 
 
 /* -----------The collection--------------*/

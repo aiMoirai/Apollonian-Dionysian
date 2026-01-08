@@ -6,23 +6,37 @@ const separators = [
     document.getElementById("break3")
 ];
 
-toggle.addEventListener("change", () => {
-    document.body.classList.toggle("lightmode", toggle.checked);
+function applyLightMode(isOn) {
+    document.body.classList.toggle("lightmode", isOn);
 
     separators.forEach((img, index) => {
         switch (index) {
             case 0:
-                img.src = toggle.checked ? "imgs/sopra_col_light.png" : "imgs/sopra colonna.png";
+                img.src = isOn ? "imgs/sopra_col_light.png" : "imgs/sopra colonna.png";
                 break;
             case 1:
-                img.src = toggle.checked ? "imgs/centro_col_light.png" : "imgs/centro colonna.png";
+                img.src = isOn ? "imgs/centro_col_light.png" : "imgs/centro colonna.png";
                 break;
             case 2:
-                img.src = toggle.checked ? "imgs/fine_col_light.png" : "imgs/fine colonne.png";
+                img.src = isOn ? "imgs/fine_col_light.png" : "imgs/fine colonne.png";
                 break;
         }
     });
+
+    // salva in localStorage
+    localStorage.setItem("lightMode", isOn);
+}
+
+toggle.addEventListener("change", () => {
+    applyLightMode(toggle.checked);
 });
+
+window.addEventListener("DOMContentLoaded", () => {
+    const savedState = localStorage.getItem("lightMode") === "true";
+    toggle.checked = savedState;
+    applyLightMode(savedState);
+});
+
 
 
 //script for populating the index modals ------------------------

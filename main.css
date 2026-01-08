@@ -1145,6 +1145,11 @@ footer .footer .col {
     pointer-events: none;
 }
 
+.immagine-opera {
+    cursor: pointer;
+    pointer-events: all;
+}
+
 /* ========== COMMENTS SECTION ========== */
 #comments-section {
     margin-bottom: clamp(1rem, 2vw, 1.5rem);

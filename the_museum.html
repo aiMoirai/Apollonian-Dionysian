@@ -1,0 +1,768 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tyrsos & Lyre</title>
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" id="theme-link" href="main.css">
+    
+    <!--------------------Fonts---------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!--Inter-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <!--Cinzel-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Belleza&family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+
+    <!---------Favicon---------->
+    <link rel="icon" href="imgs/logo_grigio_con_nome.png" type="image/png">
+</head>
+<body>
+     <!--Navigation bar-->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="imgs/logo_grigio_con_nome.png" class="logo" alt="Logo" width="30" height="24"
+                    href="index.html"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">The Museum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Exhibition</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="narratives/index.html">Narratives</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">The Team</a></li>
+                            <li><a class="dropdown-item" href="About\Documentation.html">The Documentation</a></li>
+                            <li><a class="dropdown-item" href="About\Disclaimer.html">Disclaimer</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Choose your theme
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" id="theme-90s">90's game</a></li>
+                            <li><a class="dropdown-item" href="About\Disclaimer.html">Second</a></li>
+                            <li><a class="dropdown-item" href="#">Third</a></li>
+                            <li><a class="dropdown-item" href="#">Default Theme</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+    <!--Dark/light button-->
+    <div class="theme-switch">
+        <input type="checkbox" id="switch" />
+        <label for="switch"></label>
+    </div>
+
+    <!-- Museum Page -->
+    <section id="museum-rooms" class="museum-page">
+        <header class="museum-header">
+            <h1 class="museum-title">THE MUSEUM</h1>
+            <p class="museum-subtitle">Explore the rooms and discover the artworks</p>
+        </header>
+    </section>
+        
+    <!-- Discover the Rooms Section -->
+    <section id="rooms" class="p-2">
+        <div class="row">
+            <!-- SVG map container - now centered with Bootstrap -->
+            <div class="col-12">
+                <div class="museum-map-container">
+                    <svg id="planimetria-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 440 180" version="1.1" style="width: 100%; height: auto;">
+                        <defs>
+                            <clipPath clipPathUnits="userSpaceOnUse" id="clipPath100">
+                                <g id="use100">
+                                    <path style="fill:none;stroke:#000000;stroke-width:0.75;stroke-opacity:1" id="path100" d="m 389.41371,175.60464 a 16.142132,15.685279 0 0 1 21.18682,-8.00869 16.142132,15.685279 0 0 1 8.41753,20.52 16.142132,15.685279 0 0 1 -21.04707,8.34935 16.142132,15.685279 0 0 1 -8.76695,-20.38139 l 14.95841,5.89578 z"/>
+                                </g>
+                            </clipPath>
+                            <mask maskUnits="userSpaceOnUse" id="mask102">
+                                <ellipse style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.75;stroke-opacity:1" id="ellipse102" cx="401.57361" cy="181.97971" rx="18.426395" ry="16.903553"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask90">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse90" cx="403.58926" cy="178.96622" rx="15.936824" ry="12.706386"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask90-4">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse90-5" cx="403.58926" cy="178.96622" rx="15.936824" ry="12.706386"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask93">
+                                <ellipse style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.75" id="ellipse93" cx="432.18268" cy="15.989849" rx="13.705584" ry="11.116752"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask94">
+                                <ellipse style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.648997" id="ellipse94" cx="448.63046" cy="154.87311" rx="14.365252" ry="12.385528" transform="matrix(0.99999893,-0.0014623,0,1,0,0)"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask1">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.819772" id="ellipse1" cx="423.04572" cy="17.969547" rx="13.670699" ry="12.147855"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask2">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.819772" id="ellipse2" cx="414.04001" cy="147.46638" rx="13.670699" ry="12.147855"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask3">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.819772" id="ellipse3" cx="381.45117" cy="0.055202194" rx="13.670699" ry="12.147855"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask4">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.819772" id="ellipse4" cx="409.77603" cy="183.40544" rx="13.670699" ry="12.147855"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask5">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.819772" id="ellipse5" cx="350.99426" cy="13.760786" rx="13.670699" ry="12.147855"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask95">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse95" cx="317.51266" cy="13.705592" rx="12.639595" ry="11.878174"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask96">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.819772" id="ellipse96" cx="353.73541" cy="159.05901" rx="13.670699" ry="12.147855"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask97">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse97" cx="264.45111" cy="161.63643" rx="12.639595" ry="11.878174"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask98">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse98" cx="269.93338" cy="13.920687" rx="12.639595" ry="11.878174"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask99">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse99" cx="221.20241" cy="162.55013" rx="12.639595" ry="11.878174"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask100">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse100" cx="174.60341" cy="23.666882" rx="12.639595" ry="11.878174"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask101">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse101" cx="168.13135" cy="165.97653" rx="12.639595" ry="11.878174"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask103">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse103" cx="150.28363" cy="56.255714" rx="12.639595" ry="11.878174"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask104">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse104" cx="165.61899" cy="22.274744" rx="12.639595" ry="11.878174"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask105">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse105" cx="151.37573" cy="120.14121" rx="12.639595" ry="11.878174"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask106">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse106" cx="469.32352" cy="134.25449" rx="12.639711" ry="11.878067" transform="matrix(0.99979321,-0.02033555,0.01988097,0.99980235,0,0)"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask107">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse107" cx="355.21255" cy="156.45876" rx="12.639595" ry="11.878174"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask108">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse108" cx="464.14151" cy="49.890236" rx="12.639595" ry="11.878174"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask6">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.75" id="ellipse6" cx="234.29884" cy="15.443531" rx="12.639595" ry="11.878174"/>
+                            </mask>
+                            <mask maskUnits="userSpaceOnUse" id="mask109">
+                                <ellipse style="fill:#ffffff;stroke:#000000;stroke-width:0.689734" id="ellipse109" cx="235.12694" cy="15.532995" rx="11.890805" ry="11.586237"/>
+                            </mask>
+                        </defs>
+                        
+                        <!-- PERIMETER AND WALLS (non-interactive) -->
+                        <g id="surface1" class="non-interactive" transform="translate(-150.97113,-2.2220674)">
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="M 4149.0625,1223.3984 V 817.10937 H 1988.3203 v 930.07813 h 2160.7422 z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path1"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="M 4135.1953,1223.3984 V 830.97656 H 2002.2266 v 902.30474 h 2132.9687 z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path2"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="M 2016.0938,844.88281 H 4121.2891 V 1719.375 H 2016.0938 Z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path3"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 4121.2891,1282.1484 z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path4"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 4401.0937,1223.3984 h -279.8046 v 144.336 h 273.0859" transform="matrix(0.1,0,0,-0.1,0,210)" id="path5"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 4280.1562,1295.5859 z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path6"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 4397.7344,1295.5859 z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path7"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 4280.1562,1367.7344 h 181.4454 v -144.336 h -181.4454" transform="matrix(0.1,0,0,-0.1,0,210)" id="path8"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2109.2969,1659.8828 c 0,18.5547 -15.0391,33.5938 -33.5938,33.5938 -18.5547,0 -33.5937,-15.0391 -33.5937,-33.5938 0,-18.5547 15.039,-33.5937 33.5937,-33.5937 18.5547,0 33.5938,15.039 33.5938,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path9"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2109.2969,1659.8828 c 0,18.5547 -15.0391,33.5938 -33.5938,33.5938 -18.5547,0 -33.5937,-15.0391 -33.5937,-33.5938 0,-18.5547 15.039,-33.5937 33.5937,-33.5937 18.5547,0 33.5938,15.039 33.5938,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path10"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2109.2969,904.41406 c 0,18.55469 -15.0391,33.59375 -33.5938,33.59375 -18.5547,0 -33.5937,-15.03906 -33.5937,-33.59375 0,-18.55469 15.039,-33.59375 33.5937,-33.59375 18.5547,0 33.5938,15.03906 33.5938,33.59375" transform="matrix(0.1,0,0,-0.1,0,210)" id="path11"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 4091.9531,1659.8828 c 0,18.5547 -15.039,33.5938 -33.5937,33.5938 -18.5547,0 -33.5938,-15.0391 -33.5938,-33.5938 0,-18.5547 15.0391,-33.5937 33.5938,-33.5937 18.5547,0 33.5937,15.039 33.5937,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path12"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2109.2969,1659.8828 c 0,18.5547 -15.0391,33.5938 -33.5938,33.5938 -18.5547,0 -33.5937,-15.0391 -33.5937,-33.5938 0,-18.5547 15.039,-33.5937 33.5937,-33.5937 18.5547,0 33.5938,15.039 33.5938,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path13"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2109.2969,1495.3516 c 0,18.5547 -15.0391,33.5937 -33.5938,33.5937 -18.5547,0 -33.5937,-15.039 -33.5937,-33.5937 0,-18.5547 15.039,-33.5938 33.5937,-33.5938 18.5547,0 33.5938,15.0391 33.5938,33.5938" transform="matrix(0.1,0,0,-0.1,0,210)" id="path14"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2109.2969,1344.2578 c 0,18.5547 -15.0391,33.5938 -33.5938,33.5938 -18.5547,0 -33.5937,-15.0391 -33.5937,-33.5938 0,-18.5547 15.039,-33.5937 33.5937,-33.5937 18.5547,0 33.5938,15.039 33.5938,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path15"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2109.2969,1186.4453 c 0,18.5547 -15.0391,33.5938 -33.5938,33.5938 -18.5547,0 -33.5937,-15.0391 -33.5937,-33.5938 0,-18.5547 15.039,-33.5937 33.5937,-33.5937 18.5547,0 33.5938,15.039 33.5938,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path16"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2109.2969,1048.7891 c 0,18.5547 -15.0391,33.5937 -33.5938,33.5937 -18.5547,0 -33.5937,-15.039 -33.5937,-33.5937 0,-18.5547 15.039,-33.5938 33.5937,-33.5938 18.5547,0 33.5938,15.0391 33.5938,33.5938" transform="matrix(0.1,0,0,-0.1,0,210)" id="path17"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2109.2969,1659.8828 c 0,18.5547 -15.0391,33.5938 -33.5938,33.5938 -18.5547,0 -33.5937,-15.0391 -33.5937,-33.5938 0,-18.5547 15.039,-33.5937 33.5937,-33.5937 18.5547,0 33.5938,15.039 33.5938,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path18"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2109.2969,1659.8828 c 0,18.5547 -15.0391,33.5938 -33.5938,33.5938 -18.5547,0 -33.5937,-15.0391 -33.5937,-33.5938 0,-18.5547 15.039,-33.5937 33.5937,-33.5937 18.5547,0 33.5938,15.039 33.5938,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path19"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2253.7891,1659.8828 c 0,18.5547 -15.0391,33.5938 -33.5938,33.5938 -18.5547,0 -33.5937,-15.0391 -33.5937,-33.5938 0,-18.5547 15.039,-33.5937 33.5937,-33.5937 18.5547,0 33.5938,15.039 33.5938,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path20"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2408.3984,1659.8828 c 0,18.5547 -15.0781,33.5938 -33.6328,33.5938 -18.5547,0 -33.5937,-15.0391 -33.5937,-33.5938 0,-18.5547 15.039,-33.5937 33.5937,-33.5937 18.5547,0 33.6328,15.039 33.6328,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path21"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2559.6094,1659.8828 c 0,18.5547 -15.0781,33.5938 -33.6328,33.5938 -18.5547,0 -33.5938,-15.0391 -33.5938,-33.5938 0,-18.5547 15.0391,-33.5937 33.5938,-33.5937 18.5547,0 33.6328,15.039 33.6328,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path22"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2690.6641,1659.8828 c 0,18.5547 -15.0391,33.5938 -33.6328,33.5938 -18.5547,0 -33.5938,-15.0391 -33.5938,-33.5938 0,-18.5547 15.0391,-33.5937 33.5938,-33.5937 18.5937,0 33.6328,15.039 33.6328,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path23"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2835.1563,1659.8828 c 0,18.5547 -15.0391,33.5938 -33.5938,33.5938 -18.5547,0 -33.5937,-15.0391 -33.5937,-33.5938 0,-18.5547 15.039,-33.5937 33.5937,-33.5937 18.5547,0 33.5938,15.039 33.5938,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path24"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2972.9297,1659.8828 c 0,18.5547 -15.0391,33.5938 -33.5938,33.5938 -18.5546,0 -33.6328,-15.0391 -33.6328,-33.5938 0,-18.5547 15.0782,-33.5937 33.6328,-33.5937 18.5547,0 33.5938,15.039 33.5938,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path25"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3127.5,1659.8828 c 0,18.5547 -15.0391,33.5938 -33.5937,33.5938 -18.5547,0 -33.5938,-15.0391 -33.5938,-33.5938 0,-18.5547 15.0391,-33.5937 33.5938,-33.5937 18.5546,0 33.5937,15.039 33.5937,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path26"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3261.9141,1659.8828 c 0,18.5547 -15.0391,33.5938 -33.5938,33.5938 -18.5547,0 -33.5937,-15.0391 -33.5937,-33.5938 0,-18.5547 15.039,-33.5937 33.5937,-33.5937 18.5547,0 33.5938,15.039 33.5938,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path27"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3409.8047,1659.8828 c 0,18.5547 -15.0781,33.5938 -33.6328,33.5938 -18.5547,0 -33.5938,-15.0391 -33.5938,-33.5938 0,-18.5547 15.0391,-33.5937 33.5938,-33.5937 18.5547,0 33.6328,15.039 33.6328,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path28"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3547.5781,1659.8828 c 0,18.5547 -15.039,33.5938 -33.6328,33.5938 -18.5547,0 -33.5937,-15.0391 -33.5937,-33.5938 0,-18.5547 15.039,-33.5937 33.5937,-33.5937 18.5938,0 33.6328,15.039 33.6328,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path29"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3681.9922,1659.8828 c 0,18.5547 -15.0781,33.5938 -33.5938,33.5938 -18.5937,0 -33.6328,-15.0391 -33.6328,-33.5938 0,-18.5547 15.0391,-33.5937 33.6328,-33.5937 18.5157,0 33.5938,15.039 33.5938,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path30"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3819.7656,1659.8828 c 0,18.5547 -15.039,33.5938 -33.5937,33.5938 -18.5547,0 -33.6328,-15.0391 -33.6328,-33.5938 0,-18.5547 15.0781,-33.5937 33.6328,-33.5937 18.5547,0 33.5937,15.039 33.5937,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path31"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3950.8203,1659.8828 c 0,18.5547 -15.039,33.5938 -33.5937,33.5938 -18.5938,0 -33.6328,-15.0391 -33.6328,-33.5938 0,-18.5547 15.039,-33.5937 33.6328,-33.5937 18.5547,0 33.5937,15.039 33.5937,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path32"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3950.8203,1659.8828 c 0,18.5547 -15.039,33.5938 -33.5937,33.5938 -18.5938,0 -33.6328,-15.0391 -33.6328,-33.5938 0,-18.5547 15.039,-33.5937 33.6328,-33.5937 18.5547,0 33.5937,15.039 33.5937,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path33"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2253.7891,901.05469 c 0,18.55468 -15.0391,33.59375 -33.5938,33.59375 -18.5547,0 -33.5937,-15.03907 -33.5937,-33.59375 0,-18.55469 15.039,-33.63282 33.5937,-33.63282 18.5547,0 33.5938,15.07813 33.5938,33.63282" transform="matrix(0.1,0,0,-0.1,0,210)" id="path34"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2408.3984,901.05469 c 0,18.55468 -15.0781,33.59375 -33.6328,33.59375 -18.5547,0 -33.5937,-15.03907 -33.5937,-33.59375 0,-18.55469 15.039,-33.63282 33.5937,-33.63282 18.5547,0 33.6328,15.07813 33.6328,33.63282" transform="matrix(0.1,0,0,-0.1,0,210)" id="path35"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2559.6094,901.05469 c 0,18.55468 -15.0781,33.59375 -33.6328,33.59375 -18.5547,0 -33.5938,-15.03907 -33.5938,-33.59375 0,-18.55469 15.0391,-33.63282 33.5938,-33.63282 18.5547,0 33.6328,15.07813 33.6328,33.63282" transform="matrix(0.1,0,0,-0.1,0,210)" id="path36"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2690.6641,901.05469 c 0,18.55468 -15.0391,33.59375 -33.6328,33.59375 -18.5547,0 -33.5938,-15.03907 -33.5938,-33.59375 0,-18.55469 15.0391,-33.63282 33.5938,-33.63282 18.5937,0 33.6328,15.07813 33.6328,33.63282" transform="matrix(0.1,0,0,-0.1,0,210)" id="path37"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2835.1563,901.05469 c 0,18.55468 -15.0391,33.59375 -33.5938,33.59375 -18.5547,0 -33.5937,-15.03907 -33.5937,-33.59375 0,-18.55469 15.039,-33.63282 33.5937,-33.63282 18.5547,0 33.5938,15.07813 33.5938,33.63282" transform="matrix(0.1,0,0,-0.1,0,210)" id="path38"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2972.9297,901.05469 c 0,18.55468 -15.0391,33.59375 -33.5938,33.59375 -18.5546,0 -33.6328,-15.03907 -33.6328,-33.59375 0,-18.55469 15.0782,-33.63282 33.6328,-33.63282 18.5547,0 33.5938,15.07813 33.5938,33.63282" transform="matrix(0.1,0,0,-0.1,0,210)" id="path39"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3127.5,901.05469 c 0,18.55468 -15.0391,33.59375 -33.5937,33.59375 -18.5547,0 -33.5938,-15.03907 -33.5938,-33.59375 0,-18.55469 15.0391,-33.63282 33.5938,-33.63282 18.5546,0 33.5937,15.07813 33.5937,33.63282" transform="matrix(0.1,0,0,-0.1,0,210)" id="path40"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3261.9141,901.05469 c 0,18.55468 -15.0391,33.59375 -33.5938,33.59375 -18.5547,0 -33.5937,-15.03907 -33.5937,-33.59375 0,-18.55469 15.039,-33.63282 33.5937,-33.63282 18.5547,0 33.5938,15.07813 33.5938,33.63282" transform="matrix(0.1,0,0,-0.1,0,210)" id="path41"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3409.8047,901.05469 c 0,18.55468 -15.0781,33.59375 -33.6328,33.59375 -18.5547,0 -33.5938,-15.03907 -33.5938,-33.59375 0,-18.55469 15.0391,-33.63282 33.5938,-33.63282 18.5547,0 33.6328,15.07813 33.6328,33.63282" transform="matrix(0.1,0,0,-0.1,0,210)" id="path42"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3547.5781,901.05469 c 0,18.55468 -15.039,33.59375 -33.6328,33.59375 -18.5547,0 -33.5937,-15.03907 -33.5937,-33.59375 0,-18.55469 15.039,-33.63282 33.5937,-33.63282 18.5938,0 33.6328,15.07813 33.6328,33.63282" transform="matrix(0.1,0,0,-0.1,0,210)" id="path43"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3681.9922,901.05469 c 0,18.55468 -15.0781,33.59375 -33.5938,33.59375 -18.5937,0 -33.6328,-15.03907 -33.6328,-33.59375 0,-18.55469 15.0391,-33.63282 33.6328,-33.63282 18.5157,0 33.5938,15.07813 33.5938,33.63282" transform="matrix(0.1,0,0,-0.1,0,210)" id="path44"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3819.7656,901.05469 c 0,18.55468 -15.039,33.59375 -33.5937,33.59375 -18.5547,0 -33.6328,-15.03907 -33.6328,-33.59375 0,-18.55469 15.0781,-33.63282 33.6328,-33.63282 18.5547,0 33.5937,15.07813 33.5937,33.63282" transform="matrix(0.1,0,0,-0.1,0,210)" id="path45"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3950.8203,901.05469 c 0,18.55468 -15.039,33.59375 -33.5937,33.59375 -18.5938,0 -33.6328,-15.03907 -33.6328,-33.59375 0,-18.55469 15.039,-33.63282 33.6328,-33.63282 18.5547,0 33.5937,15.07813 33.5937,33.63282" transform="matrix(0.1,0,0,-0.1,0,210)" id="path46"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2109.2969,904.41406 c 0,18.55469 -15.0391,33.59375 -33.5938,33.59375 -18.5547,0 -33.5937,-15.03906 -33.5937,-33.59375 0,-18.55469 15.039,-33.59375 33.5937,-33.59375 18.5547,0 33.5938,15.03906 33.5938,33.59375" transform="matrix(0.1,0,0,-0.1,0,210)" id="path47"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2109.2969,1186.4453 c 0,18.5547 -15.0391,33.5938 -33.5938,33.5938 -18.5547,0 -33.5937,-15.0391 -33.5937,-33.5938 0,-18.5547 15.039,-33.5937 33.5937,-33.5937 18.5547,0 33.5938,15.039 33.5938,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path48"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2109.2969,1048.7891 c 0,18.5547 -15.0391,33.5937 -33.5938,33.5937 -18.5547,0 -33.5937,-15.039 -33.5937,-33.5937 0,-18.5547 15.039,-33.5938 33.5937,-33.5938 18.5547,0 33.5938,15.0391 33.5938,33.5938" transform="matrix(0.1,0,0,-0.1,0,210)" id="path49"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 4095.3125,904.41406 c 0,18.55469 -15.0391,33.59375 -33.5937,33.59375 -18.5547,0 -33.5938,-15.03906 -33.5938,-33.59375 0,-18.55469 15.0391,-33.59375 33.5938,-33.59375 18.5546,0 33.5937,15.03906 33.5937,33.59375" transform="matrix(0.1,0,0,-0.1,0,210)" id="path50"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 4095.3125,1048.7891 c 0,18.5547 -15.0391,33.5937 -33.5937,33.5937 -18.5547,0 -33.5938,-15.039 -33.5938,-33.5937 0,-18.5547 15.0391,-33.5938 33.5938,-33.5938 18.5546,0 33.5937,15.0391 33.5937,33.5938" transform="matrix(0.1,0,0,-0.1,0,210)" id="path51"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2310.9375,1031.9922 h 1532.3438 v 483.5156 H 2310.9375 Z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path52"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2411.7578,1082.3438 h 225.1172 v 382.7734 h -225.1172 z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path53"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3508.9063,1082.3438 h 225.1562 v 382.7734 h -225.1562 z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path54"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3508.9063,1273.75 z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path55"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="M 2411.9922,1463.9844 H 2308.7891 V 1031.9922" transform="matrix(0.1,0,0,-0.1,0,210)" id="path56"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="M 2411.9922,1080 H 2308.7891" transform="matrix(0.1,0,0,-0.1,0,210)" id="path57"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3734.4141,1463.9844 h 107.9687" transform="matrix(0.1,0,0,-0.1,0,210)" id="path58"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3734.4141,1080 h 107.9687" transform="matrix(0.1,0,0,-0.1,0,210)" id="path59"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2683.9453,1082.3438 h 779.6094 v 376.0546 h -779.6094 z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path60"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2391.5625,1344.2578 c 0,18.5547 -15.0391,33.5938 -33.5937,33.5938 -18.5547,0 -33.5938,-15.0391 -33.5938,-33.5938 0,-18.5547 15.0391,-33.5937 33.5938,-33.5937 18.5546,0 33.5937,15.039 33.5937,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path61"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2391.5625,1186.4453 c 0,18.5547 -15.0391,33.5938 -33.5937,33.5938 -18.5547,0 -33.5938,-15.0391 -33.5938,-33.5938 0,-18.5547 15.0391,-33.5937 33.5938,-33.5937 18.5546,0 33.5937,15.039 33.5937,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path62"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2391.5625,1186.4453 c 0,18.5547 -15.0391,33.5938 -33.5937,33.5938 -18.5547,0 -33.5938,-15.0391 -33.5938,-33.5938 0,-18.5547 15.0391,-33.5937 33.5938,-33.5937 18.5546,0 33.5937,15.039 33.5937,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path63"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3819.7656,1344.2578 c 0,18.5547 -15.039,33.5938 -33.5937,33.5938 -18.5547,0 -33.6328,-15.0391 -33.6328,-33.5938 0,-18.5547 15.0781,-33.5937 33.6328,-33.5937 18.5547,0 33.5937,15.039 33.5937,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path64"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3819.7656,1186.4453 c 0,18.5547 -15.039,33.5938 -33.5937,33.5938 -18.5547,0 -33.6328,-15.0391 -33.6328,-33.5938 0,-18.5547 15.0781,-33.5937 33.6328,-33.5937 18.5547,0 33.5937,15.039 33.5937,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path65"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3819.7656,1186.4453 c 0,18.5547 -15.039,33.5938 -33.5937,33.5938 -18.5547,0 -33.6328,-15.0391 -33.6328,-33.5938 0,-18.5547 15.0781,-33.5937 33.6328,-33.5937 18.5547,0 33.5937,15.039 33.5937,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path66"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2683.9453,1408.0469 h 779.6094 z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path67"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2683.9453,1357.6953 h 779.6094 v 50.3516 h -779.6094 z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path68"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2683.9453,1082.3438 h 779.6094 v 50.3906 h -779.6094 z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path69"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2683.9453,1132.7344 h 779.6094 v 50.3515 h -779.6094 z m 0,0" transform="matrix(0.1,0,0,-0.1,0,210)" id="path70"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2732.0313,1382.8516 c 0,10.1562 -8.2422,18.3593 -18.3594,18.3593 -10.1172,0 -18.3594,-8.2031 -18.3594,-18.3593 0,-10.1172 8.2422,-18.3203 18.3594,-18.3203 10.1172,0 18.3594,8.2031 18.3594,18.3203" transform="matrix(0.1,0,0,-0.1,0,210)" id="path71"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2818.5156,1382.8516 c 0,10.1562 -8.2031,18.3593 -18.3593,18.3593 -10.1172,0 -18.3204,-8.2031 -18.3204,-18.3593 0,-10.1172 8.2032,-18.3203 18.3204,-18.3203 10.1562,0 18.3593,8.2031 18.3593,18.3203" transform="matrix(0.1,0,0,-0.1,0,210)" id="path72"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2920.7422,1382.8516 c 0,10.1562 -8.2031,18.3593 -18.3594,18.3593 -10.1172,0 -18.3594,-8.2031 -18.3594,-18.3593 0,-10.1172 8.2422,-18.3203 18.3594,-18.3203 10.1563,0 18.3594,8.2031 18.3594,18.3203" transform="matrix(0.1,0,0,-0.1,0,210)" id="path73"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3013.7891,1382.8516 c 0,10.1562 -8.2032,18.3593 -18.3594,18.3593 -10.1172,0 -18.3203,-8.2031 -18.3203,-18.3593 0,-10.1172 8.2031,-18.3203 18.3203,-18.3203 10.1562,0 18.3594,8.2031 18.3594,18.3203" transform="matrix(0.1,0,0,-0.1,0,210)" id="path74"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3109.4531,1382.8516 c 0,10.1562 -8.2031,18.3593 -18.3593,18.3593 -10.1172,0 -18.3204,-8.2031 -18.3204,-18.3593 0,-10.1172 8.2032,-18.3203 18.3204,-18.3203 10.1562,0 18.3593,8.2031 18.3593,18.3203" transform="matrix(0.1,0,0,-0.1,0,210)" id="path75"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3207.7344,1382.8516 c 0,10.1562 -8.2031,18.3593 -18.3203,18.3593 -10.1563,0 -18.3594,-8.2031 -18.3594,-18.3593 0,-10.1172 8.2031,-18.3203 18.3594,-18.3203 10.1172,0 18.3203,8.2031 18.3203,18.3203" transform="matrix(0.1,0,0,-0.1,0,210)" id="path76"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3309.9609,1382.8516 c 0,10.1562 -8.2031,18.3593 -18.3203,18.3593 -10.1562,0 -18.3593,-8.2031 -18.3593,-18.3593 0,-10.1172 8.2031,-18.3203 18.3593,-18.3203 10.1172,0 18.3203,8.2031 18.3203,18.3203" transform="matrix(0.1,0,0,-0.1,0,210)" id="path77"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3417.4219,1382.8516 c 0,10.1562 -8.2031,18.3593 -18.3203,18.3593 -10.1563,0 -18.3594,-8.2031 -18.3594,-18.3593 0,-10.1172 8.2031,-18.3203 18.3594,-18.3203 10.1172,0 18.3203,8.2031 18.3203,18.3203" transform="matrix(0.1,0,0,-0.1,0,210)" id="path78"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2732.0313,1156.3281 c 0,10.1172 -8.2422,18.3594 -18.3594,18.3594 -10.1172,0 -18.3594,-8.2422 -18.3594,-18.3594 0,-10.1172 8.2422,-18.3593 18.3594,-18.3593 10.1172,0 18.3594,8.2421 18.3594,18.3593" transform="matrix(0.1,0,0,-0.1,0,210)" id="path79"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2818.5156,1156.3281 c 0,10.1172 -8.2031,18.3594 -18.3593,18.3594 -10.1172,0 -18.3204,-8.2422 -18.3204,-18.3594 0,-10.1172 8.2032,-18.3593 18.3204,-18.3593 10.1562,0 18.3593,8.2421 18.3593,18.3593" transform="matrix(0.1,0,0,-0.1,0,210)" id="path80"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 2920.7422,1156.3281 c 0,10.1172 -8.2031,18.3594 -18.3594,18.3594 -10.1172,0 -18.3594,-8.2422 -18.3594,-18.3594 0,-10.1172 8.2422,-18.3593 18.3594,-18.3593 10.1563,0 18.3594,8.2421 18.3594,18.3593" transform="matrix(0.1,0,0,-0.1,0,210)" id="path81"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3013.7891,1156.3281 c 0,10.1172 -8.2032,18.3594 -18.3594,18.3594 -10.1172,0 -18.3203,-8.2422 -18.3203,-18.3594 0,-10.1172 8.2031,-18.3593 18.3203,-18.3593 10.1562,0 18.3594,8.2421 18.3594,18.3593" transform="matrix(0.1,0,0,-0.1,0,210)" id="path82"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3109.4531,1156.3281 c 0,10.1172 -8.2031,18.3594 -18.3593,18.3594 -10.1172,0 -18.3204,-8.2422 -18.3204,-18.3594 0,-10.1172 8.2032,-18.3593 18.3204,-18.3593 10.1562,0 18.3593,8.2421 18.3593,18.3593" transform="matrix(0.1,0,0,-0.1,0,210)" id="path83"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3207.7344,1156.3281 c 0,10.1172 -8.2031,18.3594 -18.3203,18.3594 -10.1563,0 -18.3594,-8.2422 -18.3594,-18.3594 0,-10.1172 8.2031,-18.3593 18.3594,-18.3593 10.1172,0 18.3203,8.2421 18.3203,18.3593" transform="matrix(0.1,0,0,-0.1,0,210)" id="path84"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3309.9609,1156.3281 c 0,10.1172 -8.2031,18.3594 -18.3203,18.3594 -10.1562,0 -18.3593,-8.2422 -18.3593,-18.3594 0,-10.1172 8.2031,-18.3593 18.3593,-18.3593 10.1172,0 18.3203,8.2421 18.3203,18.3593" transform="matrix(0.1,0,0,-0.1,0,210)" id="path85"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 3417.4219,1156.3281 c 0,10.1172 -8.2031,18.3594 -18.3203,18.3594 -10.1563,0 -18.3594,-8.2422 -18.3594,-18.3594 0,-10.1172 8.2031,-18.3593 18.3594,-18.3593 10.1172,0 18.3203,8.2421 18.3203,18.3593" transform="matrix(0.1,0,0,-0.1,0,210)" id="path86"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 4094.4531,1344.2578 c 0,18.5547 -15.039,33.5938 -33.5937,33.5938 -18.5547,0 -33.5938,-15.0391 -33.5938,-33.5938 0,-18.5547 15.0391,-33.5937 33.5938,-33.5937 18.5547,0 33.5937,15.039 33.5937,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path87"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 4094.4531,1186.4453 c 0,18.5547 -15.039,33.5938 -33.5937,33.5938 -18.5547,0 -33.5938,-15.0391 -33.5938,-33.5938 0,-18.5547 15.0391,-33.5937 33.5938,-33.5937 18.5547,0 33.5937,15.039 33.5937,33.5937" transform="matrix(0.1,0,0,-0.1,0,210)" id="path88"/>
+                            <path style="fill:#ffffff;stroke:#000000;stroke-width:1.2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-opacity:1" d="m 4091.9531,1519.2969 c 0,18.5547 -15.039,33.5937 -33.5937,33.5937 -18.5547,0 -33.5938,-15.039 -33.5938,-33.5937 0,-18.5547 15.0391,-33.6328 33.5938,-33.6328 18.5547,0 33.5937,15.0781 33.5937,33.6328" transform="matrix(0.1,0,0,-0.1,0,210)" id="path89"/>
+                        </g>
+                        
+                        <!-- INTERACTIVE ROOMS -->
+                        <g id="opistodomo" class="room">
+                            <rect class="stanza stanza-sinistra" x="90.100" y="61.200" width="22.548" height="38.256"/>
+                        </g>
+                        
+                        <g id="cella" class="room">
+                            <rect class="stanza stanza-centrale" x="117.500" y="61.900" width="77.793" height="37.586"/>
+                        </g>
+                        
+                        <g id="pronaos" class="room">
+                            <rect class="stanza stanza-destra" x="200" y="61.350" width="22.552" height="38.256"/>
+                        </g>
+                        
+                        <!-- ARTWORKS AND CONNECTION LINES -->
+                        <g id="layer1" transform="translate(-148.7869,-2.8312054)">
+                            <!-- Connection Lines -->
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.45969629;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 282.5933,101.61938 c -51.14376,50.72128 -50.42356,50.54091 -50.42356,50.54091" id="path92-79"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.485129;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 291.75119,102.35139 c -20.25055,46.75884 -19.96538,46.59255 -19.96538,46.59255" id="path92-79-4"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.45969629;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 301.23882,102.33822 c 10.28492,46.27321 10.14007,46.10866 10.14007,46.10866" id="path92-79-2"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.45969629;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 310.76472,102.27666 c 42.77391,46.31354 42.17162,46.14884 42.17162,46.14884" id="path92-79-5"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.429643;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 320.59256,101.98288 c 65.27261,50.8644 64.35345,50.68352 64.35345,50.68352" id="path92-79-1"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.457002;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 332.81513,102.2673 c 95.95533,38.41006 94.6041,38.27347 94.6041,38.27347" id="path92-79-27"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.471039;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 271.48094,101.93925 c -69.89438,37.82513 -68.91012,37.69061 -68.91012,37.69061" id="path92-79-42"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.459036;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 247.88585,95.577328 c -78.61384,31.943852 -77.5068,31.830252 -77.5068,31.830252" id="path92-79-21"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.538753;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 360.05157,95.599855 c 101.12055,34.208285 99.69657,34.086655 99.69657,34.086655" id="path92-79-57"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.491815;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="M 459.14365,53.155201 C 358.86412,71.41225 360.27623,71.347327 360.27623,71.347327" id="path92-79-8"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.449816;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="M 423.72114,31.198806 C 331.43913,65.141368 332.73863,65.020665 332.73863,65.020665" id="path92-79-7"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.478651;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="M 385.42306,23.152316 C 320.13635,64.974419 321.05572,64.825697 321.05572,64.825697" id="path92-79-43"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.429455;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 351.38698,24.808937 c -42.15167,41.153754 -41.5581,41.007408 -41.5581,41.007408" id="path92-79-3"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.455082;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="M 313.91808,26.830659 C 301.165,65.120267 301.34458,64.984107 301.34458,64.984107" id="path92-79-11"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.47575555;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 269.23647,25.95824 c 23.15336,39.041678 22.82732,38.902844 22.82732,38.902844" id="path92-79-74"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.410931;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 233.96013,24.815928 c 49.43787,40.706999 48.74171,40.562244 48.74171,40.562244" id="path92-79-79"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.45166666;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 194.37339,25.525124 c 77.92524,39.732773 76.82791,39.59148 76.82791,39.59148" id="path92-79-9"/>
+                            <path style="fill:#280303;fill-opacity:1;stroke:#000000;stroke-width:0.45166666;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" d="m 161.71057,51.167021 c 88.32932,20.810288 87.08547,20.736286 87.08547,20.736286" id="path92-79-50" transform="translate(-2.2303303e-6)"/>
+                            
+                            <!-- Interactive Artwork Images -->
+                            <image width="32.893398" height="25.027918" preserveAspectRatio="none" xlink:href="imgs/maschera_comica.jpg" id="image1-2" class="immagine-opera" x="365.35278" y="-12.677665" mask="url(#mask3)" transform="translate(13.401015,15.532995)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('maschera-comica', event)"/>
+                            <image width="34.451771" height="37.969593" preserveAspectRatio="none" xlink:href="imgs/apollo_e_dafne.jpg" id="image1-88" class="immagine-opera" x="204.73224" y="148.48979" mask="url(#mask99)" transform="translate(13.705584,-2.7411167)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('apollo-dafne', event)"/>
+                            <image width="33.411167" height="51.667011" preserveAspectRatio="none" xlink:href="imgs/bacco_statue.jpg" id="image1-57" class="immagine-opera" x="449.40991" y="37.908867" mask="url(#mask108)" transform="translate(5.4822335,-1.8274112)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('bacco-statue', event)"/>
+                            <image width="71.461563" height="48.242851" preserveAspectRatio="none" xlink:href="imgs/apollo_e_le_muse.jpg" id="image1-6" class="immagine-opera" x="317.20703" y="135.61331" mask="url(#mask96)" transform="matrix(1,0,0,1.0059751,-41.42132,-0.26865917)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('apollo-muse', event)"/>
+                            <image width="61.888317" height="43.751278" preserveAspectRatio="none" xlink:href="imgs/bach.png" id="image1-84" class="immagine-opera" x="233.56978" y="140.39085" mask="url(#mask97)" transform="translate(6.3959364,-1.8274111)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('bach', event)"/>
+                            <image width="51.167519" height="34.115456" preserveAspectRatio="none" xlink:href="imgs/Fedro.jpeg" id="image1-8" class="immagine-opera" x="396.48734" y="129.77094" mask="url(#mask2)" transform="translate(21.319793,-0.30456853)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('fedro', event)"/>
+                            <image width="40.815441" height="30.974619" preserveAspectRatio="none" xlink:href="imgs/maschera_tragica.jpg" id="image1-5" class="immagine-opera" x="391.47171" y="168.45686" mask="url(#mask4)" transform="translate(-14.619285,-23.756345)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('maschera-tragica', event)"/>
+                            <image width="61.68269" height="38.999992" preserveAspectRatio="none" xlink:href="imgs/cittàideale.jpg" id="image1-59" class="immagine-opera" x="137.43919" y="146.58601" mask="url(#mask101)" transform="translate(28.020306,-17.360406)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('citta-ideale', event)"/>
+                            <image width="38.593155" height="40.963226" preserveAspectRatio="none" xlink:href="imgs/coppadionisio.jpg" id="image1-42" class="immagine-opera" x="132.36607" y="100.71704" mask="url(#mask105)" transform="translate(10.050763,14.619289)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('coppadionisio', event)"/>
+                            <image width="27.1803" height="34.30172" preserveAspectRatio="none" xlink:href="imgs/Apollo_of_the_Belvedere.jpg" id="image1" class="immagine-opera" x="457.8356" y="113.30186" transform="matrix(0.99979321,0.02033574,-0.01988079,0.99980239,0.60913801,0.91370555)" mask="url(#mask106)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('apollo-belvedere', event)"/>
+                            <image width="35.344574" height="50.168507" preserveAspectRatio="none" xlink:href="imgs/pacioli.png" id="image1-1" class="immagine-opera" x="342.83405" y="144.58707" mask="url(#mask107)" transform="matrix(1.0608696,0,0,1.0173467,-22.391023,0.53756712)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('pacioli', event)"/>
+                            <image width="28.697971" height="35.813446" preserveAspectRatio="none" xlink:href="imgs/Simposio.jpg" id="image1-9" class="immagine-opera" x="408.60529" y="5.3851542" mask="url(#mask1)" transform="translate(12.487309,8.8324873)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('simposio', event)"/>
+                            <image width="41.272686" height="37.742111" preserveAspectRatio="none" xlink:href="imgs/baccanti.jpg" id="image1-17" class="immagine-opera" x="330.27609" y="-6.1401038" mask="url(#mask5)" transform="translate(4.5685308,1.2182741)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('baccanti', event)"/>
+                            <image width="38.492596" height="40.397987" preserveAspectRatio="none" xlink:href="imgs/caravaggio.jpg" id="image1-0" class="immagine-opera" x="297.97705" y="-3.1317301" mask="url(#mask95)" transform="matrix(1.060241,0,0,1.025641,-22.629812,1.7805545)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('caravaggio', event)"/>
+                            <image width="44.999977" height="37.983696" preserveAspectRatio="none" xlink:href="imgs/wagner.jpg" id="image1-63" class="immagine-opera" x="240.76888" y="0.58837265" mask="url(#mask98)" transform="translate(-2.2303303e-6,1.8274112)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('wagner', event)"/>
+                            <image width="30.76903" height="38.657364" preserveAspectRatio="none" xlink:href="imgs/lorenzo.png" id="image1-94" class="immagine-opera" x="222.47971" y="-0.030458197" mask="url(#mask109)" transform="matrix(1.0128069,0,0,1,-1.9452553,0.30456855)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('lorenzo', event)"/>
+                            <image width="44.633976" height="35.360435" preserveAspectRatio="none" xlink:href="imgs/cittàchesale.jpg" id="image1-61" class="immagine-opera" x="152.37437" y="8.4019871" mask="url(#mask104)" transform="translate(30.152285,-1.5228427)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('citta-chesale', event)"/>
+                            <image width="44.795532" height="35.078529" preserveAspectRatio="none" xlink:href="imgs/kylix.jpg" id="image1-4" class="immagine-opera" x="127.34439" y="38.935986" mask="url(#mask103)" transform="translate(11.878169,-6.7005073)" onmouseover="ingrandisciImmagine(this)" onmouseout="riduciImmagine(this)" onclick="mostraPopupOpera('kylix', event)"/>
+                            
+                            <!-- Connection Points -->
+                            <rect style="fill:#F4C430;stroke:#000000;stroke-width:0.238024" id="rect109-8-6" width="3.1346831" height="2.1349409" x="280.26913" y="100.18417"/>
+                            <rect style="fill:#F4C430;stroke:#000000;stroke-width:0.238024" id="rect109-8-9" width="3.1346831" height="2.1349409" x="290.33734" y="100.23801"/>
+                            <rect style="fill:#F4C430;stroke:#000000;stroke-width:0.238024" id="rect109-8-95" width="3.1346831" height="2.1349409" x="299.7056" y="100.18417"/>
+                            <rect style="fill:#F4C430;stroke:#000000;stroke-width:0.238024" id="rect109-8-1" width="3.1346831" height="2.1349409" x="309.24023" y="100.18417"/>
+                            <rect style="fill:#F4C430;stroke:#000000;stroke-width:0.238024" id="rect109-8-3" width="3.1346831" height="2.1349409" x="319.37088" y="100.18417"/>
+                            <rect style="fill:#F4C430;stroke:#000000;stroke-width:0.238024" id="rect109-8-13" width="3.1346831" height="2.1349409" x="329.87198" y="100.23801"/>
+                            <rect style="fill:#F4C430;stroke:#000000;stroke-width:0.238024" id="rect109-8-4" width="3.1346831" height="2.1349409" x="357.3779" y="93.663429"/>
+                            <rect style="fill:#F4C430;stroke:#000000;stroke-width:0.238024" id="rect109-8" width="3.1346831" height="2.1349409" x="270.82925" y="100.11418"/>
+                            <rect style="fill:#F4C430;stroke:#000000;stroke-width:0.238024" id="rect109-8-7" width="3.1346831" height="2.1349409" x="247.34871" y="93.731956"/>
+                            <rect style="fill:#641527;stroke:#000000;stroke-width:0.238024" id="rect109-50" width="3.1346831" height="2.1349409" x="357.33447" y="71.193695"/>
+                            <rect style="fill:#641527;stroke:#000000;stroke-width:0.238024" id="rect109-22" width="3.1346831" height="2.1349409" x="330.04855" y="64.898651"/>
+                            <rect style="fill:#641527;stroke:#000000;stroke-width:0.238024" id="rect109-4" width="3.1346831" height="2.1349409" x="319.57495" y="64.898651"/>
+                            <rect style="fill:#641527;stroke:#000000;stroke-width:0.238024" id="rect109-1" width="3.1346831" height="2.1349409" x="299.97104" y="64.84481"/>
+                            <rect style="fill:#641527;stroke:#000000;stroke-width:0.238024" id="rect109-5" width="3.1346831" height="2.1349409" x="290.49509" y="64.84481"/>
+                            <rect style="fill:#641527;stroke:#000000;stroke-width:0.238024" id="rect109-27" width="3.1346831" height="2.1349409" x="309.39908" y="64.79097"/>
+                            <rect style="fill:#641527;stroke:#000000;stroke-width:0.238024" id="rect109-2" width="3.1346831" height="2.1349409" x="280.48071" y="64.898651"/>
+                            <rect style="fill:#641527;stroke:#000000;stroke-width:0.238024" id="rect109" width="3.1346831" height="2.1349409" x="270.82593" y="64.884796"/>
+                            <rect style="fill:#641527;stroke:#000000;stroke-width:0.238024" id="rect109-19" width="3.1346831" height="2.1349409" x="247.12219" y="71.457428"/>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    </section>
+
+    <section id="explanationbox">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-11 col-md-10 col-sm-10">
+                    <p class="museum-dropcap-text">
+                        Beneath the whispers of the Oracle, the Temple of Apollo at Delphi exhumes its secrets to host a clash that defies time. The artworks lie hidden within the sacred core, unfolding through the shadows of the <strong>pronaos</strong>, the mystery of the <strong>cella</strong>, and the silence of the <strong>opisthodomos</strong>.
+                        
+                        Here, the icy order of the <strong>Apollonian</strong> and the wild ecstasy of the <strong>Dionysian</strong> stand face-to-face in an eternal duel, confronting each other from opposite sides of the ancient halls. As these rival souls challenge one another in the gloom, the very stones seem to vibrate with the pulse of the gods.<br><br>
+                        
+                        The journey is yours to command: <strong>click on the rooms</strong> to unveil their ancestral secrets and <strong>touch the artworks</strong> to trigger revelations and claim your deeper knowledge of this divine struggle.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="map-info">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-11 col-md-10 col-sm-10">
+                    <h3 class="visit-title">COME TO VISIT US…</h3>
+                    <p class="visit-paragraph">
+                        Discover our unique exhibition: visit us in Delphi for an immersive journey you won't want to miss!
+                    </p>
+                    
+                    <div class="map-carousel-wrapper">
+                        
+                        <!-- MAPPA -->
+                        <div class="content-box map-box">
+                            <iframe 
+                                id="map-iframe"
+                                src="https://www.openstreetmap.org/export/embed.html?bbox=22.496888%2C38.479893%2C22.506888%2C38.484893&amp;layer=mapnik&amp;marker=38.482393%2C22.501888"
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                        
+                        <!-- CAROSELLO CROSSFADE -->
+                        <div class="content-box carousel-box">
+                            <div id="museumcarouselThemeImages" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2000">
+                                
+                                <div class="carousel-inner">
+                                    <div class="carousel-item active">
+                                        <img src="imgs/maschera_comica.jpg" class="d-block w-100" alt="Delphi archaeological site">
+                                        <div class="carousel-caption">
+                                            <h5>Discover the history</h5>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="carousel-item">
+                                        <img src="imgs/Fedro.jpeg" class="d-block w-100" alt="Phocis region">
+                                        <div class="carousel-caption">
+                                            <h5>Learn what you don't know yet</h5>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="carousel-item">
+                                        <img src="imgs/cittàideale.jpg" class="d-block w-100" alt="Masters">
+                                        <div class="carousel-caption">
+                                            <h5>Meet great masters</h5>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="carousel-item">
+                                        <img src="imgs/wagner.jpg" class="d-block w-100" alt="Time travel">
+                                        <div class="carousel-caption">
+                                            <h5>Approach different art forms</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Controlli -->
+                                <button class="carousel-control-prev" type="button" data-bs-target="#museumcarouselThemeImages" data-bs-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#museumcarouselThemeImages" data-bs-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="visually-hidden">Next</span>
+                                </button>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="comments-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-11 col-md-10 col-sm-10">
+                    
+                    <h3 class="visit-title">LEAVE A COMMENT...</h3>
+                    <p class="visit-paragraph">
+                        Tell us what this exhibition means to you. Your comment will appear below.
+                    </p>
+
+                    <div class="comment-box">
+                        <textarea id="commentInput" placeholder="Write your comment here..."></textarea>
+                        <button onclick="addComment()">Submit</button>
+                    </div>
+
+                    <div id="commentsList"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Footer section-->
+    <footer>
+        <div class="footer container">
+            <div class="row" id="footer">
+                <div class="col info">
+                    <h4><b>Free Entry</b></h4>
+                    <p>Diagon Alley 18, London</p>
+                    <h4><b>Box Office</b></h4>
+                    <p>+11 2233445566</p>
+                    <h4><b>Opening Hours</b></h4>
+                    <p>Daily: 00.00–24.00 (Fridays: 23:30)<br>Last entry: Anytime (Fridays: 23:29)</p>
+                </div>
+                <div class="col about" style="line-height: 2.5">
+                    <h4><b>About</b></h4>
+                    <a href="URL">The Museum</a><br>
+                    <a href="narratives/index.html">The Narratives</a><br>
+                    <a href="URL">The Themes</a><br>
+                    <a href="URL">The Team</a><br>
+                    <a href="About\Documentation.html">The Documentation</a><br>
+                    <a href="About\Disclaimer.html">Disclaimer</a>
+                </div>
+                <div class="col exam">
+                    <h4 style="text-align: left;"><b>The Project</b></h4>
+                    <p>This project was created for the <a
+                            href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2024/454464"><i>Information
+                                Modeling and Web Technologies</i></a> exam (2024/2025)
+                        at the University
+                        of Bologna, taught by <a href="https://www.unibo.it/sitoweb/fabio.vitali">Fabio Vitali</a> in
+                        the Master’s program in <a
+                            href="https://corsi.unibo.it/2cycle/DigitalHumanitiesKnowledge"><i>Digital Humanities and
+                                Digital Knowledge</i></a>. All museum information is
+                        fictional.</p>
+                    <p><b> Alma Mater Studiorum <br>Università di Bologna <br>
+                            Via Zamboni 34 <br>
+                            40126 BO Bologna </b></p>
+                </div>
+            </div>
+            <div class="row rights">
+                <p style="text-align: center;">All the images and resources taken from external sources are solely used
+                    for study purposes. No
+                    commercial use is intended.<br>
+                    <i>Tyrsos & Lyre</i> © 2025
+                </p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Popup and Overlay -->
+    <div id="rooms-popup" class="rooms-popup">
+        <button class="close-btn" onclick="closePopup()">&times;</button>
+        <div id="rooms-popup-content"></div>
+    </div>
+
+    <div id="artworks-popup" class="artworks-popup">
+        <button class="close-btn" onclick="closePopup()">&times;</button>
+        <div id="artworks-popup-content"></div>
+    </div>
+
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Popup Content Templates - ROOMS -->
+    <div id="popup-content-pronaos" class="popup-content" style="display:none;">
+        <h3 class="room-title">Pronaos</h3>
+        <p class="room-description">The Pronaos was the entrance hall of the temple, a porticoed space preceding the main cella. Here visitors could pause before accessing the most sacred part of the temple. This area was often decorated with inscriptions and votive offerings, and represented the transitional point between the external world and the sacred space of the temple.</p>
+    </div>
+
+    <div id="popup-content-cella" class="popup-content" style="display:none;">
+        <h3 class="room-title">Cella</h3>
+        <p class="room-description">The Cella was the heart of the temple, the most sacred space where the statue of the deity was kept. Only priests could access it to perform religious rites. In this space, the most important ceremonies took place and the temple's treasures were stored, including precious offerings and ritual objects.</p>
+    </div>
+
+    <div id="popup-content-opistodomo" class="popup-content" style="display:none;">
+        <h3 class="room-title">Opisthodomos</h3>
+        <p class="room-description">The Opisthodomos was the rear hall of the temple, symmetrical to the pronaos. This area was used to store sacred objects and temple treasures. Unlike the pronaos, the opisthodomos was not accessible to the public and represented the most reserved area of the temple complex.</p>
+    </div>
+
+    <!-- Popup Content Templates - ARTWORKS -->
+    <div id="popup-content-apollo-belvedere" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Apollo of the Belvedere</h3>
+        <div class="artwork-container">
+            <img src="imgs/Apollo_of_the_Belvedere.jpg" class="artwork-image apollo-image" alt="Statue of Apollo of the Belvedere">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Roman statue copy after a Greek bronze original</p>
+                <p><strong>Creation date:</strong> II century AD</p>
+                <p><strong>Current location:</strong> Musei Vaticani, Rome</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-bacco-statue" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Michelangelo's Bacco</h3>
+        <div class="artwork-container">
+            <img src="imgs/bacco_statue.jpg" class="artwork-image bacco-image" alt="Statue of Bacchus by Michelangelo">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Buonarroti Michelangelo</p>
+                <p><strong>Creation date:</strong> 	1496–1497</p>
+                <p><strong>Current location:</strong> Museo Nazionale del Bargello, Florence</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-simposio" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Plato's Symposium</h3>
+        <div class="artwork-container">
+            <img src="imgs/Simposio.jpg" class="artwork-image" alt="Plato's Symposium fragment">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Plato</p>
+                <p><strong>Creation date:</strong> 2nd–3rd century AD</p>
+                <p><strong>Current location:</strong> Cairo Museum</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-fedro" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Plato's Phaedrus</h3>
+        <div class="artwork-container">
+            <img src="imgs/Fedro.jpeg" class="artwork-image" alt="Plato's Phaedrus fragment">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Plato</p>
+                <p><strong>Creation date:</strong> Roman period</p>
+                <p><strong>Current location:</strong> Toledo Museum of Art</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-maschera-comica" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Comic Mask</h3>
+        <div class="artwork-container">
+            <img src="imgs/maschera_comica.jpg" class="artwork-image" alt="Comic Mask from Magna Grecia">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Unknown</p>
+                <p><strong>Creation date:</strong> II-I century BC</p>
+                <p><strong>Current location:</strong> MArTA - Museo Archeologico Nazionale di Taranto</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-maschera-tragica" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Tragic Mask</h3>
+        <div class="artwork-container">
+            <img src="imgs/maschera_tragica.jpg" class="artwork-image" alt="Greek Tragic Mask">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Unknown</p>
+                <p><strong>Creation date:</strong> I century BC</p>
+                <p><strong>Current location:</strong> Museo Nazionale Etrusco di Villa Giulia - Rome</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-baccanti" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Euripides' Bacchae</h3>
+        <div class="artwork-container">
+            <img src="imgs/baccanti.jpg" class="artwork-image" alt="The Bacchae manuscript fragment">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Euripides</p>
+                <p><strong>Creation date:</strong> Unknown</p>
+                <p><strong>Current location:</strong> Berkeley Library, University of California</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-caravaggio" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Caravaggio's Bacco</h3>
+        <div class="artwork-container">
+            <img src="imgs/caravaggio.jpg" class="artwork-image caravaggio-image" alt="Caravaggio's Bacco painting">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Merisi Michelangelo</p>
+                <p><strong>Creation date:</strong> 1571/1610</p>
+                <p><strong>Current location:</strong> Uffizi Gallery, Florence</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-apollo-muse" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Apollo and the Muses</h3>
+        <div class="artwork-container">
+            <img src="imgs/apollo_e_le_muse.jpg" class="artwork-image" alt="Apollo and the Muses by Poussin">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Nicolas Poussin</p>
+                <p><strong>Creation date:</strong> 1626–1628</p>
+                <p><strong>Current location:</strong> Getty Museum Collection</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-bach" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">The Well-Tempered Clavier</h3>
+        <div class="artwork-container">
+            <img src="imgs/bach.png" class="artwork-image" alt="The Well-Tempered Clavier's score">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Bach, Johann Sebastian</p>
+                <p><strong>Creation date:</strong> mid-18th century</p>
+                <p><strong>Current location:</strong> Berlin State Library – Prussian Cultural Heritage Foundation</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-wagner" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Tristan and Isolde</h3>
+        <div class="artwork-container">
+            <img src="imgs/wagner.jpg" class="artwork-image" alt="Tristan and Isolde's score">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Wagner, Richard</p>
+                <p><strong>Creation date:</strong> 1850 - 1859</p>
+                <p><strong>Current location:</strong> The New York Public Library, Music Division</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-apollo-dafne" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Apollo and Daphne</h3>
+        <div class="artwork-container">
+            <img src="imgs/apollo_e_dafne.jpg" class="artwork-image apoldaf-image" alt="Apollo and Daphne by Bernini">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Gian Lorenzo Bernini</p>
+                <p><strong>Creation date:</strong> 1622–1625</p>
+                <p><strong>Current location:</strong> Galleria Borghese Rome</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-citta-ideale" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">The ideal city</h3>
+        <div class="artwork-container">
+            <img src="imgs/cittàideale.jpg" class="artwork-image" alt="Ideal City painting">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Anonymous</p>
+                <p><strong>Creation date:</strong> 1480–1490</p>
+                <p><strong>Current location:</strong> Galleria Nazionale delle Marche - Urbino</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-kylix" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Kylix with Apollo</h3>
+        <div class="artwork-container">
+            <img src="imgs/kylix.jpg" class="artwork-image" alt="Greek Kylix">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Attic red-figure painters</p>
+                <p><strong>Creation date:</strong> 480–470 BC</p>
+                <p><strong>Current location:</strong> British Museum London</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-citta-chesale" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">La città che sale</h3>
+        <div class="artwork-container">
+            <img src="imgs/cittàchesale.jpg" class="artwork-image" alt="Città che sale painting">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Boccioni Umberto</p>
+                <p><strong>Creation date:</strong> 	1910</p>
+                <p><strong>Current location:</strong> Museum of Modern Art (MoMA)</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-coppadionisio" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Dionysus' goblet</h3>
+        <div class="artwork-container">
+            <img src="imgs/coppadionisio.jpg" class="artwork-image" alt="Dionysian cup">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Exekias</p>
+                <p><strong>Creation date:</strong> 	540–530 BC</p>
+                <p><strong>Current location:</strong> Staatliche Antikensammlungen Munich</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-pacioli" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">De Divina Proportione</h3>
+        <div class="artwork-container">
+            <img src="imgs/pacioli.png" class="artwork-image pacioli-image" alt="Luca Pacioli's work">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Pacioli Luca</p>
+                <p><strong>Creation date:</strong> 	/</p>
+                <p><strong>Current location:</strong> /</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-lorenzo" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Il Trionfo di Bacco e d'Arianna</h3>
+        <div class="artwork-container">
+            <img src="imgs/lorenzo.png" class="artwork-image arianna-image" alt="Il Trionfo di Bacco e d'Arianna">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Lorenzo de' Medici</p>
+                <p><strong>Creation date:</strong> 	1490</p>
+                <p><strong>Current location:</strong> Various libraries</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="scriptsilviajs.js"></script>
+</body>
+</html>

@@ -879,6 +879,44 @@ footer .footer .col {
     END NARRATIVES ------ Mari
    ========================================================================================== */
 
+/* =========================
+   EXHIBITION – GALLERY CARDS - Mari
+   ========================= */
+
+.exhibition-card{
+  background: var(--bg);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(184,173,167,0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.exhibition-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+.exhibition-thumb{
+  padding: 14px;
+  background: rgba(0,0,0,0.08);
+}
+
+.exhibition-thumb img{
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+}
+
+.exhibition-body{
+  padding: 14px 16px 16px;
+}
+
+
+/* ==========================================================================================
+    END EXHIBITION ------ Mari
+   ==========================================================================================
+ 
 
 /* ==========================================================================================
     MUSEUM ------ Silvia

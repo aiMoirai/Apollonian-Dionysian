@@ -912,6 +912,41 @@ footer .footer .col {
   padding: 14px 16px 16px;
 }
 
+/* ===== popup artworks ===== */
+
+/* Click to view link */
+.click-to-view {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.click-to-view:hover {
+  color: var(--yellow);
+}
+
+/* Thumbnail zoom cursor */
+.artwork-thumb {
+  cursor: zoom-in;
+}
+
+/* Modal image */
+.modal-artwork-img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.btn-close {
+  --bs-btn-close-color: var(--text);
+  --bs-btn-close-opacity: 1;
+}
 
 /* ==========================================================================================
     END EXHIBITION ------ Mari

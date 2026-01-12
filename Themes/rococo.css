@@ -9,7 +9,7 @@
         rgba(255, 235, 245, 0.55),   
         rgba(225, 235, 245, 0.6)     
     ),
-    url('bacco_rococo.png');
+    url('imgs/bacco_rococo.png');
 
     --bg: #FCEAF1;          
     --blackbg: #F4DDE8;    
@@ -130,7 +130,7 @@ a {
     /* IMMAGINE DI SFONDO*/
     background-image: 
         linear-gradient(rgba(247, 225, 235, 0.5), rgba(247, 225, 235, 0.5)),
-        url("rococo_navbar.png");
+        url("imgs/rococo_navbar.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -325,7 +325,7 @@ a {
     background-color: var(--yellow);
     max-width: 80vw;
     max-height: 25vw;
-    border-image: url("rococo_navbar.png") 30 round; 
+    border-image: url("imgs/rococo_navbar.png") 30 round; 
 
 }
 
@@ -339,7 +339,7 @@ a {
     padding: 1rem;
     background-color: var(--textred);
     border: 12px solid;
-    border-image: url("rococo_navbar.png") 30 round; /* round = ripete l’immagine */
+    border-image: url("imgs/rococo_navbar.png") 30 round; /* round = ripete l’immagine */
     max-width: 80vw;
     max-height: 25vw;
 }
@@ -448,11 +448,10 @@ a {
     border-radius: var(--modal-border-radius);
     background-color: var(--modal-bg);
     border: 12px solid; /* spessore del bordo */
-    border-style: solid; /* necessario per border-image */
-    border-image-source: url("rococo_navbar.png"); /* immagine ornamentale */
-    border-image-slice: 30; /* quanta parte dell’immagine usare */
-    border-image-width: 12; /* pari allo spessore del bordo */
-    border-image-repeat: round; /* ripeti lungo tutto il bordo */
+    border-image-source: url("imgs/rococo_navbar.png"); /* immagine ornamentale */
+    border-image-slice: 30; 
+    border-image-width: 12; 
+    border-image-repeat: round; 
 }
 
 .modal-header,
@@ -589,7 +588,7 @@ select {
             rgba(224, 164, 176, 0.9),  
             rgba(224, 164, 176, 0.9)
         ),
-        url('rococo_rose.png') !important;
+        url('imgs/rococo_rose.png') !important;
     background-size: cover !important;
     background-position: center !important;
 }
@@ -663,7 +662,7 @@ footer .footer .col {
 .narratives-hero-img {
     margin-top: 2rem;
     border: 12px solid;
-    border-image: url("rococo_narr.png") 30 round; /* round = ripete l’immagine */
+    border-image: url("imgs/rococo_narr.png") 30 round; /* round = ripete l’immagine */
     max-height: 320px;
     width: 80%;
     object-fit: cover;
@@ -686,7 +685,7 @@ footer .footer .col {
 .narrative-card {
     background: var(--bg);
     border: 12px solid;
-    border-image: url("rococo_narr.png") 30 round; /* round = ripete l’immagine */
+    border-image: url("imgs/rococo_narr.png") 30 round; /* round = ripete l’immagine */
     padding: 1.5rem;
     height: 100%;
 }
@@ -736,7 +735,7 @@ footer .footer .col {
             rgba(224, 164, 176, 0.9),  
             rgba(224, 164, 176, 0.9)  
         ),
-        url('rococo_rose.png') !important;
+        url('imgs/rococo_rose.png') !important;
     background-size: cover !important;
     background-position: center !important;
     box-shadow: 0 4px 12px rgba(180, 90, 106, 0.3);
@@ -782,7 +781,7 @@ footer .footer .col {
 .artwork-card {
     background: var(--bg) !important;
     border: 12px solid !important;
-    border-image: url("rococo_exhib.png") 30 round !important; /* Bordo color textred */
+    border-image: url("imgs/rococo_exhib.png") 30 round !important; /* Bordo color textred */
 }
 
 .desc-short,
@@ -918,7 +917,7 @@ footer .footer .col {
   border-radius: 16px;
   overflow: hidden;
   border: 12px solid;
-  border-image: url(rococo_border.png);
+  border-image: url("imgs/rococo_border.png");
   transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -1106,7 +1105,7 @@ footer .footer .col {
     overflow: hidden;
     position: relative;
     border: 12px solid;
-    border-image: url("rococo_mus.png") 30 round;
+    border-image: url("imgs/rococo_mus.png") 30 round;
 }
 
 /* RESPONSIVE */
@@ -1269,7 +1268,7 @@ footer .footer .col {
     min-height: clamp(80px, 15vh, 120px);
     background-color: rgba(0,0,0,0.3);
     border: 10px solid;
-    border-image: url(rococo_mus.png) 30 round;
+    border-image: url("imgs/rococo_mus.png") 30 round;
     color: var(--text);
     font-family: var(--general_font);
     font-size: clamp(0.95rem, 1.2vw, 1.1rem);
@@ -1321,7 +1320,7 @@ footer .footer .col {
             rgba(224, 164, 176, 0.9),  
             rgba(224, 164, 176, 0.9)
         ),
-        url('rococo_rose.png') !important;
+        url('imgs/rococo_rose.png') !important;
     background-size: cover !important;
     background-position: center !important;
     border-color: var(--textred);
@@ -1341,7 +1340,7 @@ footer .footer .col {
     font-size: clamp(1rem, 1.2vw, 1.1rem);
     text-align: center;
     border: 3px solid;
-    border-image: url(rococo_letter.png) 30 round;
+    border-image: url("imgs/rococo_letter.png") 30 round;
 }
 
 /* ========== POPUP ROOMS ========== */
@@ -1358,7 +1357,7 @@ footer .footer .col {
     max-width: min(500px, 90vw);
     width: min(90%, 500px);
     border: 12px solid;
-    border-image: url("rococo_exhib.png") 30 round;
+    border-image: url("imgs/rococo_exhib.png") 30 round;
     max-height: min(80vh, 600px);
     overflow-y: auto;
     scroll-behavior: smooth;
@@ -1397,7 +1396,7 @@ footer .footer .col {
     max-width: min(600px, 95vw);
     width: min(90%, 600px);
     border: 12px solid;
-    border-image: url("rococo_narr.png") 30 round;
+    border-image: url("imgs/rococo_narr.png") 30 round;
     max-height: min(80vh, 650px);
     overflow-y: auto;
     scroll-behavior: smooth;
@@ -1598,4 +1597,5 @@ footer .footer .col {
         font-size: 1.4rem;
     }
 }
+
 

@@ -64,6 +64,7 @@ body.lightmode {
     --modal-bg: rgba(175, 162, 146, 0.90);
     --modal-header-border-color: var(--textred);
     --modal-header-border-width: 3px;
+    --btn-close-filter: invert(0);
 }
 
 html,

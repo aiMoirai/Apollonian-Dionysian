@@ -880,8 +880,10 @@ footer .footer .col {
    ========================================================================================== */
 
 /* =========================
-   EXHIBITION – GALLERY CARDS - Mari
+   EXHIBITION ------ Mari
    ========================= */
+
+/* GALLERY CARDS */
 
 .exhibition-card{
   background: var(--bg);
@@ -912,9 +914,7 @@ footer .footer .col {
   padding: 14px 16px 16px;
 }
 
-/* ===== popup artworks ===== */
-
-/* Click to view link */
+/* Click to view */
 .click-to-view {
   display: inline-block;
   margin-top: 0.5rem;
@@ -928,12 +928,22 @@ footer .footer .col {
   color: var(--yellow);
 }
 
-/* Thumbnail zoom cursor */
+/* clickable thumbs */
 .artwork-thumb {
   cursor: zoom-in;
 }
 
-/* Modal image */
+/* modal box style */
+.modal-artwork-content {
+  background: var(--bg);
+  border: 3px solid var(--text);
+}
+
+#imageModal .modal-header {
+  border-bottom: 1px solid var(--text);
+}
+
+/* image in modal */
 .modal-artwork-img {
   width: 100%;
   height: auto;
@@ -943,10 +953,83 @@ footer .footer .col {
   margin: 0 auto;
 }
 
-.btn-close {
-  --bs-btn-close-color: var(--text);
-  --bs-btn-close-opacity: 1;
+/* right column text tuning */
+.modal-artwork-text {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text);
+  max-height: 78vh;
+  overflow-y: auto;
+  padding-left: 0.25rem;
+  padding-right: 2rem;
 }
+
+/* section label (Description) */
+.modal-section-title {
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+/* remove blue focus ring on close button (only this modal) */
+#imageModal .btn-close:focus,
+#imageModal .btn-close:active {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Wrap text around the modal image */
+#imageModal .modal-body {
+  padding: 1rem;           
+}
+
+#imageModal .modal-artwork-img.modal-float-left{
+  float: left;
+
+  width: auto;
+  max-width: 52%;       
+  max-height: 80vh;     
+
+  margin: 0 1.25rem 0.75rem 0;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+}
+
+#imageModal .modal-artwork-img.is-large.modal-float-left{
+  max-width: 55%;
+  max-height: 70vh;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#imageModal .modal-artwork-copy {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* Important: clear float at the end so layout non si rompe */
+#imageModal .modal-body::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+@media (max-width: 991.98px) {
+  #imageModal .modal-float-left {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1rem 0;
+  }
+}
+
+
 
 /* ==========================================================================================
     END EXHIBITION ------ Mari

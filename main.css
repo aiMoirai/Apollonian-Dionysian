@@ -1085,14 +1085,14 @@ footer .footer .col {
 }
 
 .museum-dropcap-text strong {
-    color: #641527;
+    color: var(--textred);
 }
 
 .museum-dropcap-text::first-letter {
     float: left;
     font-size: clamp(5em, 12vw, 7em);
     line-height: 0.7;
-    color: #641527;
+    color: var(--textred);
     padding: 0.08em 0.12em 0 0;
 }
 

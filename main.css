@@ -46,6 +46,7 @@
 
 }
 
+
 body.lightmode {
     --bgimg: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(230, 220, 205, 0.9)), url('imgs/apollo_e_le_muse.jpg');
     --bg: #F3E9DA;
@@ -676,7 +677,6 @@ footer .footer .col {
     margin-bottom: 120px;
 }
 
-
 .narratives-hero-img {
     margin-top: 2rem;
     border: var(--border);
@@ -686,7 +686,6 @@ footer .footer .col {
     object-fit: cover;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
-
 
 .narratives-grid {
     margin-top: -7rem !important;
@@ -764,6 +763,24 @@ footer .footer .col {
     font-size: 0.95em;
 }
 
+/* Title + back row on narrative detail pages (apollo/literature/...) */
+.narrative-head{
+    display:flex;
+    align-items:center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Margin */
+.narrative-page-header{
+  margin-top: 0.5rem; 
+}
+
+/* Footer helpers (remove inline styles) */
+.footer-about{ line-height: 2.5; }
+.footer-project-title{ text-align: left; }
+.footer-rights{ text-align: center; }
+
 @media (max-width: 600px) {
     .theme-switch {
         width: 60px;
@@ -786,14 +803,42 @@ footer .footer .col {
     }
 }
 
-/* =========================
-   ARTWORKS
-   ========================= */
+/* ==========================================================================================
+   ARTWORKS (Narratives detail pages: Apollo / Dionysus / Literature / ...)
+   ========================================================================================== */
 
-.artwork-card {
+.artwork-card{
     background: var(--bg) !important;
+    color: var(--text);
+    border: 2px solid rgba(184, 173, 167, 0.35);
+    border-radius: 16px;
+    padding: 1.5rem;
 }
 
+/* Theme variants (use these instead of inline border colors) */
+.artwork-card--apollonian{ border-color: var(--yellow); }
+.artwork-card--dionysian{ border-color: var(--textred); }
+
+/* Two-column layout helpers (left image+accordion, right text) */
+.artwork-left{ width: 400px; }
+.artwork-right{ max-width: 520px; }
+
+@media (max-width: 991.98px){
+    .artwork-left{ width: 100%; }
+    .artwork-right{ max-width: 100%; }
+}
+
+/* Thumbnails inside carousel items */
+.artwork-thumb{ cursor: zoom-in; }
+
+.artwork-img{
+    max-height: 320px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Descriptions */
 .desc-short,
 .desc-long {
     font-size: 1.2rem;
@@ -803,11 +848,61 @@ footer .footer .col {
     padding-right: 0.5rem;
 }
 
-/* =========================
-   ARTWORK ACCORDION (Apollo/Dionysus pages)
-   ========================= */
+/* More-detail buttons (apollonian/dionysian variants) */
+.btn-theme{
+    border-width: 1px;
+}
+.btn-theme--apollonian{
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--bg);
+}
+.btn-theme--dionysian{
+    background: var(--textred);
+    border-color: var(--textred);
+    color: var(--text);
+}
 
-/* Accordion container: keep it "invisible" on bg */
+/* Dionysian: colore testo diverso SOLO in light mode */
+body.lightmode .btn-theme--dionysian{
+    color: var(--bg); 
+}
+
+/* evita che Bootstrap lo cambi in hover/focus */
+body.lightmode .btn-theme--dionysian:hover,
+body.lightmode .btn-theme--dionysian:focus{
+    color: var(--yellow);
+}
+
+/* Click to view link */
+.click-to-view {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.click-to-view:hover { color: var(--yellow); }
+
+/* Audio player styling */
+.narratives-audio{
+    width: 100%;
+    margin-top: 0.5rem;
+    filter: grayscale(1);
+    opacity: 0.9;
+}
+
+/* Back to narratives */
+.back-to-narratives{
+  margin-left: auto;
+  margin-right: 4rem; 
+}
+
+/* ==========================================================================================
+   ARTWORK ACCORDION
+   ========================================================================================== */
+
 .artwork-accordion {
     --bs-accordion-bg: transparent;
     --bs-accordion-border-color: rgba(184, 173, 167, 0.25);
@@ -826,7 +921,6 @@ footer .footer .col {
     --bs-accordion-body-padding-y: 0.75rem;
 }
 
-/* Button look */
 .artwork-accordion .accordion-button {
     font-family: var(--general_font);
     letter-spacing: 0.2px;
@@ -837,28 +931,22 @@ footer .footer .col {
 .artwork-accordion .accordion-button:focus {
     box-shadow: none !important;
     border-color: rgba(244, 196, 48, 0.45);
-    /* yellow glow */
 }
 
-/* "+" / chevron color (bootstrap uses SVG mask) */
 .artwork-accordion .accordion-button::after {
     filter: invert(83%) sepia(7%) saturate(279%) hue-rotate(334deg) brightness(92%) contrast(89%);
-    /* approximates var(--text) */
 }
 
 .artwork-accordion .accordion-button:not(.collapsed)::after {
     filter: invert(82%) sepia(45%) saturate(990%) hue-rotate(358deg) brightness(103%) contrast(104%);
-    /* approximates var(--yellow) */
 }
 
-/* Body text smaller + compact (metadata) */
 .artwork-accordion .accordion-body {
     color: var(--text);
     font-size: 0.95rem;
     line-height: 1.35;
 }
 
-/* Links inside accordion */
 .artwork-accordion .accordion-body a {
     color: var(--linkred);
     text-decoration: underline;
@@ -868,10 +956,55 @@ footer .footer .col {
     color: var(--yellow);
 }
 
-/* Download link spacing */
 .meta-download-link {
     display: inline-block;
     margin-top: 0.25rem;
+}
+
+/* ==========================================================================================
+   MODAL
+   ========================================================================================== */
+
+#imageModal .modal-content{
+    background: var(--bg);
+    border: 3px solid rgba(184, 173, 167, 0.35);
+}
+#imageModal.apollonian .modal-content{ border-color: var(--yellow); }
+#imageModal.dionysian .modal-content{ border-color: var(--textred); }
+
+#imageModal .modal-header{
+    border-bottom: 1px solid rgba(184, 173, 167, 0.35);
+}
+
+/* Close button visibility: use a variable so light mode can override */
+body{
+    --btn-close-filter: invert(1);
+}
+body.light,
+body.light-mode,
+body[data-theme="light"],
+html[data-theme="light"]{
+    --btn-close-filter: none;
+}
+
+#imageModal .btn-close{
+    filter: var(--btn-close-filter);
+}
+
+#imageModal .btn-close:focus,
+#imageModal .btn-close:active {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Modal image */
+.modal-artwork-img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }
 
 
@@ -879,9 +1012,9 @@ footer .footer .col {
     END NARRATIVES ------ Mari
    ========================================================================================== */
 
-/* =========================
+/* ==========================================================================================
    EXHIBITION ------ Mari
-   ========================= */
+   ========================================================================================== */
 
 /* GALLERY CARDS */
 

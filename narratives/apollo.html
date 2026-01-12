@@ -11,42 +11,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
   <title>Characters · Apollo</title>
-
-  <style>
-    /* Small helper for the "Click to view" link */
-    .click-to-view {
-      display: inline-block;
-      margin-top: 0.5rem;
-      font-size: 0.85rem;
-      color: var(--text);
-      text-decoration: underline;
-      cursor: pointer;
-    }
-
-    .click-to-view:hover {
-      color: var(--yellow);
-    }
-
-    /* Make the thumbnail feel clickable */
-    .artwork-thumb {
-      cursor: zoom-in;
-    }
-
-    /* Ensure modal image fits nicely */
-    .modal-artwork-img {
-      width: 100%;
-      height: auto;
-      max-height: 80vh;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-    }
-
-    audio {
-      filter: grayscale(1);
-      opacity: 0.9;
-    }
-  </style>
 </head>
 
 <body>
@@ -111,16 +75,18 @@
     </div>
   </nav>
 
+  <!-- Dark/light button -->
+  <div class="theme-switch">
+    <input type="checkbox" id="switch" />
+    <label for="switch"></label>
+  </div>
+
   <div class="container py-5" id="quote">
 
     <!-- Title + back -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="narrative-head mb-4 narrative-page-header">
       <h1 class="h4 mb-0 section-title">Characters: Apollo</h1>
-
-      <!-- robust link (same folder) -->
-      <a href="./index.html" class="btn btn-outline-secondary btn-sm">
-        ← Back to Narratives
-      </a>
+      <a href="./index.html" class="btn btn-outline-secondary btn-sm back-to-narratives">← Back to Narratives</a>
     </div>
 
     <!-- CAROUSEL -->
@@ -129,29 +95,31 @@
 
         <!-- ITEM 1 -->
         <div class="carousel-item active">
-          <div class="card artwork-card text-light border border-warning p-4"
-            style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card artwork-card--apollonian">
 
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
               <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <div class="d-flex flex-column align-items-center artwork-left">
 
                 <!-- IMAGE + CLICK TO VIEW -->
                 <div class="text-center">
-                  <img src="../imgs/Apollo_of_the_Belvedere.jpg" class="d-block artwork-thumb"
-                    alt="Apollo of the Belvedere" style="max-height:320px; width:auto; object-fit:contain;"
+                  <img src="../imgs/Apollo_of_the_Belvedere.jpg" class="d-block artwork-thumb artwork-img"
+                    alt="Apollo of the Belvedere"
                     data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/Apollo_of_the_Belvedere.jpg" data-title="Apollo of the Belvedere">
+                    data-fullsrc="../imgs/Apollo_of_the_Belvedere.jpg" data-title="Apollo of the Belvedere"
+                    data-theme="apollonian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/Apollo_of_the_Belvedere.jpg" data-title="Apollo of the Belvedere">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/Apollo_of_the_Belvedere.jpg" data-title="Apollo of the Belvedere"
+                    data-theme="apollonian">
                     Click to view
                   </span>
                 </div>
 
                 <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item1" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item1">
 
                   <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
@@ -208,7 +176,7 @@
               </div>
 
               <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
 
                 <h2 class="h4">Apollo of the Belvedere</h2>
 
@@ -242,7 +210,7 @@
                   thereby securing its place in the imagination of modern Europe.
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian" data-see-more="More detail"
                   data-see-less="Less detail">
                   More detail
                 </button>
@@ -253,35 +221,33 @@
           </div>
         </div>
 
-
         <!-- ITEM 2 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4"
-            style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card artwork-card--apollonian">
 
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <div class="d-flex flex-column align-items-center artwork-left">
 
-                <!-- IMAGE + CLICK TO VIEW -->
                 <div class="text-center">
-                  <img src="../imgs/Fedro.jpeg" class="d-block artwork-thumb"
+                  <img src="../imgs/Fedro.jpeg" class="d-block artwork-thumb artwork-img"
                     alt="Plato’s Phaedrus, Oxyrhynchus Papyrus Fragment"
-                    style="max-height:320px; max-width:400px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/Fedro.jpeg"
-                    data-title="Plato’s Phaedrus, Oxyrhynchus Papyrus Fragment">
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/Fedro.jpeg"
+                    data-title="Plato’s Phaedrus, Oxyrhynchus Papyrus Fragment"
+                    data-theme="apollonian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/Fedro.jpeg" data-title="Plato’s Phaedrus, Oxyrhynchus Papyrus Fragment">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/Fedro.jpeg"
+                    data-title="Plato’s Phaedrus, Oxyrhynchus Papyrus Fragment"
+                    data-theme="apollonian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item2" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item2">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item2-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -311,7 +277,6 @@
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item2-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -335,8 +300,7 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
 
                 <h2 class="h4">Plato’s Phaedrus, Oxyrhynchus Papyrus Fragment</h2>
 
@@ -364,7 +328,7 @@
                   aspiration toward form and intelligibility.
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian" data-see-more="More detail"
                   data-see-less="Less detail">
                   More detail
                 </button>
@@ -375,33 +339,29 @@
           </div>
         </div>
 
-
         <!-- ITEM 3 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4"
-            style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card artwork-card--apollonian">
 
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
-
-                <!-- IMAGE + CLICK TO VIEW -->
+              <div class="d-flex flex-column align-items-center artwork-left">
                 <div class="text-center">
-                  <img src="../imgs/maschera_tragica.jpg" class="d-block artwork-thumb" alt="Tragic mask"
-                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/maschera_tragica.jpg" data-title="Tragic mask">
+                  <img src="../imgs/maschera_tragica.jpg" class="d-block artwork-thumb artwork-img" alt="Tragic mask"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/maschera_tragica.jpg" data-title="Tragic mask"
+                    data-theme="apollonian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/maschera_tragica.jpg" data-title="Tragic mask">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/maschera_tragica.jpg" data-title="Tragic mask"
+                    data-theme="apollonian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item3" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item3">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item3-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -425,12 +385,10 @@
                             href="https://catalogo.beniculturali.it/detail/ArchaeologicalProperty/1200789636"
                             target="_blank">General Catalogue of Cultural Heritage</a><br>
                         </p>
-                        </p>
                       </div>
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item3-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -454,8 +412,7 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
 
                 <h2 class="h4">Tragic mask</h2>
 
@@ -484,7 +441,7 @@
                   of the public stage into private life.
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian" data-see-more="More detail"
                   data-see-less="Less detail">
                   More detail
                 </button>
@@ -495,35 +452,33 @@
           </div>
         </div>
 
-
         <!-- ITEM 4 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4"
-            style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card artwork-card--apollonian">
 
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <div class="d-flex flex-column align-items-center artwork-left">
 
-                <!-- IMAGE + CLICK TO VIEW -->
                 <div class="text-center">
-                  <img src="../imgs/pacioli.png" class="d-block artwork-thumb"
+                  <img src="../imgs/pacioli.png" class="d-block artwork-thumb artwork-img"
                     alt="De Divina Proportione by Luca Pacioli"
-                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/pacioli.png"
-                    data-title="De Divina Proportione by Luca Pacioli">
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/pacioli.png"
+                    data-title="De Divina Proportione by Luca Pacioli"
+                    data-theme="apollonian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/pacioli.png" data-title="De Divina Proportione by Luca Pacioli">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/pacioli.png"
+                    data-title="De Divina Proportione by Luca Pacioli"
+                    data-theme="apollonian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item4" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item4">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item4-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -553,7 +508,6 @@
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item4-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -577,8 +531,7 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
 
                 <h2 class="h4">De Divina Proportione by Luca Pacioli</h2>
 
@@ -634,7 +587,7 @@
                   historical collaboration between mathematicians and artists.
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian" data-see-more="More detail"
                   data-see-less="Less detail">
                   More detail
                 </button>
@@ -645,35 +598,33 @@
           </div>
         </div>
 
-
         <!-- ITEM 5 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4"
-            style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card artwork-card--apollonian">
 
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <div class="d-flex flex-column align-items-center artwork-left">
 
-                <!-- IMAGE + CLICK TO VIEW -->
                 <div class="text-center">
-                  <img src="../imgs/apollo_e_le_muse.jpg" class="d-block artwork-thumb"
+                  <img src="../imgs/apollo_e_le_muse.jpg" class="d-block artwork-thumb artwork-img"
                     alt="Apollo and the Muses on Mount Parnassus"
-                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/apollo_e_le_muse.jpg"
-                    data-title="Apollo and the Muses on Mount Parnassus">
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/apollo_e_le_muse.jpg"
+                    data-title="Apollo and the Muses on Mount Parnassus"
+                    data-theme="apollonian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/apollo_e_le_muse.jpg" data-title="Apollo and the Muses on Mount Parnassus">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/apollo_e_le_muse.jpg"
+                    data-title="Apollo and the Muses on Mount Parnassus"
+                    data-theme="apollonian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item5" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item5">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item5-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -689,25 +640,21 @@
                           <b>Title:</b> Apollo and the Muses<br>
                           <b>Attribution:</b> Nicolas Poussin (French, 1594 - 1665)<br>
                           <b>Type:</b> Drawing<br>
-                          <b>Materials and Techniques:</b> Pen and brown ink, brush with brown wash; small, irregular
-                          section at right margin added<br>
+                          <b>Materials and Techniques:</b> Pen and brown ink, brush with brown wash; small, irregular section at right margin added<br>
                           <b>Measurements:</b> Unframed: 17.6 × 24.6 cm (6 15/16 × 9 11/16 in.)<br>
                           <b>Current Location:</b> J. Paul Getty Museum<br>
                           <b>Creation Date:</b> about 1626–1628<br>
-                          <b>Online Location:</b> <a
-                            href="https://www.getty.edu/art/collection/object/103QW9#full-artwork-details"
+                          <b>Online Location:</b> <a href="https://www.getty.edu/art/collection/object/103QW9#full-artwork-details"
                             target="_blank">Getty Museum Collection</a><br>
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item5-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapse-item5-download" aria-expanded="false"
-                        aria-controls="collapse-item5-download">
+                        data-bs-target="#collapse-item5-download" aria-expanded="false" aria-controls="collapse-item5-download">
                         Download metadata
                       </button>
                     </h2>
@@ -715,8 +662,8 @@
                     <div id="collapse-item5-download" class="accordion-collapse collapse"
                       aria-labelledby="heading-item5-download" data-bs-parent="#accordion-item5">
                       <div class="accordion-body">
-                        <a class="text-decoration-underline meta-download-link" href="../csv_files/illustration.csv"
-                          download="Apollo_and_Muses.csv">
+                        <a class="text-decoration-underline meta-download-link"
+                          href="../csv_files/illustration.csv" download="Apollo_and_Muses.csv">
                           Download (CSV)
                         </a>
                       </div>
@@ -726,8 +673,7 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
 
                 <h2 class="h4">Apollo and the Muses on Mount Parnassus</h2>
 
@@ -740,24 +686,10 @@
                 </p>
 
                 <p class="desc-long mb-3 d-none">
-                  This drawing by Nicolas Poussin (French, 1594–1665) depicts an animated mythological scene in which
-                  the nine Muses, goddesses of poetic inspiration and the arts, surround Apollo, who is shown playing a
-                  <i>lira di braccio</i>. Homer and Virgil are present, gathered alongside the Castalian Spring, a
-                  legendary source of inspiration and learning. The spring flows through the center of the composition,
-                  while Mount Parnassus, celebrated for its beauty, forms the backdrop, creating a setting ideal for
-                  music and contemplation.<br>
-                  Poussin’s composition is full of movement, achieved both through the dynamic arrangement of figures
-                  and his lively drawing style. The design draws on an engraving by Marcantonio Raimondi after Raphael’s
-                  Parnassus fresco in the Vatican, though Poussin positions Apollo slightly left of center. The Muses
-                  are arranged in a semi-circular formation, leading the viewer’s eye around the scene and upward
-                  through the trees to the putti hovering in the sky.<br>
-                  The work combines soft washes with fine pen lines, creating a delicate interplay of light and shadow
-                  that imparts a sense of three-dimensionality and vitality. Though not currently on view, the drawing
-                  remains a remarkable example of Poussin’s engagement with classical mythology and his skill in
-                  translating grand, narrative compositions into lively, detailed works on paper.
+                  Nicolas Poussin’s drawing depicts Apollo playing a <i>lira di braccio</i>, surrounded by the nine Muses and figures like Homer and Virgil along the Castalian spring at Mount Parnassus. Inspired by Raphael’s Vatican fresco via Raimoni’s engraving, Apollo is placed slightly left of center, with the Muses arranged semi-circularly to guide the viewer’s eye. The combination of soft washes and fine pen lines creates a lively, three-dimensional sense of movement and depth.
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian" data-see-more="More detail"
                   data-see-less="Less detail">
                   More detail
                 </button>
@@ -768,34 +700,30 @@
           </div>
         </div>
 
-
         <!-- ITEM 6 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4"
-            style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card artwork-card--apollonian">
 
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <div class="d-flex flex-column align-items-center artwork-left">
 
-                <!-- IMAGE + CLICK TO VIEW -->
                 <div class="text-center">
-                  <img src="../imgs/bach.png" class="d-block artwork-thumb" alt="The Well-Tempered Clavier, BWV 846-893"
-                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/bach.png"
-                    data-title="The Well-Tempered Clavier, BWV 846-893">
+                  <img src="../imgs/bach.png" class="d-block artwork-thumb artwork-img" alt="The Well-Tempered Clavier, BWV 846-893"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/bach.png" data-title="The Well-Tempered Clavier, BWV 846-893"
+                    data-theme="apollonian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/bach.png" data-title="The Well-Tempered Clavier, BWV 846-893">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/bach.png" data-title="The Well-Tempered Clavier, BWV 846-893"
+                    data-theme="apollonian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item6" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item6">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item6-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -823,7 +751,6 @@
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item6-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -847,12 +774,10 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
 
                 <h2 class="h4">The Well-Tempered Clavier, BWV 846-893</h2>
 
-                <!-- SHORT DESCRIPTION -->
                 <div class="desc-short mb-3 small">
                   <p>
                     <i>The Well-Tempered Clavier</i> by Johann Sebastian Bach, first published in 1722 (Book I) and 1742
@@ -864,8 +789,7 @@
                     compositional process.
                   </p>
 
-                  <!-- AUDIO PLAYER (SHORT) -->
-                  <audio controls preload="none" style="width: 100%; margin-top: 0.5rem;">
+                  <audio class="narratives-audio" controls preload="none">
                     <source
                       src="music/J.S.Bach - The Well Tempered Clavier_ Book I_ Prelude and Fugue No.1 in C Major - Sviatoslav Richter.mp3"
                       type="audio/mpeg">
@@ -873,7 +797,6 @@
                   </audio>
                 </div>
 
-                <!-- LONG DESCRIPTION -->
                 <div class="desc-long mb-3 d-none">
                   <p>
                     This item is a handwritten manuscript copy of <i>Das Wohltemperierte Klavier</i> by Johann Sebastian
@@ -907,8 +830,7 @@
                     origin, though no specific copyist is identified.
                   </p>
 
-                  <!-- AUDIO PLAYER (LONG) -->
-                  <audio controls preload="none" style="width: 100%; margin-top: 0.5rem;">
+                  <audio class="narratives-audio" controls preload="none">
                     <source
                       src="music/J.S.Bach - The Well Tempered Clavier_ Book I_ Prelude and Fugue No.1 in C Major - Sviatoslav Richter.mp3"
                       type="audio/mpeg">
@@ -916,46 +838,41 @@
                   </audio>
                 </div>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian" data-see-more="More detail"
                   data-see-less="Less detail">
                   More detail
                 </button>
 
               </div>
 
-
             </div>
           </div>
         </div>
 
-
         <!-- ITEM 7 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4"
-            style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card artwork-card--apollonian">
 
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <div class="d-flex flex-column align-items-center artwork-left">
 
-                <!-- IMAGE + CLICK TO VIEW -->
                 <div class="text-center">
-                  <img src="../imgs/apollo_e_dafne.jpg" class="d-block artwork-thumb" alt="Apollo and Daphne"
-                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/apollo_e_dafne.jpg"
-                    data-title="Apollo and Daphne">
+                  <img src="../imgs/apollo_e_dafne.jpg" class="d-block artwork-thumb artwork-img" alt="Apollo and Daphne"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/apollo_e_dafne.jpg" data-title="Apollo and Daphne"
+                    data-theme="apollonian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/apollo_e_dafne.jpg" data-title="Apollo and Daphne">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/apollo_e_dafne.jpg" data-title="Apollo and Daphne"
+                    data-theme="apollonian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item7" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item7">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item7-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -983,7 +900,6 @@
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item7-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1007,8 +923,7 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
 
                 <h2 class="h4">Apollo and Daphne</h2>
 
@@ -1045,7 +960,7 @@
                   sensuality and transcendence.
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian" data-see-more="More detail"
                   data-see-less="Less detail">
                   More detail
                 </button>
@@ -1056,34 +971,29 @@
           </div>
         </div>
 
-
         <!-- ITEM 8 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4"
-            style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card artwork-card--apollonian">
 
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
-
-                <!-- IMAGE + CLICK TO VIEW -->
+              <div class="d-flex flex-column align-items-center artwork-left">
                 <div class="text-center">
-                  <img src="../imgs/cittaideale.jpg" class="d-block artwork-thumb" alt="The Ideal City of Urbino"
-                    style="max-height:320px; max-width:430px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/cittaideale.jpg"
-                    data-title="The Ideal City of Urbino">
+                  <img src="../imgs/cittaideale.jpg" class="d-block artwork-thumb artwork-img" alt="The Ideal City of Urbino"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/cittaideale.jpg" data-title="The Ideal City of Urbino"
+                    data-theme="apollonian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/cittaideale.jpg" data-title="The Ideal City of Urbino">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/cittaideale.jpg" data-title="The Ideal City of Urbino"
+                    data-theme="apollonian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item8" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item8">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item8-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1111,7 +1021,6 @@
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item8-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1135,8 +1044,7 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
                 <h2 class="h4">The Ideal City of Urbino</h2>
 
                 <p class="desc-short mb-3 small">
@@ -1161,7 +1069,7 @@
                   court to become a model of enlightened governance and aesthetic perfection.
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian" data-see-more="More detail"
                   data-see-less="Less detail">
                   More detail
                 </button>
@@ -1171,34 +1079,29 @@
           </div>
         </div>
 
-
         <!-- ITEM 9 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light border border-warning p-4"
-            style="min-height: 420px; border-width: 2px;">
+          <div class="card artwork-card artwork-card--apollonian">
 
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
-
-                <!-- IMAGE + CLICK TO VIEW -->
+              <div class="d-flex flex-column align-items-center artwork-left">
                 <div class="text-center">
-                  <img src="../imgs/kylix.jpg" class="d-block artwork-thumb" alt="Kylix with Apollo and kithara"
-                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/kylix.jpg"
-                    data-title="Kylix with Apollo and kithara">
+                  <img src="../imgs/kylix.jpg" class="d-block artwork-thumb artwork-img" alt="Kylix with Apollo and kithara"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/kylix.jpg" data-title="Kylix with Apollo and kithara"
+                    data-theme="apollonian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/kylix.jpg" data-title="Kylix with Apollo and kithara">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/kylix.jpg" data-title="Kylix with Apollo and kithara"
+                    data-theme="apollonian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item9" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item9">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item9-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1225,7 +1128,6 @@
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item9-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1249,8 +1151,7 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
                 <h2 class="h4">Kylix with Apollo and kithara</h2>
 
                 <p class="desc-short mb-3 small">
@@ -1286,7 +1187,7 @@
                   Below the handles a palmette. The exergue in the interior is left red.
                 </p>
 
-                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian" data-see-more="More detail"
                   data-see-less="Less detail">
                   More detail
                 </button>
@@ -1296,29 +1197,28 @@
           </div>
         </div>
 
-
-        <!-- ARROWS -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-
       </div>
+
+      <!-- ARROWS -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
     </div>
 
     <!-- Image Modal -->
     <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered modal-xl">
-        <div class="modal-content" style="background: var(--bg); border: 3px solid var(--yellow);">
-          <div class="modal-header" style="border-bottom: 1px solid rgba(184, 173, 167, 0.35);">
+        <div class="modal-content">
+          <div class="modal-header">
             <h5 class="modal-title section-title" id="imageModalTitle">Artwork</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-              style="filter: invert(1);"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <img id="imageModalImg" class="modal-artwork-img" src="" alt="">
@@ -1326,6 +1226,7 @@
         </div>
       </div>
     </div>
+
   </div>
 
   <!--Footer section-->
@@ -1340,7 +1241,7 @@
           <h4><b>Opening Hours</b></h4>
           <p>Daily: 00.00–24.00 (Fridays: 23:30)<br>Last entry: Anytime (Fridays: 23:29)</p>
         </div>
-        <div class="col about" style="line-height: 2.5;">
+        <div class="col about footer-about">
           <h4><b>About</b></h4>
           <a href="../the_museum.html">The Museum</a><br>
           <a href="/narratives/index.html">The Narratives</a><br>
@@ -1350,7 +1251,7 @@
           <a href="../About/Disclaimer.html">Disclaimer</a>
         </div>
         <div class="col exam">
-          <h4 style="text-align: left;"><b>The Project</b></h4>
+          <h4 class="footer-project-title"><b>The Project</b></h4>
           <p>This project was created for the <a
               href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2024/454464"><i>Information
                 Modeling and Web Technologies</i></a> exam (2024/2025)
@@ -1366,7 +1267,7 @@
         </div>
       </div>
       <div class="row rights">
-        <p style="text-align: center;">All the images and resources taken from external sources are solely used
+        <p class="footer-rights">All the images and resources taken from external sources are solely used
           for study purposes. No
           commercial use is intended.<br>
           <i>Tyrsos & Lyre</i> © 2025
@@ -1375,9 +1276,9 @@
     </div>
   </footer>
 
-
-
   <!-- JS -->
+  <script src="../scripts/common.js" defer></script>
+
   <script>
     // Toggle short/long description
     document.querySelectorAll('.js-toggle-desc').forEach(btn => {
@@ -1419,24 +1320,39 @@
     const modalTitle = document.getElementById('imageModalTitle');
 
     function openArtworkModalFrom(el) {
+      if (!imageModal || !modalImg || !modalTitle) return;
+
       const fullSrc = el.getAttribute('data-fullsrc');
       const title = el.getAttribute('data-title') || 'Artwork';
+      const theme = el.getAttribute('data-theme'); // "apollonian" | "dionysian"
+
       if (!fullSrc) return;
 
       modalImg.src = fullSrc;
       modalImg.alt = title;
       modalTitle.textContent = title;
+
+      // reset themes
+      imageModal.classList.remove('apollonian', 'dionysian');
+
+      // default to apollonian (yellow) if missing
+      if (theme === 'dionysian') {
+        imageModal.classList.add('dionysian');
+      } else {
+        imageModal.classList.add('apollonian');
+      }
     }
 
     document.querySelectorAll('[data-bs-target="#imageModal"]').forEach(el => {
       el.addEventListener('click', () => openArtworkModalFrom(el));
     });
 
-    // Clear image on close (optional, avoids flashing old image)
+    // Clear image on close
     imageModal.addEventListener('hidden.bs.modal', () => {
       modalImg.src = '';
       modalImg.alt = '';
       modalTitle.textContent = 'Artwork';
+      imageModal.classList.remove('apollonian', 'dionysian');
     });
   </script>
 

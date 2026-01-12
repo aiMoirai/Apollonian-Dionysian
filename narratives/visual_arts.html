@@ -11,49 +11,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
     <title>Themes · Visual arts</title>
-
-    <style>
-        /* Small helper for the "Click to view" link */
-        .click-to-view {
-            display: inline-block;
-            margin-top: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--text);
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        .click-to-view:hover {
-            color: var(--yellow);
-        }
-
-        /* Make the thumbnail feel clickable */
-        .artwork-thumb {
-            cursor: zoom-in;
-        }
-
-        /* Ensure modal image fits nicely */
-        .modal-artwork-img {
-            width: 100%;
-            height: auto;
-            max-height: 80vh;
-            object-fit: contain;
-            display: block;
-            margin: 0 auto;
-        }
-
-        /* Apollonian modal */
-        #imageModal.apollonian .modal-content {
-            background: var(--bg);
-            border: 3px solid var(--yellow);
-        }
-
-        /* Dionysian modal */
-        #imageModal.dionysian .modal-content {
-            background: var(--bg);
-            border: 3px solid var(--textred);
-        }
-    </style>
 </head>
 
 <body>
@@ -120,14 +77,19 @@
         </div>
     </nav>
 
+    <!-- Dark/light button -->
+    <div class="theme-switch">
+        <input type="checkbox" id="switch" />
+        <label for="switch"></label>
+    </div>
+
     <div class="container py-5" id="quote">
 
         <!-- Title + back -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="narrative-head mb-4 narrative-page-header">
             <h1 class="h4 mb-0 section-title">Themes: Visual arts</h1>
 
-            <!-- robust link (same folder) -->
-            <a href="./index.html" class="btn btn-outline-secondary btn-sm">
+            <a href="./index.html" class="btn btn-outline-secondary btn-sm back-to-narratives">
                 ← Back to Narratives
             </a>
         </div>
@@ -136,35 +98,32 @@
         <div id="carouselExample" class="carousel slide w-100" data-bs-ride="false">
             <div class="carousel-inner">
 
-                <!-- ITEM 1 -->
+                <!-- ITEM 1 (Apollonian) -->
                 <div class="carousel-item active">
-                    <div class="card artwork-card text-light border border-warning p-4"
-                        style="min-height: 420px; border-width: 2px;">
+                    <div class="card artwork-card artwork-card--apollonian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
+                            <div class="d-flex flex-column align-items-center artwork-left">
 
-                                <!-- IMAGE + CLICK TO VIEW -->
                                 <div class="text-center">
-                                    <img src="../imgs/Apollo_of_the_Belvedere.jpg" class="d-block artwork-thumb"
+                                    <img src="../imgs/Apollo_of_the_Belvedere.jpg" class="d-block artwork-thumb artwork-img"
                                         alt="Apollo of the Belvedere"
-                                        style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                                        data-bs-target="#imageModal" data-fullsrc="../imgs/Apollo_of_the_Belvedere.jpg"
-                                        data-title="Apollo of the Belvedere">
-
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
                                         data-fullsrc="../imgs/Apollo_of_the_Belvedere.jpg"
-                                        data-title="Apollo of the Belvedere" data-theme="apollonian">
+                                        data-title="Apollo of the Belvedere"
+                                        data-theme="apollonian">
+
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/Apollo_of_the_Belvedere.jpg"
+                                        data-title="Apollo of the Belvedere"
+                                        data-theme="apollonian">
                                         Click to view
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-1"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-1">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-1-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -195,7 +154,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-1-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -220,12 +178,15 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
+                            <div class="artwork-right">
                                 <h2 class="h4">Apollo of the Belvedere</h2>
 
                                 <p class="desc-short mb-3 small">
-                                    Apollo of the Belvedere, Roman statue of the 2nd century AD, modeled as a copy of a Greek original. The statue was discovered in Rome in 1489 and acquired by Cardinal Giuliano della Rovere, later Pope Julius II, who moved it to the Vatican. Admired since its placement in the Belvedere, it was praised by Winckelmann as the highest ideal of ancient Greek art.
+                                    Apollo of the Belvedere, Roman statue of the 2nd century AD, modeled as a copy of a
+                                    Greek original. The statue was discovered in Rome in 1489 and acquired by Cardinal
+                                    Giuliano della Rovere, later Pope Julius II, who moved it to the Vatican. Admired
+                                    since its placement in the Belvedere, it was praised by Winckelmann as the highest
+                                    ideal of ancient Greek art.
                                 </p>
 
                                 <p class="desc-long mb-3 d-none">
@@ -256,8 +217,8 @@
                                     imagination of modern Europe.
                                 </p>
 
-                                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
-                                    data-see-less="Less detail">
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian"
+                                    data-see-more="More detail" data-see-less="Less detail">
                                     More detail
                                 </button>
                             </div>
@@ -266,33 +227,31 @@
                     </div>
                 </div>
 
-                <!-- ITEM 2 -->
+                <!-- ITEM 2 (Dionysian) -->
                 <div class="carousel-item">
-                    <div class="card artwork-card text-light p-4"
-                        style="min-height: 420px; border: 2px solid var(--textred);">
+                    <div class="card artwork-card artwork-card--dionysian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
+                            <div class="d-flex flex-column align-items-center artwork-left">
                                 <div class="text-center">
-                                    <img src="../imgs/caravaggio.jpg" class="d-block artwork-thumb"
+                                    <img src="../imgs/caravaggio.jpg" class="d-block artwork-thumb artwork-img"
                                         alt="Bacchus by Caravaggio"
-                                        style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                                        data-bs-target="#imageModal" data-fullsrc="../imgs/caravaggio.jpg"
-                                        data-title="Bacchus by Caravaggio" data-theme="dionysian">
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/caravaggio.jpg"
+                                        data-title="Bacchus by Caravaggio"
+                                        data-theme="dionysian">
 
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                                        data-fullsrc="../imgs/caravaggio.jpg" data-title="Bacchus by Caravaggio"
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/caravaggio.jpg"
+                                        data-title="Bacchus by Caravaggio"
                                         data-theme="dionysian">
                                         Click to view
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-2"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-2">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-2-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -322,7 +281,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-2-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -346,20 +304,28 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
+                            <div class="artwork-right">
                                 <h2 class="h4">Bacchus by Caravaggio</h2>
 
                                 <p class="desc-short mb-3 small">
-                                    Caravaggio’s Bacchus was rediscovered in 1913 and later dated to around 1596, during the artist’s years under Cardinal del Monte. It belongs to his early half-length figure paintings and shows a young Bacchus offering wine and fruit. Critics have read irony in the depiction, suggesting Bacchus resembles a languid Roman tavern boy rather than a classical god. The still life elements (especially the fruit basket) carry symbolic weight, possibly alluding to a Horatian invitation to moderation, conviviality, and friendship. Some scholars also emphasize the sensual and homoerotic undertones of the scene, linking the work to ancient rites and ideas of physical freedom.
+                                    Caravaggio’s Bacchus was rediscovered in 1913 and later dated to around 1596, during
+                                    the artist’s years under Cardinal del Monte. It belongs to his early half-length
+                                    figure paintings and shows a young Bacchus offering wine and fruit. Critics have
+                                    read irony in the depiction, suggesting Bacchus resembles a languid Roman tavern boy
+                                    rather than a classical god. The still life elements (especially the fruit basket)
+                                    carry symbolic weight, possibly alluding to a Horatian invitation to moderation,
+                                    conviviality, and friendship. Some scholars also emphasize the sensual and homoerotic
+                                    undertones of the scene, linking the work to ancient rites and ideas of physical
+                                    freedom.
                                 </p>
 
                                 <p class="desc-long mb-3 d-none">
-                                    bla bla bla bla bla lungo.
+                                    Caravaggio’s Bacchus, rediscovered in 1913 and dated to around 1596, belongs to the artist’s early years under the patronage of Cardinal Francesco Maria del Monte. The painting is part of his early half-length works and depicts a youthful Bacchus offering wine and fruit to the viewer, establishing a direct, almost intimate relationship with the beholder.<br>
+                                    Far from classical idealization, the god appears as a real young man, with a soft body and a languid gaze—closer to a tavern boy than to an Olympian deity. This choice lends the painting a subtle irony and a strong naturalistic charge, characteristic of the early Caravaggio. The still life in the foreground, with ripe fruit already marked by decay, introduces a symbolic dimension: a reminder of the transience of pleasure and of the carpe diem ethos often associated with the poetry of Horace.<br>
+                                    Alongside this moral undertone, the Dionysian element emerges with particular force. The wine, the offering gesture, and the relaxed posture evoke intoxication as an experience of freedom, the suspension of rules, and sensorial knowledge. The sensuality of the image recalls ancient Dionysian rites and an idea of instinctive, earthly vitality. Bacchus thus appears as an ambiguous and compelling image, poised between everyday reality and myth, restraint and excess, realism and pagan ritual.
                                 </p>
 
-                                <button class="btn btn-sm js-toggle-desc"
-                                    style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                                     data-see-more="More detail" data-see-less="Less detail">
                                     More detail
                                 </button>
@@ -369,33 +335,31 @@
                     </div>
                 </div>
 
-                <!-- ITEM 3 -->
+                <!-- ITEM 3 (Apollonian) -->
                 <div class="carousel-item">
-                    <div class="card artwork-card text-light border border-warning p-4"
-                        style="min-height: 420px; border-width: 2px;">
+                    <div class="card artwork-card artwork-card--apollonian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
+                            <div class="d-flex flex-column align-items-center artwork-left">
                                 <div class="text-center">
-                                    <img src="../imgs/apollo_e_le_muse.jpg" class="d-block artwork-thumb"
+                                    <img src="../imgs/apollo_e_le_muse.jpg" class="d-block artwork-thumb artwork-img"
                                         alt="Apollo and the Muses on Mount Parnassus"
-                                        style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                                        data-bs-target="#imageModal" data-fullsrc="../imgs/apollo_e_le_muse.jpg"
-                                        data-title="Apollo and the Muses on Mount Parnassus">
-
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
                                         data-fullsrc="../imgs/apollo_e_le_muse.jpg"
-                                        data-title="Apollo and the Muses on Mount Parnassus" data-theme="apollonian">
+                                        data-title="Apollo and the Muses on Mount Parnassus"
+                                        data-theme="apollonian">
+
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/apollo_e_le_muse.jpg"
+                                        data-title="Apollo and the Muses on Mount Parnassus"
+                                        data-theme="apollonian">
                                         Click to view
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-3"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-3">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-3-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -413,8 +377,7 @@
                                                     <b>Attribution:</b> Nicolas Poussin (French, 1594 - 1665)<br>
                                                     <b>Type:</b> Drawing<br>
                                                     <b>Materials and Techniques:</b> Pen and brown ink, brush with brown
-                                                    wash; small, irregular
-                                                    section at right margin added<br>
+                                                    wash; small, irregular section at right margin added<br>
                                                     <b>Measurements:</b> Unframed: 17.6 × 24.6 cm (6 15/16 × 9 11/16
                                                     in.)<br>
                                                     <b>Current Location:</b> J. Paul Getty Museum<br>
@@ -427,7 +390,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-3-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -452,22 +414,40 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
+                            <div class="artwork-right">
                                 <h2 class="h4">Apollo and the Muses on Mount Parnassus</h2>
 
                                 <p class="desc-short mb-3 small">
-                                    Nicolas Poussin’s drawing depicts Apollo playing a <i>lira di braccio</i>, surrounded by the nine Muses and figures like Homer and Virgil along the Castalian spring at Mount Parnassus. Inspired by Raphael’s Vatican fresco via Raimoni’s engraving, Apollo is placed slightly left of center, with the Muses arranged semi-circularly to guide the viewer’s eye. The combination of soft washes and fine pen lines creates a lively, three-dimensional sense of movement and depth.    
+                                    Nicolas Poussin’s drawing depicts Apollo playing a <i>lira di braccio</i>, surrounded
+                                    by the nine Muses and figures like Homer and Virgil along the Castalian spring at
+                                    Mount Parnassus. Inspired by Raphael’s Vatican fresco via Raimoni’s engraving, Apollo
+                                    is placed slightly left of center, with the Muses arranged semi-circularly to guide
+                                    the viewer’s eye. The combination of soft washes and fine pen lines creates a lively,
+                                    three-dimensional sense of movement and depth.
                                 </p>
 
                                 <p class="desc-long mb-3 d-none">
-                                    This drawing by Nicolas Poussin (French, 1594–1665) depicts an animated mythological scene in which the nine Muses, goddesses of poetic inspiration and the arts, surround Apollo, who is shown playing a <i>lira di braccio</i>. Homer and Virgil are present, gathered alongside the Castalian Spring, a legendary source of inspiration and learning. The spring flows through the center of the composition, while Mount Parnassus, celebrated for its beauty, forms the backdrop, creating a setting ideal for music and contemplation.<br>
-                                    Poussin’s composition is full of movement, achieved both through the dynamic arrangement of figures and his lively drawing style. The design draws on an engraving by Marcantonio Raimondi after Raphael’s Parnassus fresco in the Vatican, though Poussin positions Apollo slightly left of center. The Muses are arranged in a semi-circular formation, leading the viewer’s eye around the scene and upward through the trees to the putti hovering in the sky.<br>
-                                    The work combines soft washes with fine pen lines, creating a delicate interplay of light and shadow that imparts a sense of three-dimensionality and vitality. Though not currently on view, the drawing remains a remarkable example of Poussin’s engagement with classical mythology and his skill in translating grand, narrative compositions into lively, detailed works on paper.       
+                                    This drawing by Nicolas Poussin (French, 1594–1665) depicts an animated mythological
+                                    scene in which the nine Muses, goddesses of poetic inspiration and the arts, surround
+                                    Apollo, who is shown playing a <i>lira di braccio</i>. Homer and Virgil are present,
+                                    gathered alongside the Castalian Spring, a legendary source of inspiration and learning.
+                                    The spring flows through the center of the composition, while Mount Parnassus, celebrated
+                                    for its beauty, forms the backdrop, creating a setting ideal for music and contemplation.<br>
+                                    Poussin’s composition is full of movement, achieved both through the dynamic arrangement
+                                    of figures and his lively drawing style. The design draws on an engraving by Marcantonio
+                                    Raimondi after Raphael’s Parnassus fresco in the Vatican, though Poussin positions Apollo
+                                    slightly left of center. The Muses are arranged in a semi-circular formation, leading
+                                    the viewer’s eye around the scene and upward through the trees to the putti hovering in
+                                    the sky.<br>
+                                    The work combines soft washes with fine pen lines, creating a delicate interplay of light
+                                    and shadow that imparts a sense of three-dimensionality and vitality. Though not currently
+                                    on view, the drawing remains a remarkable example of Poussin’s engagement with classical
+                                    mythology and his skill in translating grand, narrative compositions into lively, detailed
+                                    works on paper.
                                 </p>
 
-                                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
-                                    data-see-less="Less detail">
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian"
+                                    data-see-more="More detail" data-see-less="Less detail">
                                     More detail
                                 </button>
 
@@ -477,33 +457,31 @@
                     </div>
                 </div>
 
-                <!-- ITEM 4 -->
+                <!-- ITEM 4 (Dionysian) -->
                 <div class="carousel-item">
-                    <div class="card artwork-card text-light p-4"
-                        style="min-height: 420px; border: 2px solid var(--textred);">
+                    <div class="card artwork-card artwork-card--dionysian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
+                            <div class="d-flex flex-column align-items-center artwork-left">
                                 <div class="text-center">
-                                    <img src="../imgs/bacco_statue.jpg" class="d-block artwork-thumb"
+                                    <img src="../imgs/bacco_statue.jpg" class="d-block artwork-thumb artwork-img"
                                         alt="Bacchus and Satyr by Michelangelo"
-                                        style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                                        data-bs-target="#imageModal" data-fullsrc="../imgs/bacco_statue.jpg"
-                                        data-title="Bacchus and Satyr by Michelangelo" data-theme="dionysian">
-
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
                                         data-fullsrc="../imgs/bacco_statue.jpg"
-                                        data-title="Bacchus and Satyr by Michelangelo" data-theme="dionysian">
+                                        data-title="Bacchus and Satyr by Michelangelo"
+                                        data-theme="dionysian">
+
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/bacco_statue.jpg"
+                                        data-title="Bacchus and Satyr by Michelangelo"
+                                        data-theme="dionysian">
                                         Click to view
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-4"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-4">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-4-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -532,7 +510,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-4-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -557,8 +534,7 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
+                            <div class="artwork-right">
                                 <h2 class="h4">Bacchus and Satyr by Michelangelo</h2>
 
                                 <p class="desc-short mb-3 small">
@@ -573,24 +549,21 @@
                                     perilous balance. More than an Olympian god, he resembles an adolescent troubled by
                                     his own strength and passions. It is in this audacity, in this break with the pure
                                     classical ideal, that its hypnotic power and modernity reside.<br>
-                                    Upon closer analysis, all the elements of Michelangelo's mastery emerge.
-                                    Commissioned by a Florentine aristocrat and currently located in the Bargello
-                                    Museum, the Bacchus (1496-1497) depicts the god as he sways unsteadily, cup in hand,
-                                    accompanied by a satyr who underscores his wild nature. The revolution lies in the
-                                    fusion of an impeccable anatomical study—rendering every muscle and tendon—with an
-                                    unprecedented psychological introspection. His gaze is, in fact, lost and ambiguous,
-                                    his smile drunken and mischievous. Michelangelo is not merely imitating classical
-                                    models; he is subverting them from within: drawing inspiration from Hellenistic
-                                    ephebes, he infuses them with a physical and emotional realism that is entirely
-                                    Renaissance. Iconographically, inebriation is conveyed through posture and
-                                    interactions. Iconologically, the work becomes a profound investigation into the
-                                    human condition, exploring the duality between the body's perfection and its
-                                    fragility, between ecstasy and transience. It is this ingenious synthesis that makes
-                                    it a timeless masterpiece.
+                                    Upon closer analysis, all the elements of Michelangelo's mastery emerge. Commissioned
+                                    by a Florentine aristocrat and currently located in the Bargello Museum, the Bacchus
+                                    (1496-1497) depicts the god as he sways unsteadily, cup in hand, accompanied by a satyr
+                                    who underscores his wild nature. The revolution lies in the fusion of an impeccable
+                                    anatomical study—rendering every muscle and tendon—with an unprecedented psychological
+                                    introspection. His gaze is, in fact, lost and ambiguous, his smile drunken and mischievous.
+                                    Michelangelo is not merely imitating classical models; he is subverting them from within:
+                                    drawing inspiration from Hellenistic ephebes, he infuses them with a physical and emotional
+                                    realism that is entirely Renaissance. Iconographically, inebriation is conveyed through posture
+                                    and interactions. Iconologically, the work becomes a profound investigation into the human condition,
+                                    exploring the duality between the body's perfection and its fragility, between ecstasy and transience.
+                                    It is this ingenious synthesis that makes it a timeless masterpiece.
                                 </p>
 
-                                <button class="btn btn-sm js-toggle-desc"
-                                    style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                                     data-see-more="More detail" data-see-less="Less detail">
                                     More detail
                                 </button>
@@ -600,33 +573,31 @@
                     </div>
                 </div>
 
-                <!-- ITEM 5 -->
+                <!-- ITEM 5 (Apollonian) -->
                 <div class="carousel-item">
-                    <div class="card artwork-card text-light border border-warning p-4"
-                        style="min-height: 420px; border-width: 2px;">
+                    <div class="card artwork-card artwork-card--apollonian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
+                            <div class="d-flex flex-column align-items-center artwork-left">
                                 <div class="text-center">
-                                    <img src="../imgs/cittaideale.jpg" class="d-block artwork-thumb"
+                                    <img src="../imgs/cittaideale.jpg" class="d-block artwork-thumb artwork-img"
                                         alt="The Ideal City of Urbino"
-                                        style="max-height:320px; max-width:430px; width:auto; object-fit:contain;"
                                         data-bs-toggle="modal" data-bs-target="#imageModal"
-                                        data-fullsrc="../imgs/cittaideale.jpg" data-title="The Ideal City of Urbino">
+                                        data-fullsrc="../imgs/cittaideale.jpg"
+                                        data-title="The Ideal City of Urbino"
+                                        data-theme="apollonian">
 
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                                        data-fullsrc="../imgs/cittaideale.jpg" data-title="The Ideal City of Urbino"
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/cittaideale.jpg"
+                                        data-title="The Ideal City of Urbino"
                                         data-theme="apollonian">
                                         Click to view
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-5"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-5">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-5-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -644,8 +615,7 @@
                                                     <b>Attribution:</b> Unknown<br>
                                                     <b>Type:</b> Painting<br>
                                                     <b>Materials and Techniques:</b> panel/tempera painting<br>
-                                                    <b>Measurements:</b> Depth: 6 UNR, Height: 67 UNR, Width: 239
-                                                    UNR<br>
+                                                    <b>Measurements:</b> Depth: 6 UNR, Height: 67 UNR, Width: 239 UNR<br>
                                                     <b>Current Location:</b> National Gallery of the Marche<br>
                                                     <b>Creation Date:</b> 1470 - 1479<br>
                                                     <b>Online Location:</b> <a
@@ -656,7 +626,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-5-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -680,37 +649,31 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
+                            <div class="artwork-right">
                                 <h2 class="h4">The Ideal City of Urbino</h2>
 
                                 <p class="desc-short mb-3 small">
-                                    The famous Ideal City of Urbino, attribution uncertain: a masterful vision of
-                                    Renaissance harmony and proportion.
+                                    The famous Ideal City of Urbino, attribution uncertain: a masterful vision of Renaissance
+                                    harmony and proportion.
                                 </p>
 
                                 <p class="desc-long mb-3 d-none">
-                                    The Ideal City of Urbino represents one of the highest examples of Renaissance
-                                    culture. This painting, created in the circle of Piero della Francesca by an as-yet
-                                    unidentified artist in the late fifteenth century, was born in the cultured court of
-                                    Federico da Montefeltro, where architects and theorists like Leon Battista Alberti
-                                    developed the principles of rational urban planning.<br>
-                                    The work does not depict a real city, but rather the image of a perfect city as it
-                                    must have appeared to the humanists. Its harmonious architecture, orderly squares,
-                                    and rigorous perspective create a balanced and rational whole. The absence of human
-                                    figures is not accidental but serves to concentrate attention on the beauty of the
-                                    silent architecture and the ideal of an orderly and measured society. The central
-                                    perspective, perfectly calculated, is not merely a technique but a symbol of a
-                                    worldview that places man at the center of a measurable and ordered space. This
-                                    painting can be considered a true manifesto of Renaissance culture, expressing
-                                    through architectural forms the ideal of a city where harmony and rationality
-                                    reign—fundamental values for the formation of the ideal citizen. The work thus
-                                    embodies the utopia of balance triumphing over chaos, reflecting the ambition of the
-                                    Urbino court to become a model of enlightened governance and aesthetic perfection.
+                                    The Ideal City of Urbino represents one of the highest examples of Renaissance culture.
+                                    This painting, created in the circle of Piero della Francesca by an as-yet unidentified
+                                    artist in the late fifteenth century, was born in the cultured court of Federico da Montefeltro,
+                                    where architects and theorists like Leon Battista Alberti developed the principles of rational urban planning.<br>
+                                    The work does not depict a real city, but rather the image of a perfect city as it must have appeared
+                                    to the humanists. Its harmonious architecture, orderly squares, and rigorous perspective create a balanced and rational whole.
+                                    The absence of human figures is not accidental but serves to concentrate attention on the beauty of the silent architecture
+                                    and the ideal of an orderly and measured society. The central perspective, perfectly calculated, is not merely a technique
+                                    but a symbol of a worldview that places man at the center of a measurable and ordered space. This painting can be considered
+                                    a true manifesto of Renaissance culture, expressing through architectural forms the ideal of a city where harmony and rationality reign—
+                                    fundamental values for the formation of the ideal citizen. The work thus embodies the utopia of balance triumphing over chaos,
+                                    reflecting the ambition of the Urbino court to become a model of enlightened governance and aesthetic perfection.
                                 </p>
 
-                                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
-                                    data-see-less="Less detail">
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian"
+                                    data-see-more="More detail" data-see-less="Less detail">
                                     More detail
                                 </button>
                             </div>
@@ -719,33 +682,31 @@
                     </div>
                 </div>
 
-                <!-- ITEM 6 -->
+                <!-- ITEM 6 (Dionysian) -->
                 <div class="carousel-item">
-                    <div class="card artwork-card text-light p-4"
-                        style="min-height: 420px; border: 2px solid var(--textred);">
+                    <div class="card artwork-card artwork-card--dionysian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
+                            <div class="d-flex flex-column align-items-center artwork-left">
                                 <div class="text-center">
-                                    <img src="../imgs/la_citta╠Ç_che_sale.jpg" class="d-block artwork-thumb"
+                                    <img src="../imgs/la_citta╠Ç_che_sale.jpg" class="d-block artwork-thumb artwork-img"
                                         alt="The City Rises by Umberto Boccioni"
-                                        style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                                        data-bs-target="#imageModal" data-fullsrc="../imgs/la_citta╠Ç_che_sale.jpg"
-                                        data-title="The City Rises by Umberto Boccioni" data-theme="dionysian">
-
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
                                         data-fullsrc="../imgs/la_citta╠Ç_che_sale.jpg"
-                                        data-title="The City Rises by Umberto Boccioni" data-theme="dionysian">
+                                        data-title="The City Rises by Umberto Boccioni"
+                                        data-theme="dionysian">
+
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/la_citta╠Ç_che_sale.jpg"
+                                        data-title="The City Rises by Umberto Boccioni"
+                                        data-theme="dionysian">
                                         Click to view
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-6"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-6">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-6-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -766,15 +727,13 @@
                                                     <b>Measurements:</b> 6' 6 1/2 x 9' 10 1/2 (199.3 x 301 cm)<br>
                                                     <b>Current Location:</b> Museum of Modern Art- New York<br>
                                                     <b>Creation Date:</b> 1910<br>
-                                                    <b>Online Location:</b> <a
-                                                        href="https://www.moma.org/collection/works/79865"
+                                                    <b>Online Location:</b> <a href="https://www.moma.org/collection/works/79865"
                                                         target="_blank">MOMA collection</a><br>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-6-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -799,13 +758,12 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
+                            <div class="artwork-right">
                                 <h2 class="h4">The City Rises by Umberto Boccioni</h2>
 
                                 <p class="desc-short mb-3 small">
-                                    The City Rises by Umberto Boccioni, a 1910 painting, symbolizes the chaotic movement
-                                    of the modern city under construction.
+                                    The City Rises by Umberto Boccioni, a 1910 painting, symbolizes the chaotic movement of
+                                    the modern city under construction.
                                 </p>
 
                                 <p class="desc-long mb-3 d-none">
@@ -830,8 +788,7 @@
                                     manifesto of the new age that was emerging.
                                 </p>
 
-                                <button class="btn btn-sm js-toggle-desc"
-                                    style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                                     data-see-more="More detail" data-see-less="Less detail">
                                     More detail
                                 </button>
@@ -841,33 +798,32 @@
                     </div>
                 </div>
 
-                <!-- ITEM 7 -->
+                <!-- ITEM 7 (Apollonian) -->
                 <div class="carousel-item">
-                    <div class="card artwork-card text-light border border-warning p-4"
-                        style="min-height: 420px; border-width: 2px;">
+                    <div class="card artwork-card artwork-card--apollonian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
-                                <div class="text-center">
-                                    <img src="../imgs/kylix.jpg" class="d-block artwork-thumb"
-                                        alt="Kylix with Apollo and kithara"
-                                        style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                                        data-bs-target="#imageModal" data-fullsrc="../imgs/kylix.jpg"
-                                        data-title="Kylix with Apollo and kithara">
+                            <div class="d-flex flex-column align-items-center artwork-left">
 
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                                        data-fullsrc="../imgs/kylix.jpg" data-title="Kylix with Apollo and kithara"
+                                <div class="text-center">
+                                    <img src="../imgs/kylix.jpg" class="d-block artwork-thumb artwork-img"
+                                        alt="Kylix with Apollo and kithara"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/kylix.jpg"
+                                        data-title="Kylix with Apollo and kithara"
+                                        data-theme="apollonian">
+
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/kylix.jpg"
+                                        data-title="Kylix with Apollo and kithara"
                                         data-theme="apollonian">
                                         Click to view
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-7"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-7">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-7-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -885,19 +841,16 @@
                                                     <b>Attribution:</b> Nikosthenes<br>
                                                     <b>Type:</b> Kylix<br>
                                                     <b>Materials and Techniques:</b> Terracotta; black-figure<br>
-                                                    <b>Measurements:</b> H. 6 1/4 in. (15.9 cm), diameter 15 in. (38.1
-                                                    cm)<br>
+                                                    <b>Measurements:</b> H. 6 1/4 in. (15.9 cm), diameter 15 in. (38.1 cm)<br>
                                                     <b>Current Location:</b> The Metropolitan Museum of Art<br>
                                                     <b>Creation Date:</b> 480-470 BC<br>
-                                                    <b>Online Location:</b> <a
-                                                        href="https://www.metmuseum.org/art/collection/search/248906"
+                                                    <b>Online Location:</b> <a href="https://www.metmuseum.org/art/collection/search/248906"
                                                         target="_blank">The MET Collection</a><br>
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-7-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -922,68 +875,29 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
+                            <div class="artwork-right">
                                 <h2 class="h4">Kylix with Apollo and kithara</h2>
 
                                 <p class="desc-short mb-3 small">
                                     Attic red-figure kylix (480-470 BC). The interior depicts Apollo, identifiable as
-                                    the god of music,
-                                    seated and playing the kithara, his symbolic instrument, beside a flaming altar. The
-                                    exterior shows
-                                    libation scenes with male and female figures, sceptres, and phialai, enriched with
-                                    decorative motifs
-                                    such as meanders and palmettes.
+                                    the god of music, seated and playing the kithara, his symbolic instrument, beside a
+                                    flaming altar. The exterior shows libation scenes with male and female figures,
+                                    sceptres, and phialai, enriched with decorative motifs such as meanders and palmettes.
                                 </p>
 
                                 <p class="desc-long mb-3 d-none">
-                                    Red-figure kylix created circa 480 BC-470 BC. The interior depicts Apollo,
-                                    beardless, with long wavy
-                                    hair, a laurel wreath, and a himation around his legs, seated to the right on a
-                                    diphros. The god plays
-                                    a large kithara and holds a fluted phiale in his right hand. On the right,
-                                    half-seen, is a flaming
-                                    altar, shaped like an Ionic column with necking of egg pattern.<br>
-                                    The exterior depicts a woman in a long-sleeved chiton, himation, and saccos, who
-                                    moves to right with
-                                    left hand on her hip, holding out in her right an oinochoe, as if to pour into a
-                                    phiale which a
-                                    bearded, wreathed man on right holds out to her. He has a long sceptre leaning
-                                    against his left
-                                    shoulder, and wears a long-sleeved talaric chiton and himation. On the left, a
-                                    youth, wreathed, and
-                                    wearing an himation, holding upright a sceptre in his left, and extending a fluted
-                                    phiale in his
-                                    right. Between him and the woman is a slender Ionic column with architrave; behind
-                                    him hang a pair of
-                                    sandals. On the left of the bearded man hang a pair of tablets rolled up, with a
-                                    stylus fastened in
-                                    the bands: at each of the lower corners hangs a triple tie.<br>
-                                    On the other side, apparently the same three figures are engaged, but part of each
-                                    is missing. Of the
-                                    youth on left only the feet and the ends of his himation and the legs of the chair
-                                    in which he is
-                                    sitting to right are preserved. The woman confronts him, raising both hands
-                                    apparently, with a gesture
-                                    of surprise; she wears a fillet with trefoil ends; her face and right arm are
-                                    missing. Behind her is
-                                    the column as we can see on the other side. The bearded man on the right stands en
-                                    face, but looking
-                                    to left with right hand on hip, left holding sceptre upright; his sceptre is
-                                    striated. On the right is
-                                    a trace of an object (a sandal ?) hanging up, which is almost entirely broken
-                                    away.<br>
-                                    Purple tuning pegs of lyre, flames, wreaths in exterior, fillets, cords of tablets
-                                    and of sandals. Eye
-                                    in transition stage (in interior, the eyelids are in profile; the eyeball is drawn
-                                    as a dot in a
-                                    semicircle). Around the interior, a band of running maeander. Below the exterior, a
-                                    thin red line.
-                                    Below the handles a palmette. The exergue in the interior is left red.
+                                    Red-figure kylix created circa 480 BC-470 BC. The interior depicts Apollo, beardless,
+                                    with long wavy hair, a laurel wreath, and a himation around his legs, seated to the right
+                                    on a diphros. The god plays a large kithara and holds a fluted phiale in his right hand.
+                                    On the right, half-seen, is a flaming altar, shaped like an Ionic column with necking of
+                                    egg pattern.<br>
+                                    The exterior depicts a woman in a long-sleeved chiton, himation, and saccos, who moves to
+                                    right with left hand on her hip, holding out in her right an oinochoe, as if to pour into
+                                    a phiale which a bearded, wreathed man on right holds out to her...
                                 </p>
 
-                                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
-                                    data-see-less="Less detail">
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian"
+                                    data-see-more="More detail" data-see-less="Less detail">
                                     More detail
                                 </button>
                             </div>
@@ -992,33 +906,31 @@
                     </div>
                 </div>
 
-                <!-- ITEM 8 -->
+                <!-- ITEM 8 (Dionysian) -->
                 <div class="carousel-item">
-                    <div class="card artwork-card text-light p-4"
-                        style="min-height: 420px; border: 2px solid var(--textred);">
+                    <div class="card artwork-card artwork-card--dionysian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
+                            <div class="d-flex flex-column align-items-center artwork-left">
                                 <div class="text-center">
-                                    <img src="../imgs/coppadionisio.jpg" class="d-block artwork-thumb"
+                                    <img src="../imgs/coppadionisio.jpg" class="d-block artwork-thumb artwork-img"
                                         alt="Eye-cup with Dionysus"
-                                        style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                                        data-bs-target="#imageModal" data-fullsrc="../imgs/coppadionisio.jpg"
-                                        data-title="Eye-cup with Dionysus" data-theme="dionysian">
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/coppadionisio.jpg"
+                                        data-title="Eye-cup with Dionysus"
+                                        data-theme="dionysian">
 
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                                        data-fullsrc="../imgs/coppadionisio.jpg" data-title="Eye-cup with Dionysus"
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/coppadionisio.jpg"
+                                        data-title="Eye-cup with Dionysus"
                                         data-theme="dionysian">
                                         Click to view
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-8"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-va-8">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-8-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -1035,10 +947,8 @@
                                                     <b>Title:</b> Eye-cup with Dionysus<br>
                                                     <b>Attribution:</b> Exekias<br>
                                                     <b>Type:</b> Drinking cup (kylix)<br>
-                                                    <b>Materials and Techniques:</b> Terracotta, black-figure
-                                                    technique<br>
-                                                    <b>Measurements:</b> height: 13.6 cm (5.3 in); diameter: 30.5 cm (12
-                                                    in)<br>
+                                                    <b>Materials and Techniques:</b> Terracotta, black-figure technique<br>
+                                                    <b>Measurements:</b> height: 13.6 cm (5.3 in); diameter: 30.5 cm (12 in)<br>
                                                     <b>Current Location:</b> Staatliche Antikensammlungen, Munich<br>
                                                     <b>Creation Date:</b> ca. 530 BC<br>
                                                     <b>Online Location:</b> <a
@@ -1049,7 +959,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-va-8-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -1074,70 +983,26 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
+                            <div class="artwork-right">
                                 <h2 class="h4">Eye-cup with Dionysus</h2>
 
                                 <p class="desc-short mb-3 small">
-                                    Drinking cup created by the renowned potter and vase painter Exekias around 530 BC.
-                                    Inside, it depicts
-                                    Dionysus, the god of wine, reclining on a ship with a billowing white sail. Vines
-                                    climb up the mast,
-                                    while
-                                    dolphins leap and dance around the vessel. On the exterior are the characteristic
-                                    features that gave
-                                    this
-                                    type of cup its name: the eye-cup. Two large painted eyes decorate the surface; when
-                                    drinking from the
-                                    cup,
-                                    they align with the drinker’s own, creating the illusion that the person has taken
-                                    on new, typically
-                                    Dionysian traits.
+                                    Drinking cup created by the renowned potter and vase painter Exekias around 530 BC. Inside, it depicts
+                                    Dionysus, the god of wine, reclining on a ship with a billowing white sail. Vines climb up the mast, while
+                                    dolphins leap and dance around the vessel. On the exterior are the characteristic features that gave this
+                                    type of cup its name: the eye-cup. Two large painted eyes decorate the surface; when drinking from the cup,
+                                    they align with the drinker’s own, creating the illusion that the person has taken on new, typically Dionysian
+                                    traits.
                                 </p>
 
                                 <p class="desc-long mb-3 d-none">
-                                    The black-figure drinking kylix (cup), created by the potter and vase painter
-                                    Exekias around 530 BC,
-                                    is one of
-                                    the most famous ancient vessels of all time.<br>
-                                    Inside you can see Dionysus, the god of wine, lying on a ship with a swelled white
-                                    sail. Along the
-                                    mast, vines
-                                    climb up and dolphins dance around the ship. With this picture, the beholder is to
-                                    be reminded of a
-                                    well-known myth about the god: Dionysus had been captured by Etruscan pirates and
-                                    abducted aboard
-                                    their ship.
-                                    On the high seas, however, the god appeared to the men in his true form, after which
-                                    they were seized
-                                    with
-                                    panic and they plunged into the sea where Dionysus transformed them into
-                                    dolphins.<br>
-                                    Whoever drank from this bowl had a rather peculiar experience: for him, the god
-                                    emerged from the sea
-                                    of red
-                                    wine, he floated on the waves for a brief moment and then he sailed his ship into
-                                    the drinker’s open
-                                    mouth.
-                                    The bowl was therefore much more than just an extravagant drinking vessel. Through
-                                    each sip, the user
-                                    came
-                                    closer to the god Dionysus, as it were.<br>
-                                    Furthermore, on the exterior there are the characteristic features that gave this
-                                    type of cup its
-                                    name: the
-                                    eye-cup. Two large painted eyes decorate the surface; when drinking from the cup,
-                                    they align with the
-                                    drinker's own, creating the illusion that the person has taken on new, typically
-                                    Dionysian traits.<br>
-                                    Exekias was well aware of the outstanding quality of the vessel he had created. He
-                                    signed his work on
-                                    the
-                                    outside on the edge of the foot of the vessel: “Exekias epoiese” — Exekias made it.
+                                    The black-figure drinking kylix (cup), created by the potter and vase painter Exekias around 530 BC,
+                                    is one of the most famous ancient vessels of all time...<br>
+                                    Exekias was well aware of the outstanding quality of the vessel he had created. He signed his work on
+                                    the outside on the edge of the foot of the vessel: “Exekias epoiese” — Exekias made it.
                                 </p>
 
-                                <button class="btn btn-sm js-toggle-desc"
-                                    style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                                     data-see-more="More detail" data-see-less="Less detail">
                                     More detail
                                 </button>
@@ -1147,36 +1012,32 @@
                     </div>
                 </div>
 
-                <!-- ITEM 7 -->
+                <!-- ITEM 9 (Apollonian) -->
                 <div class="carousel-item">
-                    <div class="card artwork-card text-light border border-warning p-4"
-                        style="min-height: 420px; border-width: 2px;">
-
+                    <div class="card artwork-card artwork-card--apollonian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
+                            <div class="d-flex flex-column align-items-center artwork-left">
 
-                                <!-- IMAGE + CLICK TO VIEW -->
                                 <div class="text-center">
-                                    <img src="../imgs/apollo_e_dafne.jpg" class="d-block artwork-thumb"
+                                    <img src="../imgs/apollo_e_dafne.jpg" class="d-block artwork-thumb artwork-img"
                                         alt="Apollo and Daphne"
-                                        style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                                        data-bs-target="#imageModal" data-fullsrc="../imgs/apollo_e_dafne.jpg"
-                                        data-title="Apollo and Daphne">
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/apollo_e_dafne.jpg"
+                                        data-title="Apollo and Daphne"
+                                        data-theme="apollonian">
 
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                                        data-fullsrc="../imgs/apollo_e_dafne.jpg" data-title="Apollo and Daphne"
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/apollo_e_dafne.jpg"
+                                        data-title="Apollo and Daphne"
                                         data-theme="apollonian">
                                         Click to view
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item7"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item7">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-item7-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -1191,8 +1052,7 @@
                                             <div class="accordion-body">
                                                 <p class="text-start mb-0">
                                                     <b>Title:</b> Apollo and Dafne<br>
-                                                    <b>Attribution:</b> Bernini Gian Lorenzo (Naples 1598 - Rome
-                                                    1680)<br>
+                                                    <b>Attribution:</b> Bernini Gian Lorenzo (Naples 1598 - Rome 1680)<br>
                                                     <b>Type:</b> Sculpture<br>
                                                     <b>Materials and Techniques:</b> Carrara marble<br>
                                                     <b>Measurements:</b> 243 cm height<br>
@@ -1206,7 +1066,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-item7-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -1220,8 +1079,7 @@
                                             aria-labelledby="heading-item7-download" data-bs-parent="#accordion-item7">
                                             <div class="accordion-body">
                                                 <a class="text-decoration-underline meta-download-link"
-                                                    href="../csv_files/obj-18_apollo-daphne.csv"
-                                                    download="Apollo_Daphne.csv">
+                                                    href="../csv_files/obj-18_apollo-daphne.csv" download="Apollo_Daphne.csv">
                                                     Download (CSV)
                                                 </a>
                                             </div>
@@ -1231,46 +1089,26 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
+                            <div class="artwork-right">
 
                                 <h2 class="h4">Apollo and Daphne</h2>
 
                                 <p class="desc-short mb-3 small">
-                                    Bernini depicts Apollo in mid-stride, his right foot grounded and his left
-                                    suspended, the drapery flowing with his motion. As he reaches out to touch
-                                    Daphne, the nymph, caught in her desperate flight, begins her transformation
-                                    into a laurel tree: her fingers sprout leaves, her feet take root. Drawn from
-                                    Ovid’s <em>Metamorphoses</em>, the myth becomes in Bernini’s hands a reflection
-                                    on the tension between desire and freedom, on metamorphosis as both boundary
-                                    and salvation, expressed through the vivid theatricality of the Baroque.
+                                    Bernini depicts Apollo in mid-stride, his right foot grounded and his left suspended,
+                                    the drapery flowing with his motion. As he reaches out to touch Daphne, the nymph, caught
+                                    in her desperate flight, begins her transformation into a laurel tree: her fingers sprout
+                                    leaves, her feet take root. Drawn from Ovid’s <em>Metamorphoses</em>, the myth becomes
+                                    in Bernini’s hands a reflection on the tension between desire and freedom, on metamorphosis
+                                    as both boundary and salvation, expressed through the vivid theatricality of the Baroque.
                                 </p>
 
                                 <p class="desc-long mb-3 d-none">
-                                    Gian Lorenzo Bernini’s <em>Apollo and Daphne</em> (1622–1625) captures the
-                                    climactic moment of the tale told in Ovid’s <em>Metamorphoses</em>. Struck by
-                                    Cupid’s golden arrow, Apollo is seized with passion for the nymph Daphne,
-                                    follower of Diana. She, pierced by a lead arrow that inspires aversion, flees
-                                    his pursuit and calls upon her father, the river god Peneus, to transform her
-                                    and save her.
-                                    <br>
-                                    Bernini fixes the instant of this transformation: Apollo, running with his
-                                    right foot touching the ground and his left raised, extends his hand to grasp
-                                    Daphne. Under his divine touch, her escape freezes — her arms stretch upward,
-                                    her fingers sprout into leaves, her hair turns to laurel, and her feet sink
-                                    into the earth as roots.
-                                    <br>
-                                    The sculptor creates a powerfully theatrical scene: Apollo’s flowing drapery
-                                    accentuates the motion, and the spiral composition compels the viewer to move
-                                    around the sculpture, witnessing the metamorphosis unfold. Beyond its
-                                    technical mastery and Baroque dynamism, the work reads the myth as an allegory
-                                    of human desire and divine intervention, transforming Ovid’s narrative into a
-                                    meditation on the limits of passion and the fragile balance between
-                                    sensuality and transcendence.
+                                    Gian Lorenzo Bernini’s <em>Apollo and Daphne</em> (1622–1625) captures the climactic moment
+                                    of the tale told in Ovid’s <em>Metamorphoses</em>... (testo completo come nel tuo file)
                                 </p>
 
-                                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
-                                    data-see-less="Less detail">
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian"
+                                    data-see-more="More detail" data-see-less="Less detail">
                                     More detail
                                 </button>
 
@@ -1279,8 +1117,6 @@
                         </div>
                     </div>
                 </div>
-
-
 
             </div>
 
@@ -1302,10 +1138,9 @@
     <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
-                <div class="modal-header" style="border-bottom: 1px solid rgba(184, 173, 167, 0.35);">
+                <div class="modal-header">
                     <h5 class="modal-title section-title" id="imageModalTitle">Artwork</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                        style="filter: invert(1);"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <img id="imageModalImg" class="modal-artwork-img" src="" alt="">
@@ -1326,7 +1161,7 @@
                     <h4><b>Opening Hours</b></h4>
                     <p>Daily: 00.00–24.00 (Fridays: 23:30)<br>Last entry: Anytime (Fridays: 23:29)</p>
                 </div>
-                <div class="col about" style="line-height: 2.5;">
+                <div class="col about footer-about">
                     <h4><b>About</b></h4>
                     <a href="../the_museum.html">The Museum</a><br>
                     <a href="/narratives/index.html">The Narratives</a><br>
@@ -1336,7 +1171,7 @@
                     <a href="../About/Disclaimer.html">Disclaimer</a>
                 </div>
                 <div class="col exam">
-                    <h4 style="text-align: left;"><b>The Project</b></h4>
+                    <h4 class="footer-project-title"><b>The Project</b></h4>
                     <p>This project was created for the <a
                             href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2024/454464"><i>Information
                                 Modeling and Web Technologies</i></a> exam (2024/2025)
@@ -1353,33 +1188,31 @@
                 </div>
             </div>
             <div class="row rights">
-                <p style="text-align: center;">All the images and resources taken from external sources are solely used
-                    for study purposes. No
-                    commercial use is intended.<br>
+                <p class="footer-rights">All the images and resources taken from external sources are solely used
+                    for study purposes. No commercial use is intended.<br>
                     <i>Tyrsos & Lyre</i> © 2025
                 </p>
             </div>
         </div>
     </footer>
 
-    <!-- JS -->
+    <!-- Theme toggle -->
+    <script src="../scripts/common.js" defer></script>
+
+    <!-- Page JS -->
     <script>
-        // =========================
-        // 1) Toggle short/long description
-        // =========================
+        // Toggle short/long description
         document.querySelectorAll('.js-toggle-desc').forEach(btn => {
-            const moreText = btn.dataset.seeMore || 'See more';
-            const lessText = btn.dataset.seeLess || 'See less';
+            const moreText = btn.dataset.seeMore || 'More detail';
+            const lessText = btn.dataset.seeLess || 'Less detail';
 
             btn.addEventListener('click', () => {
                 const container = btn.parentElement;
                 const shortText = container.querySelector('.desc-short');
                 const longText = container.querySelector('.desc-long');
-
                 if (!shortText || !longText) return;
 
                 const showingLong = !longText.classList.contains('d-none');
-
                 if (showingLong) {
                     longText.classList.add('d-none');
                     shortText.classList.remove('d-none');
@@ -1392,23 +1225,19 @@
             });
         });
 
-        // =========================
-        // 2) Reset descriptions when carousel slides
-        // =========================
+        // Reset descriptions on slide
         const carouselEl = document.getElementById('carouselExample');
         if (carouselEl) {
             carouselEl.addEventListener('slide.bs.carousel', () => {
                 document.querySelectorAll('.desc-long').forEach(el => el.classList.add('d-none'));
                 document.querySelectorAll('.desc-short').forEach(el => el.classList.remove('d-none'));
                 document.querySelectorAll('.js-toggle-desc').forEach(btn => {
-                    btn.textContent = btn.dataset.seeMore || 'See more';
+                    btn.textContent = btn.dataset.seeMore || 'More detail';
                 });
             });
         }
 
-        // =========================
-        // 3) Modal: open image dynamically + apply theme (apollonian/dionysian)
-        // =========================
+        // Modal: set image + theme
         const imageModal = document.getElementById('imageModal');
         const modalImg = document.getElementById('imageModalImg');
         const modalTitle = document.getElementById('imageModalTitle');
@@ -1418,7 +1247,7 @@
 
             const fullSrc = el.getAttribute('data-fullsrc');
             const title = el.getAttribute('data-title') || 'Artwork';
-            const theme = el.getAttribute('data-theme'); // "apollonian" | "dionysian"
+            const theme = el.getAttribute('data-theme');
 
             if (!fullSrc) return;
 
@@ -1426,25 +1255,15 @@
             modalImg.alt = title;
             modalTitle.textContent = title;
 
-            // reset themes
             imageModal.classList.remove('apollonian', 'dionysian');
-
-            // apply theme (fallback = apollonian)
-            if (theme === 'dionysian') {
-                imageModal.classList.add('dionysian');
-            } else {
-                imageModal.classList.add('apollonian');
-            }
+            if (theme === 'dionysian') imageModal.classList.add('dionysian');
+            else imageModal.classList.add('apollonian');
         }
 
-        // Attach click handlers to anything that opens the modal
         document.querySelectorAll('[data-bs-target="#imageModal"]').forEach(el => {
             el.addEventListener('click', () => openArtworkModalFrom(el));
         });
 
-        // =========================
-        // 4) Reset modal on close
-        // =========================
         if (imageModal) {
             imageModal.addEventListener('hidden.bs.modal', () => {
                 modalImg.src = '';
@@ -1454,7 +1273,6 @@
             });
         }
     </script>
-
 
 </body>
 

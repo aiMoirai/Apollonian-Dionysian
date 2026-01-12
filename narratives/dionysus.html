@@ -10,81 +10,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
   <title>Characters · Dionysus</title>
-
-  <style>
-    /* Click to view */
-    .click-to-view {
-      display: inline-block;
-      margin-top: 0.5rem;
-      font-size: 0.85rem;
-      color: var(--text);
-      text-decoration: underline;
-      cursor: pointer;
-    }
-
-    .click-to-view:hover {
-      color: var(--yellow);
-    }
-
-    .artwork-thumb {
-      cursor: zoom-in;
-    }
-
-    /* Modal image */
-    .modal-artwork-img {
-      width: 100%;
-      height: auto;
-      max-height: 80vh;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-    }
-
-    /* Accordion styling (coherent with site palette) */
-    .artwork-accordion .accordion-item {
-      background: transparent;
-      border: 0;
-      border-top: 1px solid rgba(184, 173, 167, 0.25);
-    }
-
-    .artwork-accordion .accordion-button {
-      background: transparent;
-      color: var(--text);
-      padding: 0.75rem 0;
-      box-shadow: none !important;
-      border: 0;
-      font-size: 0.95rem;
-    }
-
-    .artwork-accordion .accordion-button::after {
-      filter: invert(1);
-      opacity: 0.8;
-    }
-
-    .artwork-accordion .accordion-button:not(.collapsed) {
-      color: var(--yellow);
-    }
-
-    .artwork-accordion .accordion-body {
-      padding: 0.75rem 0 1rem 0;
-      color: var(--text);
-      font-size: 0.9rem;
-    }
-
-    .meta-download-link {
-      color: var(--text);
-    }
-
-    .meta-download-link:hover {
-      color: var(--yellow);
-    }
-
-    audio {
-      filter: grayscale(1);
-      opacity: 0.9;
-    }
-
-  </style>
 </head>
 
 <body>
@@ -149,46 +74,51 @@
     </div>
   </nav>
 
+  <!-- Dark/light button -->
+  <div class="theme-switch">
+    <input type="checkbox" id="switch" />
+    <label for="switch"></label>
+  </div>
+
   <div class="container py-5" id="quote">
 
     <!-- Title + back -->
-    <div class="d-flex justify-content-between align-items-center mb-4">
+    <div class="narrative-head mb-4 narrative-page-header">
       <h1 class="h4 mb-0 section-title">Characters: Dionysus</h1>
-
-      <a href="./index.html" class="btn btn-outline-secondary btn-sm">
-        ← Back to Narratives
-      </a>
+      <a href="./index.html" class="btn btn-outline-secondary btn-sm back-to-narratives">← Back to Narratives</a>
     </div>
 
     <!-- CAROUSEL -->
     <div id="carouselExample" class="carousel slide w-100" data-bs-ride="false">
       <div class="carousel-inner">
 
-
         <!-- ITEM 1 -->
         <div class="carousel-item active">
-          <div class="card artwork-card text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+          <div class="card artwork-card artwork-card--dionysian">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <!-- LEFT COLUMN -->
+              <div class="d-flex flex-column align-items-center artwork-left">
 
                 <div class="text-center">
-                  <img src="../imgs/bacco_statue.jpg" class="d-block artwork-thumb"
-                    alt="Bacchus and Satyr by Michelangelo" style="max-height:320px; width:auto; object-fit:contain;"
-                    data-bs-toggle="modal" data-bs-target="#imageModal" data-fullsrc="../imgs/bacco_statue.jpg"
-                    data-title="Bacchus and Satyr by Michelangelo">
+                  <img src="../imgs/bacco_statue.jpg" class="d-block artwork-thumb artwork-img"
+                    alt="Bacchus and Satyr by Michelangelo"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/bacco_statue.jpg"
+                    data-title="Bacchus and Satyr by Michelangelo"
+                    data-theme="dionysian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/bacco_statue.jpg" data-title="Bacchus and Satyr by Michelangelo">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/bacco_statue.jpg"
+                    data-title="Bacchus and Satyr by Michelangelo"
+                    data-theme="dionysian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item1" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item1">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item1-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -201,7 +131,6 @@
                       aria-labelledby="heading-item1-info" data-bs-parent="#accordion-item1">
                       <div class="accordion-body">
                         <p class="text-start mb-0">
-                        <p class="modal-info-text">
                           <b>Title:</b> Bacchus and satyr statue<br>
                           <b>Attribution:</b> Buonarroti Michelangelo (1475/ 1564)<br>
                           <b>Type:</b> Sculpture<br>
@@ -217,7 +146,6 @@
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item1-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -230,8 +158,8 @@
                     <div id="collapse-item1-download" class="accordion-collapse collapse"
                       aria-labelledby="heading-item1-download" data-bs-parent="#accordion-item1">
                       <div class="accordion-body">
-                        <a class="text-decoration-underline meta-download-link" href="csv_files/bacco_e_satiro.csv"
-                          download="Bacchus_and_Satyr.csv">
+                        <a class="text-decoration-underline meta-download-link"
+                          href="csv_files/bacco_e_satiro.csv" download="Bacchus_and_Satyr.csv">
                           Download (CSV)
                         </a>
                       </div>
@@ -241,8 +169,8 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <!-- RIGHT COLUMN -->
+              <div class="artwork-right">
                 <h2 class="h4">Bacchus and Satyr by Michelangelo</h2>
 
                 <p class="desc-short mb-3 small">
@@ -269,8 +197,7 @@
                   It is this ingenious synthesis that makes it a timeless masterpiece.
                 </p>
 
-                <button class="btn btn-sm js-toggle-desc"
-                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                   data-see-more="More detail" data-see-less="Less detail">
                   More detail
                 </button>
@@ -282,29 +209,30 @@
 
         <!-- ITEM 2 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+          <div class="card artwork-card artwork-card--dionysian">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <div class="d-flex flex-column align-items-center artwork-left">
 
                 <div class="text-center">
-                  <img src="../imgs/Simposio.jpg" class="d-block artwork-thumb"
+                  <img src="../imgs/Simposio.jpg" class="d-block artwork-thumb artwork-img"
                     alt="Plato’s Symposium, Oxyrhynchus Papyrus 843"
-                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/Simposio.jpg"
-                    data-title="Plato’s Symposium, Oxyrhynchus Papyrus 843">
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/Simposio.jpg"
+                    data-title="Plato’s Symposium, Oxyrhynchus Papyrus 843"
+                    data-theme="dionysian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/Simposio.jpg" data-title="Plato’s Symposium, Oxyrhynchus Papyrus 843">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/Simposio.jpg"
+                    data-title="Plato’s Symposium, Oxyrhynchus Papyrus 843"
+                    data-theme="dionysian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item2" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item2">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item2-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -332,7 +260,6 @@
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item2-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -356,8 +283,7 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
                 <h2 class="h4">Plato’s Symposium, Oxyrhynchus Papyrus 843</h2>
 
                 <p class="desc-short mb-3 small">
@@ -390,8 +316,7 @@
                   underscore the tension between ephemeral experience and textual permanence.
                 </p>
 
-                <button class="btn btn-sm js-toggle-desc"
-                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                   data-see-more="More detail" data-see-less="Less detail">
                   More detail
                 </button>
@@ -401,30 +326,32 @@
           </div>
         </div>
 
-
         <!-- ITEM 3 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+          <div class="card artwork-card artwork-card--dionysian">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <div class="d-flex flex-column align-items-center artwork-left">
 
                 <div class="text-center">
-                  <img src="../imgs/maschera_comica.jpg" class="d-block artwork-thumb" alt="Comic mask"
-                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/maschera_comica.jpg" data-title="Comic mask">
+                  <img src="../imgs/maschera_comica.jpg" class="d-block artwork-thumb artwork-img"
+                    alt="Comic mask"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/maschera_comica.jpg"
+                    data-title="Comic mask"
+                    data-theme="dionysian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/maschera_comica.jpg" data-title="Comic mask">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/maschera_comica.jpg"
+                    data-title="Comic mask"
+                    data-theme="dionysian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item3" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item3">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item3-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -452,7 +379,6 @@
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item3-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -476,12 +402,13 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
                 <h2 class="h4">Comic mask</h2>
 
                 <p class="desc-short mb-3 small">
-                  Comic theatrical mask from Magna Graecia, attributed to Italic farce, a popular and licentious genre. It represents the features of a man with a deformed, bald face. It comes from a cremation tomb and testifies to the strong connection between the world of the dead, entertainment, and Dionysian cults.
+                  Comic theatrical mask from Magna Graecia, attributed to Italic farce, a popular and licentious genre. It
+                  represents the features of a man with a deformed, bald face. It comes from a cremation tomb and
+                  testifies to the strong connection between the world of the dead, entertainment, and Dionysian cults.
                 </p>
 
                 <p class="desc-long mb-3 d-none">
@@ -504,8 +431,7 @@
                   blended to create one of antiquity’s most refined theatrical traditions.
                 </p>
 
-                <button class="btn btn-sm js-toggle-desc"
-                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                   data-see-more="More detail" data-see-less="Less detail">
                   More detail
                 </button>
@@ -515,31 +441,32 @@
           </div>
         </div>
 
-
         <!-- ITEM 4 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+          <div class="card artwork-card artwork-card--dionysian">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <div class="d-flex flex-column align-items-center artwork-left">
 
                 <div class="text-center">
-                  <img src="../imgs/baccanti.jpg" class="d-block artwork-thumb" alt="Euripides' Bacchae Fragments"
-                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/baccanti.jpg"
-                    data-title="Euripides' Bacchae Fragments">
+                  <img src="../imgs/baccanti.jpg" class="d-block artwork-thumb artwork-img"
+                    alt="Euripides' Bacchae Fragments"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/baccanti.jpg"
+                    data-title="Euripides' Bacchae Fragments"
+                    data-theme="dionysian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/baccanti.jpg" data-title="Euripides' Bacchae Fragments">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/baccanti.jpg"
+                    data-title="Euripides' Bacchae Fragments"
+                    data-theme="dionysian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item4" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item4">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item4-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -568,7 +495,6 @@
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item4-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -581,8 +507,8 @@
                     <div id="collapse-item4-download" class="accordion-collapse collapse"
                       aria-labelledby="heading-item4-download" data-bs-parent="#accordion-item4">
                       <div class="accordion-body">
-                        <a class="text-decoration-underline meta-download-link" href="csv_files/euripides.csv"
-                          download="Bacchae.csv">
+                        <a class="text-decoration-underline meta-download-link"
+                          href="csv_files/euripides.csv" download="Bacchae.csv">
                           Download (CSV)
                         </a>
                       </div>
@@ -592,12 +518,17 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
                 <h2 class="h4">Euripides' Bacchae Fragments</h2>
 
                 <p class="desc-short mb-3 small">
-                  Fragments on which the beginning of the 1st line of Euripides' Bacchae has been written 3 or 4 times. Euripides’ Bacchae (late 5th century BCE) is a tragic drama centered on the arrival of Dionysus in Thebes and the city’s refusal to acknowledge his divinity. King Pentheus attempts to suppress the god’s cult, but Dionysus drives the women of Thebes into ecstatic frenzy and leads Pentheus to his brutal death at the hands of his own mother. The play explores themes of divine power, human arrogance, identity, and the tension between reason and instinct. Its blend of psychological depth, ritual, and violence has made it one of the most striking and unsettling works of Greek tragedy.
+                  Fragments on which the beginning of the 1st line of Euripides' Bacchae has been written 3 or 4 times.
+                  Euripides’ Bacchae (late 5th century BCE) is a tragic drama centered on the arrival of Dionysus in
+                  Thebes and the city’s refusal to acknowledge his divinity. King Pentheus attempts to suppress the god’s
+                  cult, but Dionysus drives the women of Thebes into ecstatic frenzy and leads Pentheus to his brutal
+                  death at the hands of his own mother. The play explores themes of divine power, human arrogance,
+                  identity, and the tension between reason and instinct. Its blend of psychological depth, ritual, and
+                  violence has made it one of the most striking and unsettling works of Greek tragedy.
                 </p>
 
                 <p class="desc-long mb-3 d-none">
@@ -623,8 +554,7 @@
                   training, and the secondary use of writing materials.
                 </p>
 
-                <button class="btn btn-sm js-toggle-desc"
-                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                   data-see-more="More detail" data-see-less="Less detail">
                   More detail
                 </button>
@@ -634,31 +564,32 @@
           </div>
         </div>
 
-
         <!-- ITEM 5 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+          <div class="card artwork-card artwork-card--dionysian">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <div class="d-flex flex-column align-items-center artwork-left">
 
                 <div class="text-center">
-                  <img src="../imgs/caravaggio.jpg" class="d-block artwork-thumb" alt="Bacchus by Caravaggio"
-                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/caravaggio.jpg"
-                    data-title="Bacchus by Caravaggio">
+                  <img src="../imgs/caravaggio.jpg" class="d-block artwork-thumb artwork-img"
+                    alt="Bacchus by Caravaggio"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/caravaggio.jpg"
+                    data-title="Bacchus by Caravaggio"
+                    data-theme="dionysian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/caravaggio.jpg" data-title="Bacchus by Caravaggio">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/caravaggio.jpg"
+                    data-title="Bacchus by Caravaggio"
+                    data-theme="dionysian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item5" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item5">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item5-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -671,7 +602,6 @@
                       aria-labelledby="heading-item5-info" data-bs-parent="#accordion-item5">
                       <div class="accordion-body">
                         <p class="text-start mb-0">
-                        <p class="modal-info-text">
                           <b>Title:</b> Bacchus<br>
                           <b>Attribution:</b> Merisi Michelangelo Called Caravaggio (1571/ 1610)<br>
                           <b>Type:</b> Painting<br>
@@ -687,7 +617,6 @@
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item5-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -700,8 +629,8 @@
                     <div id="collapse-item5-download" class="accordion-collapse collapse"
                       aria-labelledby="heading-item5-download" data-bs-parent="#accordion-item5">
                       <div class="accordion-body">
-                        <a class="text-decoration-underline meta-download-link" href="csv_files/caravaggio.csv"
-                          download="Bacchus_Caravaggio.csv">
+                        <a class="text-decoration-underline meta-download-link"
+                          href="csv_files/caravaggio.csv" download="Bacchus_Caravaggio.csv">
                           Download (CSV)
                         </a>
                       </div>
@@ -711,20 +640,26 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
                 <h2 class="h4">Bacchus by Caravaggio</h2>
 
                 <p class="desc-short mb-3 small">
-                  Caravaggio’s Bacchus was rediscovered in 1913 and later dated to around 1596, during the artist’s years under Cardinal del Monte. It belongs to his early half-length figure paintings and shows a young Bacchus offering wine and fruit. Critics have read irony in the depiction, suggesting Bacchus resembles a languid Roman tavern boy rather than a classical god. The still life elements (especially the fruit basket) carry symbolic weight, possibly alluding to a Horatian invitation to moderation, conviviality, and friendship. Some scholars also emphasize the sensual and homoerotic undertones of the scene, linking the work to ancient rites and ideas of physical freedom.
+                  Caravaggio’s Bacchus was rediscovered in 1913 and later dated to around 1596, during the artist’s years
+                  under Cardinal del Monte. It belongs to his early half-length figure paintings and shows a young Bacchus
+                  offering wine and fruit. Critics have read irony in the depiction, suggesting Bacchus resembles a languid
+                  Roman tavern boy rather than a classical god. The still life elements (especially the fruit basket) carry
+                  symbolic weight, possibly alluding to a Horatian invitation to moderation, conviviality, and friendship.
+                  Some scholars also emphasize the sensual and homoerotic undertones of the scene, linking the work to ancient
+                  rites and ideas of physical freedom.
                 </p>
 
                 <p class="desc-long mb-3 d-none">
-                  bla bla bla bla bla lungo.
+                  Caravaggio’s Bacchus, rediscovered in 1913 and dated to around 1596, belongs to the artist’s early years under the patronage of Cardinal Francesco Maria del Monte. The painting is part of his early half-length works and depicts a youthful Bacchus offering wine and fruit to the viewer, establishing a direct, almost intimate relationship with the beholder.<br>
+                  Far from classical idealization, the god appears as a real young man, with a soft body and a languid gaze—closer to a tavern boy than to an Olympian deity. This choice lends the painting a subtle irony and a strong naturalistic charge, characteristic of the early Caravaggio. The still life in the foreground, with ripe fruit already marked by decay, introduces a symbolic dimension: a reminder of the transience of pleasure and of the carpe diem ethos often associated with the poetry of Horace.<br>
+                  Alongside this moral undertone, the Dionysian element emerges with particular force. The wine, the offering gesture, and the relaxed posture evoke intoxication as an experience of freedom, the suspension of rules, and sensorial knowledge. The sensuality of the image recalls ancient Dionysian rites and an idea of instinctive, earthly vitality. Bacchus thus appears as an ambiguous and compelling image, poised between everyday reality and myth, restraint and excess, realism and pagan ritual.
                 </p>
 
-                <button class="btn btn-sm js-toggle-desc"
-                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                   data-see-more="More detail" data-see-less="Less detail">
                   More detail
                 </button>
@@ -734,33 +669,32 @@
           </div>
         </div>
 
-
         <!-- ITEM 6 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+          <div class="card artwork-card artwork-card--dionysian">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <div class="d-flex flex-column align-items-center artwork-left">
 
                 <div class="text-center">
-                  <img src="../imgs/wagner.jpg" class="d-block artwork-thumb"
+                  <img src="../imgs/wagner.jpg" class="d-block artwork-thumb artwork-img"
                     alt="Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner"
-                    style="max-height:320px; max-width:400px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/wagner.jpg"
-                    data-title="Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner">
-
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
                     data-fullsrc="../imgs/wagner.jpg"
-                    data-title="Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner">
+                    data-title="Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner"
+                    data-theme="dionysian">
+
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/wagner.jpg"
+                    data-title="Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner"
+                    data-theme="dionysian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item6" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item6">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item6-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -788,7 +722,6 @@
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item6-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -801,8 +734,8 @@
                     <div id="collapse-item6-download" class="accordion-collapse collapse"
                       aria-labelledby="heading-item6-download" data-bs-parent="#accordion-item6">
                       <div class="accordion-body">
-                        <a class="text-decoration-underline meta-download-link" href="csv_files/wagner.csv"
-                          download="Tristan_und_Isolde.csv">
+                        <a class="text-decoration-underline meta-download-link"
+                          href="csv_files/wagner.csv" download="Tristan_und_Isolde.csv">
                           Download (CSV)
                         </a>
                       </div>
@@ -812,24 +745,26 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
                 <h2 class="h4">Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner</h2>
 
-                <!-- SHORT DESCRIPTION -->
                 <div class="desc-short mb-3 small">
                   <p class="mb-2">
-                    Piano scoring (sketch?) for first 19 bars of the prelude to act one, followed by various themes from that act. Tristan und Isolde (premiered 1865) is an opera by Richard Wagner that tells a tragic medieval love story. After Tristan kills Isolde’s fiancé in battle, he escorts her by ship to marry King Mark. On the voyage, they mistakenly drink a love potion and fall into an overwhelming and forbidden passion. Their love defies duty, loyalty, and social order, driving them toward death as the only realm where union is possible. Wagner’s revolutionary music, marked by unresolved harmonies and emotional intensity, made this opera a landmark of Western music, deeply influencing later composers and the development of modernism.
+                    Piano scoring (sketch?) for first 19 bars of the prelude to act one, followed by various themes from that act.
+                    Tristan und Isolde (premiered 1865) is an opera by Richard Wagner that tells a tragic medieval love story.
+                    After Tristan kills Isolde’s fiancé in battle, he escorts her by ship to marry King Mark. On the voyage, they
+                    mistakenly drink a love potion and fall into an overwhelming and forbidden passion. Their love defies duty,
+                    loyalty, and social order, driving them toward death as the only realm where union is possible. Wagner’s
+                    revolutionary music, marked by unresolved harmonies and emotional intensity, made this opera a landmark of
+                    Western music, deeply influencing later composers and the development of modernism.
                   </p>
 
-                  <!-- AUDIO PLAYER (SHORT) -->
-                  <audio controls preload="none" style="width: 100%; margin-top: 0.5rem;">
+                  <audio class="narratives-audio" controls preload="none">
                     <source src="music/Tristan und Isolde, Act I_ Prelude.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                   </audio>
                 </div>
 
-                <!-- LONG DESCRIPTION -->
                 <div class="desc-long mb-3 d-none">
                   <p class="mb-2">
                     This item is a set of musical manuscript sketches related to the Prelude and the first act of <i>Tristan und Isolde</i>,
@@ -852,93 +787,86 @@
                     the history of the opera.
                   </p>
 
-                  <!-- AUDIO PLAYER (LONG) -->
-                  <audio controls preload="none" style="width: 100%; margin-top: 0.5rem;">
+                  <audio class="narratives-audio" controls preload="none">
                     <source src="music/Tristan und Isolde, Act I_ Prelude.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                   </audio>
                 </div>
 
-                <button class="btn btn-sm js-toggle-desc"
-                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                   data-see-more="More detail" data-see-less="Less detail">
                   More detail
                 </button>
               </div>
 
-
+            </div>
           </div>
         </div>
-      </div>
-
 
         <!-- ITEM 7 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+          <div class="card artwork-card artwork-card--dionysian">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <div class="d-flex flex-column align-items-center artwork-left">
 
                 <div class="text-center">
-                  <img src="../imgs/lorenzo.png" class="d-block artwork-thumb" alt="The Triumph of Bacchus and Ariadne"
-                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/lorenzo.png"
-                    data-title="The Triumph of Bacchus and Ariadne" />
+                  <img src="../imgs/lorenzo.png" class="d-block artwork-thumb artwork-img"
+                    alt="The Triumph of Bacchus and Ariadne"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/lorenzo.png"
+                    data-title="The Triumph of Bacchus and Ariadne"
+                    data-theme="dionysian" />
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/lorenzo.png" data-title="The Triumph of Bacchus and Ariadne">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/lorenzo.png"
+                    data-title="The Triumph of Bacchus and Ariadne"
+                    data-theme="dionysian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item2" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item7">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading-item2-info">
+                    <h2 class="accordion-header" id="heading-item7-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapse-item2-info" aria-expanded="false" aria-controls="collapse-item2-info">
+                        data-bs-target="#collapse-item7-info" aria-expanded="false" aria-controls="collapse-item7-info">
                         General information
                       </button>
                     </h2>
 
-                    <div id="collapse-item2-info" class="accordion-collapse collapse"
-                      aria-labelledby="heading-item2-info" data-bs-parent="#accordion-item2">
+                    <div id="collapse-item7-info" class="accordion-collapse collapse"
+                      aria-labelledby="heading-item7-info" data-bs-parent="#accordion-item7">
                       <div class="accordion-body">
                         <p class="text-start mb-0">
-                        <div class="modal-info">
-                          <p class="modal-info-text">
-                            <b>Title:</b> Carnival songs<br>
-                            <b>Attribution:</b> Lorenzo de' Medici, 1449-1492<br>
-                            <b>Type:</b> Book<br>
-                            <b>Materials and Techniques:</b> Printed book<br>
-                            <b>Measurements:</b> 447 p. ; 18 cm<br>
-                            <b>Current Location:</b> Leonardo Lagorio Civic Library - Imperia<br>
-                            <b>Creation Date:</b> 15th-16th century.<br>
-                            <b>Online Location:</b> <a
-                              href="https://opac.sbn.it/risultati-ricerca-avanzata/-/opac-adv/index/2/ITICCULIG0108409?monocampo=canti+carnascialeschi+lorenzo+de+medici&amp;_cacheid=1761928698943"
-                              target="_blank">OPAC SBN</a><br>
-                          </p>
-                        </div>
+                          <b>Title:</b> Carnival songs<br>
+                          <b>Attribution:</b> Lorenzo de' Medici, 1449-1492<br>
+                          <b>Type:</b> Book<br>
+                          <b>Materials and Techniques:</b> Printed book<br>
+                          <b>Measurements:</b> 447 p. ; 18 cm<br>
+                          <b>Current Location:</b> Leonardo Lagorio Civic Library - Imperia<br>
+                          <b>Creation Date:</b> 15th-16th century.<br>
+                          <b>Online Location:</b> <a
+                            href="https://opac.sbn.it/risultati-ricerca-avanzata/-/opac-adv/index/2/ITICCULIG0108409?monocampo=canti+carnascialeschi+lorenzo+de+medici&amp;_cacheid=1761928698943"
+                            target="_blank">OPAC SBN</a><br>
                         </p>
                       </div>
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
-                    <h2 class="accordion-header" id="heading-item2-download">
+                    <h2 class="accordion-header" id="heading-item7-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                        data-bs-target="#collapse-item2-download" aria-expanded="false"
-                        aria-controls="collapse-item2-download">
+                        data-bs-target="#collapse-item7-download" aria-expanded="false"
+                        aria-controls="collapse-item7-download">
                         Download metadata
                       </button>
                     </h2>
 
-                    <div id="collapse-item2-download" class="accordion-collapse collapse"
-                      aria-labelledby="heading-item2-download" data-bs-parent="#accordion-item2">
+                    <div id="collapse-item7-download" class="accordion-collapse collapse"
+                      aria-labelledby="heading-item7-download" data-bs-parent="#accordion-item7">
                       <div class="accordion-body">
                         <a class="text-decoration-underline meta-download-link"
                           href="csv_files/obj-17_bacchus-ariadne.csv" download="Triumph_of_Bacchus_and_Ariadne.csv">
@@ -951,8 +879,7 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
                 <h2 class="h4">The Triumph of Bacchus and Ariadne</h2>
 
                 <p class="desc-short mb-3 small">
@@ -986,8 +913,7 @@
                   embrace life joyfully, with both awareness and passion, before it fades away.
                 </p>
 
-                <button class="btn btn-sm js-toggle-desc"
-                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                   data-see-more="More detail" data-see-less="Less detail">
                   More detail
                 </button>
@@ -997,31 +923,32 @@
           </div>
         </div>
 
-
         <!-- ITEM 8 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+          <div class="card artwork-card artwork-card--dionysian">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <div class="d-flex flex-column align-items-center artwork-left">
 
                 <div class="text-center">
-                  <img src="../imgs/la_citta╠Ç_che_sale.jpg" class="d-block artwork-thumb"
-                    alt="The City Rises by Umberto Boccioni" style="max-height:320px; width:auto; object-fit:contain;"
-                    data-bs-toggle="modal" data-bs-target="#imageModal" data-fullsrc="../imgs/la_citta╠Ç_che_sale.jpg"
-                    data-title="The City Rises by Umberto Boccioni">
+                  <img src="../imgs/la_citta╠Ç_che_sale.jpg" class="d-block artwork-thumb artwork-img"
+                    alt="The City Rises by Umberto Boccioni"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/la_citta╠Ç_che_sale.jpg"
+                    data-title="The City Rises by Umberto Boccioni"
+                    data-theme="dionysian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/la_citta╠Ç_che_sale.jpg" data-title="The City Rises by Umberto Boccioni">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/la_citta╠Ç_che_sale.jpg"
+                    data-title="The City Rises by Umberto Boccioni"
+                    data-theme="dionysian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item8" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item8">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item8-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1048,7 +975,6 @@
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item8-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1061,8 +987,8 @@
                     <div id="collapse-item8-download" class="accordion-collapse collapse"
                       aria-labelledby="heading-item8-download" data-bs-parent="#accordion-item8">
                       <div class="accordion-body">
-                        <a class="text-decoration-underline meta-download-link" href="csv_files/la_citta_che_sale.csv"
-                          download="The_City_Rises.csv">
+                        <a class="text-decoration-underline meta-download-link"
+                          href="csv_files/la_citta_che_sale.csv" download="The_City_Rises.csv">
                           Download (CSV)
                         </a>
                       </div>
@@ -1072,8 +998,7 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
                 <h2 class="h4">The City Rises by Umberto Boccioni</h2>
 
                 <p class="desc-short mb-3 small">
@@ -1101,8 +1026,7 @@
                   new age that was emerging.
                 </p>
 
-                <button class="btn btn-sm js-toggle-desc"
-                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                   data-see-more="More detail" data-see-less="Less detail">
                   More detail
                 </button>
@@ -1112,31 +1036,31 @@
           </div>
         </div>
 
-
         <!-- ITEM 9 -->
         <div class="carousel-item">
-          <div class="card artwork-card text-light p-4" style="min-height: 420px; border: 2px solid var(--textred);">
+          <div class="card artwork-card artwork-card--dionysian">
             <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-              <!-- LEFT COLUMN: IMAGE + METADATA -->
-              <div class="d-flex flex-column align-items-center" style="width: 400px;">
+              <div class="d-flex flex-column align-items-center artwork-left">
 
                 <div class="text-center">
-                  <img src="../imgs/coppadionisio.jpg" class="d-block artwork-thumb" alt="Eye-cup with Dionysus"
-                    style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                    data-bs-target="#imageModal" data-fullsrc="../imgs/coppadionisio.jpg"
-                    data-title="Eye-cup with Dionysus">
+                  <img src="../imgs/coppadionisio.jpg" class="d-block artwork-thumb artwork-img" alt="Eye-cup with Dionysus"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/coppadionisio.jpg"
+                    data-title="Eye-cup with Dionysus"
+                    data-theme="dionysian">
 
-                  <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                    data-fullsrc="../imgs/coppadionisio.jpg" data-title="Eye-cup with Dionysus">
+                  <span class="click-to-view"
+                    data-bs-toggle="modal" data-bs-target="#imageModal"
+                    data-fullsrc="../imgs/coppadionisio.jpg"
+                    data-title="Eye-cup with Dionysus"
+                    data-theme="dionysian">
                     Click to view
                   </span>
                 </div>
 
-                <!-- ACCORDION -->
-                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item9" style="width: 100%;">
+                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-item9">
 
-                  <!-- GENERAL INFORMATION -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item9-info">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1164,7 +1088,6 @@
                     </div>
                   </div>
 
-                  <!-- DOWNLOAD METADATA -->
                   <div class="accordion-item">
                     <h2 class="accordion-header" id="heading-item9-download">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
@@ -1188,52 +1111,38 @@
                 </div>
               </div>
 
-              <!-- RIGHT COLUMN: TEXT -->
-              <div style="max-width: 520px;">
+              <div class="artwork-right">
                 <h2 class="h4">Eye-cup with Dionysus</h2>
 
                 <p class="desc-short mb-3 small">
                   Drinking cup created by the renowned potter and vase painter Exekias around 530 BC. Inside, it depicts
                   Dionysus, the god of wine, reclining on a ship with a billowing white sail. Vines climb up the mast,
-                  while
-                  dolphins leap and dance around the vessel. On the exterior are the characteristic features that gave
-                  this
-                  type of cup its name: the eye-cup. Two large painted eyes decorate the surface; when drinking from the
-                  cup,
-                  they align with the drinker’s own, creating the illusion that the person has taken on new, typically
+                  while dolphins leap and dance around the vessel. On the exterior are the characteristic features that gave
+                  this type of cup its name: the eye-cup. Two large painted eyes decorate the surface; when drinking from the
+                  cup, they align with the drinker’s own, creating the illusion that the person has taken on new, typically
                   Dionysian traits.
                 </p>
 
                 <p class="desc-long mb-3 d-none">
-                  The black-figure drinking kylix (cup), created by the potter and vase painter Exekias around 530 BC,
-                  is one of
+                  The black-figure drinking kylix (cup), created by the potter and vase painter Exekias around 530 BC, is one of
                   the most famous ancient vessels of all time.<br>
-                  Inside you can see Dionysus, the god of wine, lying on a ship with a swelled white sail. Along the
-                  mast, vines
-                  climb up and dolphins dance around the ship. With this picture, the beholder is to be reminded of a
-                  well-known myth about the god: Dionysus had been captured by Etruscan pirates and abducted aboard
-                  their ship.
-                  On the high seas, however, the god appeared to the men in his true form, after which they were seized
-                  with
-                  panic and they plunged into the sea where Dionysus transformed them into dolphins.<br>
-                  Whoever drank from this bowl had a rather peculiar experience: for him, the god emerged from the sea
-                  of red
-                  wine, he floated on the waves for a brief moment and then he sailed his ship into the drinker’s open
-                  mouth.
-                  The bowl was therefore much more than just an extravagant drinking vessel. Through each sip, the user
-                  came
+                  Inside you can see Dionysus, the god of wine, lying on a ship with a swelled white sail. Along the mast, vines
+                  climb up and dolphins dance around the ship. With this picture, the beholder is to be reminded of a well-known
+                  myth about the god: Dionysus had been captured by Etruscan pirates and abducted aboard their ship. On the high
+                  seas, however, the god appeared to the men in his true form, after which they were seized with panic and they
+                  plunged into the sea where Dionysus transformed them into dolphins.<br>
+                  Whoever drank from this bowl had a rather peculiar experience: for him, the god emerged from the sea of red
+                  wine, he floated on the waves for a brief moment and then he sailed his ship into the drinker’s open mouth.
+                  The bowl was therefore much more than just an extravagant drinking vessel. Through each sip, the user came
                   closer to the god Dionysus, as it were.<br>
-                  Furthermore, on the exterior there are the characteristic features that gave this type of cup its
-                  name: the
+                  Furthermore, on the exterior there are the characteristic features that gave this type of cup its name: the
                   eye-cup. Two large painted eyes decorate the surface; when drinking from the cup, they align with the
                   drinker's own, creating the illusion that the person has taken on new, typically Dionysian traits.<br>
-                  Exekias was well aware of the outstanding quality of the vessel he had created. He signed his work on
-                  the
+                  Exekias was well aware of the outstanding quality of the vessel he had created. He signed his work on the
                   outside on the edge of the foot of the vessel: “Exekias epoiese” — Exekias made it.
                 </p>
 
-                <button class="btn btn-sm js-toggle-desc"
-                  style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                   data-see-more="More detail" data-see-less="Less detail">
                   More detail
                 </button>
@@ -1243,27 +1152,27 @@
           </div>
         </div>
 
-
-        <!-- Controls (Bootstrap default arrows) -->
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
-
       </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+
     </div>
 
-    <!-- IMAGE MODAL -->
-    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalTitle" aria-hidden="true">
-      <div class="modal-dialog modal-lg modal-dialog-centered">
-        <div class="modal-content" style="background: var(--bg); border: 3px solid var(--textred);">
-          <div class="modal-header" style="border-bottom: 1px solid rgba(184, 173, 167, 0.35);">
-            <h5 class="modal-title section-title" id="imageModalTitle" style="margin:0;">Artwork</h5>
+    <!-- IMAGE MODAL (themed via #imageModal.dionysian in main.css) -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-xl">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title section-title" id="imageModalTitle">Artwork</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
@@ -1287,7 +1196,7 @@
           <h4><b>Opening Hours</b></h4>
           <p>Daily: 00.00–24.00 (Fridays: 23:30)<br>Last entry: Anytime (Fridays: 23:29)</p>
         </div>
-        <div class="col about" style="line-height: 2.5;">
+        <div class="col about footer-about">
           <h4><b>About</b></h4>
           <a href="../the_museum.html">The Museum</a><br>
           <a href="/narratives/index.html">The Narratives</a><br>
@@ -1297,7 +1206,7 @@
           <a href="Disclaimer.html">Disclaimer</a>
         </div>
         <div class="col exam">
-          <h4 style="text-align: left;"><b>The Project</b></h4>
+          <h4 class="footer-project-title"><b>The Project</b></h4>
           <p>This project was created for the <a
               href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2024/454464"><i>Information
                 Modeling and Web Technologies</i></a> exam (2024/2025)
@@ -1313,33 +1222,25 @@
         </div>
       </div>
       <div class="row rights">
-        <p style="text-align: center;">All the images and resources taken from external sources are solely used
-          for study purposes. No
-          commercial use is intended.<br>
+        <p class="footer-rights">All the images and resources taken from external sources are solely used
+          for study purposes. No commercial use is intended.<br>
           <i>Tyrsos & Lyre</i> © 2025
         </p>
       </div>
     </div>
   </footer>
 
-  <!-- JS -->
+  <!-- Theme toggle -->
+  <script src="../scripts/common.js" defer></script>
+
+  <!-- Page JS -->
   <script>
-    // Modal fill (Click to view / image)
-    const imageModal = document.getElementById('imageModal');
-    imageModal.addEventListener('show.bs.modal', (event) => {
-      const trigger = event.relatedTarget;
-      const fullSrc = trigger.getAttribute('data-fullsrc');
-      const title = trigger.getAttribute('data-title');
-
-      document.getElementById('imageModalImg').src = fullSrc;
-      document.getElementById('imageModalImg').alt = title || 'Artwork';
-      document.getElementById('imageModalTitle').textContent = title || 'Artwork';
-    });
-
-    // Toggle descriptions (swap short <-> long)
+    // =========================
+    // 1) Toggle short/long description
+    // =========================
     document.querySelectorAll('.js-toggle-desc').forEach(btn => {
-      const moreText = btn.dataset.seeMore || 'See more';
-      const lessText = btn.dataset.seeLess || 'See less';
+      const moreText = btn.dataset.seeMore || 'More detail';
+      const lessText = btn.dataset.seeLess || 'Less detail';
 
       btn.addEventListener('click', () => {
         const container = btn.parentElement;
@@ -1360,15 +1261,64 @@
       });
     });
 
-    // Reset descriptions when sliding carousel
+    // =========================
+    // 2) Reset toggles when sliding carousel
+    // =========================
     document.getElementById('carouselExample')
       .addEventListener('slide.bs.carousel', () => {
         document.querySelectorAll('.desc-long').forEach(el => el.classList.add('d-none'));
         document.querySelectorAll('.desc-short').forEach(el => el.classList.remove('d-none'));
         document.querySelectorAll('.js-toggle-desc').forEach(btn => {
-          btn.textContent = btn.dataset.seeMore || 'See more';
+          btn.textContent = btn.dataset.seeMore || 'More detail';
         });
       });
+
+    // =========================
+    // 3) Modal: set image + theme
+    // =========================
+    const imageModal = document.getElementById('imageModal');
+    const modalImg = document.getElementById('imageModalImg');
+    const modalTitle = document.getElementById('imageModalTitle');
+
+    function openArtworkModalFrom(el) {
+      if (!imageModal || !modalImg || !modalTitle) return;
+
+      const fullSrc = el.getAttribute('data-fullsrc');
+      const title = el.getAttribute('data-title') || 'Artwork';
+      const theme = el.getAttribute('data-theme'); // "apollonian" | "dionysian"
+
+      if (!fullSrc) return;
+
+      modalImg.src = fullSrc;
+      modalImg.alt = title;
+      modalTitle.textContent = title;
+
+      // reset themes
+      imageModal.classList.remove('apollonian', 'dionysian');
+
+      // this page is always dionysian, but keep robust:
+      if (theme === 'apollonian') {
+        imageModal.classList.add('apollonian');
+      } else {
+        imageModal.classList.add('dionysian');
+      }
+    }
+
+    document.querySelectorAll('[data-bs-target="#imageModal"]').forEach(el => {
+      el.addEventListener('click', () => openArtworkModalFrom(el));
+    });
+
+    // =========================
+    // 4) Reset modal on close
+    // =========================
+    if (imageModal) {
+      imageModal.addEventListener('hidden.bs.modal', () => {
+        modalImg.src = '';
+        modalImg.alt = '';
+        modalTitle.textContent = 'Artwork';
+        imageModal.classList.remove('apollonian', 'dionysian');
+      });
+    }
   </script>
 
 </body>

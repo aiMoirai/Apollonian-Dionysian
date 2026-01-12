@@ -11,54 +11,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
     <title>Themes · Performing arts</title>
-
-    <style>
-        /* Small helper for the "Click to view" link */
-        .click-to-view {
-            display: inline-block;
-            margin-top: 0.5rem;
-            font-size: 0.85rem;
-            color: var(--text);
-            text-decoration: underline;
-            cursor: pointer;
-        }
-
-        .click-to-view:hover {
-            color: var(--yellow);
-        }
-
-        /* Make the thumbnail feel clickable */
-        .artwork-thumb {
-            cursor: zoom-in;
-        }
-
-        /* Ensure modal image fits nicely */
-        .modal-artwork-img {
-            width: 100%;
-            height: auto;
-            max-height: 80vh;
-            object-fit: contain;
-            display: block;
-            margin: 0 auto;
-        }
-
-        /* Apollonian modal */
-        #imageModal.apollonian .modal-content {
-            background: var(--bg);
-            border: 3px solid var(--yellow);
-        }
-
-        /* Dionysian modal */
-        #imageModal.dionysian .modal-content {
-            background: var(--bg);
-            border: 3px solid var(--textred);
-        }
-
-        audio {
-            filter: grayscale(1);
-            opacity: 0.9;
-        }
-    </style>
 </head>
 
 <body>
@@ -125,14 +77,19 @@
         </div>
     </nav>
 
+    <!-- Dark/light button -->
+    <div class="theme-switch">
+        <input type="checkbox" id="switch" />
+        <label for="switch"></label>
+    </div>
+
     <div class="container py-5" id="quote">
 
         <!-- Title + back -->
-        <div class="d-flex justify-content-between align-items-center mb-4">
+        <div class="narrative-head mb-4 narrative-page-header">
             <h1 class="h4 mb-0 section-title">Themes: Performing arts</h1>
 
-            <!-- robust link (same folder) -->
-            <a href="./index.html" class="btn btn-outline-secondary btn-sm">
+            <a href="./index.html" class="btn btn-outline-secondary btn-sm back-to-narratives">
                 ← Back to Narratives
             </a>
         </div>
@@ -141,36 +98,33 @@
         <div id="carouselExample" class="carousel slide w-100" data-bs-ride="false">
             <div class="carousel-inner">
 
-                <!-- ITEM 1 -->
+                <!-- ITEM 1 (Apollonian) -->
                 <div class="carousel-item active">
-                    <div class="card artwork-card text-light border border-warning p-4"
-                        style="min-height: 420px; border-width: 2px;">
-
+                    <div class="card artwork-card artwork-card--apollonian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
+                            <!-- LEFT COLUMN -->
+                            <div class="d-flex flex-column align-items-center artwork-left">
 
-                                <!-- IMAGE + CLICK TO VIEW -->
                                 <div class="text-center">
-                                    <img src="../imgs/bach.png" class="d-block artwork-thumb"
+                                    <img src="../imgs/bach.png" class="d-block artwork-thumb artwork-img"
                                         alt="The Well-Tempered Clavier, BWV 846-893"
-                                        style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                                        data-bs-target="#imageModal" data-fullsrc="../imgs/bach.png"
-                                        data-title="The Well-Tempered Clavier, BWV 846-893">
-
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
                                         data-fullsrc="../imgs/bach.png"
-                                        data-title="The Well-Tempered Clavier, BWV 846-893" data-theme="apollonian">
+                                        data-title="The Well-Tempered Clavier, BWV 846-893"
+                                        data-theme="apollonian">
+
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/bach.png"
+                                        data-title="The Well-Tempered Clavier, BWV 846-893"
+                                        data-theme="apollonian">
                                         Click to view
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-1"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-1">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-pa-1-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -200,7 +154,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-pa-1-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -225,83 +178,102 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
+                            <!-- RIGHT COLUMN -->
+                            <div class="artwork-right">
 
                                 <h2 class="h4">The Well-Tempered Clavier, BWV 846-893</h2>
 
-                                <!-- SHORT DESCRIPTION -->
                                 <div class="desc-short mb-3 small">
-                                <p>
-                                    <i>The Well-Tempered Clavier</i> by Johann Sebastian Bach, first published in 1722 (Book I) and 1742 (Book II), is a landmark collection of preludes and fugues in all 24 major and minor keys. The work systematically explores the possibilities of equal temperament tuning, enabling music in every key. Each prelude and fugue pair demonstrates contrapuntal mastery and expressive depth. The collection influenced generations of composers and remains central to keyboard repertoire. Original manuscripts and early editions show Bach’s careful notation and occasional revisions, reflecting his meticulous compositional process.
-                                </p>
+                                    <p>
+                                        <i>The Well-Tempered Clavier</i> by Johann Sebastian Bach, first published in
+                                        1722 (Book I) and 1742 (Book II), is a landmark collection of preludes and
+                                        fugues in all 24 major and minor keys. The work systematically explores the
+                                        possibilities of equal temperament tuning, enabling music in every key. Each
+                                        prelude and fugue pair demonstrates contrapuntal mastery and expressive depth.
+                                        The collection influenced generations of composers and remains central to
+                                        keyboard repertoire. Original manuscripts and early editions show Bach’s
+                                        careful notation and occasional revisions, reflecting his meticulous
+                                        compositional process.
+                                    </p>
 
-                                <!-- AUDIO PLAYER (SHORT) -->
-                                <audio controls preload="none" style="width: 100%; margin-top: 0.5rem;">
-                                    <source src="music/J.S.Bach - The Well Tempered Clavier_ Book I_ Prelude and Fugue No.1 in C Major - Sviatoslav Richter.mp3" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
+                                    <audio class="narratives-audio" controls preload="none">
+                                        <source
+                                            src="music/J.S.Bach - The Well Tempered Clavier_ Book I_ Prelude and Fugue No.1 in C Major - Sviatoslav Richter.mp3"
+                                            type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
                                 </div>
 
-                                <!-- LONG DESCRIPTION -->
                                 <div class="desc-long mb-3 d-none">
-                                <p>
-                                    This item is a handwritten manuscript copy of <i>Das Wohltemperierte Klavier</i> by Johann Sebastian Bach (1685–1750),
-                                    catalogued under the shelfmark Mus.2405-T-7,1. The manuscript is preserved by the Sächsische Landesbibliothek –
-                                    Staats- und Universitätsbibliothek Dresden (SLUB Dresden) and is available today as a digital object within the
-                                    Königliche Privat-Musikaliensammlung digital collection. The document is dated approximately between 1760 and 1787,
-                                    placing it after Bach’s death and identifying it clearly as an eighteenth-century copy rather than an autograph.
-                                    <br>
-                                    <i>Das Wohltemperierte Klavier</i> is one of the foundational works of Western keyboard music. It consists of a
-                                    systematic collection of preludes and fugues written in all major and minor keys, demonstrating the possibilities of
-                                    a well-tempered tuning system. This manuscript contains the first book of the work, corresponding to BWV 846–869,
-                                    beginning with <i>Praeludium I</i> (BWV 846) and concluding with <i>Praeludium XXIV</i> (BWV 869). The internal structure
-                                    of the manuscript reflects this ordered sequence of preludes, which are individually listed in the catalog record.
-                                    <br>
-                                    The physical extent of the item is described as an <i>Abschrift</i> (copy), and its structure type is identified as
-                                    <i>Handschrift</i> (manuscript). The source language is marked as “not to be determined,” which is typical for
-                                    instrumental music sources without extensive verbal text. The manuscript is associated with Dresden as its place of
-                                    origin, though no specific copyist is identified.
-                                </p>
+                                    <p>
+                                        This item is a handwritten manuscript copy of <i>Das Wohltemperierte
+                                            Klavier</i> by Johann Sebastian Bach (1685–1750),
+                                        catalogued under the shelfmark Mus.2405-T-7,1. The manuscript is preserved by
+                                        the Sächsische Landesbibliothek –
+                                        Staats- und Universitätsbibliothek Dresden (SLUB Dresden) and is available
+                                        today as a digital object within the
+                                        Königliche Privat-Musikaliensammlung digital collection. The document is dated
+                                        approximately between 1760 and 1787,
+                                        placing it after Bach’s death and identifying it clearly as an eighteenth-century
+                                        copy rather than an autograph.
+                                        <br>
+                                        <i>Das Wohltemperierte Klavier</i> is one of the foundational works of Western
+                                        keyboard music. It consists of a
+                                        systematic collection of preludes and fugues written in all major and minor
+                                        keys, demonstrating the possibilities of
+                                        a well-tempered tuning system. This manuscript contains the first book of the
+                                        work, corresponding to BWV 846–869,
+                                        beginning with <i>Praeludium I</i> (BWV 846) and concluding with <i>Praeludium
+                                            XXIV</i> (BWV 869). The internal structure
+                                        of the manuscript reflects this ordered sequence of preludes, which are
+                                        individually listed in the catalog record.
+                                        <br>
+                                        The physical extent of the item is described as an <i>Abschrift</i> (copy), and
+                                        its structure type is identified as
+                                        <i>Handschrift</i> (manuscript). The source language is marked as “not to be
+                                        determined,” which is typical for
+                                        instrumental music sources without extensive verbal text. The manuscript is
+                                        associated with Dresden as its place of
+                                        origin, though no specific copyist is identified.
+                                    </p>
 
-                                <!-- AUDIO PLAYER (LONG) -->
-                                <audio controls preload="none" style="width: 100%; margin-top: 0.5rem;">
-                                    <source src="music/J.S.Bach - The Well Tempered Clavier_ Book I_ Prelude and Fugue No.1 in C Major - Sviatoslav Richter.mp3" type="audio/mpeg">
-                                    Your browser does not support the audio element.
-                                </audio>
+                                    <audio class="narratives-audio" controls preload="none">
+                                        <source
+                                            src="music/J.S.Bach - The Well Tempered Clavier_ Book I_ Prelude and Fugue No.1 in C Major - Sviatoslav Richter.mp3"
+                                            type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
                                 </div>
 
-                                <button class="btn btn-warning btn-sm js-toggle-desc"
-                                data-see-more="More detail"
-                                data-see-less="Less detail">
-                                More detail
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian"
+                                    data-see-more="More detail" data-see-less="Less detail">
+                                    More detail
                                 </button>
 
                             </div>
 
-
-                            </div>
                         </div>
-                        </div>
+                    </div>
+                </div>
 
-                <!-- ITEM 2 -->
+                <!-- ITEM 2 (Dionysian) -->
                 <div class="carousel-item">
-                    <div class="card artwork-card text-light p-4"
-                        style="min-height: 420px; border: 2px solid var(--textred);">
+                    <div class="card artwork-card artwork-card--dionysian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
+                            <!-- LEFT COLUMN -->
+                            <div class="d-flex flex-column align-items-center artwork-left">
 
                                 <div class="text-center">
-                                    <img src="../imgs/wagner.jpg" class="d-block artwork-thumb"
+                                    <img src="../imgs/wagner.jpg" class="d-block artwork-thumb artwork-img"
                                         alt="Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner"
-                                        style="max-height:320px; max-width:400px; width:auto; object-fit:contain;"
                                         data-bs-toggle="modal" data-bs-target="#imageModal"
                                         data-fullsrc="../imgs/wagner.jpg"
-                                        data-title="Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner" data-theme="dionysian">
+                                        data-title="Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner"
+                                        data-theme="dionysian">
 
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
                                         data-fullsrc="../imgs/wagner.jpg"
                                         data-title="Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner"
                                         data-theme="dionysian">
@@ -309,11 +281,8 @@
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-2"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-2">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-pa-2-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -344,7 +313,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-pa-2-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -368,93 +336,107 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
-                            <h2 class="h4">Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner</h2>
+                            <!-- RIGHT COLUMN -->
+                            <div class="artwork-right">
+                                <h2 class="h4">Sketches for the prelude and act one of Tristan und Isolde by Richard Wagner</h2>
 
-                            <!-- SHORT DESCRIPTION -->
-                            <div class="desc-short mb-3 small">
-                                <p class="mb-2">
-                                    Piano scoring (sketch?) for first 19 bars of the prelude to act one, followed by various themes from that act. Tristan und Isolde (premiered 1865) is an opera by Richard Wagner that tells a tragic medieval love story. After Tristan kills Isolde’s fiancé in battle, he escorts her by ship to marry King Mark. On the voyage, they mistakenly drink a love potion and fall into an overwhelming and forbidden passion. Their love defies duty, loyalty, and social order, driving them toward death as the only realm where union is possible. Wagner’s revolutionary music, marked by unresolved harmonies and emotional intensity, made this opera a landmark of Western music, deeply influencing later composers and the development of modernism.
-                                </p>
+                                <div class="desc-short mb-3 small">
+                                    <p class="mb-2">
+                                        Piano scoring (sketch?) for first 19 bars of the prelude to act one, followed by
+                                        various themes from that act. Tristan und Isolde (premiered 1865) is an opera by
+                                        Richard Wagner that tells a tragic medieval love story. After Tristan kills
+                                        Isolde’s fiancé in battle, he escorts her by ship to marry King Mark. On the
+                                        voyage, they mistakenly drink a love potion and fall into an overwhelming and
+                                        forbidden passion. Their love defies duty, loyalty, and social order, driving
+                                        them toward death as the only realm where union is possible. Wagner’s
+                                        revolutionary music, marked by unresolved harmonies and emotional intensity,
+                                        made this opera a landmark of Western music, deeply influencing later composers
+                                        and the development of modernism.
+                                    </p>
 
-                                <!-- AUDIO PLAYER (SHORT) -->
-                                <audio controls preload="none" style="width: 100%; margin-top: 0.5rem;">
-                                <source src="music/Tristan und Isolde, Act I_ Prelude.mp3" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                                </audio>
-                            </div>
+                                    <audio class="narratives-audio" controls preload="none">
+                                        <source src="music/Tristan und Isolde, Act I_ Prelude.mp3" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
 
-                            <!-- LONG DESCRIPTION -->
-                            <div class="desc-long mb-3 d-none">
-                                <p class="mb-2">
-                                This item is a set of musical manuscript sketches related to the Prelude and the first act of <i>Tristan und Isolde</i>,
-                                an opera by Richard Wagner (1813-1883). The material was produced approximately between 1850 and 1859, during the period
-                                in which Wagner was working on the conception and composition of the opera. Unlike a finished score, these sketches
-                                represent preparatory work and document an early stage of the compositional process.
-                                <br>
-                                <i>Tristan und Isolde</i> is one of Wagner’s most important operas and a central work of nineteenth-century music drama.
-                                The Prelude and Act One introduce the main musical and dramatic ideas of the opera, which is based on the medieval legend
-                                of Tristan and Isolde and explores themes of love, desire, and fate. The manuscript sketches are therefore directly
-                                connected to the development of these core elements and to Wagner’s method of shaping music and drama together.
-                                <br>
-                                The composer associated with the manuscript is Richard Wagner, while Siegfried Wagner (1869–1930), his son, is listed as
-                                an associated name, likely in relation to the later history, ownership, or preservation of the material. The item is
-                                classified as a music manuscript and falls within the genre of scores.
-                                <br>
-                                The manuscript is held in the Music Division of the library and is stored in a locked case (Shelf locator: JOB 73–92),
-                                indicating its status as a rare and valuable object. As an original manuscript source connected to <i>Tristan und Isolde</i>,
-                                it is primarily of interest for musicological research, especially for the study of Wagner’s compositional practices and
-                                the history of the opera.
-                                </p>
+                                <div class="desc-long mb-3 d-none">
+                                    <p class="mb-2">
+                                        This item is a set of musical manuscript sketches related to the Prelude and the
+                                        first act of <i>Tristan und Isolde</i>,
+                                        an opera by Richard Wagner (1813-1883). The material was produced approximately
+                                        between 1850 and 1859, during the period
+                                        in which Wagner was working on the conception and composition of the opera.
+                                        Unlike a finished score, these sketches
+                                        represent preparatory work and document an early stage of the compositional
+                                        process.
+                                        <br>
+                                        <i>Tristan und Isolde</i> is one of Wagner’s most important operas and a central
+                                        work of nineteenth-century music drama.
+                                        The Prelude and Act One introduce the main musical and dramatic ideas of the
+                                        opera, which is based on the medieval legend
+                                        of Tristan and Isolde and explores themes of love, desire, and fate. The
+                                        manuscript sketches are therefore directly
+                                        connected to the development of these core elements and to Wagner’s method of
+                                        shaping music and drama together.
+                                        <br>
+                                        The composer associated with the manuscript is Richard Wagner, while Siegfried
+                                        Wagner (1869–1930), his son, is listed as
+                                        an associated name, likely in relation to the later history, ownership, or
+                                        preservation of the material. The item is
+                                        classified as a music manuscript and falls within the genre of scores.
+                                        <br>
+                                        The manuscript is held in the Music Division of the library and is stored in a
+                                        locked case (Shelf locator: JOB 73–92),
+                                        indicating its status as a rare and valuable object. As an original manuscript
+                                        source connected to <i>Tristan und Isolde</i>,
+                                        it is primarily of interest for musicological research, especially for the study
+                                        of Wagner’s compositional practices and
+                                        the history of the opera.
+                                    </p>
 
-                                <!-- AUDIO PLAYER (LONG) -->
-                                <audio controls preload="none" style="width: 100%; margin-top: 0.5rem;">
-                                <source src="music/Tristan und Isolde, Act I_ Prelude.mp3" type="audio/mpeg">
-                                Your browser does not support the audio element.
-                                </audio>
-                            </div>
+                                    <audio class="narratives-audio" controls preload="none">
+                                        <source src="music/Tristan und Isolde, Act I_ Prelude.mp3" type="audio/mpeg">
+                                        Your browser does not support the audio element.
+                                    </audio>
+                                </div>
 
-                            <button class="btn btn-sm js-toggle-desc"
-                                style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
-                                data-see-more="More detail" data-see-less="Less detail">
-                                More detail
-                            </button>
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
+                                    data-see-more="More detail" data-see-less="Less detail">
+                                    More detail
+                                </button>
                             </div>
 
                         </div>
                     </div>
                 </div>
 
-                <!-- ITEM 3 -->
+                <!-- ITEM 3 (Apollonian) -->
                 <div class="carousel-item">
-                    <div class="card artwork-card text-light border border-warning p-4"
-                        style="min-height: 420px; border-width: 2px;">
-
+                    <div class="card artwork-card artwork-card--apollonian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
+                            <div class="d-flex flex-column align-items-center artwork-left">
 
-                                <!-- IMAGE + CLICK TO VIEW -->
                                 <div class="text-center">
-                                    <img src="../imgs/maschera_tragica.jpg" class="d-block artwork-thumb"
-                                        alt="Tragic mask" style="max-height:320px; width:auto; object-fit:contain;"
+                                    <img src="../imgs/maschera_tragica.jpg" class="d-block artwork-thumb artwork-img"
+                                        alt="Tragic mask"
                                         data-bs-toggle="modal" data-bs-target="#imageModal"
-                                        data-fullsrc="../imgs/maschera_tragica.jpg" data-title="Tragic mask">
+                                        data-fullsrc="../imgs/maschera_tragica.jpg"
+                                        data-title="Tragic mask"
+                                        data-theme="apollonian">
 
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                                        data-fullsrc="../imgs/maschera_tragica.jpg" data-title="Tragic mask"
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/maschera_tragica.jpg"
+                                        data-title="Tragic mask"
                                         data-theme="apollonian">
                                         Click to view
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-3"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-3">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-pa-3-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -467,7 +449,7 @@
                                         <div id="collapse-pa-3-info" class="accordion-collapse collapse"
                                             aria-labelledby="heading-pa-3-info" data-bs-parent="#accordion-pa-3">
                                             <div class="accordion-body">
-                                               <p class="text-start mb-0">
+                                                <p class="text-start mb-0">
                                                     <b>Title:</b> Tragedy Mask<br>
                                                     <b>Attribution:</b> Unknown<br>
                                                     <b>Type:</b> Plaque<br>
@@ -483,7 +465,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-pa-3-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -508,13 +489,17 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
+                            <div class="artwork-right">
 
                                 <h2 class="h4">Tragic mask</h2>
 
                                 <p class="desc-short mb-3 small">
-                                    Plaque depicting a female tragic theatrical mask with hair bound by a diadem. Tragic masks in ancient Greek theater were essential tools for performance, allowing actors to embody gods, heroes, and mythic figures while heightening emotional expression. Carved or molded with exaggerated features, wide, open mouths, deeply contoured brows, dramatic eyes, they made gestures and feelings visible even to spectators seated far from the stage.
+                                    Plaque depicting a female tragic theatrical mask with hair bound by a diadem. Tragic
+                                    masks in ancient Greek theater were essential tools for performance, allowing actors
+                                    to embody gods, heroes, and mythic figures while heightening emotional expression.
+                                    Carved or molded with exaggerated features, wide, open mouths, deeply contoured
+                                    brows, dramatic eyes, they made gestures and feelings visible even to spectators
+                                    seated far from the stage.
                                 </p>
 
                                 <p class="desc-long mb-3 d-none">
@@ -537,8 +522,8 @@
                                     life.
                                 </p>
 
-                                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
-                                    data-see-less="Less detail">
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian"
+                                    data-see-more="More detail" data-see-less="Less detail">
                                     More detail
                                 </button>
 
@@ -548,33 +533,32 @@
                     </div>
                 </div>
 
-                <!-- ITEM 4 -->
+                <!-- ITEM 4 (Dionysian) -->
                 <div class="carousel-item">
-                    <div class="card artwork-card text-light p-4"
-                        style="min-height: 420px; border: 2px solid var(--textred);">
+                    <div class="card artwork-card artwork-card--dionysian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
+                            <div class="d-flex flex-column align-items-center artwork-left">
 
                                 <div class="text-center">
-                                    <img src="../imgs/maschera_comica.jpg" class="d-block artwork-thumb"
-                                        alt="Comic mask" style="max-height:320px; width:auto; object-fit:contain;"
+                                    <img src="../imgs/maschera_comica.jpg" class="d-block artwork-thumb artwork-img"
+                                        alt="Comic mask"
                                         data-bs-toggle="modal" data-bs-target="#imageModal"
-                                        data-fullsrc="../imgs/maschera_comica.jpg" data-title="Comic mask" data-theme="dionysian">
+                                        data-fullsrc="../imgs/maschera_comica.jpg"
+                                        data-title="Comic mask"
+                                        data-theme="dionysian">
 
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                                        data-fullsrc="../imgs/maschera_comica.jpg" data-title="Comic mask"
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/maschera_comica.jpg"
+                                        data-title="Comic mask"
                                         data-theme="dionysian">
                                         Click to view
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-4"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-4">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-pa-4-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -594,8 +578,7 @@
                                                     <b>Materials and Techniques:</b> Polychrome terracotta<br>
                                                     <b>Measurements:</b> 15.5 cm (height); 24 cm (width); 25.5 cm
                                                     (length)<br>
-                                                    <b>Current Location:</b> National Archaeological Museum of
-                                                    Taranto<br>
+                                                    <b>Current Location:</b> National Archaeological Museum of Taranto<br>
                                                     <b>Creation Date:</b> 2nd-1st century B.C<br>
                                                     <b>Online Location:</b> <a
                                                         href="https://artsandculture.google.com/asset/figured-terracotta/NAHrFhcLSJLcxw?hl=it"
@@ -605,7 +588,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-pa-4-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -630,12 +612,14 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
+                            <div class="artwork-right">
                                 <h2 class="h4">Comic mask</h2>
 
                                 <p class="desc-short mb-3 small">
-                                    Comic theatrical mask from Magna Graecia, attributed to Italic farce, a popular and licentious genre. It represents the features of a man with a deformed, bald face. It comes from a cremation tomb and testifies to the strong connection between the world of the dead, entertainment, and Dionysian cults.
+                                    Comic theatrical mask from Magna Graecia, attributed to Italic farce, a popular and
+                                    licentious genre. It represents the features of a man with a deformed, bald face. It
+                                    comes from a cremation tomb and testifies to the strong connection between the world
+                                    of the dead, entertainment, and Dionysian cults.
                                 </p>
 
                                 <p class="desc-long mb-3 d-none">
@@ -661,8 +645,7 @@
                                     refined theatrical traditions.
                                 </p>
 
-                                <button class="btn btn-sm js-toggle-desc"
-                                    style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                                     data-see-more="More detail" data-see-less="Less detail">
                                     More detail
                                 </button>
@@ -672,36 +655,32 @@
                     </div>
                 </div>
 
-                <!-- ITEM 5 -->
+                <!-- ITEM 5 (Apollonian) -->
                 <div class="carousel-item">
-                    <div class="card artwork-card text-light border border-warning p-4"
-                        style="min-height: 420px; border-width: 2px;">
-
+                    <div class="card artwork-card artwork-card--apollonian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
+                            <div class="d-flex flex-column align-items-center artwork-left">
 
-                                <!-- IMAGE + CLICK TO VIEW -->
                                 <div class="text-center">
-                                    <img src="../imgs/kylix.jpg" class="d-block artwork-thumb"
+                                    <img src="../imgs/kylix.jpg" class="d-block artwork-thumb artwork-img"
                                         alt="Kylix with Apollo and kithara"
-                                        style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                                        data-bs-target="#imageModal" data-fullsrc="../imgs/kylix.jpg"
-                                        data-title="Kylix with Apollo and kithara">
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/kylix.jpg"
+                                        data-title="Kylix with Apollo and kithara"
+                                        data-theme="apollonian">
 
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                                        data-fullsrc="../imgs/kylix.jpg" data-title="Kylix with Apollo and kithara"
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/kylix.jpg"
+                                        data-title="Kylix with Apollo and kithara"
                                         data-theme="apollonian">
                                         Click to view
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-5"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-5">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-pa-5-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -731,7 +710,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-pa-5-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -756,8 +734,7 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
+                            <div class="artwork-right">
                                 <h2 class="h4">Kylix with Apollo and kithara</h2>
 
                                 <p class="desc-short mb-3 small">
@@ -816,8 +793,8 @@
                                     Below the handles a palmette. The exergue in the interior is left red.
                                 </p>
 
-                                <button class="btn btn-warning btn-sm js-toggle-desc" data-see-more="More detail"
-                                    data-see-less="Less detail">
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--apollonian"
+                                    data-see-more="More detail" data-see-less="Less detail">
                                     More detail
                                 </button>
                             </div>
@@ -826,34 +803,32 @@
                     </div>
                 </div>
 
-                <!-- ITEM 6 -->
+                <!-- ITEM 6 (Dionysian) -->
                 <div class="carousel-item">
-                    <div class="card artwork-card text-light p-4"
-                        style="min-height: 420px; border: 2px solid var(--textred);">
+                    <div class="card artwork-card artwork-card--dionysian">
                         <div class="d-flex justify-content-evenly align-items-start gap-4">
 
-                            <!-- LEFT COLUMN: IMAGE + METADATA -->
-                            <div class="d-flex flex-column align-items-center" style="width: 400px;">
+                            <div class="d-flex flex-column align-items-center artwork-left">
 
                                 <div class="text-center">
-                                    <img src="../imgs/baccanti.jpg" class="d-block artwork-thumb"
+                                    <img src="../imgs/baccanti.jpg" class="d-block artwork-thumb artwork-img"
                                         alt="Euripides' Bacchae Fragments"
-                                        style="max-height:320px; width:auto; object-fit:contain;" data-bs-toggle="modal"
-                                        data-bs-target="#imageModal" data-fullsrc="../imgs/baccanti.jpg"
-                                        data-title="Euripides' Bacchae Fragments" data-theme="dionysian">
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/baccanti.jpg"
+                                        data-title="Euripides' Bacchae Fragments"
+                                        data-theme="dionysian">
 
-                                    <span class="click-to-view" data-bs-toggle="modal" data-bs-target="#imageModal"
-                                        data-fullsrc="../imgs/baccanti.jpg" data-title="Euripides' Bacchae Fragments"
+                                    <span class="click-to-view"
+                                        data-bs-toggle="modal" data-bs-target="#imageModal"
+                                        data-fullsrc="../imgs/baccanti.jpg"
+                                        data-title="Euripides' Bacchae Fragments"
                                         data-theme="dionysian">
                                         Click to view
                                     </span>
                                 </div>
 
-                                <!-- ACCORDION -->
-                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-6"
-                                    style="width: 100%;">
+                                <div class="accordion accordion-flush artwork-accordion mt-3" id="accordion-pa-6">
 
-                                    <!-- GENERAL INFORMATION -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-pa-6-info">
                                             <button class="accordion-button collapsed" type="button"
@@ -886,7 +861,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- DOWNLOAD METADATA -->
                                     <div class="accordion-item">
                                         <h2 class="accordion-header" id="heading-pa-6-download">
                                             <button class="accordion-button collapsed" type="button"
@@ -910,39 +884,51 @@
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN: TEXT -->
-                            <div style="max-width: 520px;">
+                            <div class="artwork-right">
                                 <h2 class="h4">Euripides' Bacchae Fragments</h2>
 
                                 <p class="desc-short mb-3 small">
-                                    Fragments on which the beginning of the 1st line of Euripides' Bacchae has been written 3 or 4 times. Euripides’ Bacchae (late 5th century BCE) is a tragic drama centered on the arrival of Dionysus in Thebes and the city’s refusal to acknowledge his divinity. King Pentheus attempts to suppress the god’s cult, but Dionysus drives the women of Thebes into ecstatic frenzy and leads Pentheus to his brutal death at the hands of his own mother. The play explores themes of divine power, human arrogance, identity, and the tension between reason and instinct. Its blend of psychological depth, ritual, and violence has made it one of the most striking and unsettling works of Greek tragedy.
+                                    Fragments on which the beginning of the 1st line of Euripides' Bacchae has been
+                                    written 3 or 4 times. Euripides’ Bacchae (late 5th century BCE) is a tragic drama
+                                    centered on the arrival of Dionysus in Thebes and the city’s refusal to acknowledge
+                                    his divinity. King Pentheus attempts to suppress the god’s cult, but Dionysus drives
+                                    the women of Thebes into ecstatic frenzy and leads Pentheus to his brutal death at
+                                    the hands of his own mother. The play explores themes of divine power, human
+                                    arrogance, identity, and the tension between reason and instinct. Its blend of
+                                    psychological depth, ritual, and violence has made it one of the most striking and
+                                    unsettling works of Greek tragedy.
                                 </p>
 
                                 <p class="desc-long mb-3 d-none">
-                                    This item consists of a set of four fragmentary pieces of papyrus on which the opening words of line 1 of
-                                    <i>Bacchae</i> by Euripides have been written three or four times. The text is in ancient Greek and preserves only a
-                                    very small portion of the tragedy, focusing exclusively on the repeated copying of the same line rather than on
-                                    continuous literary transmission.
+                                    This item consists of a set of four fragmentary pieces of papyrus on which the opening
+                                    words of line 1 of <i>Bacchae</i> by Euripides have been written three or four times.
+                                    The text is in ancient Greek and preserves only a very small portion of the tragedy,
+                                    focusing exclusively on the repeated copying of the same line rather than on continuous
+                                    literary transmission.
                                     <br>
-                                    The fragments form part of the Tebtunis Papyri collection and are held by The Bancroft Library. The material is
-                                    classified as literary papyri, although its function appears to be primarily educational rather than performative or
-                                    archival. The handwriting is described as a large “schoolboy hand,” which, together with the repetition of the same
-                                    line, strongly suggests that the papyrus was used as a writing exercise, likely for the practice of penmanship.
+                                    The fragments form part of the Tebtunis Papyri collection and are held by The Bancroft
+                                    Library. The material is classified as literary papyri, although its function appears
+                                    to be primarily educational rather than performative or archival. The handwriting is
+                                    described as a large “schoolboy hand,” which, together with the repetition of the same
+                                    line, strongly suggests that the papyrus was used as a writing exercise, likely for the
+                                    practice of penmanship.
                                     <br>
-                                    Physically, the object survives in an incomplete state and consists of four papyrus fragments of various sizes. The
-                                    text is written in a single column of four lines on the recto, along the papyrus fibers. The papyrus sheet had been
-                                    reused: it was probably originally employed for an account or another documentary purpose, and traces of the earlier
-                                    writing remain visible, particularly on the verso.
+                                    Physically, the object survives in an incomplete state and consists of four papyrus
+                                    fragments of various sizes. The text is written in a single column of four lines on
+                                    the recto, along the papyrus fibers. The papyrus sheet had been reused: it was probably
+                                    originally employed for an account or another documentary purpose, and traces of the
+                                    earlier writing remain visible, particularly on the verso.
                                     <br>
-                                    As a material object, the papyrus provides clear evidence of reuse and of everyday writing practices in antiquity.
-                                    Rather than transmitting the <i>Bacchae</i> as a literary text, it documents the educational context in which canonical
-                                    Greek authors such as Euripides were copied and memorized. The repetition of the opening line reflects the pedagogical
-                                    importance of classical tragedy in Greek education and offers valuable insight into ancient schooling, handwriting
-                                    training, and the secondary use of writing materials.
+                                    As a material object, the papyrus provides clear evidence of reuse and of everyday
+                                    writing practices in antiquity. Rather than transmitting the <i>Bacchae</i> as a literary
+                                    text, it documents the educational context in which canonical Greek authors such as
+                                    Euripides were copied and memorized. The repetition of the opening line reflects the
+                                    pedagogical importance of classical tragedy in Greek education and offers valuable
+                                    insight into ancient schooling, handwriting training, and the secondary use of writing
+                                    materials.
                                 </p>
 
-                                <button class="btn btn-sm js-toggle-desc"
-                                    style="background-color: var(--textred); border-color: var(--textred); color: var(--text);"
+                                <button class="btn btn-sm js-toggle-desc btn-theme btn-theme--dionysian"
                                     data-see-more="More detail" data-see-less="Less detail">
                                     More detail
                                 </button>
@@ -973,10 +959,9 @@
     <div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content">
-                <div class="modal-header" style="border-bottom: 1px solid rgba(184, 173, 167, 0.35);">
+                <div class="modal-header">
                     <h5 class="modal-title section-title" id="imageModalTitle">Artwork</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
-                        style="filter: invert(1);"></button>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <img id="imageModalImg" class="modal-artwork-img" src="" alt="">
@@ -997,7 +982,7 @@
                     <h4><b>Opening Hours</b></h4>
                     <p>Daily: 00.00–24.00 (Fridays: 23:30)<br>Last entry: Anytime (Fridays: 23:29)</p>
                 </div>
-                <div class="col about" style="line-height: 2.5;">
+                <div class="col about footer-about">
                     <h4><b>About</b></h4>
                     <a href="../the_museum.html">The Museum</a><br>
                     <a href="/narratives/index.html">The Narratives</a><br>
@@ -1007,7 +992,7 @@
                     <a href="../About/Disclaimer.html">Disclaimer</a>
                 </div>
                 <div class="col exam">
-                    <h4 style="text-align: left;"><b>The Project</b></h4>
+                    <h4 class="footer-project-title"><b>The Project</b></h4>
                     <p>This project was created for the <a
                             href="https://www.unibo.it/it/studiare/insegnamenti-competenze-trasversali-moocs/insegnamenti/insegnamento/2024/454464"><i>Information
                                 Modeling and Web Technologies</i></a> exam (2024/2025)
@@ -1024,24 +1009,25 @@
                 </div>
             </div>
             <div class="row rights">
-                <p style="text-align: center;">All the images and resources taken from external sources are solely used
-                    for study purposes. No
-                    commercial use is intended.<br>
+                <p class="footer-rights">All the images and resources taken from external sources are solely used
+                    for study purposes. No commercial use is intended.<br>
                     <i>Tyrsos & Lyre</i> © 2025
                 </p>
             </div>
         </div>
     </footer>
 
+    <!-- Theme toggle -->
+    <script src="../scripts/common.js" defer></script>
 
-    <!-- JS -->
+    <!-- Page JS -->
     <script>
         // =========================
         // 1) Toggle short/long description
         // =========================
         document.querySelectorAll('.js-toggle-desc').forEach(btn => {
-            const moreText = btn.dataset.seeMore || 'See more';
-            const lessText = btn.dataset.seeLess || 'See less';
+            const moreText = btn.dataset.seeMore || 'More detail';
+            const lessText = btn.dataset.seeLess || 'Less detail';
 
             btn.addEventListener('click', () => {
                 const container = btn.parentElement;
@@ -1073,7 +1059,7 @@
                 document.querySelectorAll('.desc-long').forEach(el => el.classList.add('d-none'));
                 document.querySelectorAll('.desc-short').forEach(el => el.classList.remove('d-none'));
                 document.querySelectorAll('.js-toggle-desc').forEach(btn => {
-                    btn.textContent = btn.dataset.seeMore || 'See more';
+                    btn.textContent = btn.dataset.seeMore || 'More detail';
                 });
             });
         }
@@ -1109,7 +1095,6 @@
             }
         }
 
-        // Attach click handlers to anything that opens the modal
         document.querySelectorAll('[data-bs-target="#imageModal"]').forEach(el => {
             el.addEventListener('click', () => openArtworkModalFrom(el));
         });

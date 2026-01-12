@@ -1,0 +1,803 @@
+/* General Typography section --------------------*/
+
+
+
+:root {
+    /* Background */
+    --bgimg: linear-gradient(
+        to bottom,
+        rgba(255, 235, 245, 0.55),   /* rosa chiaro molto leggero */
+        rgba(225, 235, 245, 0.6)     /* azzurrino polvere */
+    ),
+    url('bacco_rococo.png');
+
+    --bg: #FCEAF1;          /* rosa cipria */
+    --blackbg: #F4DDE8;     /* rosa-beige elegante */
+
+    /* Palette rococò */
+    --text: #6A3F4D;        /* marrone-rosato */
+    --yellow: #7F9EB2;      /* oro chiaro */
+    --linkred: #C27B8E;     /* rosa antico */
+    --textred: #B45A6A;     /* carminio morbido */
+    --nav: #F7E1EB;         /* crema rosata */
+    --title: #7F9EB2;       /* azzurro polvere */
+
+    /* Fonts */
+    --general_font: "Libre Baskerville", "Cormorant Garamond", serif;
+    --h1_font: "Cinzel Decorative", "Playfair Display", serif;
+
+
+    /* Borders / UI */
+    --border: 2px solid #E6C97A;
+    --modal-border-radius: 20px;
+    --modal-bg: rgba(255, 245, 250, 0.95);
+    --modal-header-border-color: #E6C97A;
+    --modal-header-border-width: 2px;
+}
+
+
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    height: 100%;
+    background-color: var(--bg);
+    color: var(--text);
+    margin: 0;
+    padding: 0;
+    font-family: var(--general_font);
+    font-size: 1.2em;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+}
+
+
+h1 {
+    color: var(--yellow);
+    font-family: var(--h1_font);
+    text-align: left;
+}
+
+h4 {
+    font-size: 1.2em;
+}
+
+p {
+    color: var(--text);
+    text-align: justify;
+}
+
+a:hover,
+span {
+    color: var(--yellow);
+}
+
+a {
+    color: var(--linkred);
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 16px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    h4 {
+        font-size: 18px;
+    }
+}
+
+.custom-cursor {
+    cursor: url("cursor.png") 16 16, auto;
+}
+
+/* --------------------------------*/
+
+
+/* Navbar section --------------------*/
+
+.dropdown-menu {
+    background-color: var(--nav);
+    border-width: 1px;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23B8ADA7' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    transition: background-image 0.2s ease;
+}
+
+.navbar-toggler:hover .navbar-toggler-icon,
+.navbar-toggler:focus .navbar-toggler-icon,
+.navbar-toggler:active .navbar-toggler-icon,
+.navbar-toggler.collapsed~.navbar-collapse.show+.navbar-toggler .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23F4C430' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar {
+    background-color: var(--nav);
+    border-bottom: var(--border);
+    font-size: 1em;
+    position: fixed;
+    color: var(--text);
+
+    /* IMMAGINE DI SFONDO*/
+    background-image: 
+        linear-gradient(rgba(247, 225, 235, 0.5), rgba(247, 225, 235, 0.5)),
+        url("rococo_navbar.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.nav-link {
+    color: var(--text);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: var(--yellow);
+}
+
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link[aria-current="page"] {
+    color: var(--yellow);
+}
+
+.dropdown-menu {
+    border: var(--border);
+}
+
+.dropdown-item {
+    color: var(--text);
+}
+
+.navbar-nav .dropdown-item:hover,
+.navbar-nav .dropdown-item:focus {
+    background-color: var(--yellow);
+}
+
+.navbar-nav .dropdown-item:active {
+    background-color: var(--yellow);
+}
+
+.logo {
+    height: 5vw;
+    width: 7vw;
+    object-fit: contain;
+    background-color: rgba(247, 225, 235, 0.7); /* crema rosata trasparente */
+    padding: 5px; /* spazio intorno al logo */
+    border-radius: 10px; /* angoli arrotondati */
+    display: inline-block; /* necessario per applicare background e padding */
+}
+
+/* -------------------------------*/
+
+
+
+
+/* -----------Hero section (with button)--------------*/
+
+.hero {
+    height: 100vh;
+    background-image: 
+        linear-gradient(rgba(255, 245, 250, 0.2), rgba(255, 245, 250, 0.2)),
+        var(--bgimg);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    perspective: 400px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Fade delicato in stile Rococò */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(to top, transparent, rgba(255, 245, 250, 0.8)); /* rosa/avorio delicato */
+    z-index: 1;
+}
+
+/* Contenuto hero – entra da sinistra e centrato */
+.hero-content.crawl {
+    position: relative;
+    left: -100%; /* parte fuori dalla sinistra */
+    width: 100%;  
+    margin: 0 auto; /* centra orizzontalmente */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centra anche bottone */
+    justify-content: center;
+    top: -10%;
+
+    animation: slide-from-left 5s ease-out forwards;
+    z-index: 2;
+}
+
+/* Titolo */
+.hero-content .title {
+    font-family: "Cinzel Decorative", "Rochester", cursive;
+    font-size: 6vw;
+    color: var(--title); /* usa variabile root */
+    text-shadow:
+        2px 2px 4px rgba(255, 245, 230, 0.7),
+        4px 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Paragrafo / resto del testo */
+.hero-content p {
+    font-family: "Cormorant Infant", serif;
+    font-size: 1em;
+    color: var(--text); /* usa variabile root */
+    text-shadow: 1px 1px 3px rgba(255, 245, 230, 0.6);
+    line-height: 1.8em;
+    margin-top: 1em;
+}
+
+/* Bottone vino */
+.wine_button {
+    margin-top: 2vw;
+    max-width: 100px;
+    clip-path: circle(50%);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Animazione – scivola da sinistra */
+@keyframes slide-from-left {
+    0% {
+        left: -100%;
+        opacity: 0;
+    }
+    100% {
+        left: 0%;
+        opacity: 1;
+    }
+}
+
+
+
+.title {
+    font-size: 8vw;
+    margin-top: 3vw;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1em;
+}
+
+/* -----------Intro + narratives and museum cards--------------*/
+
+
+#quote {
+    background-color: var(--bg);
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--yellow);
+}
+
+
+.quote {
+    margin-bottom: 15rem;
+}
+
+.dropcap::first-letter {
+    float: left;
+    font-size: 5em;
+    line-height: 0.9;
+    padding-right: 0.15em;
+    padding-top: 0.05em;
+
+    font-family: var(--title);
+    font-weight: 700;
+}
+
+#intro {
+    background-color: var(--bg);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 80vw;
+}
+
+/* -----------Intro + narratives and museum cards--------------*/
+
+#quote {
+    background-color: var(--bg);
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    text-align: center;
+    color: var(--yellow);
+}
+
+.quote {
+    margin-bottom: 15rem;
+}
+
+.dropcap::first-letter {
+    float: left;
+    font-size: 4.5em;
+    line-height: 0.9;
+    padding-right: 0.15em;
+    padding-top: 0.05em;
+
+    font-family: var(--h1_font);
+    font-weight: 700;
+}
+
+#intro {
+    background-color: var(--bg);
+    font-size: 1.2rem;
+    text-align: center;
+    max-width: 80vw;
+}
+
+#museum {
+    margin-bottom: 5rem;
+    padding: 1rem;
+    border: 12px solid var(--yellow);
+    background-color: var(--yellow);
+    max-width: 80vw;
+    max-height: 25vw;
+    border-image: url("rococo_navbar.png") 30 round; 
+
+}
+
+#museum-h1 {
+    color: var(--textred);
+}
+
+#narratives {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background-color: var(--textred);
+    border: 12px solid var(--yellow);
+
+    /* Bordo con immagine */
+    border-image: url("rococo_navbar.png") 30 round; /* round = ripete l’immagine */
+    max-width: 80vw;
+    max-height: 25vw;
+}
+
+
+
+.img-fluid {
+    height: 18vw;
+    width: 30vw;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+#museum-h1,
+#narratives-h1 {
+    font-size: 3vw;
+}
+
+
+
+/* -----------The collection--------------*/
+
+
+.browse,
+.tickets {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 1rem;
+    background-color: var(--bg);
+    max-width: 80vw;
+}
+
+.scroller {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem 0;
+    position: relative;
+    align-items: center;
+    color: var(--textred);
+}
+
+.slide {
+    position: relative;
+    width: 200px;
+    flex: 0 0 auto;
+    overflow: hidden;
+}
+
+.scroller-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    display: block;
+}
+
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--blackbg);
+    overflow: hidden;
+    width: 0;
+    height: 100%;
+    transition: .5s ease;
+}
+
+.slide:hover .overlay {
+    width: 100%;
+}
+
+.text {
+    white-space: nowrap;
+    color: var(--text);
+    font-size: 0.3em;
+    position: absolute;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+/* -------Modals-------------*/
+
+.media-area {
+    display: flex;
+    gap: 1.5em;
+    align-items: flex-start;
+}
+
+
+.modal-content {
+    border-radius: var(--modal-border-radius);
+    background-color: var(--modal-bg);
+    border: 12px solid; /* spessore del bordo */
+    border-style: solid; /* necessario per border-image */
+    border-image-source: url("rococo_navbar.png"); /* immagine ornamentale */
+    border-image-slice: 30; /* quanta parte dell’immagine usare */
+    border-image-width: 12; /* pari allo spessore del bordo */
+    border-image-repeat: round; /* ripeti lungo tutto il bordo */
+}
+
+.modal-header,
+.modal-footer {
+    border-color: var(--modal-header-border-color);
+    border-width: var(--modal-header-border-width);
+    
+}
+
+.modal-img {
+    height: 100%;
+    max-height: none;
+    align-items: flex-start;
+    width: 250px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.modal-img:hover {
+    transform: scale(1.03);
+}
+
+.modal-info {
+    flex: 1;
+    min-width: 0;
+    background-color: var(--modal-bg);
+}
+
+.overlay>.text {
+    font-size: 0.8em;
+}
+
+/* Modal responsive */
+@media (max-width: 992px) {
+
+    /* tablet e laptop piccoli */
+    .modal-dialog {
+        max-width: 650px !important;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* tablet verticale */
+    .modal-dialog {
+        max-width: 90% !important;
+        margin: 0 auto;
+    }
+
+    .media-area {
+        flex-direction: column;
+        gap: 1em;
+    }
+
+    .modal-img {
+        width: 200px;
+        height: auto;
+        margin: 0 auto 1em auto;
+    }
+
+    .modal-info {
+        width: 100%;
+    }
+}
+
+@media (max-width: 576px) {
+
+    /* smartphone */
+    .modal-dialog {
+        max-width: 95% !important;
+        margin: 0.5em auto;
+    }
+
+    .modal-img {
+        width: 150px;
+    }
+
+    .modal-title {
+        font-size: 1em;
+    }
+}
+
+
+
+/* --------Ticket section --------*/
+.tickets {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+label {
+    font-size: 0.8em;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input,
+select {
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.field-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.field-row>div {
+    flex: 1 1 20px;
+}
+
+.book {
+    width: 100%;
+    padding: 14px;
+    background: var(--textred);
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.book:hover {
+    background: var(--linkred);
+}
+
+@media (max-width: 600px) {
+    .field-row {
+        flex-direction: column;
+        gap: 6px;
+    }
+}
+
+
+/* -------Footer-------------*/
+footer {
+    border-top: var(--border);
+    flex-direction: column;
+    margin: 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--blackbg);
+    padding-top: 10px;
+    text-align: center;
+    z-index: 1000;
+}
+
+footer .footer .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 1em;
+}
+
+footer .footer .col {
+    flex: 1;
+    min-width: 200px;
+    text-align: left;
+}
+
+/* Media query for mobile */
+@media (max-width: 600px) {
+    footer .footer .row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    footer .footer .col {
+        width: 90%;
+    }
+}
+
+
+/* -------Disclaimer-------------*/
+#disclaimer {
+    padding-top: 6em;
+    padding-bottom: 2em;
+}
+
+/* ===============================
+   Narratives page
+   =============================== */
+
+.narratives-hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 120px;
+}
+
+
+.narratives-hero-img {
+    margin-top: 2rem;
+    border: var(--border);
+    border-radius: 12px;
+    max-height: 320px;
+    width: 80%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+
+.narratives-grid {
+    margin-top: -7rem !important;
+    padding-top: 0 !important;
+}
+
+.sep-centro {
+    display: block;
+    margin-bottom: 0 !important;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+.narrative-card {
+    background: var(--bg);
+    border: var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    height: 100%;
+}
+
+.narrative-card__header {
+    margin-bottom: 1rem;
+}
+
+.narrative-title {
+    color: var(--yellow);
+    font-family: var(--h1_font);
+    font-size: 1.6em;
+    margin: 0;
+}
+
+.narrative-subtitle {
+    margin: 0.25rem 0 0;
+    font-size: 0.95em;
+}
+
+.narrative-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.narrative-pill {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 0.6rem 1rem;
+    border: var(--border);
+    color: var(--text);
+    transition: 0.2s ease;
+    font-size: 0.95em;
+}
+
+.narrative-pill:hover,
+.narrative-pill:focus {
+    border-color: var(--yellow);
+    color: var(--yellow);
+    transform: translateY(-1px);
+}
+
+.narrative-note {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(184, 173, 167, 0.35);
+    font-size: 0.9em;
+}
+
+.narratives-footnote {
+    font-size: 0.95em;
+}
+
+@media (max-width: 600px) {
+    .theme-switch {
+        width: 60px;
+        height: 30px;
+    }
+
+    .theme-switch label {
+        border-radius: 30px;
+    }
+
+    .theme-switch label::after {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 16px;
+    }
+
+    .theme-switch input:checked+label::after {
+        transform: translateX(30px);
+    }
+}
+
+/* =========================
+   ARTWORKS
+   ========================= */
+
+.artwork-card {
+    background: var(--bg) !important;
+}
+
+.desc-short,
+.desc-long {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-right: 0.5rem;
+}

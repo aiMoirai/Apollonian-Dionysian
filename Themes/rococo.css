@@ -6,22 +6,21 @@
     /* Background */
     --bgimg: linear-gradient(
         to bottom,
-        rgba(255, 235, 245, 0.55),   /* rosa chiaro molto leggero */
-        rgba(225, 235, 245, 0.6)     /* azzurrino polvere */
+        rgba(255, 235, 245, 0.55),   
+        rgba(225, 235, 245, 0.6)     
     ),
-    url('bacco_rococo.png');
+    url('imgs/bacco_rococo.png');
 
-    --bg: #FCEAF1;          /* rosa cipria */
-    --blackbg: #F4DDE8;     /* rosa-beige elegante */
+    --bg: #FCEAF1;          
+    --blackbg: #F4DDE8;    
 
     /* Palette rococò */
-    --text: #6A3F4D;        /* marrone-rosato */
-    --yellow: #7F9EB2;      /* oro chiaro */
-    --linkred: #C27B8E;     /* rosa antico */
-    --textred: #B45A6A;     /* carminio morbido */
-    --nav: #F7E1EB;         /* crema rosata */
-    --title: #7F9EB2;       /* azzurro polvere */
-
+    --text: #6A3F4D;       
+    --yellow: #7F9EB2;      
+    --linkred: #C27B8E;     
+    --textred: #B45A6A;     
+    --nav: #F7E1EB;        
+    --title: #7F9EB2;       
     /* Fonts */
     --general_font: "Libre Baskerville", "Cormorant Garamond", serif;
     --h1_font: "Cinzel Decorative", "Playfair Display", serif;
@@ -130,7 +129,7 @@ a {
     /* IMMAGINE DI SFONDO*/
     background-image: 
         linear-gradient(rgba(247, 225, 235, 0.5), rgba(247, 225, 235, 0.5)),
-        url("rococo_navbar.png");
+        url("imgs/rococo_navbar.png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -800,4 +799,5 @@ footer .footer .col {
     margin-top: 0.5rem;
     margin-bottom: 1.25rem;
     padding-right: 0.5rem;
+
 }

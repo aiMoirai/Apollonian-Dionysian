@@ -661,7 +661,7 @@ footer .footer .col {
 
 /* -------Disclaimer-------------*/
 #disclaimer {
-    padding-top: 6em;
+    padding-top: 5.2em;
     padding-bottom: 2em;
 }
 
@@ -1745,4 +1745,13 @@ html[data-theme="light"]{
         height: 32px;
         font-size: 1.4rem;
     }
+}
+
+
+/* ==========================================================================================
+    Documentation
+   ==========================================================================================*/
+
+    .doc-title {
+    color: var(--yellow);
 }

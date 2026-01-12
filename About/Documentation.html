@@ -13,7 +13,6 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-
     <!--Inter-->
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
@@ -23,50 +22,56 @@
         href="https://fonts.googleapis.com/css2?family=Belleza&family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
 
-
     <!---------Favicon---------->
-
     <link rel="icon" href="../imgs/logo_grigio_con_nome.png" type="image/png">
-
-
 </head>
 
 <body>
     <!--Navigation bar-->
     <nav class="navbar fixed-top navbar-expand-lg">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="../imgs/logo_grigio_con_nome.png" class="logo" alt="Logo" width="30" height="24"
-                    href="../index.html"></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
-                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../imgs/logo_grigio_con_nome.png" class="logo" alt="Logo" width="30" height="24">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
                 <ul class="navbar-nav">
+
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                        <a class="nav-link" href="../index.html">Home</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#">The Museum</a>
+                        <a class="nav-link" href="../the_museum.html">The Museum</a>
                     </li>
+
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Exhibition</a>
+                        <a class="nav-link" href="../exhibition.html">Exhibition</a>
                     </li>
+
                     <li class="nav-item">
                         <a class="nav-link" href="/narratives/index.html">Narratives</a>
                     </li>
+
+                    <!-- ABOUT ACTIVE -->
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <a class="nav-link dropdown-toggle active" aria-current="page" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             About
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">The Team</a></li>
-                            <li><a class="dropdown-item" href="#">The Documentation</a></li>
-                            <li><a class="dropdown-item" href="About\Disclaimer.html">Disclaimer</a></li>
+                            <li><a class="dropdown-item" href="Documentation.html">The Documentation</a></li>
+                            <li><a class="dropdown-item" href="About/Disclaimer.html">Disclaimer</a></li>
                         </ul>
                     </li>
+
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -74,10 +79,11 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">First Theme</a></li>
-                            <li><a class="dropdown-item" href="About\Disclaimer.html">Second</a></li>
+                            <li><a class="dropdown-item" href="About/Disclaimer.html">Second</a></li>
                             <li><a class="dropdown-item" href="#">Third</a></li>
                         </ul>
                     </li>
+
                 </ul>
             </div>
         </div>
@@ -89,41 +95,84 @@
         <label for="switch"></label>
     </div>
 
+    <!--CONTENT -->
     <div class="container" id="disclaimer">
         <div class="row">
             <div class="col">
-                <h1>Documentation</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non suscipit velit. Curabitur egestas
-                    urna id bibendum tincidunt. Suspendisse potenti. Pellentesque dapibus luctus justo, eget eleifend
-                    lorem convallis a. Fusce sed felis vitae turpis molestie volutpat. In sit amet tortor lorem. Integer
-                    a neque tortor.</p>
-                <h4><b>Titolo paragrafo</b></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget nunc vitae libero cursus
-                    hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-                    Maecenas fermentum, velit eu bibendum sodales, metus massa convallis justo, sed pretium turpis sem
-                    eget mi. Integer et consequat dolor, vitae tincidunt nibh. Curabitur nec sapien lorem. Sed mollis
-                    lorem eu pulvinar lacinia. Aenean vitae blandit velit, vitae pulvinar mauris.
 
-                    Pellentesque ac massa eu lorem cursus eleifend vitae eget velit. Donec suscipit varius risus quis
-                    fermentum. Etiam bibendum ullamcorper ex, venenatis porttitor enim. Cras vel fermentum sem.
-                    Suspendisse tempus lacus sit amet nibh tincidunt porttitor. Mauris sed ante eu odio lacinia
-                    scelerisque in quis libero.</p>
-                <h4><b>Titolo secondo paragrafo</b></h4>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget nunc vitae libero cursus
-                    hendrerit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-                    Maecenas fermentum, velit eu bibendum sodales, metus massa convallis justo, sed pretium turpis sem
-                    eget mi. Integer et consequat dolor, vitae tincidunt nibh. Curabitur nec sapien lorem. Sed mollis
-                    lorem eu pulvinar lacinia. Aenean vitae blandit velit, vitae pulvinar mauris.
+                <!-- Titolo -->
+                <h1 class="mb-4">Documentation</h1>
 
-                    Pellentesque ac massa eu lorem cursus eleifend vitae eget velit. Donec suscipit varius risus quis
-                    fermentum. Etiam bibendum ullamcorper ex, venenatis porttitor enim. Cras vel fermentum sem.
-                    Suspendisse tempus lacus sit amet nibh tincidunt porttitor. Mauris sed ante eu odio lacinia
-                    scelerisque in quis libero.</p>
-                <h4><b>Eccetera così</b></h4>
+                <!-- 1 -->
+                <h4 class="doc-title"><b>1. The Topic of the Exhibition: Apollonian and Dionysian</b></h4>
+
+                <p style="margin-bottom: 1.5rem;">
+                    The choice of the theme of this exhibition is situated within the broader framework of the dichotomies that permeate human experience and that have long been used to give form and meaning to the complexity of existence. The concepts of the Apollonian and the Dionysian refer to a primordial principle, comparable to the ancient opposition between chaos and cosmos, through which past cultures sought to explain the origin and order of the universe.<br>
+                    These two forces do not represent a moral opposition between good and evil, but rather a dynamic tension between complementary poles: irrational and rational, instinct and measure, disorder and harmony, intoxication and control. They describe different, yet equally necessary, ways through which human beings perceive, interpret, and create the world. It is no coincidence that in Greek religion, at the roots of Western spirituality and imagination, two deities came to embody these fundamental principles, which govern life and sustain its balance.<br>
+                    Apollo represents the principle of form, clarity, and measure. As the god of light, music, poetry, and prophecy, he embodies the ideal of a harmonious and rational order founded on proportion and knowledge. The Apollonian is the realm of luminous appearance, composed beauty, and the intellect that seeks to impose structure on reality. It is the force inclined toward control, definition, and stability, finding expression in artistic forms grounded in balance, symmetry, and formal clarity.<br>
+                    Dionysus, by contrast, embodies vital energy in its most instinctive and overwhelming form. As the god of wine, intoxication, theatre, and metamorphosis, he represents the dissolution of individual boundaries, the abandonment to sensory experience, and the fusion with the primordial rhythm of nature. The Dionysian is excess, impulse, and dismeasure; it is the force that breaks apparent order to reveal a deeper truth rooted in emotion, corporeality, and collective participation. Through Dionysus, life manifests itself as continuous flow and incessant transformation.<br>
+                    It was the philosopher Friedrich Nietzsche who systematically articulated this opposition, identifying the Apollonian and the Dionysian as the two original forces of art and Western culture. In his thought, authentic art arises precisely from the tension and interaction between these principles, from the ability to hold together form and impulse, measure and intoxication, without one negating the other. Far from being separable, the Apollonian and the Dionysian intertwine, contaminate one another, and undergo constant transformation.<br>
+                    It is therefore unsurprising that countless works of art, originating from different periods, places, and artistic languages, engage with these themes, sometimes emphasizing one pole, sometimes blending them in complex and ambiguous ways. Painting, sculpture, music, literature, and the performing arts have continuously reworked this fundamental tension, making it visible in both the forms and the contents of artistic creation.<br>
+                    The <i>Tyrsos & Lyre Mouseion</i> was conceived precisely from these reflections. The exhibition presents works drawn from heterogeneous cultural contexts and different historical periods, united by the explicit or underlying presence of one or both of these principles. The aim is not to rigidly classify the works, but to offer visitors an interpretive framework that highlights how the Apollonian and the Dionysian continue to operate as structuring forces within the human imagination.
+                </p>
+
+                <!-- 2 -->
+                <h4 class="doc-title"><b>2. The Collection</b></h4>
+
+                <p style="margin-bottom: 1.5rem;">
+                    The current collection, which can also be visited physically until 30 February 2027 at the evocative Temple of Apollo, within the Sanctuary of Delphi at the foot of Mount Parnassus, brings together a heterogeneous group of works spanning an exceptionally broad chronological range. The exhibited artifacts extend from the Greco-Roman period to the contemporary era, offering visitors a journey across different epochs, artistic languages, and cultural contexts, all united by the presence of Apollonian and Dionysian principles.<br>
+                    The selection includes objects of varied nature and function. Alongside everyday items, such as cups used for the symposium, a ritual moment closely associated with the Dionysian sphere, there are theatrical masks, which refer to the world of stage performance and the dual dimension of tragedy and comedy.<br>
+                    The collection also includes statues and paintings depicting Apollo and Dionysus, as well as written texts, theoretical treatises, and musical scores that, since antiquity, have contributed to articulating, questioning, and at times problematizing this fundamental dichotomy.<br>
+                    Architecture and the representation of society are likewise present within the exhibition path. Some paintings depict the city through radically opposing visions: on the one hand, the orderly, rational, and ideal city; on the other, the dynamic, chaotic, and pulsating city.<br>
+                    As can also be observed through the Map available in <a href="../the_museum.html">The Museum</a> section, the objects have been arranged according to a precise spatial criterion within the temple’s chambers. On the right side of the exhibition route are concentrated the artifacts primarily associated with the Apollonian principle, while those related to the Dionysian principle are placed on the left side.<br>
+                    The works are presented in pairs of opposites, selected to allow visitors a direct comparison between objects linked by a shared thematic thread but oriented toward different poles of the dichotomy.<br>
+                    Below are presented the 18 works on display, in the order in which visitors will encounter them along the exhibition route, structured according to the Dionysian–Apollonian axis that shapes the entire exhibition experience.
+                </p>
+
+                <!-- 3 -->
+                <h4 class="doc-title"><b>3. The Logo</b></h4>
+
+                <p style="margin-bottom: 1.5rem;">
+                    The Association’s logo, visible on the left side of the website’s navigation bar, constitutes a visual synthesis of the conceptual principles underlying the exhibition and the identity of the <i>Tyrsos & Lyre Mouseion</i>.<br>
+                    The name <i>Tyrsos & Lyre</i> explicitly refers to these two symbolic objects. The thyrsus, a ritual staff wrapped in ivy and topped with a pinecone, is one of the most recognizable emblems of Dionysus. The lyre, a musical instrument traditionally attributed to Apollo, embodies the opposite and complementary principle: harmony, measure, proportion, and the ability to transform chaos into order through sound.<br>
+                    From a formal perspective, the logo combines these two elements into a unified and balanced composition. The lyre is depicted through vertical and symmetrical lines, while the thyrsus introduces organic and ascending movement. Above the lyre is placed a stylized sun, a direct reference to Apollo as the god of light and clarity, reinforcing the Apollonian dimension of reason, illumination, and formal balance. The presence of the sun visually anchors the lyre to the principle of luminosity and knowledge, completing the symbolic triad that defines the logo.<br>
+                    The use of a restrained color palette and an essential graphic style further reinforces the institutional character of the logo, clearly expressing its cultural mission: to explore the relationship between the Apollonian and the Dionysian as an ongoing dialogue.
+                </p>
+
+                <!-- 4 -->
+                <h4 class="doc-title"><b>4. The Aesthetic and Stylistic Choices</b></h4>
+                <p style="margin-bottom: 2.25rem;">
+                    bla bla bla.
+                <!-- 5 -->
+                <h4 class="doc-title"><b>5. The Home Page</b></h4>
+                <p style="margin-bottom: 2.25rem;">
+                    bla bla bla.
+                </p>
+
+                <!-- 6 -->
+                <h4 class="doc-title"><b>6. The Museum Page</b></h4>
+                <p style="margin-bottom: 2.25rem;">
+                    bla bla bla.
+                <!-- 7 -->
+                <h4 class="doc-title"><b>7. The Exhibition Page</b></h4>
+                <p style="margin-bottom: 2.25rem;">
+                    bla bla bla.
+
+                <!-- 8 -->
+                <h4 class="doc-title"><b>8. The Narratives Page</b></h4>
+                <p style="margin-bottom: 2.25rem;">
+                    bla bla bla.
+                </p>
+
+                <!-- 9 -->
+                <h4 class="doc-title"><b>9. The Themes</b></h4>
+                <p style="margin-bottom: 0;">
+                    bla bla bla.
+                </p>
+
             </div>
         </div>
     </div>
-
 
     <!--Footer section-->
     <footer>
@@ -139,11 +188,11 @@
                 </div>
                 <div class="col about" style="line-height: 2.5">
                     <h4><b>About</b></h4>
-                    <a href="URL">The Museum</a><br>
+                    <a href="../the_museum.html">The Museum</a><br>
                     <a href="/narratives/index.html">The Narratives</a><br>
                     <a href="URL">The Themes</a><br>
                     <a href="URL">The Team</a><br>
-                    <a href="URL">The Documentation</a><br>
+                    <a href="Documentation.html">The Documentation</a><br>
                     <a href="About\Disclaimer.html">Disclaimer</a>
                 </div>
                 <div class="col exam">
@@ -173,7 +222,6 @@
     </footer>
     </div>
 
-
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
@@ -181,7 +229,6 @@
 
     <!-- our JS -->
     <script src="/scripts/common.js"></script>
-
 
 </body>
 

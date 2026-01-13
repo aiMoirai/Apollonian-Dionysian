@@ -5,7 +5,7 @@ const separators = ["break1", "break2", "break3"].map(id => document.getElementB
 const themeConfigs = {
     'default': { css: 'main.css', imgs: ['imgs/sopra colonna.png', 'imgs/centro colonna.png', 'imgs/fine colonne.png'] },
     'rococo': { css: 'Themes/rococo.css', imgs: ['imgs/rococo_sopra.png', 'imgs/rococo_centro.png', 'imgs/rococo_sotto.png'] },
-    'artdeco': {css: "Themes/art deco/art_deco.css", imgs: ["imgs/art deco/columns/sopra_colonne_artdeco.png", "imgs/art deco/columns/centro_colonne_artdeco.png", "imgs/art deco/columns/sotto_colonne_artdeco.png"], button: "imgs/art deco/champagne_button.png"},
+    'artdeco': { css: "Themes/art deco/art_deco.css", imgs: ["imgs/art deco/columns/sopra_colonne_artdeco.png", "imgs/art deco/columns/centro_colonne_artdeco.png", "imgs/art deco/columns/sotto_colonne_artdeco.png"], button: "imgs/art deco/champagne_button.png" },
     '90s': { css: 'Themes/90s.css', imgs: ['imgs/sopra_col_90.png', 'imgs/centro_col_90.png', 'imgs/sotto_col_90.png'] },
     '2035': { css: 'Themes/2035.css', imgs: ['imgs/sopra_col_futuristic.png', 'imgs/centro_col_futuristic.png', 'imgs/fine_col_futuristic.png'] }
 };
@@ -34,14 +34,6 @@ function changeTheme(themeName) {
     separators.forEach((img, i) => {
         if (img) img.src = config.imgs[i];
     });
-
-    // 3. Cambia immagine bottone bicchiere
-    if (wineButton && config.button) {
-        wineButton.src = config.button;
-        wineButton.style.display = "block";
-    } else if (wineButton) {
-        wineButton.style.display = "none";
-    }
 
     // 3. Gestione Light Mode
     const isDefault = themeName === 'default';

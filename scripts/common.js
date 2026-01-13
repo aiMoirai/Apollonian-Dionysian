@@ -1,134 +1,80 @@
 const toggle = document.getElementById("switch");
-const separators = [
-    document.getElementById("break1"),
-    document.getElementById("break2"),
-    document.getElementById("break3")
-];
+// Seleziona tutti i break in un colpo solo tramite gli ID
+const separators = ["break1", "break2", "break3"].map(id => document.getElementById(id));
+
+const themeConfigs = {
+    'default': { css: 'main.css', imgs: ['imgs/sopra colonna.png', 'imgs/centro colonna.png', 'imgs/fine colonne.png'] },
+    'rococo': { css: 'rococo.css', imgs: ['imgs/rococo_sopra.png', 'imgs/rococo_centro.png', 'imgs/rococo_sotto.png'] },
+    '90s': { css: '90s.css', imgs: ['imgs/sopra_col_90s.png', 'imgs/centro_col_90s.png', 'imgs/fine_col_90s.png'] },
+    '2035': { css: '2035.css', imgs: ['imgs/sopra_col_futuristic.png', 'imgs/centro_col_futuristic.png', 'imgs/fine_col_futuristic.png'] }
+};
+
+const lightModeImgs = ['imgs/sopra_col_light.png', 'imgs/centro_col_light.png', 'imgs/fine_col_light.png'];
 
 function applyLightMode(isOn) {
     document.body.classList.toggle("lightmode", isOn);
-
-    separators.forEach((img, index) => {
-        if (!img) return; // ignora immagini non presenti
-        switch (index) {
-            case 0: img.src = isOn ? "imgs/sopra_col_light.png" : "imgs/sopra colonna.png"; break;
-            case 1: img.src = isOn ? "imgs/centro_col_light.png" : "imgs/centro colonna.png"; break;
-            case 2: img.src = isOn ? "imgs/fine_col_light.png" : "imgs/fine colonne.png"; break;
-        }
+    
+    separators.forEach((img, i) => {
+        if (img) img.src = isOn ? lightModeImgs[i] : themeConfigs.default.imgs[i];
     });
 
     localStorage.setItem("lightMode", isOn);
 }
 
+function changeTheme(themeName) {
+    const config = themeConfigs[themeName];
+    if (!config) return console.error("Tema non trovato:", themeName);
+
+    // 1. Cambio CSS
+    const themeLink = document.getElementById('theme-link');
+    if (themeLink) themeLink.href = config.css;
+
+    // 2. Cambio immagini separatori
+    separators.forEach((img, i) => {
+        if (img) img.src = config.imgs[i];
+    });
+
+    // 3. Gestione Light Mode
+    const isDefault = themeName === 'default';
+    if (!isDefault) {
+        document.body.classList.remove("lightmode");
+        localStorage.setItem("lightMode", false);
+        if (toggle) toggle.checked = false;
+    } else {
+        setTimeout(() => {
+            const wasLight = localStorage.getItem("lightMode") === "true";
+            applyLightMode(wasLight);
+            if (toggle) toggle.checked = wasLight;
+        }, 100);
+    }
+
+    localStorage.setItem('selectedTheme', themeName);
+}
+
+// Event Listeners e Inizializzazione
 if (toggle) {
     toggle.addEventListener("change", () => {
+        if ((localStorage.getItem('selectedTheme') || 'default') !== 'default') {
+            toggle.checked = false;
+            return alert("La modalità chiara è disponibile solo nel tema Default");
+        }
         applyLightMode(toggle.checked);
     });
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    const savedState = localStorage.getItem("lightMode") === "true";
-    if (toggle) toggle.checked = savedState;
-    applyLightMode(savedState);
-});
+    const savedTheme = localStorage.getItem('selectedTheme') || 'default';
+    changeTheme(savedTheme);
 
-
-// Configurazione dei temi
-const themeConfigs = {
-    'default': {
-        css: 'main.css',
-        break1: 'imgs/sopra colonna.png',
-        break2: 'imgs/centro colonna.png',
-        break3: 'imgs/fine colonne.png'
-    },
-    'rococo': {
-        css: 'Themes/rococo.css',
-        break1: 'imgs/sopra_col_rococo.png',
-        break2: 'imgs/centro_col_rococo.png',
-        break3: 'imgs/fine_col_rococo.png'
-    },
-    '90s': {
-        css: 'Themes/90s.css',
-        break1: 'imgs/sopra_col_90s.png',
-        break2: 'imgs/centro_col_90s.png',
-        break3: 'imgs/fine_col_90s.png'
-    },
-    '2035': {
-        css: 'Themes/2035.css',
-        break1: 'imgs/sopra_col_futuristic.png',
-        break2: 'imgs/centro_col_futuristic.png',
-        break3: 'imgs/fine_col_futuristic.png'
-    }
-};
-
-// Funzione per cambiare tema
-function changeTheme(themeName) {
-    console.log("Cambio tema a:", themeName);
-
-
-    // 1. Cambia il foglio di stile CSS
-    document.getElementById('theme-link').href = config.css;
-    console.log("CSS cambiato a:", config.css);
-
-    // 2. Cambia le immagini dei separatori (solo se esistono)
-    const break1 = document.getElementById('break1');
-    const break2 = document.getElementById('break2');
-    const break3 = document.getElementById('break3');
-
-    if (break1 && config.break1) {
-        break1.src = config.break1;
-        console.log("break1 cambiato:", config.break1);
-    }
-    if (break2 && config.break2) {
-        break2.src = config.break2;
-        console.log("break2 cambiato:", config.break2);
-    }
-    if (break3 && config.break3) {
-        break3.src = config.break3;
-        console.log("break3 cambiato:", config.break3);
-    }
-
-    // 3. Salva la scelta
-    localStorage.setItem('selectedTheme', themeName);
-    console.log("Tema salvato:", themeName);
-}
-
-// Quando la pagina si carica
-document.addEventListener('DOMContentLoaded', function () {
-    console.log("Pagina caricata - Inizializzazione temi");
-
-    // Controlla se c'è un tema salvato
-    const savedTheme = localStorage.getItem('selectedTheme');
-    console.log("Tema salvato precedentemente:", savedTheme);
-
-    // Applica il tema
-    if (savedTheme && themeConfigs[savedTheme]) {
-        changeTheme(savedTheme);
-    } else {
-        changeTheme('default');
-    }
-
-    // Aggiungi event listener a tutti i link che iniziano con "theme-"
-    const themeLinks = document.querySelectorAll('[id^="theme-"]');
-    console.log("Trovati", themeLinks.length, "link per i temi");
-
-    themeLinks.forEach(link => {
-        link.addEventListener('click', function (event) {
-            event.preventDefault();
-
-            // Estrae il nome del tema dall'ID
-            const themeName = this.id.replace('theme-', '');
-            console.log("Cliccato su tema:", themeName);
-
-            // Cambia il tema
-            changeTheme(themeName);
-        });
+    // Delega dell'evento per i link dei temi (più efficiente di molti listener singoli)
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('[id^="theme-"]');
+        if (link) {
+            e.preventDefault();
+            changeTheme(link.id.replace('theme-', ''));
+        }
     });
-
-    // Debug: mostra tutti i temi disponibili
-    console.log("Temi configurati:", Object.keys(themeConfigs));
 });
-
 
 
 

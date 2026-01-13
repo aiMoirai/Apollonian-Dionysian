@@ -670,6 +670,510 @@ footer .footer .col {
     padding-bottom: 2em;
 }
 
+
+/* ==========================================================================================
+    NARRATIVES ------ Mari
+   ========================================================================================== */
+
+.narratives-hero {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-bottom: 120px;
+}
+
+.narratives-hero-img {
+    margin-top: 2rem;
+    border: var(--border);
+    border-radius: 12px;
+    max-height: 320px;
+    width: 80%;
+    object-fit: cover;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.narratives-grid {
+    margin-top: -7rem !important;
+    padding-top: 0 !important;
+}
+
+.sep-centro {
+    display: block;
+    margin-bottom: 0 !important;
+    max-height: 120px;
+    object-fit: contain;
+}
+
+.narrative-card {
+    background: var(--bg);
+    border: var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    height: 100%;
+}
+
+.narrative-card__header {
+    margin-bottom: 1rem;
+}
+
+.narrative-title {
+    color: var(--yellow);
+    font-family: var(--h1_font);
+    font-size: 1.6em;
+    margin: 0;
+}
+
+.section-title {
+    color: var(--text);
+}
+
+.narrative-subtitle {
+    margin: 0.25rem 0 0;
+    font-size: 0.95em;
+}
+
+.narrative-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+
+.narrative-pill {
+    display: inline-block;
+    text-decoration: none;
+    border-radius: 999px;
+    padding: 0.6rem 1rem;
+    border: var(--border);
+    color: var(--text);
+    transition: 0.2s ease;
+    font-size: 0.95em;
+}
+
+.narrative-pill:hover,
+.narrative-pill:focus {
+    border-color: var(--yellow);
+    color: var(--yellow);
+    transform: translateY(-1px);
+}
+
+.narrative-note {
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(184, 173, 167, 0.35);
+    font-size: 0.9em;
+}
+
+.narratives-footnote {
+    font-size: 0.95em;
+}
+
+/* Title + back row on narrative detail pages (apollo/literature/...) */
+.narrative-head{
+    display:flex;
+    align-items:center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Margin */
+.narrative-page-header{
+  margin-top: 0.5rem; 
+}
+
+/* Footer helpers (remove inline styles) */
+.footer-about{ line-height: 2.5; }
+.footer-project-title{ text-align: left; }
+.footer-rights{ text-align: center; }
+
+@media (max-width: 600px) {
+    .theme-switch {
+        width: 60px;
+        height: 30px;
+    }
+
+    .theme-switch label {
+        border-radius: 30px;
+    }
+
+    .theme-switch label::after {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 16px;
+    }
+
+    .theme-switch input:checked+label::after {
+        transform: translateX(30px);
+    }
+}
+
+/* ==========================================================================================
+   ARTWORKS (Narratives detail pages: Apollo / Dionysus / Literature / ...)
+   ========================================================================================== */
+
+.artwork-card{
+    background: var(--bg) !important;
+    color: var(--text);
+    border: 2px solid rgba(184, 173, 167, 0.35);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+/* Theme variants (use these instead of inline border colors) */
+.artwork-card--apollonian{ border-color: var(--yellow); }
+.artwork-card--dionysian{ border-color: var(--textred); }
+
+/* Two-column layout helpers (left image+accordion, right text) */
+.artwork-left{ width: 400px; }
+.artwork-right{ max-width: 520px; }
+
+@media (max-width: 991.98px){
+    .artwork-left{ width: 100%; }
+    .artwork-right{ max-width: 100%; }
+}
+
+/* Thumbnails inside carousel items */
+.artwork-thumb{ cursor: zoom-in; }
+
+.artwork-img{
+    max-height: 320px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Descriptions */
+.desc-short,
+.desc-long {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-right: 0.5rem;
+}
+
+/* More-detail buttons (apollonian/dionysian variants) */
+.btn-theme{
+    border-width: 1px;
+}
+.btn-theme--apollonian{
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--bg);
+}
+.btn-theme--dionysian{
+    background: var(--textred);
+    border-color: var(--textred);
+    color: var(--text);
+}
+
+/* Dionysian: colore testo diverso SOLO in light mode */
+body.lightmode .btn-theme--dionysian{
+    color: var(--bg); 
+}
+
+/* evita che Bootstrap lo cambi in hover/focus */
+body.lightmode .btn-theme--dionysian:hover,
+body.lightmode .btn-theme--dionysian:focus{
+    color: var(--yellow);
+}
+
+/* Click to view link */
+.click-to-view {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.click-to-view:hover { color: var(--yellow); }
+
+/* Audio player styling */
+.narratives-audio{
+    width: 100%;
+    margin-top: 0.5rem;
+    filter: grayscale(1);
+    opacity: 0.9;
+}
+
+/* Back to narratives */
+.back-to-narratives{
+  margin-left: auto;
+  margin-right: 4rem; 
+}
+
+/* ==========================================================================================
+   ARTWORK ACCORDION
+   ========================================================================================== */
+
+.artwork-accordion {
+    --bs-accordion-bg: transparent;
+    --bs-accordion-border-color: rgba(184, 173, 167, 0.25);
+    --bs-accordion-border-width: 1px;
+    --bs-accordion-border-radius: 12px;
+
+    --bs-accordion-btn-bg: transparent;
+    --bs-accordion-btn-color: var(--text);
+    --bs-accordion-btn-padding-x: 0.9rem;
+    --bs-accordion-btn-padding-y: 0.75rem;
+
+    --bs-accordion-active-bg: transparent;
+    --bs-accordion-active-color: var(--yellow);
+
+    --bs-accordion-body-padding-x: 0.9rem;
+    --bs-accordion-body-padding-y: 0.75rem;
+}
+
+.artwork-accordion .accordion-button {
+    font-family: var(--general_font);
+    letter-spacing: 0.2px;
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(184, 173, 167, 0.18);
+}
+
+.artwork-accordion .accordion-button:focus {
+    box-shadow: none !important;
+    border-color: rgba(244, 196, 48, 0.45);
+}
+
+.artwork-accordion .accordion-button::after {
+    filter: invert(83%) sepia(7%) saturate(279%) hue-rotate(334deg) brightness(92%) contrast(89%);
+}
+
+.artwork-accordion .accordion-button:not(.collapsed)::after {
+    filter: invert(82%) sepia(45%) saturate(990%) hue-rotate(358deg) brightness(103%) contrast(104%);
+}
+
+.artwork-accordion .accordion-body {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.35;
+}
+
+.artwork-accordion .accordion-body a {
+    color: var(--linkred);
+    text-decoration: underline;
+}
+
+.artwork-accordion .accordion-body a:hover {
+    color: var(--yellow);
+}
+
+.meta-download-link {
+    display: inline-block;
+    margin-top: 0.25rem;
+}
+
+/* ==========================================================================================
+   MODAL
+   ========================================================================================== */
+
+#imageModal .modal-content{
+    background: var(--bg);
+    border: 3px solid rgba(184, 173, 167, 0.35);
+}
+#imageModal.apollonian .modal-content{ border-color: var(--yellow); }
+#imageModal.dionysian .modal-content{ border-color: var(--textred); }
+
+#imageModal .modal-header{
+    border-bottom: 1px solid rgba(184, 173, 167, 0.35);
+}
+
+/* Close button visibility: use a variable so light mode can override */
+body{
+    --btn-close-filter: invert(1);
+}
+body.light,
+body.light-mode,
+body[data-theme="light"],
+html[data-theme="light"]{
+    --btn-close-filter: none;
+}
+
+#imageModal .btn-close{
+    filter: var(--btn-close-filter);
+}
+
+#imageModal .btn-close:focus,
+#imageModal .btn-close:active {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Modal image */
+.modal-artwork-img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* ==========================================================================================
+    END NARRATIVES ------ Mari
+   ========================================================================================== */
+
+/* ==========================================================================================
+   EXHIBITION ------ Mari
+   ========================================================================================== */
+
+/* GALLERY CARDS */
+
+.exhibition-card{
+  background: var(--bg);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(184,173,167,0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.exhibition-card:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+}
+
+.exhibition-thumb{
+  padding: 14px;
+  background: rgba(0,0,0,0.08);
+}
+
+.exhibition-thumb img{
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+}
+
+.exhibition-body{
+  padding: 14px 16px 16px;
+}
+
+/* Click to view */
+.click-to-view {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.click-to-view:hover {
+  color: var(--yellow);
+}
+
+/* clickable thumbs */
+.artwork-thumb {
+  cursor: zoom-in;
+}
+
+/* modal box style */
+.modal-artwork-content {
+  background: var(--bg);
+  border: 3px solid var(--text);
+}
+
+#imageModal .modal-header {
+  border-bottom: 1px solid var(--text);
+}
+
+/* image in modal */
+.modal-artwork-img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* right column text tuning */
+.modal-artwork-text {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text);
+  max-height: 78vh;
+  overflow-y: auto;
+  padding-left: 0.25rem;
+  padding-right: 2rem;
+}
+
+/* section label (Description) */
+.modal-section-title {
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+/* remove blue focus ring on close button (only this modal) */
+#imageModal .btn-close:focus,
+#imageModal .btn-close:active {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Wrap text around the modal image */
+#imageModal .modal-body {
+  padding: 1rem;           
+}
+
+#imageModal .modal-artwork-img.modal-float-left{
+  float: left;
+
+  width: auto;
+  max-width: 52%;       
+  max-height: 80vh;     
+
+  margin: 0 1.25rem 0.75rem 0;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+}
+
+#imageModal .modal-artwork-img.is-large.modal-float-left{
+  max-width: 55%;
+  max-height: 70vh;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#imageModal .modal-artwork-copy {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* Important: clear float at the end so layout non si rompe */
+#imageModal .modal-body::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+@media (max-width: 991.98px) {
+  #imageModal .modal-float-left {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1rem 0;
+  }
+}
+
+
+
+/* ==========================================================================================
+    END EXHIBITION ------ Mari
+   ==========================================================================================
+ 
+
+
 /* ==========================================================================================
     MUSEUM ------ Silvia
    ========================================================================================== */

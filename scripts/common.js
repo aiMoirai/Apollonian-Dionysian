@@ -4,9 +4,9 @@ const separators = ["break1", "break2", "break3"].map(id => document.getElementB
 
 const themeConfigs = {
     'default': { css: 'main.css', imgs: ['imgs/sopra colonna.png', 'imgs/centro colonna.png', 'imgs/fine colonne.png'] },
-    'rococo': { css: 'rococo.css', imgs: ['imgs/rococo_sopra.png', 'imgs/rococo_centro.png', 'imgs/rococo_sotto.png'] },
-    '90s': { css: '90s.css', imgs: ['imgs/sopra_col_90s.png', 'imgs/centro_col_90s.png', 'imgs/fine_col_90s.png'] },
-    '2035': { css: '2035.css', imgs: ['imgs/sopra_col_futuristic.png', 'imgs/centro_col_futuristic.png', 'imgs/fine_col_futuristic.png'] }
+    'rococo': { css: 'Themes/rococo.css', imgs: ['imgs/rococo_sopra.png', 'imgs/rococo_centro.png', 'imgs/rococo_sotto.png'] },
+    '90s': { css: 'Themes/90s.css', imgs: ['imgs/sopra_col_90s.png', 'imgs/centro_col_90s.png', 'imgs/fine_col_90s.png'] },
+    '2035': { css: 'Themes/2035.css', imgs: ['imgs/sopra_col_futuristic.png', 'imgs/centro_col_futuristic.png', 'imgs/fine_col_futuristic.png'] }
 };
 
 const lightModeImgs = ['imgs/sopra_col_light.png', 'imgs/centro_col_light.png', 'imgs/fine_col_light.png'];

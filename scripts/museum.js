@@ -1,8 +1,3 @@
-
-
-
-// ==================== Silvia ==================== //
-
 const popup = document.getElementById('popup');
 const popupContent = document.getElementById('popup-content');
 const overlay = document.getElementById('overlay');
@@ -132,5 +127,8 @@ function renderComments() {
     });
 }
 
-renderComments();
+// Inizializza i commenti al caricamento
+document.addEventListener('DOMContentLoaded', function() {
+    renderComments();
+});
 

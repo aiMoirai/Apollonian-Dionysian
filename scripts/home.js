@@ -225,9 +225,9 @@ if (themeArt) {
       document.getElementById("break3")
     ];
 
-    if (temples[0]) temples[0].src = "imgs/art deco/columns/sopra_colonna_artdeco.png";
-    if (temples[1]) temples[1].src = "imgs/art deco/columns/centro_colonna_artdeco.png";
-    if (temples[2]) temples[2].src = "imgs/art deco/columns/sotto_colonna_artdeco.png";
+    if (temples[0]) temples[0].src = "imgs/art deco/columns/sopra_colonne_artdeco.png";
+    if (temples[1]) temples[1].src = "imgs/art deco/columns/centro_colonne_artdeco.png";
+    if (temples[2]) temples[2].src = "imgs/art deco/columns/sotto_colonne_artdeco.png";
 
     // (opzionale) persistenza tema
     localStorage.setItem("selectedTheme", "theme-artdeco");

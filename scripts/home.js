@@ -195,3 +195,41 @@ theme90.addEventListener("click", (e) => {
     temples[1].src = "imgs/90s-centro-colonna.png";
     temples[2].src = "imgs/90s-fine-colonne.png";
 });
+
+
+
+
+
+
+
+// ====== Mari's themes ==============
+
+// ====== THEME: ART DECO ======
+const themeArt = document.getElementById("theme-artdeco");
+
+if (themeArt) {
+  themeArt.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const themeLink = document.getElementById("theme-link");
+    if (themeLink) themeLink.href = "Themes/art deco/art_deco.css";
+
+    // ripristina bottone vino (se nel 90s lo cambiavi)
+    const btn = document.getElementById("wineButton");
+    if (btn) btn.src = "imgs/art deco/champagne_button.png";
+
+    // separatori (metti qui i tuoi asset art-deco se li hai)
+    const temples = [
+      document.getElementById("break1"),
+      document.getElementById("break2"),
+      document.getElementById("break3")
+    ];
+
+    if (temples[0]) temples[0].src = "imgs/art deco/columns/sopra_colonna_artdeco.png";
+    if (temples[1]) temples[1].src = "imgs/art deco/columns/centro_colonna_artdeco.png";
+    if (temples[2]) temples[2].src = "imgs/art deco/columns/sotto_colonna_artdeco.png";
+
+    // (opzionale) persistenza tema
+    localStorage.setItem("selectedTheme", "theme-artdeco");
+  });
+}

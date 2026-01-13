@@ -10,15 +10,26 @@
 
 @font-face {
     font-family: "PoiretOne";
-    src: url("../Themes/art deco/fonts/PoiretOne-Regular.ttf") format("truetype");
+    src: url("fonts/PoiretOne-Regular.ttf") format("truetype");
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 
+@font-face {
+  font-family: "Decomang Hold";
+  src: url("fonts/DecomangHold-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
 :root {
     /* Background */
-    --bgimg: linear-gradient(to bottom, rgba(23, 34, 37, 0.72), rgba(23, 34, 37, 0.92)), url('../imgs/art deco/Bacchus_art_deco.png');
+    --bgimg: linear-gradient(to bottom, rgba(23, 34, 37, 0.72), rgba(23, 34, 37, 0.92)),
+        url('../../imgs/art deco/Bacchus_art_deco.png');
     --bg: #172225;
 
     --blackbg: #0f1719;
@@ -32,8 +43,8 @@
     --title: #b69046;       /* oro */
 
     /* Fonts (solo due, poi li sostituisci) */
-    --general_font: --general_font: "PoiretOne", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-    --h1_font: "FontB", Georgia, "Times New Roman", serif;
+    --general_font: "PoiretOne", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+    --h1_font: "Decomang Hold", serif;
 
     /* Borders / UI */
     --border: 2px solid rgba(182, 144, 70, 0.9);
@@ -61,13 +72,15 @@ body {
     flex-direction: column;
 }
 
-
-h1 {
+h1,
+.title {
     color: var(--yellow);
     font-family: var(--h1_font);
-    text-align: left;
-    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
 }
+
+
 
 h4 {
     font-size: 1.2em;
@@ -104,9 +117,7 @@ a {
     }
 }
 
-
 /* --------------------------------*/
-
 
 /* Navbar section --------------------*/
 
@@ -176,8 +187,8 @@ a {
 
 /* -------------------------------*/
 
-
 /* -----------Hero section (with button)--------------*/
+/* (Animazione rimossa: niente .crawl e niente @keyframes crawl) */
 
 .hero {
     height: 100vh;
@@ -186,14 +197,11 @@ a {
     background-repeat: no-repeat;
 
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    perspective: 400px;
-    overflow: hidden;
+    align-items: center;
+    text-align: center;
 }
 
-/* Fade come Star Wars */
+/* Fade (lasciato, ma senza effetto crawl) */
 .hero::before {
     content: "";
     position: absolute;
@@ -204,43 +212,18 @@ a {
     z-index: 1;
 }
 
-/* Crawl */
-.hero-content.crawl {
+/* Contenuto hero sempre visibile e fermo */
+.hero-content {
     position: relative;
-    bottom: -80%;
     width: 90%;
     text-align: center;
-
-    transform-origin: 50% 100%;
-    animation: crawl 32s linear forwards;
     z-index: 2;
 }
-
 
 /* Titolo */
 .hero-content .title {
     text-shadow: 0 0 22px rgba(182, 144, 70, 0.65);
 }
-
-/* Animazione */
-@keyframes crawl {
-    0% {
-        transform: rotateX(10deg) scale(3.4) translateZ(0);
-        bottom: -80%;
-    }
-
-    50% {
-        transform: rotateX(14deg) scale(2.4) translateZ(-150px);
-        bottom: 50%;
-    }
-
-    100% {
-        transform: rotateX(18deg) scale(1.8) translateZ(-150px);
-        bottom: 35%;
-    }
-}
-
-/* source: https://css-tricks.com/snippets/css/star-wars-crawl-text/ */
 
 .wine_button {
     margin-top: 2vw;
@@ -255,11 +238,11 @@ a {
     filter: drop-shadow(0 0 14px rgba(182, 144, 70, 0.55));
 }
 
-
 .title {
-    font-size: 8vw;
+    font-size: 6vw;
     margin-top: 3vw;
     text-align: center;
+    color: var(--title);
 }
 
 .subtitle {
@@ -268,7 +251,6 @@ a {
 }
 
 /* -----------Intro + narratives and museum cards--------------*/
-
 
 #quote {
     background-color: var(--bg);
@@ -281,7 +263,6 @@ a {
     border: 1px solid rgba(182, 144, 70, 0.35);
     border-radius: 10px;
 }
-
 
 .quote {
     margin-bottom: 15rem;
@@ -340,10 +321,7 @@ a {
     font-size: 3vw;
 }
 
-
-
 /* -----------The collection--------------*/
-
 
 .browse,
 .tickets {
@@ -378,7 +356,6 @@ a {
     object-fit: cover;
     display: block;
 }
-
 
 .overlay {
     position: absolute;
@@ -416,7 +393,6 @@ a {
     gap: 1.5em;
     align-items: flex-start;
 }
-
 
 .modal-content {
     border-radius: var(--modal-border-radius);
@@ -466,16 +442,12 @@ a {
 
 /* Modal responsive */
 @media (max-width: 992px) {
-
-    /* tablet e laptop piccoli */
     .modal-dialog {
         max-width: 650px !important;
     }
 }
 
 @media (max-width: 768px) {
-
-    /* tablet verticale */
     .modal-dialog {
         max-width: 90% !important;
         margin: 0 auto;
@@ -498,8 +470,6 @@ a {
 }
 
 @media (max-width: 576px) {
-
-    /* smartphone */
     .modal-dialog {
         max-width: 95% !important;
         margin: 0.5em auto;
@@ -513,8 +483,6 @@ a {
         font-size: 1em;
     }
 }
-
-
 
 /* --------Ticket section --------*/
 .tickets {
@@ -585,7 +553,6 @@ select:focus {
     }
 }
 
-
 /* -------Footer-------------*/
 footer {
     border-top: var(--border);
@@ -626,7 +593,6 @@ footer .footer .col {
     }
 }
 
-
 /* -------Disclaimer-------------*/
 #disclaimer {
     padding-top: 6em;
@@ -643,7 +609,6 @@ footer .footer .col {
     margin-bottom: 120px;
 }
 
-
 .narratives-hero-img {
     margin-top: 2rem;
     border: var(--border);
@@ -653,7 +618,6 @@ footer .footer .col {
     object-fit: cover;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
-
 
 .narratives-grid {
     margin-top: -7rem !important;

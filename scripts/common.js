@@ -70,13 +70,19 @@ const themeConfigs = {
 // Funzione per cambiare tema
 function changeTheme(themeName) {
     console.log("Cambio tema a:", themeName);
-
     
-    // 1. Cambia il foglio di stile CSS
+    // 1. Recupera la configurazione del tema
+    const config = themeConfigs[themeName];
+    if (!config) {
+        console.error("Tema non trovato:", themeName);
+        return;
+    }
+    
+    // 2. Cambia il foglio di stile CSS
     document.getElementById('theme-link').href = config.css;
     console.log("CSS cambiato a:", config.css);
     
-    // 2. Cambia le immagini dei separatori (solo se esistono)
+    // 3. Cambia le immagini dei separatori (solo se esistono)
     const break1 = document.getElementById('break1');
     const break2 = document.getElementById('break2');
     const break3 = document.getElementById('break3');
@@ -94,7 +100,7 @@ function changeTheme(themeName) {
         console.log("break3 cambiato:", config.break3);
     }
     
-    // 3. Salva la scelta
+    // 4. Salva la scelta
     localStorage.setItem('selectedTheme', themeName);
     console.log("Tema salvato:", themeName);
 }

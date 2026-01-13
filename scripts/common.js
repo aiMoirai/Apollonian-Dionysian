@@ -33,6 +33,102 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// Configurazione dei temi
+const themeConfigs = {
+    'default': {
+        css: 'main.css',  
+        break1: 'imgs/sopra colonna.png',
+        break2: 'imgs/centro colonna.png',
+        break3: 'imgs/fine colonne.png'
+    },
+    'rococo': {
+        css: 'Themes/rococo.css',  
+        break1: 'imgs/sopra_col_rococo.png',  
+        break2: 'imgs/centro_col_rococo.png',
+        break3: 'imgs/fine_col_rococo.png'
+    },
+    '90s': {
+        css: 'Themes/90s.css',
+        break1: 'imgs/sopra_col_90s.png',
+        break2: 'imgs/centro_col_90s.png',
+        break3: 'imgs/fine_col_90s.png'
+    },
+    '2035': {
+        css: 'Themes/2035.css',
+        break1: 'imgs/sopra_col_futuristic.png',
+        break2: 'imgs/centro_col_futuristic.png',
+        break3: 'imgs/fine_col_futuristic.png'
+    }
+};
+
+// Funzione per cambiare tema
+function changeTheme(themeName) {
+    console.log("Cambio tema a:", themeName);
+
+    
+    // 1. Cambia il foglio di stile CSS
+    document.getElementById('theme-link').href = config.css;
+    console.log("CSS cambiato a:", config.css);
+    
+    // 2. Cambia le immagini dei separatori (solo se esistono)
+    const break1 = document.getElementById('break1');
+    const break2 = document.getElementById('break2');
+    const break3 = document.getElementById('break3');
+    
+    if (break1 && config.break1) {
+        break1.src = config.break1;
+        console.log("break1 cambiato:", config.break1);
+    }
+    if (break2 && config.break2) {
+        break2.src = config.break2;
+        console.log("break2 cambiato:", config.break2);
+    }
+    if (break3 && config.break3) {
+        break3.src = config.break3;
+        console.log("break3 cambiato:", config.break3);
+    }
+    
+    // 3. Salva la scelta
+    localStorage.setItem('selectedTheme', themeName);
+    console.log("Tema salvato:", themeName);
+}
+
+// Quando la pagina si carica
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Pagina caricata - Inizializzazione temi");
+    
+    // Controlla se c'è un tema salvato
+    const savedTheme = localStorage.getItem('selectedTheme');
+    console.log("Tema salvato precedentemente:", savedTheme);
+    
+    // Applica il tema
+    if (savedTheme && themeConfigs[savedTheme]) {
+        changeTheme(savedTheme);
+    } else {
+        changeTheme('default');
+    }
+    
+    // Aggiungi event listener a tutti i link che iniziano con "theme-"
+    const themeLinks = document.querySelectorAll('[id^="theme-"]');
+    console.log("Trovati", themeLinks.length, "link per i temi");
+    
+    themeLinks.forEach(link => {
+        link.addEventListener('click', function(event) {
+            event.preventDefault();
+            
+            // Estrae il nome del tema dall'ID
+            const themeName = this.id.replace('theme-', '');
+            console.log("Cliccato su tema:", themeName);
+            
+            // Cambia il tema
+            changeTheme(themeName);
+        });
+    });
+    
+    // Debug: mostra tutti i temi disponibili
+    console.log("Temi configurati:", Object.keys(themeConfigs));
+});
+
 
 
 

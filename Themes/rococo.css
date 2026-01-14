@@ -1102,7 +1102,7 @@ footer .footer .col {
 .museum-header {
     padding: 2rem 0;
     text-align: center;
-    margin-top: 2%;
+    margin-top: 60px;
 }
 
 .museum-title {
@@ -1698,6 +1698,7 @@ footer .footer .col {
 .doc-title {
     color: var(--yellow);
 }
+
 
 
 

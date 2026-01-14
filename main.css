@@ -1905,3 +1905,44 @@ html[data-theme="light"] {
 .narrative-page-header{
   scroll-margin-top: calc(var(--nav-offset) + 1rem);
 }
+
+/* =========================================
+   NAVBAR OFFSET per THE MUSEUM
+   evita che il titolo finisca sotto la navbar
+   ========================================= */
+
+:root{
+  --nav-offset: 60px; /* desktop: coerente col body padding-top */
+}
+
+/* su mobile la navbar tende ad essere più alta */
+@media (max-width: 991.98px){
+  :root{
+    --nav-offset: 96px;
+  }
+}
+
+/* 2. TITOLI E HEADER */
+.museum-header {
+    padding: calc(2rem + var(--nav-offset)) 0 2rem 0;
+    text-align: center;
+    margin-top: 2%;
+}
+
+.museum-title {
+    font-size: 4vw;
+    color: var(--yellow);
+    font-family: var(--h1_font);
+    text-align: center;
+}
+
+.museum-subtitle {
+    color: var(--text);
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+/* Se arrivi tramite anchor/link (es. #qualcosa), non finisce sotto la navbar */
+.museum-header {
+  scroll-margin-top: calc(var(--nav-offset) + 1rem);
+}

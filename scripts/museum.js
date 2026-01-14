@@ -1,7 +1,34 @@
+// ==================== Silvia ==================== //
+
 const popup = document.getElementById('popup');
 const popupContent = document.getElementById('popup-content');
 const overlay = document.getElementById('overlay');
 const rooms = document.querySelectorAll('.room');
+
+// Mappa degli ID dei popup in ordine
+const opereInOrdine = [
+    "apollo-belvedere",
+    "bacco-statue", 
+    "simposio",
+    "fedro",
+    "maschera-comica",
+    "maschera-tragica",
+    "baccanti",
+    "pacioli",
+    "caravaggio",
+    "apollo-muse",
+    "bach",
+    "wagner",
+    "lorenzo",
+    "apollo-dafne",
+    "citta-chesale",
+    "citta-ideale",
+    "kylix",
+    "coppadionisio",
+];
+
+let operaCorrente = "";
+let indiceCorrente = 0;
 
 // Room click handlers
 rooms.forEach(room => {
@@ -59,7 +86,7 @@ function riduciImmagine(img) {
     img.style.filter = 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))';
 }
 
-// Show artwork popup
+// Show artwork popup CON NAVIGAZIONE
 function mostraPopupOpera(operaId, event) {
     if (event) {
         event.stopPropagation();
@@ -72,10 +99,72 @@ function mostraPopupOpera(operaId, event) {
     const contentElem = document.getElementById(contentId);
     
     if (contentElem) {
-        document.getElementById('artworks-popup-content').innerHTML = contentElem.innerHTML;
+        // Crea una copia del contenuto senza gli onclick statici
+        const contenutoTemp = document.createElement('div');
+        contenutoTemp.innerHTML = contentElem.innerHTML;
+        
+        // Rimuovi gli onclick statici dai bottoni
+        const prevBtn = contenutoTemp.querySelector('.art-nav-prev');
+        const nextBtn = contenutoTemp.querySelector('.art-nav-next');
+        const counter = contenutoTemp.querySelector('.art-nav-counter');
+        
+        if (prevBtn) prevBtn.removeAttribute('onclick');
+        if (nextBtn) nextBtn.removeAttribute('onclick');
+        
+        // Aggiorna l'indice corrente
+        indiceCorrente = opereInOrdine.indexOf(operaId);
+        
+        // Aggiorna il contatore
+        if (counter) {
+            counter.textContent = `${indiceCorrente + 1}/${opereInOrdine.length}`;
+        }
+        
+        document.getElementById('artworks-popup-content').innerHTML = contenutoTemp.innerHTML;
         document.getElementById('artworks-popup').style.display = 'block';
         overlay.style.display = 'block';
+        
+        // Aggiungi gli event listener per le frecce
+        aggiungiEventListenerFrecce();
     }
+}
+
+// Aggiungi event listener per le frecce di navigazione
+function aggiungiEventListenerFrecce() {
+    const prevBtn = document.querySelector('.art-nav-prev');
+    const nextBtn = document.querySelector('.art-nav-next');
+    
+    if (prevBtn) {
+        prevBtn.addEventListener('click', navPrev);
+    }
+    
+    if (nextBtn) {
+        nextBtn.addEventListener('click', navNext);
+    }
+}
+
+// Navigazione tra opere
+function navPrev() {
+    if (indiceCorrente > 0) {
+        indiceCorrente--;
+    } else {
+        indiceCorrente = opereInOrdine.length - 1; // Torna all'ultima
+    }
+    
+    // Riapri il popup con l'opera precedente
+    document.getElementById('artworks-popup').style.display = 'none';
+    mostraPopupOpera(opereInOrdine[indiceCorrente]);
+}
+
+function navNext() {
+    if (indiceCorrente < opereInOrdine.length - 1) {
+        indiceCorrente++;
+    } else {
+        indiceCorrente = 0; // Torna alla prima
+    }
+    
+    // Riapri il popup con l'opera successiva
+    document.getElementById('artworks-popup').style.display = 'none';
+    mostraPopupOpera(opereInOrdine[indiceCorrente]);
 }
 
 // Close popup
@@ -84,13 +173,28 @@ function closePopup() {
     document.getElementById('rooms-popup').style.display = 'none';
     document.getElementById('artworks-popup').style.display = 'none';
     overlay.style.display = 'none';
+    
+    // Reset della navigazione
+    operaCorrente = "";
+    indiceCorrente = 0;
 }
 
 // Event listeners
 overlay.addEventListener('click', closePopup);
 document.addEventListener('keydown', (e) => {
+    const popupVisibile = document.getElementById('artworks-popup').style.display === 'block';
+    
     if (e.key === 'Escape') {
         closePopup();
+    }
+    
+    // Navigazione da tastiera solo se il popup opere è visibile
+    if (popupVisibile) {
+        if (e.key === 'ArrowLeft') {
+            navPrev();
+        } else if (e.key === 'ArrowRight') {
+            navNext();
+        }
     }
 });
 
@@ -130,5 +234,7 @@ function renderComments() {
 // Inizializza i commenti al caricamento
 document.addEventListener('DOMContentLoaded', function() {
     renderComments();
+    
+    console.log("Museum.js con navigazione opere caricato!");
 });
 

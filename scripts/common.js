@@ -9,7 +9,7 @@ const themeWineButton = document.getElementById("wineButton");
 const themeConfigs = {
     'default': { css: 'main.css', imgs: ['imgs/sopra colonna.png', 'imgs/centro colonna.png', 'imgs/fine colonne.png'] },
     'rococo': { css: 'Themes/rococo.css', imgs: ['imgs/rococo_sopra.png', 'imgs/rococo_centro.png', 'imgs/rococo_sotto.png'] },
-    'artdeco': { css: "Themes/art deco/art_deco.css", imgs: ["imgs/art deco/columns/sopra_colonne_artdeco.png", "imgs/art deco/columns/centro_colonne_artdeco.png", "imgs/art deco/columns/sotto_colonne_artdeco.png"], button: "imgs/art deco/champagne_button.png" },
+    'artdeco': { css: "Themes/art deco/art_deco.css", imgs: ["imgs/art deco/columns/sopra_colonne_artdeco.jpeg", "imgs/art deco/columns/centro_colonne_artdeco.jpeg", "imgs/art deco/columns/sotto_colonne_artdeco.jpeg"], button: "imgs/art deco/champagne_button.png" },
     '90s': { css: 'Themes/90s.css', imgs: ['imgs/sopra_col_90.png', 'imgs/centro_col_90.png', 'imgs/sotto_col_90.png'] },
     '2035': { css: 'Themes/2035.css', imgs: ['imgs/sopra_col_futuristic.png', 'imgs/centro_col_futuristic.png', 'imgs/fine_col_futuristic.png'] }
 };

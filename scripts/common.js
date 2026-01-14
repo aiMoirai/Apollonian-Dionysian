@@ -3,7 +3,7 @@ const toggle = document.getElementById("switch");
 const separators = ["break1", "break2", "break3"].map(id => document.getElementById(id));
 
 // Bottone (esiste nell'HTML come <img id="wineButton" ...>)
-const wineButton = document.getElementById("wineButton");
+/*const wineButton = document.getElementById("wineButton");*/
 
 
 const themeConfigs = {
@@ -40,12 +40,12 @@ function changeTheme(themeName) {
     });
 
     // 2b) Cambia immagine bottone bicchiere
-    if (wineButton) {
+    /*if (wineButton) {
         wineButton.src = config.button || "imgs/wine_button.png";
         wineButton.style.display = "block";
         wineButton.style.marginLeft = "auto";
         wineButton.style.marginRight = "auto";
-    }
+    }*/
 
     // 3. Gestione Light Mode
     const isDefault = themeName === 'default';

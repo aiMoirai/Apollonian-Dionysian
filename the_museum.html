@@ -93,21 +93,22 @@
 
     <!-- Museum Page -->
     <section id="museum-rooms" class="museum-page">
-        <header class="museum-header">
-            <h1 class="museum-title">THE MUSEUM</h1>
-            <p class="museum-subtitle">Explore the rooms and discover the artworks</p>
-        </header>
+        <div class="container"> 
+            <header class="museum-header">
+                <h1 class="museum-title">THE MUSEUM</h1>
+                <p class="museum-subtitle">Explore the rooms and discover the artworks</p>
+            </header>
+        </div>
     </section>
 
     <!-- Discover the Rooms Section -->
-    <section id="rooms" class="p-2">
-        <div class="row">
-            <!-- SVG map container - now centered with Bootstrap -->
+    <section id="rooms">
+        <div class="container"> <div class="row justify-content-center">
+            <!-- SVG map container  -->
             <div class="col-12">
                 <div class="museum-map-container">
                     <svg id="planimetria-svg" xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 440 180" version="1.1"
-                        style="width: 100%; height: auto;">
+                        xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 440 180" version="1.1">
                         <defs>
                             <clipPath clipPathUnits="userSpaceOnUse" id="clipPath100">
                                 <g id="use100">
@@ -806,13 +807,14 @@
                 </div>
             </div>
         </div>
+    </div>
     </section>
     </section>
 
     <section id="explanationbox">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-11 col-md-10 col-sm-10">
+                <div class="col-12">
                     <p class="museum-dropcap-text">
                         Beneath the whispers of the Oracle, the Temple of Apollo at Delphi exhumes its secrets to host a
                         clash that defies time. The artworks lie hidden within the sacred core, unfolding through the
@@ -836,7 +838,7 @@
     <section id="map-info">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-11 col-md-10 col-sm-10">
+                <div class="col-12">
                     <h3 class="visit-title">COME TO VISIT US…</h3>
                     <p class="visit-paragraph">
                         Discover our unique exhibition: visit us in Delphi for an immersive journey you won't want to
@@ -912,8 +914,7 @@
     <section id="comments-section">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-11 col-md-10 col-sm-10">
-
+               <div class="col-12">
                     <h3 class="visit-title">LEAVE A COMMENT...</h3>
                     <p class="visit-paragraph">
                         Tell us what this exhibition means to you. Your comment will appear below.
@@ -945,6 +946,7 @@
                 <div class="col about" style="line-height: 2.5">
                     <h4><b>About</b></h4>
                     <a href="the_museum.html">The Museum</a><br>
+                    <a href="exhibition.html">The Exhibition</a><br>
                     <a href="narratives/index.html">The Narratives</a><br>
                     <a href="About/Team.html">The Team</a><br>
                     <a href="About\Documentation.html">The Documentation</a><br>
@@ -1017,12 +1019,16 @@
     <div id="popup-content-apollo-belvedere" class="popup-content" style="display:none;">
         <h3 class="artwork-title">Apollo of the Belvedere</h3>
         <div class="artwork-container">
-            <img src="imgs/Apollo_of_the_Belvedere.jpg" class="artwork-image apollo-image"
-                alt="Statue of Apollo of the Belvedere">
+            <img src="imgs/Apollo_of_the_Belvedere.jpg" class="artwork-image apollo-image" alt="Statue of Apollo of the Belvedere">
             <div class="artwork-metadata">
                 <p><strong>Attribution:</strong> Roman statue copy after a Greek bronze original</p>
                 <p><strong>Creation date:</strong> II century AD</p>
                 <p><strong>Current location:</strong> Musei Vaticani, Rome</p>
+            </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">1/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
             </div>
         </div>
     </div>
@@ -1033,8 +1039,13 @@
             <img src="imgs/bacco_statue.jpg" class="artwork-image bacco-image" alt="Statue of Bacchus by Michelangelo">
             <div class="artwork-metadata">
                 <p><strong>Attribution:</strong> Buonarroti Michelangelo</p>
-                <p><strong>Creation date:</strong> 1496–1497</p>
+                <p><strong>Creation date:</strong> 	1496–1497</p>
                 <p><strong>Current location:</strong> Museo Nazionale del Bargello, Florence</p>
+            </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">2/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
             </div>
         </div>
     </div>
@@ -1048,6 +1059,11 @@
                 <p><strong>Creation date:</strong> 2nd–3rd century AD</p>
                 <p><strong>Current location:</strong> Cairo Museum</p>
             </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">3/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
+            </div>
         </div>
     </div>
 
@@ -1059,6 +1075,11 @@
                 <p><strong>Attribution:</strong> Plato</p>
                 <p><strong>Creation date:</strong> Roman period</p>
                 <p><strong>Current location:</strong> Toledo Museum of Art</p>
+            </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">4/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
             </div>
         </div>
     </div>
@@ -1072,6 +1093,11 @@
                 <p><strong>Creation date:</strong> II-I century BC</p>
                 <p><strong>Current location:</strong> MArTA - Museo Archeologico Nazionale di Taranto</p>
             </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">5/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
+            </div>
         </div>
     </div>
 
@@ -1083,6 +1109,11 @@
                 <p><strong>Attribution:</strong> Unknown</p>
                 <p><strong>Creation date:</strong> I century BC</p>
                 <p><strong>Current location:</strong> Museo Nazionale Etrusco di Villa Giulia - Rome</p>
+            </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">6/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
             </div>
         </div>
     </div>
@@ -1096,6 +1127,28 @@
                 <p><strong>Creation date:</strong> Unknown</p>
                 <p><strong>Current location:</strong> Berkeley Library, University of California</p>
             </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">7/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-pacioli" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">De Divina Proportione</h3>
+        <div class="artwork-container">
+            <img src="imgs/pacioli.png" class="artwork-image pacioli-image" alt="Luca Pacioli's work">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Pacioli Luca</p>
+                <p><strong>Creation date:</strong> 1509</p>
+                <p><strong>Current location:</strong> National Gallery of Art (Washington, USA)</p>
+            </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">8/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
+            </div>
         </div>
     </div>
 
@@ -1107,6 +1160,11 @@
                 <p><strong>Attribution:</strong> Merisi Michelangelo</p>
                 <p><strong>Creation date:</strong> 1571/1610</p>
                 <p><strong>Current location:</strong> Uffizi Gallery, Florence</p>
+            </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">9/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
             </div>
         </div>
     </div>
@@ -1120,6 +1178,11 @@
                 <p><strong>Creation date:</strong> 1626–1628</p>
                 <p><strong>Current location:</strong> Getty Museum Collection</p>
             </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">10/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
+            </div>
         </div>
     </div>
 
@@ -1131,6 +1194,11 @@
                 <p><strong>Attribution:</strong> Bach, Johann Sebastian</p>
                 <p><strong>Creation date:</strong> mid-18th century</p>
                 <p><strong>Current location:</strong> Berlin State Library – Prussian Cultural Heritage Foundation</p>
+            </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">11/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
             </div>
         </div>
     </div>
@@ -1144,6 +1212,28 @@
                 <p><strong>Creation date:</strong> 1850 - 1859</p>
                 <p><strong>Current location:</strong> The New York Public Library, Music Division</p>
             </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">12/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-lorenzo" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">Il Trionfo di Bacco e d'Arianna</h3>
+        <div class="artwork-container">
+            <img src="imgs/lorenzo.png" class="artwork-image arianna-image" alt="Il Trionfo di Bacco e d'Arianna">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Lorenzo de' Medici</p>
+                <p><strong>Creation date:</strong> 	1490</p>
+                <p><strong>Current location:</strong> Various libraries</p>
+            </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">13/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
+            </div>
         </div>
     </div>
 
@@ -1155,6 +1245,28 @@
                 <p><strong>Attribution:</strong> Gian Lorenzo Bernini</p>
                 <p><strong>Creation date:</strong> 1622–1625</p>
                 <p><strong>Current location:</strong> Galleria Borghese Rome</p>
+            </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">14/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-content-citta-chesale" class="popup-content" style="display:none;">
+        <h3 class="artwork-title">La città che sale</h3>
+        <div class="artwork-container">
+            <img src="imgs/cittachesale.jpg" class="artwork-image" alt="Città che sale painting">
+            <div class="artwork-metadata">
+                <p><strong>Attribution:</strong> Boccioni Umberto</p>
+                <p><strong>Creation date:</strong> 	1910</p>
+                <p><strong>Current location:</strong> Museum of Modern Art (MoMA)</p>
+            </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">15/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
             </div>
         </div>
     </div>
@@ -1168,6 +1280,11 @@
                 <p><strong>Creation date:</strong> 1480–1490</p>
                 <p><strong>Current location:</strong> Galleria Nazionale delle Marche - Urbino</p>
             </div>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">16/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
+            </div>
         </div>
     </div>
 
@@ -1180,17 +1297,10 @@
                 <p><strong>Creation date:</strong> 480–470 BC</p>
                 <p><strong>Current location:</strong> British Museum London</p>
             </div>
-        </div>
-    </div>
-
-    <div id="popup-content-citta-chesale" class="popup-content" style="display:none;">
-        <h3 class="artwork-title">La città che sale</h3>
-        <div class="artwork-container">
-            <img src="imgs/cittachesale.jpg" class="artwork-image" alt="Città che sale painting">
-            <div class="artwork-metadata">
-                <p><strong>Attribution:</strong> Boccioni Umberto</p>
-                <p><strong>Creation date:</strong> 1910</p>
-                <p><strong>Current location:</strong> Museum of Modern Art (MoMA)</p>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">17/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
             </div>
         </div>
     </div>
@@ -1201,36 +1311,17 @@
             <img src="imgs/coppadionisio.jpg" class="artwork-image" alt="Dionysian cup">
             <div class="artwork-metadata">
                 <p><strong>Attribution:</strong> Exekias</p>
-                <p><strong>Creation date:</strong> 540–530 BC</p>
+                <p><strong>Creation date:</strong> 	540–530 BC</p>
                 <p><strong>Current location:</strong> Staatliche Antikensammlungen Munich</p>
             </div>
-        </div>
-    </div>
-
-    <div id="popup-content-pacioli" class="popup-content" style="display:none;">
-        <h3 class="artwork-title">De Divina Proportione</h3>
-        <div class="artwork-container">
-            <img src="imgs/pacioli.png" class="artwork-image pacioli-image" alt="Luca Pacioli's work">
-            <div class="artwork-metadata">
-                <p><strong>Attribution:</strong> Pacioli Luca</p>
-                <p><strong>Creation date:</strong> /</p>
-                <p><strong>Current location:</strong> /</p>
+            <div class="artwork-navigation">
+                <button class="art-nav-prev" onclick="navPrev()">← Prev</button>
+                <span class="art-nav-counter">18/18</span>
+                <button class="art-nav-next" onclick="navNext()">Next →</button>
             </div>
         </div>
     </div>
-
-    <div id="popup-content-lorenzo" class="popup-content" style="display:none;">
-        <h3 class="artwork-title">Il Trionfo di Bacco e d'Arianna</h3>
-        <div class="artwork-container">
-            <img src="imgs/lorenzo.png" class="artwork-image arianna-image" alt="Il Trionfo di Bacco e d'Arianna">
-            <div class="artwork-metadata">
-                <p><strong>Attribution:</strong> Lorenzo de' Medici</p>
-                <p><strong>Creation date:</strong> 1490</p>
-                <p><strong>Current location:</strong> Various libraries</p>
-            </div>
-        </div>
-    </div>
-
+    
     <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
@@ -1239,6 +1330,5 @@
 
 </body>
 
-
-
 </html>
+

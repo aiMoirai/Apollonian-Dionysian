@@ -2,6 +2,10 @@ const toggle = document.getElementById("switch");
 // Seleziona tutti i break in un colpo solo tramite gli ID
 const separators = ["break1", "break2", "break3"].map(id => document.getElementById(id));
 
+// Bottone (esiste nell'HTML come <img id="wineButton" ...>)
+const wineButton = document.getElementById("wineButton");
+
+
 const themeConfigs = {
     'default': { css: 'main.css', imgs: ['imgs/sopra colonna.png', 'imgs/centro colonna.png', 'imgs/fine colonne.png'] },
     'rococo': { css: 'Themes/rococo.css', imgs: ['imgs/rococo_sopra.png', 'imgs/rococo_centro.png', 'imgs/rococo_sotto.png'] },
@@ -34,6 +38,14 @@ function changeTheme(themeName) {
     separators.forEach((img, i) => {
         if (img) img.src = config.imgs[i];
     });
+
+    // 2b) Cambia immagine bottone bicchiere
+    if (wineButton) {
+        wineButton.src = config.button || "imgs/wine_button.png";
+        wineButton.style.display = "block";
+        wineButton.style.marginLeft = "auto";
+        wineButton.style.marginRight = "auto";
+    }
 
     // 3. Gestione Light Mode
     const isDefault = themeName === 'default';

@@ -1744,7 +1744,6 @@ html[data-theme="light"]{
     margin-top: 1rem;
     padding: 1rem;
     background: rgba(42, 36, 34, 0.8);
-    border: 3px solid var(--yellow);
 }
 
 .art-nav-prev, .art-nav-next {

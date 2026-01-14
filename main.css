@@ -1574,7 +1574,7 @@ html[data-theme="light"]{
 
 /* Metadata */
 .artworks-popup .artwork-metadata {
-    background: rgba(42, 36, 34, 0.9);
+    background: var(--blackbg);
     padding: 1.5rem;
     border-left: 3px solid var(--yellow);
     box-shadow: inset 0 0 15px rgb(0, 0, 0);
@@ -1743,7 +1743,7 @@ html[data-theme="light"]{
     align-items: center;
     margin-top: 1rem;
     padding: 1rem;
-    background: rgba(42, 36, 34, 0.8);
+    background: var(--blackbg);
 }
 
 .art-nav-prev, .art-nav-next {

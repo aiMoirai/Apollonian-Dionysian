@@ -933,7 +933,7 @@ footer .footer .col {
     border-radius: 16px;
     overflow: hidden;
     border: 12px solid;
-    border-image: url("../imgs/rococo_border.png");
+    border-image: url("../imgs/rococo_navbar.png") 30 round;
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -993,6 +993,8 @@ footer .footer .col {
   object-fit: contain;
   display: block;
   margin: 0 auto;
+  border: 12px solid;
+  border-image: url("../imgs/rococo_mus.png") 30 round;
 }
 
 /* right column text tuning */

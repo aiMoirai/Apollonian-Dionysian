@@ -412,16 +412,14 @@ a {
     display: flex;
     gap: 1.5em;
     align-items: flex-start;
+    border: 12px solid;
+    border-image: url("../imgs/rococo_navbar.png") 30 round;
 }
 
 .modal-content {
     border-radius: var(--modal-border-radius);
     background-color: var(--modal-bg);
-    border: 12px solid;
-    border-image-source: url("../imgs/rococo_navbar.png");
-    border-image-slice: 30;
-    border-image-width: 12;
-    border-image-repeat: round;
+    border: 2px solid;
 }
 
 .modal-header,
@@ -605,9 +603,10 @@ footer .footer .col {
     padding-bottom: 2em;
 }
 
-/* ===============================
-   Narratives page
-   =============================== */
+
+/* ==========================================================================================
+    NARRATIVES ------ Mari
+   ========================================================================================== */
 
 .narratives-hero {
     padding-top: 2rem;
@@ -699,7 +698,7 @@ footer .footer .col {
 .narrative-note {
     margin-top: 1.25rem;
     padding-top: 1rem;
-    border-top: 1px solid rgba(184, 173, 167, 0.35);
+    border-top: 1px solid rgba(160, 82, 105, 0.35);
     font-size: 0.9em;
 }
 
@@ -707,14 +706,73 @@ footer .footer .col {
     font-size: 0.95em;
 }
 
-/* =========================
-   ARTWORKS
-   ========================= */
+/* Title + back row on narrative detail pages (apollo/literature/...) */
+.narrative-head{
+    display:flex;
+    align-items:center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Margin */
+.narrative-page-header{
+  margin-top: 0.5rem; 
+}
+
+/* Footer helpers (remove inline styles) */
+.footer-about{ line-height: 2.5; }
+.footer-project-title{ text-align: left; }
+.footer-rights{ text-align: center; }
+
+@media (max-width: 600px) {
+    .theme-switch {
+        width: 60px;
+        height: 30px;
+    }
+
+    .theme-switch label {
+        border-radius: 30px;
+    }
+
+    .theme-switch label::after {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 16px;
+    }
+
+    .theme-switch input:checked+label::after {
+        transform: translateX(30px);
+    }
+}
+
+/* ==========================================================================================
+   ARTWORKS (Narratives detail pages: Apollo / Dionysus / Literature / ...)
+   ========================================================================================== */
 
 .artwork-card {
     background: var(--bg) !important;
     border: 12px solid !important;
     border-image: url("../imgs/rococo_exhib.png") 30 round !important;
+}
+
+/* Two-column layout helpers (left image+accordion, right text) */
+.artwork-left{ width: 400px; }
+.artwork-right{ max-width: 520px; }
+
+@media (max-width: 991.98px){
+    .artwork-left{ width: 100%; }
+    .artwork-right{ max-width: 100%; }
+}
+
+/* Thumbnails inside carousel items */
+.artwork-thumb{ cursor: zoom-in; }
+
+.artwork-img{
+    max-height: 320px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
 }
 
 .desc-short,
@@ -726,42 +784,49 @@ footer .footer .col {
     padding-right: 0.5rem;
 }
 
-.artwork-card .h4 {
-    color: var(--yellow) !important;
-    font-weight: 700;
-    margin-bottom: 1rem;
+/* More-detail buttons (apollonian/dionysian variants) */
+.btn-theme{
+    border-width: 1px;
+}
+.btn-theme--apollonian{
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--bg);
+}
+.btn-theme--dionysian{
+    background: var(--textred);
+    border-color: var(--textred);
+    color: var(--text);
 }
 
-#quote .d-flex.justify-content-between {
-    margin-top: 4rem;
-    margin-bottom: 2.5rem;
+/* Click to view link */
+.click-to-view {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text);
+    text-decoration: underline;
+    cursor: pointer;
+}
+.click-to-view:hover { color: var(--yellow); }
+
+/* Audio player styling */
+.narratives-audio{
+    width: 100%;
+    margin-top: 0.5rem;
+    filter: grayscale(1);
+    opacity: 0.9;
 }
 
-#quote .d-flex.justify-content-between .btn-outline-secondary {
-    border-color: var(--textred) !important;
-    color: var(--textred) !important;
-    background-color: transparent;
-    transition: all 0.3s ease;
+/* Back to narratives */
+.back-to-narratives{
+  margin-left: auto;
+  margin-right: 4rem; 
 }
 
-#quote .d-flex.justify-content-between .btn-outline-secondary:hover {
-    background-color: var(--textred) !important;
-    color: var(--yellow) !important;
-}
-
-.btn-warning.btn-sm.js-toggle-desc {
-    background-color: var(--textred) !important;
-    border-color: var(--textred) !important;
-    color: white !important;
-    transition: all 0.3s ease;
-}
-
-.btn-warning.btn-sm.js-toggle-desc:hover {
-    background-color: var(--linkred) !important;
-    border-color: var(--linkred) !important;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(180, 90, 106, 0.3);
-}
+/* ==========================================================================================
+   ARTWORK ACCORDION
+   ========================================================================================== */
 
 .artwork-accordion {
     --bs-accordion-bg: transparent;
@@ -818,6 +883,47 @@ footer .footer .col {
     margin-top: 0.25rem;
 }
 
+/* ==========================================================================================
+   MODAL
+   ========================================================================================== */
+
+#imageModal .modal-content{
+    background: var(--bg);
+    border: 3px solid rgba(98, 224, 231, 0.678);
+}
+#imageModal.apollonian .modal-content{ border-color: var(--yellow); }
+#imageModal.dionysian .modal-content{ border-color: var(--textred); }
+
+#imageModal .modal-header{
+    border-bottom: 1px solid rgba(204, 134, 182, 0.766);
+}
+
+
+#imageModal .btn-close{
+    filter: var(--btn-close-filter);
+}
+
+#imageModal .btn-close:focus,
+#imageModal .btn-close:active {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Modal image */
+.modal-artwork-img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* ==========================================================================================
+    END NARRATIVES ------ Mari
+   ========================================================================================== */
+
 /* =========================
    EXHIBITION – GALLERY CARDS
    ========================= */
@@ -869,61 +975,189 @@ footer .footer .col {
     cursor: zoom-in;
 }
 
-.modal-artwork-img {
-    width: 100%;
-    height: auto;
-    max-height: 80vh;
-    object-fit: contain;
-    display: block;
-    margin: 0 auto;
+/* modal box style */
+.modal-artwork-content {
+  background: var(--bg);
+  border: 3px double var(--text);
 }
 
-.btn-close {
-    --bs-btn-close-color: var(--text);
-    --bs-btn-close-opacity: 1;
+#imageModal .modal-header {
+  border-bottom: 1px double var(--text);
 }
+
+/* image in modal */
+.modal-artwork-img {
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* right column text tuning */
+.modal-artwork-text {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text);
+  max-height: 78vh;
+  overflow-y: auto;
+  padding-left: 0.25rem;
+  padding-right: 2rem;
+}
+
+/* section label (Description) */
+.modal-section-title {
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
+
+/* remove blue focus ring on close button (only this modal) */
+#imageModal .btn-close:focus,
+#imageModal .btn-close:active {
+  box-shadow: none;
+  outline: none;
+}
+
+/* Wrap text around the modal image */
+#imageModal .modal-body {
+  padding: 1rem;           
+}
+
+#imageModal .modal-artwork-img.modal-float-left{
+  float: left;
+
+  width: auto;
+  max-width: 52%;       
+  max-height: 80vh;     
+
+  margin: 0 1.25rem 0.75rem 0;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+}
+
+#imageModal .modal-artwork-img.is-large.modal-float-left{
+  max-width: 55%;
+  max-height: 70vh;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#imageModal .modal-artwork-copy {
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text);
+}
+
+/* Important: clear float at the end so layout non si rompe */
+#imageModal .modal-body::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+@media (max-width: 991.98px) {
+  #imageModal .modal-float-left {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 0 1rem 0;
+  }
+}
+
+
+
+/* ==========================================================================================
+    END EXHIBITION ------ Mari
+   ==========================================================================================
+ 
+
+/* ==========================================================================================
+    MUSEUM ------ Silvia
+   ========================================================================================== */
+
 
 /* ========== MUSEUM SECTION ========== */
-.museum-page {
-    padding: clamp(1rem, 4vw, 2.5rem) 0;
+
+
+/* 1. ALLINEAMENTO FASCIA CENTRALE*/
+#museum-rooms .container,
+#rooms .container,
+#explanationbox .container,
+#map-info .container,
+#comments-section .container {
+    max-width: 80vw !important;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
 .museum-header {
-    height: clamp(22vh, 25vh, 29vh);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 2rem 0;
     text-align: center;
-    flex-direction: column;
-    padding: 0 clamp(1rem, 4vw, 3rem);
-    position: relative;
-    overflow: hidden;
+    margin-top: 2%;
 }
 
 .museum-title {
-    font-size: clamp(1.8rem, 3.5vw, 4rem);
+    font-size: 4vw;
     color: var(--yellow);
-    font-family: var(--general_font);
-    position: relative;
+    font-family: var(--h1_font);
+    text-align: center;
     left: -100%;
     animation: slide-from-left 5s ease-out forwards;
     animation-delay: 0.5s;
 }
 
 .museum-subtitle {
-    font-size: clamp(0.85rem, 1.5vw, 1.2rem);
     color: var(--text);
-    max-width: 60ch;
-    position: relative;
+    font-size: 1.2rem;
+    text-align: center;
     left: -100%;
     animation: slide-from-left 5s ease-out forwards;
     animation-delay: 0.8s;
 }
 
+/* Media queries per schermi piccoli */
+@media (max-width: 768px) {
+    .museum-header {
+        padding: 1.5rem 0;
+        max-height: none;
+    }
+    
+    .museum-title {
+        font-size: 2rem; /* Dimensione fissa minima */
+        font-size: min(2.5rem, 8vw); /* 8vw su mobile molto piccolo */
+        line-height: 1.3;
+        padding: 0 1rem;
+    }
+    
+    .museum-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+        line-height: 1.5;
+    }
+}
+
+/* 3. MAPPA SVG E INTERAZIONE */
 .museum-map-container {
-    margin-left: 20%;
-    width: 85%;
-    transform: scale(1.1);
+    margin-left: 13%; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+#planimetria-svg {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
 }
 
 .museum-dropcap-text {
@@ -931,50 +1165,33 @@ footer .footer .col {
     color: var(--text);
     text-align: justify;
     margin-top: 2.5rem;
+    line-height: 1.6;
 }
 
 .museum-dropcap-text strong {
-    color: var(--yellow);
+    color: var(--textred);
 }
 
 .museum-dropcap-text::first-letter {
     float: left;
-    font-size: clamp(5em, 12vw, 7em);
+    font-size: 7em;
     line-height: 0.7;
-    color: var(--yellow);
+    color: var(--textred);
     padding: 0.08em 0.12em 0 0;
     font-family: var(--h1_font);
+    font-weight: 600;
 }
 
-#explanationbox .col-lg-11,
-#explanationbox .col-md-10,
-#explanationbox .col-sm-10,
-#map-info .col-lg-11,
-#map-info .col-md-10,
-#map-info .col-sm-10 {
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
-}
-
-#explanationbox .container,
-#map-info .container {
-    padding-left: clamp(1rem, 2vw, 4rem);
-    padding-right: clamp(1rem, 2vw, 4rem);
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 .visit-title {
-    margin: 1.5rem 0 1.5rem 0;
+    margin: 2rem 0 1rem 0;
     font-family: var(--h1_font);
-    color: var(--textred);
-    font-size: clamp(1.5rem, 2vw, 2rem);
+    color: var(--yellow);
+    font-size: 2rem;
 }
 
 .visit-paragraph {
-    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    font-size: 1.2rem;
     color: var(--text);
     text-align: justify;
 }
@@ -983,9 +1200,8 @@ footer .footer .col {
     display: flex;
     gap: 1.5rem;
     align-items: stretch;
-    width: 100%;
     margin-bottom: 3rem;
-    height: clamp(335px, 42vh, 525px);
+    height: 400px;
 }
 
 .content-box {
@@ -996,20 +1212,8 @@ footer .footer .col {
     border-image: url("../imgs/rococo_mus.png") 30 round;
 }
 
+/* RESPONSIVE */
 @media (max-width: 768px) {
-    #explanationbox {
-        margin-top: 4rem;
-    }
-    
-    .museum-dropcap-text {
-        font-size: 1.05rem;
-        text-align: left;
-        margin-top: 2rem;
-    }
-    
-    .visit-title {
-        margin: 2rem 0 1rem 0;
-    }
     
     .map-carousel-wrapper {
         flex-direction: column;
@@ -1017,26 +1221,8 @@ footer .footer .col {
     }
 }
 
-@media (max-width: 576px) {
-    #explanationbox .container,
-    #map-info .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-    
-    .visit-title {
-        margin: 1.5rem 0 0.75rem 0;
-    }
-}
 
-@media (min-width: 1400px) {
-    #explanationbox .container,
-    #map-info .container {
-        padding-left: calc((100vw - 1300px) / 2);
-        padding-right: calc((100vw - 1300px) / 2);
-    }
-}
-
+/* MAPPA */
 .map-box iframe {
     width: 100%;
     height: 100%;
@@ -1120,6 +1306,7 @@ footer .footer .col {
     fill: rgba(244, 196, 48, 0);
     stroke: transparent;
     stroke-width: 1;
+    transition: 0.3s;
 }
 
 .room:hover .stanza {
@@ -1139,7 +1326,7 @@ footer .footer .col {
 
 /* ========== COMMENTS SECTION ========== */
 #comments-section {
-    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: 1.5rem;
 }
 
 .comment-box textarea {
@@ -1150,48 +1337,28 @@ footer .footer .col {
     border-image: url("../imgs/rococo_mus.png") 30 round;
     color: var(--text);
     font-family: var(--general_font);
-    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
-    padding: clamp(0.4rem, 1vw, 0.6rem);
-    resize: vertical;
+    font-size: 1.2rem;
 }
 
 .comment-box textarea::placeholder {
     color: var(--text);
-    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    font-size: 1.2rem;
 }
 
 .comment-box button {
-    margin-top: clamp(0.6rem, 1vw, 0.8rem);
+    margin-top: 1rem;
     background-color: transparent;
     border: 2px solid var(--yellow);
     color: var(--yellow);
-    padding: clamp(0.3rem, 0.8vw, 0.5rem) clamp(0.8rem, 2vw, 1.2rem);
+    padding: 0.7rem 1.5rem; 
     font-family: var(--h1_font);
-    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    font-size: 1.2rem; 
     cursor: pointer;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.comment-box {
-    text-align: center;
-}
-
-.comment-box button {
-    margin-top: clamp(0.6rem, 1vw, 0.8rem);
-    background-color: transparent;
-    border: 2px solid var(--yellow);
-    color: var(--yellow);
-    padding: clamp(0.3rem, 0.8vw, 0.5rem) clamp(0.8rem, 2vw, 1.2rem);
-    font-family: var(--h1_font);
-    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
-    cursor: pointer;
-    border-radius: 4px;
+    min-width: 120px;
     transition: all 0.3s ease;
     display: inline-block;
 }
+
 
 .comment-box button:hover {
     background: 
@@ -1209,14 +1376,14 @@ footer .footer .col {
 }
 
 #commentsList {
-    margin-top: clamp(1.5rem, 3vw, 2rem);
+    margin-top: 1.5rem;
 }
 
 .single-comment {
     background: var(--textred);
-    padding: clamp(0.8rem, 1.5vw, 1rem);
-    margin-bottom: clamp(0.8rem, 1.5vw, 1rem);
-    font-size: clamp(1rem, 1.2vw, 1.1rem);
+    padding: 0.7rem 1.5rem; 
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
     text-align: center;
     border: 3px solid;
     border-image: url("../imgs/rococo_letter.png") 30 round;
@@ -1230,14 +1397,15 @@ footer .footer .col {
     left: 50%;
     transform: translate(-50%, -50%);
     background: var(--bg);
-    padding: clamp(1rem, 3vw, 2rem);
+    padding: 1.5rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     z-index: 1001;
-    max-width: min(500px, 90vw);
-    width: min(90%, 500px);
+    width: 85vw; 
+    max-width: 1000px; 
+    height: auto;
+    max-height: 55vh; 
     border: 12px solid;
     border-image: url("../imgs/rococo_exhib.png") 30 round;
-    max-height: min(80vh, 600px);
     overflow-y: auto;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -1248,17 +1416,19 @@ footer .footer .col {
     font-family: var(--h1_font);
     font-weight: bold;
     text-align: center;
-    font-size: clamp(1.3rem, 4vw, 1.8rem);
-    border-bottom: clamp(2px, 0.8vw, 4px) double var(--textred);
+    font-size: 1.8rem;
+    border-bottom: 6px double var(--textred);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
 }
 
 .rooms-popup .room-description {
     color: var(--text);
     font-family: var(--general_font);
     text-align: justify;
-    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-    line-height: clamp(1.4, 1.6, 1.8);
-    padding: 0 clamp(0.5rem, 1vw, 0);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding: 0 0.5rem;
 }
 
 /* ========== POPUP ARTWORKS ========== */
@@ -1269,14 +1439,14 @@ footer .footer .col {
     left: 50%;
     transform: translate(-50%, -50%);
     background: var(--bg);
-    padding: clamp(1rem, 3vw, 2.5rem);
+    padding: 1.5rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
     z-index: 1001;
-    max-width: min(600px, 95vw);
-    width: min(90%, 600px);
+    width: 60vw;
+    height: auto;
+    max-height: 80vh; 
     border: 12px solid;
     border-image: url("../imgs/rococo_narr.png") 30 round;
-    max-height: min(80vh, 650px);
     overflow-y: auto;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
@@ -1286,23 +1456,23 @@ footer .footer .col {
     color: var(--yellow);
     font-family: var(--h1_font);
     text-align: center;
-    font-size: clamp(1.4rem, 4.5vw, 2rem);
-    border-bottom: clamp(2px, 10vw, 5px) double var(--yellow);
+    font-size: 2rem;
+    border-bottom: 6px double var(--yellow);
 }
 
 .artworks-popup .artwork-container {
     display: flex;
     flex-direction: column;
-    gap: clamp(0.8rem, 2vw, 1.5rem);
+    gap: 1.5rem;
 }
 
 .artworks-popup .artwork-image {
     max-width: 100%;
-    height: clamp(150px, 30vh, 250px);
+    height: 300px;
     object-fit: cover;
     object-position: center center;
-    border: clamp(4px, 1vw, 8px) double var(--yellow);
-    border-radius: clamp(0px, 1vw, 4px);
+    border: 8px double var(--yellow);
+    border-radius: 4px;
 }
 
 .artworks-popup .apollo-image { object-position: 20% 10%; }
@@ -1310,12 +1480,12 @@ footer .footer .col {
 .artworks-popup .pacioli-image { object-position: 5% 2%; }
 .artworks-popup .caravaggio-image { object-position: 25% 15%; }
 .artworks-popup .apoldaf-image { object-position: 30% 20%; }
-.artworks-popup .arianna-image { object-position: 10% 5%; }
+.artworks-popup .arianna-image { object-position: 15% 8%; }
 
 .artworks-popup .artwork-metadata {
     background: rgba(236, 229, 238, 0.5);
-    padding: clamp(1rem, 2vw, 1.5rem);
-    border-left: clamp(2px, 0.8vw, 4px) solid var(--yellow);
+    padding: 1.5rem;
+    border-left: 3px solid var(--yellow);
     border-radius: 0 8px 8px 0;
     box-shadow: inset 0 0 15px rgba(255, 253, 208, 0.6);
     --metadata-border: rgba(184, 173, 167, 0.2);
@@ -1347,16 +1517,15 @@ footer .footer .col {
 
 .close-btn {
     position: absolute;
-    top: clamp(10px, 2vw, 15px);
-    right: clamp(10px, 2vw, 15px);
+    top: 15px;
+    right: 15px;
     background: none;
     border: none;
-    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    font-size: 1.8rem;
     cursor: pointer;
     color: var(--text);
     transition: all 0.3s ease;
     z-index: 1002;
-    padding: clamp(0.3rem, 1vw, 0.5rem);
     line-height: 1;
 }
 
@@ -1365,7 +1534,7 @@ footer .footer .col {
     transform: scale(1.5);
 }
 
-.overlay {
+.m {
     display: none;
     position: fixed;
     top: 0;
@@ -1469,6 +1638,69 @@ footer .footer .col {
         font-size: 1.4rem;
     }
 }
+
+/* ========== FRECCE DI NAVIGAZIONE PER POPUP ========== */
+.artwork-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.art-nav-prev, .art-nav-next {
+    background: var(--textred);
+    color: var(--text);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: var(--h1_font);
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.art-nav-prev:hover, .art-nav-next:hover {
+    background: var(--yellow);
+    color: var(--textred);
+    transform: translateY(-2px);
+}
+
+.art-nav-counter {
+    color: var(--yellow);
+    font-family: var(--h1_font);
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+/* Media queries per le frecce */
+@media (max-width: 576px) {
+    .artwork-navigation {
+        padding: 0.8rem;
+        margin-top: 1rem;
+    }
+    
+    .art-nav-prev, .art-nav-next {
+        padding: 0.5rem 1rem;
+        font-size: 0.8em;
+    }
+    
+    .art-nav-counter {
+        font-size: 1em;
+    }
+}
+
+
+/* ==========================================================================================
+    Documentation
+   ==========================================================================================*/
+
+.doc-title {
+    color: var(--yellow);
+}
+
+
+
 
 
 

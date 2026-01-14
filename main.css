@@ -1743,7 +1743,6 @@ html[data-theme="light"]{
     align-items: center;
     margin-top: 1rem;
     padding: 1rem;
-    background: var(--blackbg);
 }
 
 .art-nav-prev, .art-nav-next {
@@ -1768,7 +1767,7 @@ html[data-theme="light"]{
     color: var(--yellow);
     font-family: var(--h1_font);
     font-weight: bold;
-    font-size: 1rem;
+    font-size: 1.2rem;
 }
 
 /* Media queries per le frecce */

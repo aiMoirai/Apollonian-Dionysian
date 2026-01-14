@@ -78,7 +78,6 @@ body {
     color: var(--text);
     margin: 0;
     padding: 0;
-    padding-top: 60px;
     font-family: var(--general_font);
     font-size: 1.2em;
     text-align: justify;
@@ -293,7 +292,6 @@ a {
     margin-top: 2vw;
     max-width: 100px;
     clip-path: circle(50%);
-    transition: transform 0.2s ease-in-out;
 }
 
 
@@ -370,21 +368,10 @@ a {
     object-fit: cover;
 }
 
-#narratives,
-#museum {
-    transition: transform 1s ease-out;
-}
-
-#narratives:hover,
-#museum:hover {
-    transform: scale(1.2);
-}
-
 #museum-h1,
 #narratives-h1 {
     font-size: 3vw;
 }
-
 
 
 /* -----------The collection--------------*/

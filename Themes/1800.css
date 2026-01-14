@@ -1,29 +1,21 @@
-/* General Typography section --------------------*/
 :root {
-    /* Background */
-    --bgimg: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(10, 0, 50, 0.9)), url('../imgs/bacco_man.png');
-    --bg: #0A0A50;
-
-    --blackbg: #1A1A2E;
-
-    /* Color palette neon */
-    --text: #00FFEA;
-    --yellow: #FFFF00;
-    --linkred: #FF00FF;
-    --textred: #FF1493;
-    --nav: #1A1A2E;
-    --title: #39FF14;
-
-    /* Fonts */
-    --general_font: "Press Start 2P", monospace;
-    --h1_font: "Press Start 2P", monospace;
-
-    /* Borders / UI */
-    --border: 3px solid #FF1493;
-    --modal-border-radius: 5%;
-    --modal-bg: rgba(10, 0, 50, 0.95);
-    --modal-header-border-color: #FF00FF;
+    --bgimg: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(42, 36, 34, 0.8)), url('imgs/hero-bacco.jpg');
+    --bg: #2a2422;
+    --text: #B8ADA7;
+    --yellow: #F4C430;
+    --general_font: "Cardo", serif;
+    --h1_font: Cinzel, serif;
+    --linkred: #9c2844;
+    --textred: #641527;
+    --blackbg: black;
+    --nav: #2a2422;
+    --title: #F4C430;
+    --border: 3px solid var(--textred);
+    --modal-border-radius: 1%;
+    --modal-bg: rgba(42, 36, 34, 0.97);
+    --modal-header-border-color: var(--textred);
     --modal-header-border-width: 3px;
+
 }
 
 html,
@@ -36,7 +28,7 @@ body {
     background-color: var(--bg);
     color: var(--text);
     margin: 0;
-    padding: 0 !important;
+    padding: 0;
     font-family: var(--general_font);
     font-size: 1.2em;
     text-align: justify;
@@ -44,6 +36,9 @@ body {
     flex-direction: column;
 }
 
+.title {
+    text-align: center;
+}
 
 h1 {
     color: var(--yellow);
@@ -84,6 +79,7 @@ a {
 }
 
 
+
 /* --------------------------------*/
 
 
@@ -92,6 +88,11 @@ a {
 .dropdown-menu {
     background-color: var(--nav);
     border-width: 1px;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:active {
+    color: var(--bg);
 }
 
 .navbar-toggler-icon {
@@ -154,84 +155,101 @@ a {
 
 /* -------------------------------*/
 
+/* -------Dark/light mode button--------*/
+
+.theme-switch {
+    position: fixed;
+    top: 10rem;
+    right: 2rem;
+    z-index: 9999;
+    width: 80px;
+    height: 40px;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.theme-switch label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--text);
+    border-radius: 40px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+.theme-switch label::after {
+    content: "☽";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 20px;
+    background-color: var(--blackbg);
+    border-radius: 50%;
+    transition: 0.3s ease, transform 0.3s ease;
+}
+
+.theme-switch input:checked+label {
+    background-color: var(--yellow);
+}
+
+.theme-switch input:checked+label::after {
+    content: "☼";
+    transform: translateX(40px);
+}
+
+@media (max-width: 600px) {
+    .theme-switch {
+        width: 60px;
+        height: 30px;
+    }
+
+    .theme-switch label {
+        border-radius: 30px;
+    }
+
+    .theme-switch label::after {
+        width: 24px;
+        height: 24px;
+        line-height: 24px;
+        font-size: 16px;
+    }
+
+    .theme-switch input:checked+label::after {
+        transform: translateX(30px);
+    }
+}
+
 
 /* -----------Hero section (with button)--------------*/
-
 .hero {
     height: 100vh;
     background-image: var(--bgimg);
     background-size: cover;
     background-repeat: no-repeat;
-
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-
-    perspective: 400px;
-    overflow: hidden;
-}
-
-/* Fade come Star Wars */
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 60%;
-    background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.9));
-    z-index: 1;
-}
-
-/* Crawl */
-.hero-content.crawl {
-    position: relative;
-    bottom: -80%;
-    width: 90%;
+    align-items: center;
     text-align: center;
-
-    transform-origin: 50% 100%;
-    animation: crawl 32s linear forwards;
-    z-index: 2;
 }
-
-
-/* Titolo */
-.hero-content .title {
-    text-shadow: 0 0 25px var(--title);
-}
-
-/* Animazione */
-@keyframes crawl {
-    0% {
-        transform: rotateX(10deg) scale(3.4) translateZ(0);
-        bottom: -80%;
-    }
-
-    50% {
-        transform: rotateX(14deg) scale(2.4) translateZ(-150px);
-        bottom: 50%;
-    }
-
-    100% {
-        transform: rotateX(18deg) scale(1.8) translateZ(-150px);
-        bottom: 35%;
-    }
-}
-
-/* source: https://css-tricks.com/snippets/css/star-wars-crawl-text/ */
 
 .wine_button {
     margin-top: 2vw;
     max-width: 100px;
     clip-path: circle(50%);
-    transition: transform 0.2s ease-in-out;
 }
 
 
 .title {
-    font-size: 8vw;
+    font-size: 6vw;
     margin-top: 3vw;
-    text-align: center;
+    color: var(--title)
 }
 
 .subtitle {
@@ -239,7 +257,6 @@ a {
 }
 
 /* -----------Intro + narratives and museum cards--------------*/
-
 
 #quote {
     background-color: var(--bg);
@@ -251,19 +268,18 @@ a {
     color: var(--yellow);
 }
 
-
 .quote {
     margin-bottom: 15rem;
 }
 
 .dropcap::first-letter {
     float: left;
-    font-size: 5em;
+    font-size: 4.5em;
     line-height: 0.9;
     padding-right: 0.15em;
     padding-top: 0.05em;
 
-    font-family: serif;
+    font-family: var(--h1_font);
     font-weight: 700;
 }
 
@@ -307,7 +323,6 @@ a {
 #narratives-h1 {
     font-size: 3vw;
 }
-
 
 
 /* -----------The collection--------------*/
@@ -406,9 +421,6 @@ a {
     margin-bottom: 15px;
 }
 
-.modal-img:hover {
-    transform: scale(1.03);
-}
 
 .modal-info {
     flex: 1;
@@ -590,22 +602,23 @@ footer .footer .col {
     text-align: justify;
 }
 
+
 /* -------Disclaimer-------------*/
 #disclaimer {
-    padding-top: 6em;
+    padding-top: 5.2em;
     padding-bottom: 2em;
 }
 
-/* ===============================
-   Narratives page
-   =============================== */
+
+/* ==========================================================================================
+    NARRATIVES ------ Mari
+   ========================================================================================== */
 
 .narratives-hero {
     padding-top: 2rem;
     padding-bottom: 2rem;
     margin-bottom: 120px;
 }
-
 
 .narratives-hero-img {
     margin-top: 2rem;
@@ -617,10 +630,16 @@ footer .footer .col {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
 }
 
-
 .narratives-grid {
     margin-top: -7rem !important;
     padding-top: 0 !important;
+}
+
+.sep-centro {
+    display: block;
+    margin-bottom: 0 !important;
+    max-height: 120px;
+    object-fit: contain;
 }
 
 .narrative-card {
@@ -640,6 +659,10 @@ footer .footer .col {
     font-family: var(--h1_font);
     font-size: 1.6em;
     margin: 0;
+}
+
+.section-title {
+    color: var(--text);
 }
 
 .narrative-subtitle {
@@ -683,6 +706,32 @@ footer .footer .col {
     font-size: 0.95em;
 }
 
+/* Title + back row on narrative detail pages (apollo/literature/...) */
+.narrative-head {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Margin */
+.narrative-page-header {
+    margin-top: 0.5rem;
+}
+
+/* Footer helpers (remove inline styles) */
+.footer-about {
+    line-height: 2.5;
+}
+
+.footer-project-title {
+    text-align: left;
+}
+
+.footer-rights {
+    text-align: center;
+}
+
 @media (max-width: 600px) {
     .theme-switch {
         width: 60px;
@@ -706,44 +755,478 @@ footer .footer .col {
 }
 
 /* ==========================================================================================
+   ARTWORKS (Narratives detail pages: Apollo / Dionysus / Literature / ...)
+   ========================================================================================== */
+
+.artwork-card {
+    background: var(--bg) !important;
+    color: var(--text);
+    border: 2px solid rgba(184, 173, 167, 0.35);
+    border-radius: 16px;
+    padding: 1.5rem;
+}
+
+/* Theme variants (use these instead of inline border colors) */
+.artwork-card--apollonian {
+    border-color: var(--yellow);
+}
+
+.artwork-card--dionysian {
+    border-color: var(--textred);
+}
+
+/* Two-column layout helpers (left image+accordion, right text) */
+.artwork-left {
+    width: 400px;
+}
+
+.artwork-right {
+    max-width: 520px;
+}
+
+@media (max-width: 991.98px) {
+    .artwork-left {
+        width: 100%;
+    }
+
+    .artwork-right {
+        max-width: 100%;
+    }
+}
+
+/* Thumbnails inside carousel items */
+.artwork-thumb {
+    cursor: zoom-in;
+}
+
+.artwork-img {
+    max-height: 320px;
+    max-width: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Descriptions */
+.desc-short,
+.desc-long {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-top: 0.5rem;
+    margin-bottom: 1.25rem;
+    padding-right: 0.5rem;
+}
+
+/* More-detail buttons (apollonian/dionysian variants) */
+.btn-theme {
+    border-width: 1px;
+}
+
+.btn-theme--apollonian {
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--bg);
+}
+
+.btn-theme--dionysian {
+    background: var(--textred);
+    border-color: var(--textred);
+    color: var(--text);
+}
+
+/* Dionysian: colore testo diverso SOLO in light mode */
+body.lightmode .btn-theme--dionysian {
+    color: var(--bg);
+}
+
+/* evita che Bootstrap lo cambi in hover/focus */
+body.lightmode .btn-theme--dionysian:hover,
+body.lightmode .btn-theme--dionysian:focus {
+    color: var(--yellow);
+}
+
+/* Click to view link */
+.click-to-view {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.click-to-view:hover {
+    color: var(--yellow);
+}
+
+/* Audio player styling */
+.narratives-audio {
+    width: 100%;
+    margin-top: 0.5rem;
+    filter: grayscale(1);
+    opacity: 0.9;
+}
+
+/* Back to narratives */
+.back-to-narratives {
+    margin-left: auto;
+    margin-right: 4rem;
+}
+
+/* ==========================================================================================
+   ARTWORK ACCORDION
+   ========================================================================================== */
+
+.artwork-accordion {
+    --bs-accordion-bg: transparent;
+    --bs-accordion-border-color: rgba(184, 173, 167, 0.25);
+    --bs-accordion-border-width: 1px;
+    --bs-accordion-border-radius: 12px;
+
+    --bs-accordion-btn-bg: transparent;
+    --bs-accordion-btn-color: var(--text);
+    --bs-accordion-btn-padding-x: 0.9rem;
+    --bs-accordion-btn-padding-y: 0.75rem;
+
+    --bs-accordion-active-bg: transparent;
+    --bs-accordion-active-color: var(--yellow);
+
+    --bs-accordion-body-padding-x: 0.9rem;
+    --bs-accordion-body-padding-y: 0.75rem;
+}
+
+.artwork-accordion .accordion-button {
+    font-family: var(--general_font);
+    letter-spacing: 0.2px;
+    box-shadow: none !important;
+    border-bottom: 1px solid rgba(184, 173, 167, 0.18);
+}
+
+.artwork-accordion .accordion-button:focus {
+    box-shadow: none !important;
+    border-color: rgba(244, 196, 48, 0.45);
+}
+
+.artwork-accordion .accordion-button::after {
+    filter: invert(83%) sepia(7%) saturate(279%) hue-rotate(334deg) brightness(92%) contrast(89%);
+}
+
+.artwork-accordion .accordion-button:not(.collapsed)::after {
+    filter: invert(82%) sepia(45%) saturate(990%) hue-rotate(358deg) brightness(103%) contrast(104%);
+}
+
+.artwork-accordion .accordion-body {
+    color: var(--text);
+    font-size: 0.95rem;
+    line-height: 1.35;
+}
+
+.artwork-accordion .accordion-body a {
+    color: var(--linkred);
+    text-decoration: underline;
+}
+
+.artwork-accordion .accordion-body a:hover {
+    color: var(--yellow);
+}
+
+.meta-download-link {
+    display: inline-block;
+    margin-top: 0.25rem;
+}
+
+/* ==========================================================================================
+   MODAL
+   ========================================================================================== */
+
+#imageModal .modal-content {
+    background: var(--bg);
+    border: 3px solid rgba(184, 173, 167, 0.35);
+}
+
+#imageModal.apollonian .modal-content {
+    border-color: var(--yellow);
+}
+
+#imageModal.dionysian .modal-content {
+    border-color: var(--textred);
+}
+
+#imageModal .modal-header {
+    border-bottom: 1px solid rgba(184, 173, 167, 0.35);
+}
+
+/* Close button visibility: use a variable so light mode can override */
+body {
+    --btn-close-filter: invert(1);
+}
+
+body.light,
+body.light-mode,
+body[data-theme="light"],
+html[data-theme="light"] {
+    --btn-close-filter: none;
+}
+
+#imageModal .btn-close {
+    filter: var(--btn-close-filter);
+}
+
+#imageModal .btn-close:focus,
+#imageModal .btn-close:active {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Modal image */
+.modal-artwork-img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/* ==========================================================================================
+    END NARRATIVES ------ Mari
+   ========================================================================================== */
+
+/* ==========================================================================================
+   EXHIBITION ------ Mari
+   ========================================================================================== */
+
+/* GALLERY CARDS */
+
+.exhibition-card {
+    background: var(--bg);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(184, 173, 167, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.exhibition-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.exhibition-thumb {
+    padding: 14px;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.exhibition-thumb img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    display: block;
+}
+
+.exhibition-body {
+    padding: 14px 16px 16px;
+}
+
+/* Click to view */
+.click-to-view {
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.click-to-view:hover {
+    color: var(--yellow);
+}
+
+/* clickable thumbs */
+.artwork-thumb {
+    cursor: zoom-in;
+}
+
+/* modal box style */
+.modal-artwork-content {
+    background: var(--bg);
+    border: 3px solid var(--text);
+}
+
+#imageModal .modal-header {
+    border-bottom: 1px solid var(--text);
+}
+
+/* image in modal */
+.modal-artwork-img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+/* right column text tuning */
+.modal-artwork-text {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--text);
+    max-height: 78vh;
+    overflow-y: auto;
+    padding-left: 0.25rem;
+    padding-right: 2rem;
+}
+
+/* section label (Description) */
+.modal-section-title {
+    font-weight: 700;
+    color: var(--text);
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
+}
+
+/* remove blue focus ring on close button (only this modal) */
+#imageModal .btn-close:focus,
+#imageModal .btn-close:active {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Wrap text around the modal image */
+#imageModal .modal-body {
+    padding: 1rem;
+}
+
+#imageModal .modal-artwork-img.modal-float-left {
+    float: left;
+
+    width: auto;
+    max-width: 52%;
+    max-height: 80vh;
+
+    margin: 0 1.25rem 0.75rem 0;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+}
+
+#imageModal .modal-artwork-img.is-large.modal-float-left {
+    max-width: 55%;
+    max-height: 70vh;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+#imageModal .modal-artwork-copy {
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--text);
+}
+
+/* Important: clear float at the end so layout non si rompe */
+#imageModal .modal-body::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+@media (max-width: 991.98px) {
+    #imageModal .modal-float-left {
+        float: none;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 1rem 0;
+    }
+}
+
+
+
+/* ==========================================================================================
+    END EXHIBITION ------ Mari
+   ==========================================================================================
+ 
+
+
+/* ==========================================================================================
     MUSEUM ------ Silvia
    ========================================================================================== */
 
-
 /* ========== MUSEUM SECTION ========== */
-.museum-page {
-    padding: clamp(1rem, 4vw, 2.5rem) 0;
+
+/* 1. ALLINEAMENTO FASCIA CENTRALE (80vw come la Home) */
+#museum-rooms .container,
+#rooms .container,
+#explanationbox .container,
+#map-info .container,
+#comments-section .container {
+    max-width: 80vw !important;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-/* HEADER */
+/* 2. TITOLI E HEADER */
 .museum-header {
-    height: clamp(17vh, 20vh, 24vh);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 2rem 0;
     text-align: center;
-    flex-direction: column;
-    padding: 0 clamp(1rem, 4vw, 3rem);
+    margin-top: 2%;
 }
 
 .museum-title {
-    font-size: clamp(1.8rem, 3.5vw, 4rem);
+    font-size: 4vw;
     color: var(--yellow);
-    font-family: var(--general_font);
+    font-family: var(--h1_font);
+    text-align: center;
 }
 
 .museum-subtitle {
-    font-size: clamp(0.85rem, 1.5vw, 1.2rem);
     color: var(--text);
-    max-width: 60ch;
+    font-size: 1.2rem;
+    text-align: center;
 }
 
-/* MAP */
-.museum-map-container {
-    margin-left: 20%;
-    width: 85%;
-    transform: scale(1.1);
+/* Media queries per schermi piccoli */
+@media (max-width: 768px) {
+    .museum-header {
+        padding: 1.5rem 0;
+        max-height: none;
+    }
+
+    .museum-title {
+        font-size: 2rem;
+        /* Dimensione fissa minima */
+        font-size: min(2.5rem, 8vw);
+        /* 8vw su mobile molto piccolo */
+        line-height: 1.3;
+        padding: 0 1rem;
+    }
+
+    .museum-subtitle {
+        font-size: 1rem;
+        padding: 0 1rem;
+        line-height: 1.5;
+    }
 }
+
+/* 3. MAPPA SVG E INTERAZIONE */
+.museum-map-container {
+    margin-left: 13%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+}
+
+#planimetria-svg {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+}
+
 
 /* DROP CAP TEXT - STILE ORIGINALE */
 .museum-dropcap-text {
@@ -751,6 +1234,7 @@ footer .footer .col {
     color: var(--text);
     text-align: justify;
     margin-top: 2.5rem;
+    line-height: 1.6;
 }
 
 .museum-dropcap-text strong {
@@ -759,44 +1243,26 @@ footer .footer .col {
 
 .museum-dropcap-text::first-letter {
     float: left;
-    font-size: clamp(5em, 12vw, 7em);
+    font-size: 7em;
     line-height: 0.7;
     color: var(--textred);
     padding: 0.08em 0.12em 0 0;
+    font-family: var(--h1_font);
+    font-weight: 600;
 }
 
-/* ALLINEAMENTO PER LE SEZIONI - colonne */
-#explanationbox .col-lg-11,
-#explanationbox .col-md-10,
-#explanationbox .col-sm-10,
-#map-info .col-lg-11,
-#map-info .col-md-10,
-#map-info .col-sm-10 {
-    padding-left: 0;
-    padding-right: 0;
-    width: 100%;
-}
 
-/* Container delle sezioni unificati */
-#explanationbox .container,
-#map-info .container {
-    padding-left: clamp(1rem, 2vw, 4rem);
-    padding-right: clamp(1rem, 2vw, 4rem);
-    max-width: 1400px;
-    margin-left: auto;
-    margin-right: auto;
-}
 
 /* TITOLO - STILE ORIGINALE */
 .visit-title {
-    margin: 1.5rem 0 1.5rem 0;
+    margin: 2rem 0 1rem 0;
     font-family: var(--h1_font);
     color: var(--yellow);
-    font-size: clamp(1.5rem, 2vw, 2rem);
+    font-size: 2rem;
 }
 
 .visit-paragraph {
-    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    font-size: 1.2rem;
     color: var(--text);
     text-align: justify;
 }
@@ -806,9 +1272,8 @@ footer .footer .col {
     display: flex;
     gap: 1.5rem;
     align-items: stretch;
-    width: 100%;
     margin-bottom: 3rem;
-    height: clamp(335px, 42vh, 525px);
+    height: 400px;
 }
 
 /* BOX COMUNI */
@@ -821,19 +1286,6 @@ footer .footer .col {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    #explanationbox {
-        margin-top: 4rem;
-    }
-
-    .museum-dropcap-text {
-        font-size: 1.05rem;
-        text-align: left;
-        margin-top: 2rem;
-    }
-
-    .visit-title {
-        margin: 2rem 0 1rem 0;
-    }
 
     .map-carousel-wrapper {
         flex-direction: column;
@@ -841,27 +1293,6 @@ footer .footer .col {
     }
 }
 
-@media (max-width: 576px) {
-
-    #explanationbox .container,
-    #map-info .container {
-        padding-left: 1rem;
-        padding-right: 1rem;
-    }
-
-    .visit-title {
-        margin: 1.5rem 0 0.75rem 0;
-    }
-}
-
-@media (min-width: 1400px) {
-
-    #explanationbox .container,
-    #map-info .container {
-        padding-left: calc((100vw - 1300px) / 2);
-        padding-right: calc((100vw - 1300px) / 2);
-    }
-}
 
 /* MAPPA */
 .map-box iframe {
@@ -924,7 +1355,7 @@ footer .footer .col {
 }
 
 #map-info .map-carousel-wrapper .carousel-caption h5 {
-    font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+    font-size: 1.5rem;
     color: var(--yellow);
     margin-bottom: 0.5rem;
     font-family: var(--h1_font);
@@ -954,6 +1385,7 @@ footer .footer .col {
     fill: rgba(244, 196, 48, 0);
     stroke: transparent;
     stroke-width: 1;
+    transition: 0.3s;
 }
 
 .room:hover .stanza {
@@ -973,7 +1405,7 @@ footer .footer .col {
 
 /* ========== COMMENTS SECTION ========== */
 #comments-section {
-    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    margin-bottom: 1.5rem;
 }
 
 .comment-box textarea {
@@ -983,28 +1415,27 @@ footer .footer .col {
     border: 2px solid var(--textred);
     color: var(--text);
     font-family: var(--general_font);
-    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
-    padding: clamp(0.4rem, 1vw, 0.6rem);
-    resize: vertical;
-    border-radius: 4px;
+    font-size: 1.2rem;
 }
 
 .comment-box textarea::placeholder {
     color: var(--text);
-    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    font-size: 1.2rem;
 }
 
 .comment-box button {
-    margin-top: clamp(0.6rem, 1vw, 0.8rem);
+    margin-top: 1rem;
     background-color: transparent;
     border: 2px solid var(--yellow);
     color: var(--yellow);
-    padding: clamp(0.3rem, 0.8vw, 0.5rem) clamp(0.8rem, 2vw, 1.2rem);
+    padding: 0.7rem 1.5rem;
     font-family: var(--h1_font);
-    font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+    font-size: 1.2rem;
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.3s ease;
+    min-width: 120px;
+    display: inline-block;
 }
 
 .comment-box button:hover {
@@ -1013,14 +1444,14 @@ footer .footer .col {
 }
 
 #commentsList {
-    margin-top: clamp(1.5rem, 3vw, 2rem);
+    margin-top: 1.5rem;
 }
 
 .single-comment {
     background: var(--textred);
-    padding: clamp(0.8rem, 1.5vw, 1rem);
-    margin-bottom: clamp(0.8rem, 1.5vw, 1rem);
-    font-size: clamp(1rem, 1.2vw, 1.1rem);
+    padding: 0.7rem 1.5rem;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
     text-align: center;
     border-radius: 4px;
 }
@@ -1033,16 +1464,18 @@ footer .footer .col {
     left: 50%;
     transform: translate(-50%, -50%);
     background: var(--bg);
-    padding: clamp(1rem, 3vw, 2rem);
+    padding: 1.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     z-index: 1001;
-    max-width: min(500px, 90vw);
-    width: min(90%, 500px);
-    border: clamp(2px, 0.5vw, 3px) solid var(--textred);
-    max-height: min(80vh, 600px);
+    width: 85vw;
+    max-width: 1000px;
+    height: auto;
+    max-height: 55vh;
+    border: 3px solid var(--textred);
     overflow-y: auto;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
 }
 
 .rooms-popup .room-title {
@@ -1050,22 +1483,22 @@ footer .footer .col {
     font-family: var(--h1_font);
     font-weight: bold;
     text-align: center;
-    font-size: clamp(1.3rem, 4vw, 1.8rem);
-    margin-bottom: clamp(1rem, 2vw, 1.5rem);
-    padding-bottom: clamp(0.3rem, 1vw, 0.5rem);
-    border-bottom: clamp(2px, 0.8vw, 4px) double var(--textred);
+    font-size: 1.8rem;
+    border-bottom: 6px double var(--textred);
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
 }
 
 .rooms-popup .room-description {
     color: var(--text);
     font-family: var(--general_font);
     text-align: justify;
-    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
-    line-height: clamp(1.4, 1.6, 1.8);
-    padding: 0 clamp(0.5rem, 1vw, 0);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    padding: 0 0.5rem;
 }
 
-/* ========== POPUP ARTWORKS ========== */
+/* ========== POPUP ARTWORKS  ========== */
 .artworks-popup {
     display: none;
     position: fixed;
@@ -1073,41 +1506,40 @@ footer .footer .col {
     left: 50%;
     transform: translate(-50%, -50%);
     background: var(--bg);
-    padding: clamp(1rem, 3vw, 2.5rem);
+    padding: 1.5rem;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     z-index: 1001;
-    max-width: min(600px, 95vw);
-    width: min(90%, 600px);
-    border: clamp(1px, 0.4vw, 2px) solid var(--yellow);
-    max-height: min(80vh, 650px);
+    width: 60vw;
+    height: auto;
+    max-height: 80vh;
+    border: 3px solid var(--yellow);
     overflow-y: auto;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
+    border-radius: 8px;
 }
 
 .artworks-popup .artwork-title {
     color: var(--yellow);
     font-family: var(--h1_font);
     text-align: center;
-    font-size: clamp(1.4rem, 4.5vw, 2rem);
-    margin-bottom: clamp(1rem, 2vw, 1.5rem);
-    padding-bottom: clamp(0.3rem, 1vw, 0.5rem);
-    border-bottom: clamp(2px, 0.8vw, 4px) double var(--yellow);
+    font-size: 2rem;
+    border-bottom: 6px double var(--yellow);
 }
 
 .artworks-popup .artwork-container {
     display: flex;
     flex-direction: column;
-    gap: clamp(0.8rem, 2vw, 1.5rem);
+    gap: 1.5rem;
 }
 
 .artworks-popup .artwork-image {
     max-width: 100%;
-    height: clamp(150px, 30vh, 250px);
+    height: 300px;
     object-fit: cover;
     object-position: center center;
-    border: clamp(4px, 1vw, 8px) double var(--yellow);
-    border-radius: clamp(0px, 1vw, 4px);
+    border: 8px double var(--yellow);
+    border-radius: 4px;
 }
 
 /* Object-position personalizzati */
@@ -1132,26 +1564,26 @@ footer .footer .col {
 }
 
 .artworks-popup .arianna-image {
-    object-position: 10% 5%;
+    object-position: 15% 8%;
 }
 
 /* Metadata */
 .artworks-popup .artwork-metadata {
-    background: rgba(42, 36, 34, 0.9);
-    padding: clamp(1rem, 2vw, 1.5rem);
-    border-left: clamp(2px, 0.8vw, 4px) solid var(--yellow);
-    border-radius: 0 8px 8px 0;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.2);
+    background: var(--blackbg);
+    padding: 1.5rem;
+    border-left: 3px solid var(--yellow);
+    box-shadow: inset 0 0 15px rgb(0, 0, 0);
     --metadata-border: rgba(184, 173, 167, 0.2);
+    font-size: 1.1rem;
 }
 
 .artworks-popup .artwork-metadata p {
     color: var(--text);
     font-family: var(--general_font);
-    font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+    font-size: 1.1rem;
     line-height: 1.7;
-    margin-bottom: clamp(0.5rem, 1.2vw, 0.8rem);
-    padding: 0.2rem 0;
+    margin-bottom: 0.8rem;
+    padding: 0.3rem 0;
 }
 
 .artworks-popup .artwork-metadata p strong {
@@ -1163,7 +1595,7 @@ footer .footer .col {
 
 .artworks-popup .artwork-metadata p:not(:last-child) {
     border-bottom: 1px solid var(--metadata-border);
-    padding-bottom: 0.6rem;
+    padding-bottom: 0.5rem;
 }
 
 /* ========== STILI COMUNI POPUP ========== */
@@ -1173,22 +1605,21 @@ footer .footer .col {
 
 .close-btn {
     position: absolute;
-    top: clamp(10px, 2vw, 15px);
-    right: clamp(10px, 2vw, 15px);
+    top: 15px;
+    right: 15px;
     background: none;
     border: none;
-    font-size: clamp(1.5rem, 4vw, 1.8rem);
+    font-size: 1.8rem;
     cursor: pointer;
     color: var(--text);
     transition: all 0.3s ease;
     z-index: 1002;
-    padding: clamp(0.3rem, 1vw, 0.5rem);
     line-height: 1;
 }
 
 .close-btn:hover {
     color: var(--yellow);
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 .m {
@@ -1288,7 +1719,7 @@ footer .footer .col {
         border-width: 3px;
     }
 
-    /* Object-position per visibilità massima */
+    /* Object-position */
     .artworks-popup .apollo-image {
         object-position: 15% 8%;
     }
@@ -1333,6 +1764,60 @@ footer .footer .col {
         width: 32px;
         height: 32px;
         font-size: 1.4rem;
+    }
+}
+
+/* ========== FRECCE DI NAVIGAZIONE PER POPUP ========== */
+.artwork-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1rem;
+}
+
+.art-nav-prev,
+.art-nav-next {
+    background: var(--textred);
+    color: var(--text);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    cursor: pointer;
+    border-radius: 4px;
+    font-family: var(--h1_font);
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+}
+
+.art-nav-prev:hover,
+.art-nav-next:hover {
+    background: var(--yellow);
+    color: var(--textred);
+    transform: translateY(-2px);
+}
+
+.art-nav-counter {
+    color: var(--yellow);
+    font-family: var(--h1_font);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* Media queries per le frecce */
+@media (max-width: 576px) {
+    .artwork-navigation {
+        padding: 0.8rem;
+        margin-top: 1rem;
+    }
+
+    .art-nav-prev,
+    .art-nav-next {
+        padding: 0.5rem 1rem;
+        font-size: 0.8em;
+    }
+
+    .art-nav-counter {
+        font-size: 1em;
     }
 }
 

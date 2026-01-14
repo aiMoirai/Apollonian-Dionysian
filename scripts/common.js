@@ -15,6 +15,14 @@ const themeConfigs = {
             '/Apollonian-Dionysian/imgs/fine colonne.png'
         ]
     },
+    '1800': {
+        css: '/Apollonian-Dionysian/Themes/1800.css',
+        imgs: [
+            '/Apollonian-Dionysian/imgs/',
+            '/Apollonian-Dionysian/imgs/',
+            '/Apollonian-Dionysian/imgs/'
+        ]
+    },
     'rococo': {
         css: '/Apollonian-Dionysian/Themes/rococo.css',
         imgs: [
@@ -38,7 +46,8 @@ const themeConfigs = {
             '/Apollonian-Dionysian/imgs/sopra_col_90.png',
             '/Apollonian-Dionysian/imgs/centro_col_90.png',
             '/Apollonian-Dionysian/imgs/sotto_col_90.png'
-        ]
+        ],
+        button: '/Apollonian-Dionysian/imgs/start_button.png'
     },
     '2035': {
         css: '/Apollonian-Dionysian/Themes/2035.css',

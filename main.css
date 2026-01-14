@@ -296,12 +296,6 @@ a {
     transition: transform 0.2s ease-in-out;
 }
 
-.wine_button:hover,
-.card-img:hover,
-#narratives:hover,
-#museum:hover {
-    transform: scale(1.1);
-}
 
 .title {
     font-size: 6vw;
@@ -374,6 +368,16 @@ a {
     height: 18vw;
     width: 30vw;
     object-fit: cover;
+}
+
+#narratives,
+#museum {
+    transition: transform 1s ease-out;
+}
+
+#narratives:hover,
+#museum:hover {
+    transform: scale(1.2);
 }
 
 #museum-h1,
@@ -479,9 +483,6 @@ a {
     margin-bottom: 15px;
 }
 
-.modal-img:hover {
-    transform: scale(1.03);
-}
 
 .modal-info {
     flex: 1;
@@ -768,22 +769,30 @@ footer .footer .col {
 }
 
 /* Title + back row on narrative detail pages (apollo/literature/...) */
-.narrative-head{
-    display:flex;
-    align-items:center;
+.narrative-head {
+    display: flex;
+    align-items: center;
     gap: 1rem;
     flex-wrap: wrap;
 }
 
 /* Margin */
-.narrative-page-header{
-  margin-top: 0.5rem; 
+.narrative-page-header {
+    margin-top: 0.5rem;
 }
 
 /* Footer helpers (remove inline styles) */
-.footer-about{ line-height: 2.5; }
-.footer-project-title{ text-align: left; }
-.footer-rights{ text-align: center; }
+.footer-about {
+    line-height: 2.5;
+}
+
+.footer-project-title {
+    text-align: left;
+}
+
+.footer-rights {
+    text-align: center;
+}
 
 @media (max-width: 600px) {
     .theme-switch {
@@ -811,7 +820,7 @@ footer .footer .col {
    ARTWORKS (Narratives detail pages: Apollo / Dionysus / Literature / ...)
    ========================================================================================== */
 
-.artwork-card{
+.artwork-card {
     background: var(--bg) !important;
     color: var(--text);
     border: 2px solid rgba(184, 173, 167, 0.35);
@@ -820,22 +829,39 @@ footer .footer .col {
 }
 
 /* Theme variants (use these instead of inline border colors) */
-.artwork-card--apollonian{ border-color: var(--yellow); }
-.artwork-card--dionysian{ border-color: var(--textred); }
+.artwork-card--apollonian {
+    border-color: var(--yellow);
+}
+
+.artwork-card--dionysian {
+    border-color: var(--textred);
+}
 
 /* Two-column layout helpers (left image+accordion, right text) */
-.artwork-left{ width: 400px; }
-.artwork-right{ max-width: 520px; }
+.artwork-left {
+    width: 400px;
+}
 
-@media (max-width: 991.98px){
-    .artwork-left{ width: 100%; }
-    .artwork-right{ max-width: 100%; }
+.artwork-right {
+    max-width: 520px;
+}
+
+@media (max-width: 991.98px) {
+    .artwork-left {
+        width: 100%;
+    }
+
+    .artwork-right {
+        max-width: 100%;
+    }
 }
 
 /* Thumbnails inside carousel items */
-.artwork-thumb{ cursor: zoom-in; }
+.artwork-thumb {
+    cursor: zoom-in;
+}
 
-.artwork-img{
+.artwork-img {
     max-height: 320px;
     max-width: 100%;
     width: auto;
@@ -853,28 +879,30 @@ footer .footer .col {
 }
 
 /* More-detail buttons (apollonian/dionysian variants) */
-.btn-theme{
+.btn-theme {
     border-width: 1px;
 }
-.btn-theme--apollonian{
+
+.btn-theme--apollonian {
     background: var(--yellow);
     border-color: var(--yellow);
     color: var(--bg);
 }
-.btn-theme--dionysian{
+
+.btn-theme--dionysian {
     background: var(--textred);
     border-color: var(--textred);
     color: var(--text);
 }
 
 /* Dionysian: colore testo diverso SOLO in light mode */
-body.lightmode .btn-theme--dionysian{
-    color: var(--bg); 
+body.lightmode .btn-theme--dionysian {
+    color: var(--bg);
 }
 
 /* evita che Bootstrap lo cambi in hover/focus */
 body.lightmode .btn-theme--dionysian:hover,
-body.lightmode .btn-theme--dionysian:focus{
+body.lightmode .btn-theme--dionysian:focus {
     color: var(--yellow);
 }
 
@@ -887,10 +915,13 @@ body.lightmode .btn-theme--dionysian:focus{
     text-decoration: underline;
     cursor: pointer;
 }
-.click-to-view:hover { color: var(--yellow); }
+
+.click-to-view:hover {
+    color: var(--yellow);
+}
 
 /* Audio player styling */
-.narratives-audio{
+.narratives-audio {
     width: 100%;
     margin-top: 0.5rem;
     filter: grayscale(1);
@@ -898,9 +929,9 @@ body.lightmode .btn-theme--dionysian:focus{
 }
 
 /* Back to narratives */
-.back-to-narratives{
-  margin-left: auto;
-  margin-right: 4rem; 
+.back-to-narratives {
+    margin-left: auto;
+    margin-right: 4rem;
 }
 
 /* ==========================================================================================
@@ -969,29 +1000,36 @@ body.lightmode .btn-theme--dionysian:focus{
    MODAL
    ========================================================================================== */
 
-#imageModal .modal-content{
+#imageModal .modal-content {
     background: var(--bg);
     border: 3px solid rgba(184, 173, 167, 0.35);
 }
-#imageModal.apollonian .modal-content{ border-color: var(--yellow); }
-#imageModal.dionysian .modal-content{ border-color: var(--textred); }
 
-#imageModal .modal-header{
+#imageModal.apollonian .modal-content {
+    border-color: var(--yellow);
+}
+
+#imageModal.dionysian .modal-content {
+    border-color: var(--textred);
+}
+
+#imageModal .modal-header {
     border-bottom: 1px solid rgba(184, 173, 167, 0.35);
 }
 
 /* Close button visibility: use a variable so light mode can override */
-body{
+body {
     --btn-close-filter: invert(1);
 }
+
 body.light,
 body.light-mode,
 body[data-theme="light"],
-html[data-theme="light"]{
+html[data-theme="light"] {
     --btn-close-filter: none;
 }
 
-#imageModal .btn-close{
+#imageModal .btn-close {
     filter: var(--btn-close-filter);
 }
 
@@ -1022,148 +1060,148 @@ html[data-theme="light"]{
 
 /* GALLERY CARDS */
 
-.exhibition-card{
-  background: var(--bg);
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid rgba(184,173,167,0.25);
-  transition: transform 0.15s ease, box-shadow 0.15s ease;
+.exhibition-card {
+    background: var(--bg);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid rgba(184, 173, 167, 0.25);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
-.exhibition-card:hover{
-  transform: translateY(-2px);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.25);
+.exhibition-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
 }
 
-.exhibition-thumb{
-  padding: 14px;
-  background: rgba(0,0,0,0.08);
+.exhibition-thumb {
+    padding: 14px;
+    background: rgba(0, 0, 0, 0.08);
 }
 
-.exhibition-thumb img{
-  width: 100%;
-  height: 220px;
-  object-fit: contain;
-  display: block;
+.exhibition-thumb img {
+    width: 100%;
+    height: 220px;
+    object-fit: contain;
+    display: block;
 }
 
-.exhibition-body{
-  padding: 14px 16px 16px;
+.exhibition-body {
+    padding: 14px 16px 16px;
 }
 
 /* Click to view */
 .click-to-view {
-  display: inline-block;
-  margin-top: 0.5rem;
-  font-size: 0.85rem;
-  color: var(--text);
-  text-decoration: underline;
-  cursor: pointer;
+    display: inline-block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--text);
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 .click-to-view:hover {
-  color: var(--yellow);
+    color: var(--yellow);
 }
 
 /* clickable thumbs */
 .artwork-thumb {
-  cursor: zoom-in;
+    cursor: zoom-in;
 }
 
 /* modal box style */
 .modal-artwork-content {
-  background: var(--bg);
-  border: 3px solid var(--text);
+    background: var(--bg);
+    border: 3px solid var(--text);
 }
 
 #imageModal .modal-header {
-  border-bottom: 1px solid var(--text);
+    border-bottom: 1px solid var(--text);
 }
 
 /* image in modal */
 .modal-artwork-img {
-  width: 100%;
-  height: auto;
-  max-height: 80vh;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }
 
 /* right column text tuning */
 .modal-artwork-text {
-  font-size: 1.02rem;
-  line-height: 1.7;
-  color: var(--text);
-  max-height: 78vh;
-  overflow-y: auto;
-  padding-left: 0.25rem;
-  padding-right: 2rem;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--text);
+    max-height: 78vh;
+    overflow-y: auto;
+    padding-left: 0.25rem;
+    padding-right: 2rem;
 }
 
 /* section label (Description) */
 .modal-section-title {
-  font-weight: 700;
-  color: var(--text);
-  margin-top: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  letter-spacing: 0.02em;
+    font-weight: 700;
+    color: var(--text);
+    margin-top: 1.2rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    letter-spacing: 0.02em;
 }
 
 /* remove blue focus ring on close button (only this modal) */
 #imageModal .btn-close:focus,
 #imageModal .btn-close:active {
-  box-shadow: none;
-  outline: none;
+    box-shadow: none;
+    outline: none;
 }
 
 /* Wrap text around the modal image */
 #imageModal .modal-body {
-  padding: 1rem;           
+    padding: 1rem;
 }
 
-#imageModal .modal-artwork-img.modal-float-left{
-  float: left;
+#imageModal .modal-artwork-img.modal-float-left {
+    float: left;
 
-  width: auto;
-  max-width: 52%;       
-  max-height: 80vh;     
+    width: auto;
+    max-width: 52%;
+    max-height: 80vh;
 
-  margin: 0 1.25rem 0.75rem 0;
-  object-fit: contain;
-  display: block;
-  background: transparent;
+    margin: 0 1.25rem 0.75rem 0;
+    object-fit: contain;
+    display: block;
+    background: transparent;
 }
 
-#imageModal .modal-artwork-img.is-large.modal-float-left{
-  max-width: 55%;
-  max-height: 70vh;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+#imageModal .modal-artwork-img.is-large.modal-float-left {
+    max-width: 55%;
+    max-height: 70vh;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 #imageModal .modal-artwork-copy {
-  font-size: 1.02rem;
-  line-height: 1.7;
-  color: var(--text);
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--text);
 }
 
 /* Important: clear float at the end so layout non si rompe */
 #imageModal .modal-body::after {
-  content: "";
-  display: block;
-  clear: both;
+    content: "";
+    display: block;
+    clear: both;
 }
 
 
 @media (max-width: 991.98px) {
-  #imageModal .modal-float-left {
-    float: none;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 0 1rem 0;
-  }
+    #imageModal .modal-float-left {
+        float: none;
+        width: 100%;
+        max-width: 100%;
+        margin: 0 0 1rem 0;
+    }
 }
 
 
@@ -1219,14 +1257,16 @@ html[data-theme="light"]{
         padding: 1.5rem 0;
         max-height: none;
     }
-    
+
     .museum-title {
-        font-size: 2rem; /* Dimensione fissa minima */
-        font-size: min(2.5rem, 8vw); /* 8vw su mobile molto piccolo */
+        font-size: 2rem;
+        /* Dimensione fissa minima */
+        font-size: min(2.5rem, 8vw);
+        /* 8vw su mobile molto piccolo */
         line-height: 1.3;
         padding: 0 1rem;
     }
-    
+
     .museum-subtitle {
         font-size: 1rem;
         padding: 0 1rem;
@@ -1236,7 +1276,7 @@ html[data-theme="light"]{
 
 /* 3. MAPPA SVG E INTERAZIONE */
 .museum-map-container {
-    margin-left: 13%; 
+    margin-left: 13%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -1308,7 +1348,7 @@ html[data-theme="light"]{
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
-    
+
     .map-carousel-wrapper {
         flex-direction: column;
         gap: 1rem;
@@ -1372,7 +1412,7 @@ html[data-theme="light"]{
     left: 0;
     right: 0;
     padding: 1rem;
-    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
     text-align: center;
 }
 
@@ -1394,8 +1434,7 @@ html[data-theme="light"]{
 #map-info .map-carousel-wrapper .carousel-control-prev:hover,
 #map-info .map-carousel-wrapper .carousel-control-next:hover {
     opacity: 1;
-    filter: invert(12%) sepia(74%) saturate(5661%) hue-rotate(330deg)
-            brightness(86%) contrast(84%);
+    filter: invert(12%) sepia(74%) saturate(5661%) hue-rotate(330deg) brightness(86%) contrast(84%);
 }
 
 /* ========== INTERACTIVE ROOMS ========== */
@@ -1414,7 +1453,7 @@ html[data-theme="light"]{
 .room:hover .stanza {
     fill: rgba(244, 196, 48, 0.7);
     stroke: var(--textred);
-    filter: drop-shadow(0 0 10px rgba(244,196,48,0.8));
+    filter: drop-shadow(0 0 10px rgba(244, 196, 48, 0.8));
 }
 
 .room.selected .stanza {
@@ -1434,7 +1473,7 @@ html[data-theme="light"]{
 .comment-box textarea {
     width: 100%;
     min-height: clamp(80px, 15vh, 120px);
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
     border: 2px solid var(--textred);
     color: var(--text);
     font-family: var(--general_font);
@@ -1451,13 +1490,13 @@ html[data-theme="light"]{
     background-color: transparent;
     border: 2px solid var(--yellow);
     color: var(--yellow);
-    padding: 0.7rem 1.5rem; 
+    padding: 0.7rem 1.5rem;
     font-family: var(--h1_font);
-    font-size: 1.2rem; 
+    font-size: 1.2rem;
     cursor: pointer;
     border-radius: 4px;
     transition: all 0.3s ease;
-    min-width: 120px; 
+    min-width: 120px;
     display: inline-block;
 }
 
@@ -1472,7 +1511,7 @@ html[data-theme="light"]{
 
 .single-comment {
     background: var(--textred);
-    padding: 0.7rem 1.5rem; 
+    padding: 0.7rem 1.5rem;
     margin-bottom: 0.8rem;
     font-size: 1rem;
     text-align: center;
@@ -1488,12 +1527,12 @@ html[data-theme="light"]{
     transform: translate(-50%, -50%);
     background: var(--bg);
     padding: 1.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     z-index: 1001;
-    width: 85vw; 
-    max-width: 1000px; 
+    width: 85vw;
+    max-width: 1000px;
     height: auto;
-    max-height: 55vh; 
+    max-height: 55vh;
     border: 3px solid var(--textred);
     overflow-y: auto;
     scroll-behavior: smooth;
@@ -1530,17 +1569,18 @@ html[data-theme="light"]{
     transform: translate(-50%, -50%);
     background: var(--bg);
     padding: 1.5rem;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     z-index: 1001;
     width: 60vw;
     height: auto;
-    max-height: 80vh; 
+    max-height: 80vh;
     border: 3px solid var(--yellow);
     overflow-y: auto;
     scroll-behavior: smooth;
     -webkit-overflow-scrolling: touch;
     border-radius: 8px;
 }
+
 .artworks-popup .artwork-title {
     color: var(--yellow);
     font-family: var(--h1_font);
@@ -1565,12 +1605,29 @@ html[data-theme="light"]{
 }
 
 /* Object-position personalizzati */
-.artworks-popup .apollo-image { object-position: 20% 10%; }
-.artworks-popup .bacco-image { object-position: 5% 2%; }
-.artworks-popup .pacioli-image { object-position: 5% 2%; }
-.artworks-popup .caravaggio-image { object-position: 25% 15%; }
-.artworks-popup .apoldaf-image { object-position: 30% 20%; }
-.artworks-popup .arianna-image { object-position: 15% 8%; }
+.artworks-popup .apollo-image {
+    object-position: 20% 10%;
+}
+
+.artworks-popup .bacco-image {
+    object-position: 5% 2%;
+}
+
+.artworks-popup .pacioli-image {
+    object-position: 5% 2%;
+}
+
+.artworks-popup .caravaggio-image {
+    object-position: 25% 15%;
+}
+
+.artworks-popup .apoldaf-image {
+    object-position: 30% 20%;
+}
+
+.artworks-popup .arianna-image {
+    object-position: 15% 8%;
+}
 
 /* Metadata */
 .artworks-popup .artwork-metadata {
@@ -1604,7 +1661,9 @@ html[data-theme="light"]{
 }
 
 /* ========== STILI COMUNI POPUP ========== */
-.popup-content { display: none; }
+.popup-content {
+    display: none;
+}
 
 .close-btn {
     position: absolute;
@@ -1632,7 +1691,7 @@ html[data-theme="light"]{
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.7);
+    background: rgba(0, 0, 0, 0.7);
     z-index: 1000;
 }
 
@@ -1646,40 +1705,57 @@ html[data-theme="light"]{
         padding: 0.9rem;
         border-width: clamp(1px, 0.3vw, 2px);
     }
-    
+
     .artworks-popup .artwork-image {
         height: clamp(130px, 22vh, 180px);
         border-width: clamp(3px, 0.8vw, 6px);
     }
-    
+
     /* Object-position adattati per mobile */
-    .artworks-popup .apollo-image { object-position: 15% 8%; }
-    .artworks-popup .bacco-image { object-position: 7% 2%; }
-    .artworks-popup .pacioli-image { object-position: 12% 3%; }
-    .artworks-popup .caravaggio-image { object-position: 32% 22%; }
-    .artworks-popup .apoldaf-image { object-position: 31% 23%; }
-    .artworks-popup .arianna-image { object-position: 18% 10%; }
-    
+    .artworks-popup .apollo-image {
+        object-position: 15% 8%;
+    }
+
+    .artworks-popup .bacco-image {
+        object-position: 7% 2%;
+    }
+
+    .artworks-popup .pacioli-image {
+        object-position: 12% 3%;
+    }
+
+    .artworks-popup .caravaggio-image {
+        object-position: 32% 22%;
+    }
+
+    .artworks-popup .apoldaf-image {
+        object-position: 31% 23%;
+    }
+
+    .artworks-popup .arianna-image {
+        object-position: 18% 10%;
+    }
+
     .artworks-popup .artwork-metadata {
         padding: 1rem;
         margin-top: 0.5rem;
         border-left-width: 3px;
         --metadata-border: rgba(244, 196, 48, 0.3);
     }
-    
+
     .artworks-popup .artwork-metadata p {
         font-size: 0.95rem;
         line-height: 1.5;
         margin-bottom: 0.6rem;
     }
-    
+
     .artworks-popup .artwork-metadata p strong {
         min-width: auto;
         font-size: 1rem;
         margin-bottom: 0.1rem;
         display: block;
     }
-    
+
     .close-btn {
         background: rgba(42, 36, 34, 0.95);
         border-radius: 50%;
@@ -1688,7 +1764,7 @@ html[data-theme="light"]{
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
     }
 }
 
@@ -1699,34 +1775,51 @@ html[data-theme="light"]{
         padding: 0.7rem;
         margin: 10px auto;
     }
-    
+
     .artworks-popup .artwork-image {
         height: clamp(120px, 20vh, 160px);
         border-width: 3px;
     }
-    
+
     /* Object-position */
-    .artworks-popup .apollo-image { object-position: 15% 8%; }
-    .artworks-popup .bacco-image { object-position: 15% 8%; }
-    .artworks-popup .pacioli-image { object-position: 15% 5%; }
-    .artworks-popup .caravaggio-image { object-position: 35% 25%; }
-    .artworks-popup .apoldaf-image { object-position: 40% 30%; }
-    .artworks-popup .arianna-image { object-position: 20% 12%; }
-    
+    .artworks-popup .apollo-image {
+        object-position: 15% 8%;
+    }
+
+    .artworks-popup .bacco-image {
+        object-position: 15% 8%;
+    }
+
+    .artworks-popup .pacioli-image {
+        object-position: 15% 5%;
+    }
+
+    .artworks-popup .caravaggio-image {
+        object-position: 35% 25%;
+    }
+
+    .artworks-popup .apoldaf-image {
+        object-position: 40% 30%;
+    }
+
+    .artworks-popup .arianna-image {
+        object-position: 20% 12%;
+    }
+
     .artworks-popup .artwork-metadata {
         padding: 0.8rem;
     }
-    
+
     .artworks-popup .artwork-metadata p {
         font-size: 0.9rem;
         line-height: 1.4;
         margin-bottom: 0.5rem;
     }
-    
+
     .artworks-popup .artwork-metadata p strong {
         font-size: 0.95rem;
     }
-    
+
     .close-btn {
         top: 8px;
         right: 8px;
@@ -1745,7 +1838,8 @@ html[data-theme="light"]{
     padding: 1rem;
 }
 
-.art-nav-prev, .art-nav-next {
+.art-nav-prev,
+.art-nav-next {
     background: var(--textred);
     color: var(--text);
     border: none;
@@ -1757,7 +1851,8 @@ html[data-theme="light"]{
     transition: all 0.3s ease;
 }
 
-.art-nav-prev:hover, .art-nav-next:hover {
+.art-nav-prev:hover,
+.art-nav-next:hover {
     background: var(--yellow);
     color: var(--textred);
     transform: translateY(-2px);
@@ -1776,12 +1871,13 @@ html[data-theme="light"]{
         padding: 0.8rem;
         margin-top: 1rem;
     }
-    
-    .art-nav-prev, .art-nav-next {
+
+    .art-nav-prev,
+    .art-nav-next {
         padding: 0.5rem 1rem;
         font-size: 0.8em;
     }
-    
+
     .art-nav-counter {
         font-size: 1em;
     }

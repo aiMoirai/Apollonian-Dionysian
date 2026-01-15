@@ -9,10 +9,20 @@ function populateModal(index) {
 
     document.querySelector('#modalTemplate .modal-title-text').textContent = data.title;
 
-    const imgLink = document.querySelector('#modalTemplate .modal-img-link');
-    imgLink.href = data.image;
-    const img = imgLink.querySelector('.modal-img');
+    let imgLink = document.querySelector('#modalTemplate .modal-img-link');
+    let img = imgLink.querySelector('.modal-img');
     img.src = data.image;
+    img.style.cursor = 'zoom-in';
+
+    imgLink.replaceWith(imgLink.cloneNode(true));
+    imgLink = document.querySelector('#modalTemplate .modal-img-link');
+
+    imgLink.addEventListener('click', (e) => {
+        e.preventDefault(); // evita conflitti con il modal
+        window.open(data.image, '_blank'); // apre in una nuova scheda
+    });
+
+
 
     document.querySelector('#modalTemplate .modal-info-text').innerHTML = `
     <b>Title:</b> ${data.title}<br>
@@ -159,3 +169,15 @@ if (wineButton) {
         }, 2000);
     });
 }
+
+// Museum and narrratives glowing hovers 
+const glowSections = ['narratives', 'museum'];
+
+glowSections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+        el.addEventListener('mouseenter', () => el.classList.add('glow'));
+        el.addEventListener('mouseleave', () => el.classList.remove('glow'));
+    }
+});
+

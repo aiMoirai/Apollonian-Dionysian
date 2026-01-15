@@ -55,6 +55,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="narratives/index.html">Narratives</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#booking">Book your visit</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -177,7 +180,7 @@
             <div class="col d-flex justify-content-center align-items-center">
                 <div class="row">
                     <h1 id="museum-h1">The Museum</h1>
-                    <a href="narratives/index.html" class="stretched-link"></a>
+                    <a href="the_museum.html" class="stretched-link"></a>
                 </div>
             </div>
         </div>
@@ -186,7 +189,10 @@
 
     <!--The collection -->
     <div class="container browse">
-        <h1>Browse the collection</h1>
+        <a href="exhibition.html" style="text-decoration:none" onmouseover="this.style.textDecoration='underline'"
+            onmouseout="this.style.textDecoration='none'">
+            <h1>Browse the collection</h1>
+        </a>
         <div class="scroller" id="scrollerContainer">
             <!-- Slides generated from the JS and the JSON file-->
         </div>
@@ -228,8 +234,8 @@
 
 
     <!--Ticket section-->
-    <div class="container tickets">
-        <form action="/booking" method="POST">
+    <div class="container tickets" id="booking">
+        <form onsubmit="return false;">
             <h1>Book Your Ticket</h1>
             <p>Entry is free. Ticket booking is required for visitor number tracking and space management. </p>
             <div class="field-row">
@@ -257,17 +263,18 @@
                 </div>
 
             </div>
-            <a role="button" data-bs-toggle="modal" data-bs-target="#emailSent">
-                <button class="book" type="submit" data-bs-toggle="modal" data-bs-target="#emailSent">Book
-                    Now</button></a>
+            <button class="book" type="submit" data-bs-toggle="modal" data-bs-target="#emailSent">Book Now</button>
+
 
 
             <!-- Book now button modal -->
-            <div class="modal fade" id="emailSent" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="emailSent" data-bs-backdrop="false" tabindex="-1"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Thank you</h1>
+                            <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: var(--text);">Thank you!
+                            </h1>
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
@@ -276,7 +283,7 @@
                         </div>
                         <div class="modal-footer">
                             <a href="imgs/ticket.png" target="_blank"><button type="button" class="book">Download
-                                    here</button></a>
+                                    a copy</button></a>
                         </div>
                     </div>
                 </div>
@@ -307,6 +314,7 @@
                     <a href="the_museum.html">The Museum</a><br>
                     <a href="exhibition.html">The Exhibition</a><br>
                     <a href="narratives/index.html">The Narratives</a><br>
+                    <a href="#booking">Book your Ticket</a><br>
                     <a href="About/Team.html">The Team</a><br>
                     <a href="About\Documentation.html">The Documentation</a><br>
                     <a href="About\Disclaimer.html">Disclaimer</a>

@@ -61,7 +61,7 @@ body.lightmode {
     --title: #eba311;
     --border: 3px solid var(--textred);
     --modal-border-radius: 1%;
-    --modal-bg: rgba(175, 162, 146, 0.90);
+    --modal-bg: rgba(175, 162, 146, 0.99);
     --modal-header-border-color: var(--textred);
     --modal-header-border-width: 3px;
     --btn-close-filter: invert(0);
@@ -346,6 +346,7 @@ a {
     background-color: var(--yellow);
     max-width: 80vw;
     max-height: 25vw;
+    --highlight: var(--text);
 }
 
 #museum-h1 {
@@ -360,6 +361,7 @@ a {
     border: 2.5px solid var(--yellow);
     max-width: 80vw;
     max-height: 25vw;
+    --highlight: var(--text);
 }
 
 .img-fluid {
@@ -373,6 +375,12 @@ a {
     font-size: 3vw;
 }
 
+/* Glow generico */
+.glow {
+    border: 2px solid var(--highlight);
+    box-shadow: 0 0 20px var(--highlight);
+    transition: all 0.2s ease;
+}
 
 /* -----------The collection--------------*/
 
@@ -539,6 +547,7 @@ a {
     flex-direction: column;
     padding: 20px;
     box-sizing: border-box;
+    scroll-margin-top: 250px;
 }
 
 label {
@@ -587,7 +596,6 @@ select {
         gap: 6px;
     }
 }
-
 
 /* -------Footer-------------*/
 footer {
@@ -1884,26 +1892,27 @@ html[data-theme="light"] {
    evita che il titolo finisca sotto la navbar
    ========================================= */
 
-:root{
-  --nav-offset: 60px; /* desktop: coerente col body padding-top */
+:root {
+    --nav-offset: 60px;
+    /* desktop: coerente col body padding-top */
 }
 
 /* su mobile la navbar tende ad essere più alta */
-@media (max-width: 991.98px){
-  :root{
-    --nav-offset: 96px;
-  }
+@media (max-width: 991.98px) {
+    :root {
+        --nav-offset: 96px;
+    }
 }
 
 /* Spinge giù l’header della pagina narratives */
-.narratives-hero{
-  padding-top: calc(2rem + var(--nav-offset));
+.narratives-hero {
+    padding-top: calc(2rem + var(--nav-offset));
 }
 
 /* Se arrivi tramite anchor/link (es. #qualcosa), non finisce sotto la navbar */
 .narratives-hero,
-.narrative-page-header{
-  scroll-margin-top: calc(var(--nav-offset) + 1rem);
+.narrative-page-header {
+    scroll-margin-top: calc(var(--nav-offset) + 1rem);
 }
 
 /* =========================================
@@ -1911,15 +1920,16 @@ html[data-theme="light"] {
    evita che il titolo finisca sotto la navbar
    ========================================= */
 
-:root{
-  --nav-offset: 60px; /* desktop: coerente col body padding-top */
+:root {
+    --nav-offset: 60px;
+    /* desktop: coerente col body padding-top */
 }
 
 /* su mobile la navbar tende ad essere più alta */
-@media (max-width: 991.98px){
-  :root{
-    --nav-offset: 96px;
-  }
+@media (max-width: 991.98px) {
+    :root {
+        --nav-offset: 96px;
+    }
 }
 
 /* 2. TITOLI E HEADER */
@@ -1944,5 +1954,5 @@ html[data-theme="light"] {
 
 /* Se arrivi tramite anchor/link (es. #qualcosa), non finisce sotto la navbar */
 .museum-header {
-  scroll-margin-top: calc(var(--nav-offset) + 1rem);
+    scroll-margin-top: calc(var(--nav-offset) + 1rem);
 }

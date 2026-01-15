@@ -32,6 +32,7 @@
 </head>
 
 <body>
+
     <!--Navigation bar-->
     <nav class="navbar fixed-top navbar-expand-lg">
         <div class="container-fluid">
@@ -56,16 +57,21 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/Apollonian-Dionysian/narratives/index.html">Narratives</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Apollonian-Dionysian/index.html#booking">Book your
+                            visit</a>
+                    </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link active dropdown-toggle" aria-current="page" href="#" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             About
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/Apollonian-Dionysian/Team.html">The Team</a></li>
-                            <li><a class="dropdown-item" href="/Apollonian-Dionysian/Documentation.html">The
+                            <li><a class="dropdown-item" href="/Apollonian-Dionysian/About/Team.html">The Team</a></li>
+                            <li><a class="dropdown-item" href="/Apollonian-Dionysian/About/Documentation.html">The
                                     Documentation</a></li>
-                            <li><a class="dropdown-item" href="/Apollonian-Dionysian/Disclaimer.html">The Disclaimer</a>
+                            <li><a class="dropdown-item" href="/Apollonian-Dionysian/About/Disclaimer.html">The
+                                    Disclaimer</a>
                             </li>
                         </ul>
                     </li>
@@ -109,27 +115,29 @@
             </div>
         </div>
     </div>
-    <div class="container my-5">
-        <div class="photo-box p-3">
-            <div class="row g-3">
-                <div class="col-12 col-md-4">
-                    <img src="../imgs/kylix.jpg" alt="Photo 1" class="img-fluid rounded">
-                    <div class="overlay-text">The Museum</div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <img src="../imgs/coppadionisio.jpg" alt="Photo 2" class="img-fluid rounded">
-                    <div class="overlay-text">Exhibition</div>
-                </div>
-                <div class="col-12 col-md-4">
-                    <img src="../imgs/maschera_comica.jpg" alt="Photo 3" class="img-fluid rounded">
-                    <div class="overlay-text">Narratives</div>
-                </div>
-            </div>
+
+    <div class="cards-container">
+        <div class="card">
+            <h4>Ilaria De Dominicis</h4>
+            <img src="/Apollonian-Dionysian/imgs/apollo_e_dafne.jpg" alt="">
+            <p>Testo della prima card.</p>
+        </div>
+
+        <div class="card">
+            <h4>Maria De Matteis</h4>
+            <img src="https://via.placeholder.com/400x250" alt="">
+            <p>Testo della seconda card.</p>
+        </div>
+
+        <div class="card">
+            <h4>Silvia Antonella Pellicano</h4>
+            <img src="https://via.placeholder.com/400x250" alt="">
+            <p>Testo della terza card.</p>
         </div>
     </div>
 
-    <!--Footer section-->
-    <!--Footer section-->
+
+
     <footer>
         <div class="footer container">
             <div class="row" id="footer">
@@ -146,9 +154,10 @@
                     <a href="/Apollonian-Dionysian/the_museum.html">The Museum</a><br>
                     <a href="/Apollonian-Dionysian/exhibition.html">The Exhibition</a><br>
                     <a href="/Apollonian-Dionysian/narratives/index.html">The Narratives</a><br>
-                    <a href="/Apollonian-Dionysian/Team.html">The Team</a><br>
-                    <a href="/Apollonian-Dionysian/Documentation.html">The Documentation</a><br>
-                    <a href="/Apollonian-Dionysian/Disclaimer.html">Disclaimer</a>
+                    <a href="/Apollonian-Dionysian/index.html#booking">Book your Ticket</a><br>
+                    <a href="/Apollonian-Dionysian/About/Team.html">The Team</a><br>
+                    <a href="/Apollonian-Dionysian/About/Documentation.html">The Documentation</a><br>
+                    <a href="/Apollonian-Dionysian/About/Disclaimer.html">Disclaimer</a>
                 </div>
                 <div class="col exam">
                     <h4 style="text-align: left;"><b>The Project</b></h4>
@@ -175,7 +184,8 @@
             </div>
         </div>
     </footer>
-    </div>
+
+
 
 
     <!-- bootstrap -->
@@ -186,6 +196,51 @@
     <!-- our JS -->
     <script src="/Apollonian-Dionysian/scripts/common.js" defer></script>
 
+    <style>
+        .cards-container {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 5vw;
+            margin-left: 10vw;
+            margin-right: 10vw;
+        }
+
+        .card {
+            background: var(--blackbg);
+            border-radius: 8px;
+            overflow: hidden;
+            flex: 1;
+        }
+
+        .card h4 {
+            margin: 0;
+            padding: 1rem;
+            font-size: 1.2rem;
+            color: var(--text);
+            text-align: center;
+        }
+
+        .card img {
+            max-width: 7vw;
+            height: auto;
+            display: block;
+            object-position: center;
+        }
+
+        .card p {
+            padding: 1rem;
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cards-container {
+                flex-direction: column;
+            }
+        }
+    </style>
 
 </body>
 

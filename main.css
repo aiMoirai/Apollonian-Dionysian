@@ -720,7 +720,9 @@ footer .footer .col {
 
 .section-title {
     color: var(--text);
+    margin-top: 2rem;
 }
+
 
 .narrative-subtitle {
     margin: 0.25rem 0 0;
@@ -927,7 +929,11 @@ body.lightmode .btn-theme--dionysian:focus {
 .back-to-narratives {
     margin-left: auto;
     margin-right: 4rem;
+    margin-top: 2rem;
+    display: inline-block;
 }
+
+
 
 /* ==========================================================================================
    ARTWORK ACCORDION
@@ -1154,6 +1160,7 @@ html[data-theme="light"] {
 /* Wrap text around the modal image */
 #imageModal .modal-body {
     padding: 1rem;
+    padding-top: 2.5rem;
 }
 
 #imageModal .modal-artwork-img.modal-float-left {

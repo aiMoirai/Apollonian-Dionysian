@@ -1880,6 +1880,26 @@ html[data-theme="light"] {
 }
 
 /* =========================================
+   NAVBAR OFFSET per EXHIBITION
+   evita che il titolo finisca sotto la navbar
+   ========================================= */
+
+:root { --nav-offset: 60px; }
+
+@media (max-width: 991.98px){
+  :root { --nav-offset: 96px; }
+}
+
+/* Header exhibition */
+.exhibition-hero{
+  padding-top: calc(5rem + var(--nav-offset));
+  padding-bottom: 2rem;
+  margin-bottom: 120px;
+  scroll-margin-top: calc(var(--nav-offset) + 1rem);
+}
+
+
+/* =========================================
    NAVBAR OFFSET per NARRATIVES
    evita che il titolo finisca sotto la navbar
    ========================================= */

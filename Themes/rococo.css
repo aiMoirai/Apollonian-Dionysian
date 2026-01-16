@@ -1101,6 +1101,17 @@ footer .footer .col {
     padding-right: 15px;
 }
 
+.museum-page {
+   
+    --local-nav-desktop: 70px;
+    --local-nav-mobile: 60px;
+
+    padding-top: calc(var(--local-nav-desktop) + 3rem);
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
+
 .museum-header {
     text-align: center;
     margin-top: 0;
@@ -1128,18 +1139,18 @@ footer .footer .col {
 
 /* Media queries per schermi piccoli */
 @media (max-width: 768px) {
-    .museum-header {
-        padding: 1.5rem 0;
-        max-height: none;
+    /* Riduce lo spazio sopra il titolo su mobile */
+    .museum-page {
+        padding-top: calc(var(--local-nav-mobile)); 
     }
-    
+
     .museum-title {
-        font-size: 2rem; /* Dimensione fissa minima */
-        font-size: min(2.5rem, 8vw); /* 8vw su mobile molto piccolo */
-        line-height: 1.3;
-        padding: 0 1rem;
+        font-size: clamp(2rem, 8vw, 2.5rem);
+        line-height: 1.2;
+        /* Opzionale: riduce il margine superiore del titolo stesso */
+        margin-top: 0.5rem; 
     }
-    
+
     .museum-subtitle {
         font-size: 1rem;
         padding: 0 1rem;
@@ -1702,33 +1713,6 @@ footer .footer .col {
 }
 
 
-
-/* =========================================
-   NAVBAR OFFSET per THE MUSEUM
-   evita che il titolo finisca sotto la navbar
-   ========================================= */
-
-:root{
-  --nav-offset: 60px;
-  --hero-spacing-desktop: 2rem;
-  --hero-spacing-mobile: 0px;
-}
-
-.museum-header{
-  padding-top: calc(var(--nav-offset) + var(--hero-spacing-desktop));
-  margin-top: 0;
-  text-align: center;
-}
-
-@media (max-width: 991.98px){
-  .museum-header{
-    padding-top: calc(var(--nav-offset) + var(--hero-spacing-mobile));
-  }
-
-  .museum-title{
-    margin-top: 0;
-  }
-}
 
 
 

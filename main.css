@@ -1927,29 +1927,31 @@ html[data-theme="light"] {
     scroll-margin-top: calc(var(--nav-offset) + 1rem);
 }
 
+
+
 /* =========================================
    NAVBAR OFFSET per THE MUSEUM
    evita che il titolo finisca sotto la navbar
    ========================================= */
 
 :root{
-  --nav-offset: 60px;
-  --hero-spacing-desktop: 2rem;
-  --hero-spacing-mobile: 0px;
+  --museum-nav-offset: 60px; /* desktop: coerente col body padding-top */
 }
 
-.museum-header{
-  padding-top: calc(var(--nav-offset) + var(--hero-spacing-desktop));
-  margin-top: 0;
-  text-align: center;
-}
-
+/* su mobile la navbar tende ad essere più alta */
 @media (max-width: 991.98px){
-  .museum-header{
-    padding-top: calc(var(--nav-offset) + var(--hero-spacing-mobile));
+  :root{
+    --museum-nav-offset: 96px;
   }
+}
 
-  .museum-title{
-    margin-top: 0;
-  }
+/* Spinge giù l’header della pagina the museum */
+.museum-hero{
+  padding-top: calc(2rem + var(--museum-nav-offset));
+}
+
+/* Se arrivi tramite anchor/link (es. #qualcosa), non finisce sotto la navbar */
+.museum-hero,
+.museum-page-header{
+  scroll-margin-top: calc(var(--museum-nav-offset) + 1rem);
 }

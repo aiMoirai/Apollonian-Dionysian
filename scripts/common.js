@@ -60,6 +60,7 @@ const themeConfigs = {
 
 const lightModeImgs = ['imgs/sopra_col_light.png', 'imgs/centro_col_light.png', 'imgs/fine_col_light.png'];
 
+// Funzione per applicare la light mode
 function applyLightMode(isOn) {
     document.body.classList.toggle("lightmode", isOn);
 
@@ -70,6 +71,7 @@ function applyLightMode(isOn) {
     localStorage.setItem("lightMode", isOn);
 }
 
+// Funzione per cambiare tema
 function changeTheme(themeName) {
     const config = themeConfigs[themeName];
     if (!config) return console.error("Tema non trovato:", themeName);
@@ -105,11 +107,11 @@ function changeTheme(themeName) {
         }, 100);
     }
 
-    // Salvo il tema solo per la sessione (rimane per navigazione tra pagine)
+    // Salvo il tema selezionato solo per la sessione (rimane attivo tra pagine)
     sessionStorage.setItem('selectedTheme', themeName);
 }
 
-// Event Listeners e Inizializzazione
+// Gestione toggle light mode
 if (toggle) {
     toggle.addEventListener("change", () => {
         const currentTheme = sessionStorage.getItem('selectedTheme') || 'default';
@@ -121,12 +123,19 @@ if (toggle) {
     });
 }
 
+// Inizializzazione al caricamento della pagina
 window.addEventListener("DOMContentLoaded", () => {
-    // Forzo sempre il tema default al primo caricamento
-    const initialTheme = 'default';
-    changeTheme(initialTheme);
+    // Controllo se esiste un tema salvato nella sessione (navigazione tra pagine)
+    const sessionTheme = sessionStorage.getItem('selectedTheme');
+    if (sessionTheme) {
+        // Navigazione tra pagine: riapplico il tema della sessione
+        changeTheme(sessionTheme);
+    } else {
+        // Primo caricamento del sito: forza default theme
+        changeTheme('default');
+    }
 
-    // Delega dell'evento per i link dei temi
+    // Delega degli eventi per i link dei temi
     document.addEventListener('click', (e) => {
         const link = e.target.closest('[id^="theme-"]');
         if (link) {

@@ -1157,8 +1157,8 @@ html[data-theme="light"]{
 
 .museum-header {
     text-align: center;
-    margin-top: 0;
-    margin-bottom: 5%;
+    margin-top: 2rem;
+    margin-bottom: 1%;
 }
 
 .museum-title {
@@ -1471,6 +1471,7 @@ html[data-theme="light"]{
 .rooms-popup .room-title {
     color: var(--textred);
     font-family: var(--h1_font);
+    letter-spacing: 0.15em;
     font-weight: bold;
     text-align: center;
     font-size: 1.8rem;

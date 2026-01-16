@@ -26,9 +26,9 @@ const themeConfigs = {
     'rococo': {
         css: '/Apollonian-Dionysian/Themes/rococo.css',
         imgs: [
-            '/Apollonian-Dionysian/imgs/rococo_sopra.png',
-            '/Apollonian-Dionysian/imgs/rococo_centro.png',
-            '/Apollonian-Dionysian/imgs/rococo_sotto.png'
+            '/Apollonian-Dionysian/imgs/rococo_nuvole.png',
+            '/Apollonian-Dionysian/imgs/rococo_nuvole.png',
+            '/Apollonian-Dionysian/imgs/rococo_nuvole.png'
         ]
     },
     'artdeco': {

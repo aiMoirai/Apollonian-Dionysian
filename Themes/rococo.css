@@ -1714,6 +1714,57 @@ footer .footer .col {
 
 
 
+/* =========================================
+   NAVBAR OFFSET per EXHIBITION
+   evita che il titolo finisca sotto la navbar
+   ========================================= */
 
 
+.exhibition-hero {
 
+  padding-top: calc(6rem + var(--nav-offset)) !important;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;  
+}
+
+@media (max-width: 768px) {
+  .exhibition-hero {
+   
+    padding-top: calc(var(--nav-offset)) !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .exhibition-hero h1 {
+    margin-top: 0.5rem !important;
+    font-size: 2rem; 
+  }
+}
+
+
+/* =========================================
+   NAVBAR OFFSET per NARRATIVES
+   evita che il titolo finisca sotto la navbar
+   ========================================= */
+
+:root {
+    --nav-offset: 60px;
+    /* desktop: coerente col body padding-top */
+}
+
+/* su mobile la navbar tende ad essere più alta */
+@media (max-width: 991.98px) {
+    :root {
+        --nav-offset: 96px;
+    }
+}
+
+/* Spinge giù l’header della pagina narratives */
+.narratives-hero {
+    padding-top: calc(2rem + var(--nav-offset));
+}
+
+/* Se arrivi tramite anchor/link (es. #qualcosa), non finisce sotto la navbar */
+.narratives-hero,
+.narrative-page-header {
+    scroll-margin-top: calc(var(--nav-offset) + 1rem);
+}

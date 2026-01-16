@@ -1902,6 +1902,33 @@ html[data-theme="light"] {
 }
 
 /* =========================================
+   NAVBAR OFFSET per EXHIBITION
+   evita che il titolo finisca sotto la navbar
+   ========================================= */
+
+
+.exhibition-hero {
+
+  padding-top: calc(6rem + var(--nav-offset)) !important;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;  
+}
+
+@media (max-width: 768px) {
+  .exhibition-hero {
+   
+    padding-top: calc(var(--nav-offset)) !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .exhibition-hero h1 {
+    margin-top: 0.5rem !important;
+    font-size: 2rem; 
+  }
+}
+
+
+/* =========================================
    NAVBAR OFFSET per NARRATIVES
    evita che il titolo finisca sotto la navbar
    ========================================= */

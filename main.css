@@ -1226,6 +1226,16 @@ html[data-theme="light"] {
     padding-right: 15px;
 }
 
+.museum-page {
+   
+    --local-nav-desktop: 80px;
+    --local-nav-mobile: 60px;
+
+    padding-top: calc(var(--local-nav-desktop) + 3rem);
+    padding-bottom: 2rem;
+    text-align: center;
+}
+
 .museum-header {
     text-align: center;
     margin-top: 0;
@@ -1929,31 +1939,3 @@ html[data-theme="light"] {
 }
 
 
-
-/* =========================================
-   NAVBAR OFFSET per THE MUSEUM
-   evita che il titolo finisca sotto la navbar
-   ========================================= */
-
-:root {
-    --museum-nav-offset: 60px;
-    /* desktop: coerente col body padding-top */
-}
-
-/* su mobile la navbar tende ad essere più alta */
-@media (max-width: 991.98px) {
-    :root {
-        --museum-nav-offset: 96px;
-    }
-}
-
-/* Spinge giù l’header della pagina the museum */
-.museum-hero {
-    padding-top: calc(2rem + var(--museum-nav-offset));
-}
-
-/* Se arrivi tramite anchor/link (es. #qualcosa), non finisce sotto la navbar */
-.museum-hero,
-.museum-page-header {
-    scroll-margin-top: calc(var(--museum-nav-offset) + 1rem);
-}

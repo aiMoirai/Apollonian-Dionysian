@@ -59,7 +59,7 @@ function generateScroller() {
                                     <div class="container slide">
                                         <img src="${item.image}" class="scroller-img">
                                             <div class="overlay">
-                                                <div class="text">${item.title}</div>
+                                                <div class="text">${item.smallTitle}</div>
                                             </div>
                                     </div>
                                     `;

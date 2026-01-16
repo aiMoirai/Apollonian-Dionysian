@@ -379,7 +379,7 @@ a {
 .glow {
     border: 2px solid var(--highlight);
     box-shadow: 0 0 20px var(--highlight);
-    transition: all 0.2s ease;
+    transition: all 0s ease;
 }
 
 /* -----------The collection--------------*/
@@ -1248,12 +1248,12 @@ html[data-theme="light"] {
 
 /* Media queries per schermi piccoli */
 @media (max-width: 768px) {
-    
-    .museum-title{
+
+    .museum-title {
         font-size: clamp(2rem, 8vw, 2.5rem);
         line-height: 1.2;
-   }
-    
+    }
+
     .museum-subtitle {
         font-size: 1rem;
         padding: 0 1rem;
@@ -1884,18 +1884,22 @@ html[data-theme="light"] {
    evita che il titolo finisca sotto la navbar
    ========================================= */
 
-:root { --nav-offset: 60px; }
+:root {
+    --nav-offset: 60px;
+}
 
-@media (max-width: 991.98px){
-  :root { --nav-offset: 96px; }
+@media (max-width: 991.98px) {
+    :root {
+        --nav-offset: 96px;
+    }
 }
 
 /* Header exhibition */
-.exhibition-hero{
-  padding-top: calc(5rem + var(--nav-offset));
-  padding-bottom: 2rem;
-  margin-bottom: 120px;
-  scroll-margin-top: calc(var(--nav-offset) + 1rem);
+.exhibition-hero {
+    padding-top: calc(5rem + var(--nav-offset));
+    padding-bottom: 2rem;
+    margin-bottom: 120px;
+    scroll-margin-top: calc(var(--nav-offset) + 1rem);
 }
 
 
@@ -1934,24 +1938,25 @@ html[data-theme="light"] {
    evita che il titolo finisca sotto la navbar
    ========================================= */
 
-:root{
-  --museum-nav-offset: 60px; /* desktop: coerente col body padding-top */
+:root {
+    --museum-nav-offset: 60px;
+    /* desktop: coerente col body padding-top */
 }
 
 /* su mobile la navbar tende ad essere più alta */
-@media (max-width: 991.98px){
-  :root{
-    --museum-nav-offset: 96px;
-  }
+@media (max-width: 991.98px) {
+    :root {
+        --museum-nav-offset: 96px;
+    }
 }
 
 /* Spinge giù l’header della pagina the museum */
-.museum-hero{
-  padding-top: calc(2rem + var(--museum-nav-offset));
+.museum-hero {
+    padding-top: calc(2rem + var(--museum-nav-offset));
 }
 
 /* Se arrivi tramite anchor/link (es. #qualcosa), non finisce sotto la navbar */
 .museum-hero,
-.museum-page-header{
-  scroll-margin-top: calc(var(--museum-nav-offset) + 1rem);
+.museum-page-header {
+    scroll-margin-top: calc(var(--museum-nav-offset) + 1rem);
 }

@@ -143,6 +143,10 @@ a {
     border-bottom: var(--border);
     font-size: 1em;
     position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
     color: var(--text);
 }
 
@@ -1118,7 +1122,7 @@ html[data-theme="light"]{
 
 /* ==========================================================================================
     END EXHIBITION ------ Mari
-   ==========================================================================================
+   ========================================================================================== */
  
 /* ==========================================================================================
     MUSEUM ------ Silvia
@@ -1740,4 +1744,62 @@ html[data-theme="light"]{
 
 .doc-title {
     color: var(--yellow);
+}
+
+
+/* =========================================
+   NAVBAR OFFSET per EXHIBITION
+   evita che il titolo finisca sotto la navbar
+   ========================================= */
+
+:root {
+    --nav-offset: 60px; /* desktop */
+}
+
+@media (max-width: 991.98px) {
+    :root {
+        --nav-offset: 96px; /* mobile */
+    }
+}
+
+/* Header Exhibition */
+.exhibition-hero {
+    padding-top: calc(6rem + var(--nav-offset));
+    padding-bottom: 2rem;
+    scroll-margin-top: calc(var(--nav-offset) + 1rem);
+}
+
+
+/* Se arrivi da anchor (#qualcosa) */
+.exhibition-hero {
+    scroll-margin-top: calc(var(--nav-offset) + 1rem);
+}
+
+
+/* =========================================
+   NAVBAR OFFSET per NARRATIVES
+   evita che il titolo finisca sotto la navbar
+   ========================================= */
+
+:root {
+    --nav-offset: 60px;
+    /* desktop: coerente col body padding-top */
+}
+
+/* su mobile la navbar tende ad essere più alta */
+@media (max-width: 991.98px) {
+    :root {
+        --nav-offset: 96px;
+    }
+}
+
+/* Spinge giù l’header della pagina narratives */
+.narratives-hero {
+    padding-top: calc(2rem + var(--nav-offset));
+}
+
+/* Se arrivi tramite anchor/link (es. #qualcosa), non finisce sotto la navbar */
+.narratives-hero,
+.narrative-page-header {
+    scroll-margin-top: calc(var(--nav-offset) + 1rem);
 }

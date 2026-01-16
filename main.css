@@ -1884,44 +1884,18 @@ html[data-theme="light"] {
    evita che il titolo finisca sotto la navbar
    ========================================= */
 
-:root {
-<<<<<<< Updated upstream
-    --nav-offset: 60px;
-}
+:root { --nav-offset: 60px; }
 
-@media (max-width: 991.98px) {
-    :root {
-        --nav-offset: 96px;
-    }
+@media (max-width: 991.98px){
+  :root { --nav-offset: 96px; }
 }
 
 /* Header exhibition */
-.exhibition-hero {
-    padding-top: calc(5rem + var(--nav-offset));
-    padding-bottom: 2rem;
-    margin-bottom: 120px;
-    scroll-margin-top: calc(var(--nav-offset) + 1rem);
-=======
-    --nav-offset: 60px; /* desktop */
-}
-
-@media (max-width: 991.98px) {
-    :root {
-        --nav-offset: 96px; /* mobile */
-    }
->>>>>>> Stashed changes
-}
-
-/* Header Exhibition */
-.exhibition-hero {
-    padding-top: calc(6rem + var(--nav-offset)); 
-    padding-bottom: 2rem;
-    margin-bottom: 120px;
-}
-
-/* Se arrivi da anchor (#qualcosa) */
-.exhibition-hero {
-    scroll-margin-top: calc(var(--nav-offset) + 1rem);
+.exhibition-hero{
+  padding-top: calc(5rem + var(--nav-offset));
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;  
+  scroll-margin-top: calc(var(--nav-offset) + 1rem);
 }
 
 

@@ -1102,13 +1102,13 @@ footer .footer .col {
 }
 
 .museum-header {
-    padding: 2rem 0;
     text-align: center;
-    margin-top: 60px;
+    margin-top: 0;
+    margin-bottom: 5%;
 }
 
 .museum-title {
-    font-size: 4vw;
+    font-size: 4rem;
     color: var(--yellow);
     font-family: var(--h1_font);
     text-align: center;
@@ -1703,6 +1703,32 @@ footer .footer .col {
 
 
 
+/* =========================================
+   NAVBAR OFFSET per THE MUSEUM
+   evita che il titolo finisca sotto la navbar
+   ========================================= */
+
+:root{
+  --nav-offset: 60px;
+  --hero-spacing-desktop: 2rem;
+  --hero-spacing-mobile: 0px;
+}
+
+.museum-header{
+  padding-top: calc(var(--nav-offset) + var(--hero-spacing-desktop));
+  margin-top: 0;
+  text-align: center;
+}
+
+@media (max-width: 991.98px){
+  .museum-header{
+    padding-top: calc(var(--nav-offset) + var(--hero-spacing-mobile));
+  }
+
+  .museum-title{
+    margin-top: 0;
+  }
+}
 
 
 

@@ -1169,40 +1169,54 @@ html[data-theme="light"] {
     padding-right: 15px;
 }
 
-/* 2. TITOLI E HEADER */
-.museum-header {
-    padding: 2rem 0;
+.museum-page {
+   
+    --local-nav-desktop: 70px;
+    --local-nav-mobile: 60px;
+
+    padding-top: calc(var(--local-nav-desktop) + 3rem);
+    padding-bottom: 2rem;
     text-align: center;
-    margin-top: 2%;
+}
+
+
+.museum-header {
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 5%;
 }
 
 .museum-title {
-    font-size: 4vw;
+    font-size: 4rem;
     color: var(--yellow);
     font-family: var(--h1_font);
     text-align: center;
+    left: -100%;
+    animation: slide-from-left 5s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
 .museum-subtitle {
     color: var(--text);
     font-size: 1.2rem;
     text-align: center;
+    left: -100%;
+    animation: slide-from-left 5s ease-out forwards;
+    animation-delay: 0.8s;
 }
 
 /* Media queries per schermi piccoli */
 @media (max-width: 768px) {
-    .museum-header {
-        padding: 1.5rem 0;
-        max-height: none;
+    /* Riduce lo spazio sopra il titolo su mobile */
+    .museum-page {
+        padding-top: calc(var(--local-nav-mobile)); 
     }
 
     .museum-title {
-        font-size: 2rem;
-        /* Dimensione fissa minima */
-        font-size: min(2.5rem, 8vw);
-        /* 8vw su mobile molto piccolo */
-        line-height: 1.3;
-        padding: 0 1rem;
+        font-size: clamp(2rem, 8vw, 2.5rem);
+        line-height: 1.2;
+        /* Opzionale: riduce il margine superiore del titolo stesso */
+        margin-top: 0.5rem; 
     }
 
     .museum-subtitle {

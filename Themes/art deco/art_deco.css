@@ -677,6 +677,7 @@ footer .footer .col {
 
 .section-title {
     color: var(--text);
+    margin-top: 2rem;
 }
 
 .narrative-subtitle {
@@ -852,6 +853,8 @@ body.lightmode .btn-theme--dionysian:focus{
 
 /* Back to narratives */
 .back-to-narratives{
+  margin-top: 2rem;
+  display: inline-block;
   margin-left: auto;
   margin-right: 4rem; 
 }

@@ -95,6 +95,22 @@ function changeTheme(themeName) {
 
     // 4. Gestione Light Mode
     const isDefault = themeName === 'default';
+
+    // --- NUOVA PARTE: rimuovo completamente il toggle se tema non è default ---
+    if (toggle) {
+        if (isDefault) {
+            // Reinserisco il toggle nella pagina se manca
+            if (!document.body.contains(toggle)) {
+                document.body.appendChild(toggle.parentElement); // inserisco il div che contiene l'input
+            }
+        } else {
+            // Rimuovo completamente il toggle dal DOM
+            if (document.body.contains(toggle)) {
+                toggle.parentElement.remove();
+            }
+        }
+    }
+
     if (!isDefault) {
         document.body.classList.remove("lightmode");
         localStorage.setItem("lightMode", false);

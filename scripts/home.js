@@ -37,7 +37,7 @@ function populateModal(index) {
 
     document.querySelector('#modalTemplate .modal-text').innerHTML = `
                                     ${data.description}
-                                    <a class="modal-more" style="margin-top:1em; text-align:right;" href="">See more</a>
+                                    <a class="modal-more" style="margin-top:1em; text-align:right;" href="${data.seeMore}">See more</a>
                                     `;
 }
 

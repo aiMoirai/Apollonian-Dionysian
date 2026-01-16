@@ -5,7 +5,6 @@ const separators = ["break1", "break2", "break3"].map(id => document.getElementB
 // Bottone (esiste nell'HTML come <img id="wineButton" ...>)
 const themeWineButton = document.getElementById("wineButton");
 
-
 const themeConfigs = {
     'default': {
         css: '/Apollonian-Dionysian/main.css',
@@ -59,7 +58,6 @@ const themeConfigs = {
     }
 };
 
-
 const lightModeImgs = ['imgs/sopra_col_light.png', 'imgs/centro_col_light.png', 'imgs/fine_col_light.png'];
 
 function applyLightMode(isOn) {
@@ -72,7 +70,7 @@ function applyLightMode(isOn) {
     localStorage.setItem("lightMode", isOn);
 }
 
-function changeTheme(themeName, saveToStorage = true) {
+function changeTheme(themeName) {
     const config = themeConfigs[themeName];
     if (!config) return console.error("Tema non trovato:", themeName);
 
@@ -107,17 +105,14 @@ function changeTheme(themeName, saveToStorage = true) {
         }, 100);
     }
 
-    // Salva nel localStorage solo se esplicitamente richiesto
-    if (saveToStorage) {
-        localStorage.setItem('selectedTheme', themeName);
-    }
+    // Salvo il tema solo per la sessione (rimane per navigazione tra pagine)
+    sessionStorage.setItem('selectedTheme', themeName);
 }
 
 // Event Listeners e Inizializzazione
 if (toggle) {
     toggle.addEventListener("change", () => {
-        // Verifica se il tema attuale è 'default' prima di permettere il cambio
-        const currentTheme = localStorage.getItem('selectedTheme') || 'default';
+        const currentTheme = sessionStorage.getItem('selectedTheme') || 'default';
         if (currentTheme !== 'default') {
             toggle.checked = false;
             return alert("La modalità chiara è disponibile solo nel tema Default");
@@ -127,16 +122,16 @@ if (toggle) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    // SEMPRE carica il tema di default quando la pagina viene aperta
-    changeTheme('default', false); // false = non salvare nel localStorage
+    // Forzo sempre il tema default al primo caricamento
+    const initialTheme = 'default';
+    changeTheme(initialTheme);
 
-    // Delega dell'evento per i link dei temi (più efficiente di molti listener singoli)
+    // Delega dell'evento per i link dei temi
     document.addEventListener('click', (e) => {
         const link = e.target.closest('[id^="theme-"]');
         if (link) {
             e.preventDefault();
-            const themeName = link.id.replace('theme-', '');
-            changeTheme(themeName, true); // true = salva nel localStorage
+            changeTheme(link.id.replace('theme-', ''));
         }
     });
 });

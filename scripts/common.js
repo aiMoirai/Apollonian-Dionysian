@@ -125,6 +125,19 @@ window.addEventListener("DOMContentLoaded", () => {
     const savedTheme = localStorage.getItem('selectedTheme') || 'default';
     changeTheme(savedTheme);
 
+    /*// Se sono arrivato con un #anchor (es. #booking), rifaccio lo scroll dopo che il tema è applicato
+    if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+    if (target) {
+        // aspetta un attimo che il CSS del tema venga applicato e il layout si stabilizzi
+        requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+            target.scrollIntoView({ block: "start" });
+        });
+        });
+    }
+    }*/
+
     // Delega dell'evento per i link dei temi (più efficiente di molti listener singoli)
     document.addEventListener('click', (e) => {
         const link = e.target.closest('[id^="theme-"]');

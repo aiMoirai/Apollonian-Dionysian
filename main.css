@@ -1892,8 +1892,8 @@ html[data-theme="light"] {
 
 /* Header exhibition */
 .exhibition-hero{
-  padding-top: calc(5rem + var(--nav-offset));
-  padding-bottom: 2rem;
+  padding-top: calc(6rem + var(--nav-offset));
+  padding-bottom: 1rem;
   margin-bottom: 2rem;  
   scroll-margin-top: calc(var(--nav-offset) + 1rem);
 }

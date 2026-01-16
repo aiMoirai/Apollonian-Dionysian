@@ -72,7 +72,7 @@ function applyLightMode(isOn) {
     localStorage.setItem("lightMode", isOn);
 }
 
-function changeTheme(themeName) {
+function changeTheme(themeName, saveToStorage = true) {
     const config = themeConfigs[themeName];
     if (!config) return console.error("Tema non trovato:", themeName);
 
@@ -107,13 +107,18 @@ function changeTheme(themeName) {
         }, 100);
     }
 
-    localStorage.setItem('selectedTheme', themeName);
+    // Salva nel localStorage solo se esplicitamente richiesto
+    if (saveToStorage) {
+        localStorage.setItem('selectedTheme', themeName);
+    }
 }
 
 // Event Listeners e Inizializzazione
 if (toggle) {
     toggle.addEventListener("change", () => {
-        if ((localStorage.getItem('selectedTheme') || 'default') !== 'default') {
+        // Verifica se il tema attuale è 'default' prima di permettere il cambio
+        const currentTheme = localStorage.getItem('selectedTheme') || 'default';
+        if (currentTheme !== 'default') {
             toggle.checked = false;
             return alert("La modalità chiara è disponibile solo nel tema Default");
         }
@@ -122,34 +127,16 @@ if (toggle) {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
-    const savedTheme = localStorage.getItem('selectedTheme') || 'default';
-    changeTheme(savedTheme);
-
-    /*// Se sono arrivato con un #anchor (es. #booking), rifaccio lo scroll dopo che il tema è applicato
-    if (window.location.hash) {
-    const target = document.querySelector(window.location.hash);
-    if (target) {
-        // aspetta un attimo che il CSS del tema venga applicato e il layout si stabilizzi
-        requestAnimationFrame(() => {
-        requestAnimationFrame(() => {
-            target.scrollIntoView({ block: "start" });
-        });
-        });
-    }
-    }*/
+    // SEMPRE carica il tema di default quando la pagina viene aperta
+    changeTheme('default', false); // false = non salvare nel localStorage
 
     // Delega dell'evento per i link dei temi (più efficiente di molti listener singoli)
     document.addEventListener('click', (e) => {
         const link = e.target.closest('[id^="theme-"]');
         if (link) {
             e.preventDefault();
-            changeTheme(link.id.replace('theme-', ''));
+            const themeName = link.id.replace('theme-', '');
+            changeTheme(themeName, true); // true = salva nel localStorage
         }
     });
 });
-
-
-
-
-
-

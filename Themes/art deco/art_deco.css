@@ -1767,6 +1767,18 @@ html[data-theme="light"]{
     color: var(--yellow);
 }
 
+/* -------Documentation / Disclaimer section -------------*/
+#disclaimer {
+    padding-top: calc(6rem + var(--nav-offset)) !important;
+    padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    #disclaimer {
+        padding-top: calc(var(--nav-offset)) !important;
+    }
+}
+
 
 /* =========================================
    NAVBAR OFFSET per EXHIBITION
@@ -1793,6 +1805,7 @@ html[data-theme="light"]{
     font-size: 2rem; 
   }
 }
+
 
 /* =========================================
    NAVBAR OFFSET per NARRATIVES

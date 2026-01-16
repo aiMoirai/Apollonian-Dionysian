@@ -1712,6 +1712,18 @@ footer .footer .col {
     color: var(--yellow);
 }
 
+/* -------Documentation / Disclaimer section -------------*/
+#disclaimer {
+    padding-top: calc(6rem + var(--nav-offset)) !important;
+    padding-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+    #disclaimer {
+        padding-top: calc(var(--nav-offset)) !important;
+    }
+}
+
 
 
 /* =========================================

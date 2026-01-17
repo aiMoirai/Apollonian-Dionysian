@@ -1117,6 +1117,8 @@ html[data-theme="light"] {
 
 #imageModal .modal-header {
     border-bottom: 1px solid var(--text);
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
 }
 
 /* image in modal */

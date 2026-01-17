@@ -39,6 +39,14 @@ const themeConfigs = {
         ],
         button: '/Apollonian-Dionysian/imgs/art deco/champagne_button.png'
     },
+    'psychedelic': {
+        css: '/Apollonian-Dionysian/Themes/psychedelic 70s/psychedelic.css',
+        imgs: [
+            '/Apollonian-Dionysian/imgs/art deco/columns/sopra_colonne_artdeco.jpeg',
+            '/Apollonian-Dionysian/imgs/art deco/columns/centro_colonne_artdeco.jpeg',
+            '/Apollonian-Dionysian/imgs/art deco/columns/sotto_colonne_artdeco.jpeg'
+        ],
+    },
     '90s': {
         css: '/Apollonian-Dionysian/Themes/90s.css',
         imgs: [

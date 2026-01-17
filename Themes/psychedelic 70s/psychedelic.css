@@ -1,0 +1,500 @@
+/* ==========================================================
+   THEME 70s PSYCHEDELIC
+   ========================================================== */
+
+/* Optional: fonts (consigliate ma non obbligatorie)
+   - Body: "Quicksand" / "Nunito" vibe (soft 70s)
+   - Titles: "Cooper Black" vibe -> usa un font simile se lo hai
+*/
+@font-face {
+  font-family: "GroovyTitle";
+  src: url("fonts/GroovyTitle-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SoftRound";
+  src: url("fonts/SoftRound-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -----------------------------
+   PALETTE + GLOBAL VARIABLES
+   ----------------------------- */
+
+:root{
+  /* Base */
+  --bg: #0f1530;                 /* notte/blu profondo */
+  --panel: rgba(255,255,255,.06);
+  --panel-strong: rgba(255,255,255,.10);
+
+  /* Psychedelic palette (dall'immagine) */
+  --cream: #fff3b0;
+  --sun:   #ffd84d;              /* giallo caldo */
+  --orange:#ff7a2f;
+  --red:   #ff3f55;
+  --magenta:#c23cff;
+  --violet:#6b3bff;
+  --aqua:  #64d6ff;
+  --sky:   #5aa7ff;
+  --lime:  #b8ff4a;
+  --green: #3fe37b;
+
+  /* Text */
+  --text: rgba(255,243,176,.92); /* crema caldo */
+  --muted: rgba(255,243,176,.78);
+
+  /* Accents */
+  --accent: var(--sun);
+  --accent2: var(--magenta);
+  --link: var(--aqua);
+
+  /* Outlines (stile “vector 70s”) */
+  --ink: rgba(12, 14, 22, .92);  /* contorno scuro */
+  --border: 3px solid var(--ink);
+
+  /* Radii */
+  --r-lg: 22px;
+  --r-md: 16px;
+  --r-sm: 12px;
+
+  /* Shadows */
+  --shadow-pop: 0 14px 0 rgba(0,0,0,.28);
+  --shadow-soft: 0 18px 40px rgba(0,0,0,.35);
+
+  /* Fonts */
+  --general_font: "SoftRound", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --h1_font: "GroovyTitle", ui-serif, Georgia, serif;
+
+  /* Background (solo CSS, senza immagine) */
+  --bgimg:
+    radial-gradient(900px 600px at 20% 15%, rgba(194,60,255,.35), transparent 60%),
+    radial-gradient(700px 520px at 80% 25%, rgba(100,214,255,.28), transparent 55%),
+    radial-gradient(680px 520px at 30% 85%, rgba(255,122,47,.25), transparent 60%),
+    radial-gradient(900px 700px at 80% 85%, rgba(184,255,74,.18), transparent 62%),
+    linear-gradient(180deg, rgba(15,21,48,1), rgba(10,14,32,1));
+}
+
+/* -----------------------------
+   BASE TYPOGRAPHY
+   ----------------------------- */
+
+html, body{ min-height: 100vh; }
+
+body{
+  background: var(--bgimg);
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  font-family: var(--general_font);
+  font-size: 1.12em;
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Titoli “groovy” */
+h1, .title{
+  font-family: var(--h1_font);
+  color: var(--sun);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  /* effetto “outline” stile poster */
+  text-shadow:
+    -2px -2px 0 var(--ink),
+     2px -2px 0 var(--ink),
+    -2px  2px 0 var(--ink),
+     2px  2px 0 var(--ink),
+     0   10px 0 rgba(0,0,0,.22);
+}
+
+h4{ color: var(--text); }
+
+p{ color: var(--text); }
+
+a{
+  color: var(--link);
+  text-decoration-thickness: 3px;
+  text-underline-offset: 4px;
+}
+a:hover{ color: var(--sun); }
+
+/* -----------------------------
+   NAVBAR (Bootstrap-friendly)
+   ----------------------------- */
+
+.navbar{
+  background:
+    linear-gradient(90deg,
+      rgba(255,122,47,.20),
+      rgba(194,60,255,.16),
+      rgba(100,214,255,.18));
+  backdrop-filter: blur(10px);
+  border-bottom: var(--border);
+  box-shadow: var(--shadow-pop);
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1030;
+}
+
+.nav-link{ color: var(--text); }
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus{ color: var(--sun); }
+
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link[aria-current="page"]{ color: var(--lime); }
+
+.dropdown-menu{
+  background: rgba(15,21,48,.92);
+  border: var(--border);
+  border-radius: var(--r-md);
+  box-shadow: var(--shadow-soft);
+}
+.dropdown-item{ color: var(--text); }
+.dropdown-item:hover,
+.dropdown-item:focus{
+  background: rgba(255,216,77,.18);
+  color: var(--sun);
+}
+
+/* Hamburger icon “cream” -> hover “sun” */
+.navbar-toggler-icon{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23fff3b0' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.navbar-toggler:hover .navbar-toggler-icon,
+.navbar-toggler:focus .navbar-toggler-icon{
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23ffd84d' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.logo{
+  height: 5vw;
+  width: 7vw;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 0 rgba(0,0,0,.35));
+}
+
+/* -----------------------------
+   HERO
+   ----------------------------- */
+
+.hero{
+  height: 100vh;
+  background:
+    radial-gradient(900px 650px at 25% 30%, rgba(255,216,77,.26), transparent 60%),
+    radial-gradient(800px 620px at 75% 45%, rgba(194,60,255,.22), transparent 62%),
+    radial-gradient(900px 720px at 55% 85%, rgba(100,214,255,.20), transparent 65%),
+    var(--bgimg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position: relative;
+}
+
+/* Fade top */
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(to top, transparent, rgba(10,14,32,.70));
+  pointer-events:none;
+  z-index:1;
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  width: 92%;
+}
+
+/* Titolo più “poster” */
+.hero-content .title{
+  font-size: clamp(40px, 6vw, 92px);
+  margin-top: 3vw;
+}
+
+/* Button tondo (wine_button) */
+.wine_button{
+  margin-top: 2vw;
+  max-width: 110px;
+  clip-path: circle(50%);
+  border: var(--border);
+  background: rgba(255,255,255,.04);
+  filter: drop-shadow(0 10px 0 rgba(0,0,0,.25));
+  transition: transform .15s ease, filter .15s ease;
+}
+.wine_button:hover{
+  transform: translateY(-2px) scale(1.03);
+  filter: drop-shadow(0 14px 0 rgba(0,0,0,.30));
+}
+
+.subtitle{
+  color: var(--muted);
+  font-size: 1.05em;
+}
+
+/* -----------------------------
+   SECTIONS / BOXES (intro, museum, narratives, etc.)
+   ----------------------------- */
+
+#quote{
+  background: rgba(255,243,176,.08);
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  padding: 0.85rem 1rem;
+  font-size: 1.45rem;
+  text-align: center;
+  color: var(--sun);
+  border: var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-pop);
+}
+
+.dropcap::first-letter{
+  float:left;
+  font-size: 5em;
+  line-height:.9;
+  padding-right:.15em;
+  padding-top:.05em;
+  font-family: var(--h1_font);
+  color: var(--lime);
+  text-shadow:
+    -2px -2px 0 var(--ink),
+     2px -2px 0 var(--ink),
+    -2px  2px 0 var(--ink),
+     2px  2px 0 var(--ink);
+}
+
+#intro,
+.browse,
+.tickets{
+  background: rgba(255,255,255,.05);
+  border: var(--border);
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-pop);
+  max-width: 80vw;
+  padding: 1rem;
+}
+
+#museum{
+  margin-bottom: 5rem;
+  padding: 1rem;
+  border: var(--border);
+  border-radius: var(--r-lg);
+  background:
+    linear-gradient(135deg, rgba(100,214,255,.12), rgba(194,60,255,.10)),
+    rgba(255,255,255,.05);
+  max-width: 80vw;
+  box-shadow: var(--shadow-pop);
+}
+
+#narratives{
+  margin-top: 5rem;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border: var(--border);
+  border-radius: var(--r-lg);
+  background:
+    linear-gradient(135deg, rgba(255,122,47,.16), rgba(255,216,77,.10)),
+    rgba(255,255,255,.05);
+  max-width: 80vw;
+  box-shadow: var(--shadow-pop);
+}
+
+#museum-h1,
+#narratives-h1{
+  color: var(--sun);
+  text-shadow:
+    -2px -2px 0 var(--ink),
+     2px -2px 0 var(--ink),
+    -2px  2px 0 var(--ink),
+     2px  2px 0 var(--ink);
+}
+
+/* -----------------------------
+   SCROLLER / SLIDES
+   ----------------------------- */
+
+.slide{
+  border-radius: var(--r-md);
+  border: var(--border);
+  box-shadow: var(--shadow-pop);
+  background: rgba(255,255,255,.04);
+}
+
+.scroller-img{
+  border-radius: calc(var(--r-md) - 4px);
+}
+
+.overlay{
+  background:
+    linear-gradient(180deg, rgba(15,21,48,.92), rgba(10,14,32,.92));
+  border-left: var(--border);
+}
+
+.slide:hover .overlay{ width: 100%; }
+
+.overlay > .text{
+  color: var(--cream);
+  font-size: .85em;
+  text-shadow: 0 2px 0 rgba(0,0,0,.45);
+}
+
+/* -----------------------------
+   MODALS (Bootstrap)
+   ----------------------------- */
+
+.modal-content{
+  border-radius: var(--r-lg);
+  background:
+    radial-gradient(900px 420px at 20% 15%, rgba(255,216,77,.12), transparent 60%),
+    radial-gradient(800px 520px at 80% 20%, rgba(194,60,255,.14), transparent 62%),
+    rgba(15,21,48,.96);
+  border: var(--border);
+  box-shadow: var(--shadow-soft);
+}
+
+.modal-header,
+.modal-footer{
+  border-color: rgba(255,243,176,.28);
+  border-width: 2px;
+}
+
+.modal-title{
+  color: var(--sun);
+  font-family: var(--h1_font);
+  letter-spacing: .14em;
+  text-shadow:
+    -2px -2px 0 var(--ink),
+     2px -2px 0 var(--ink),
+    -2px  2px 0 var(--ink),
+     2px  2px 0 var(--ink);
+}
+
+.modal-img{
+  border-radius: var(--r-md);
+  border: var(--border);
+  box-shadow: var(--shadow-pop);
+}
+
+.modal-img:hover{
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 18px 0 rgba(0,0,0,.22);
+}
+
+/* -----------------------------
+   FORMS / TICKETS
+   ----------------------------- */
+
+label{ color: var(--muted); }
+
+input, select, textarea{
+  background: rgba(255,255,255,.06);
+  border: var(--border);
+  border-radius: var(--r-md);
+  color: var(--cream);
+  outline: none;
+}
+
+input:focus, select:focus, textarea:focus{
+  border-color: var(--sun);
+  box-shadow: 0 0 0 4px rgba(255,216,77,.18);
+}
+
+/* CTA button (book) */
+.book{
+  width:100%;
+  padding: 14px;
+  border-radius: var(--r-md);
+  border: var(--border);
+  font-weight: 800;
+  letter-spacing: .04em;
+  cursor:pointer;
+  color: rgba(10,14,32,.95);
+  background:
+    linear-gradient(90deg, var(--sun), var(--orange), var(--magenta));
+  box-shadow: var(--shadow-pop);
+  transition: transform .12s ease, filter .12s ease;
+}
+.book:hover{
+  transform: translateY(-2px);
+  filter: saturate(1.08) contrast(1.05);
+}
+
+/* Pills (narratives) */
+.narrative-pill{
+  border: var(--border);
+  border-radius: 999px;
+  color: var(--cream);
+  background: rgba(255,255,255,.05);
+  box-shadow: 0 10px 0 rgba(0,0,0,.18);
+}
+.narrative-pill:hover{
+  color: var(--sun);
+  transform: translateY(-2px);
+}
+
+/* Cards */
+.narrative-card,
+.artwork-card,
+.exhibition-card{
+  background: rgba(255,255,255,.05) !important;
+  border: var(--border) !important;
+  border-radius: var(--r-lg);
+  box-shadow: var(--shadow-pop);
+}
+
+/* “Theme variants” se vuoi mantenerle */
+.artwork-card--apollonian{ border-color: var(--sun) !important; }
+.artwork-card--dionysian{ border-color: var(--magenta) !important; }
+
+/* Accordion tweaks */
+.artwork-accordion{
+  --bs-accordion-bg: transparent;
+  --bs-accordion-border-color: rgba(255,243,176,.22);
+  --bs-accordion-active-color: var(--sun);
+  --bs-accordion-btn-color: var(--cream);
+}
+.artwork-accordion .accordion-button{
+  box-shadow:none !important;
+  border-bottom: 1px solid rgba(255,243,176,.18);
+}
+.artwork-accordion .accordion-button::after{
+  filter: invert(96%) sepia(12%) saturate(1120%) hue-rotate(330deg) brightness(103%) contrast(97%);
+}
+
+/* -----------------------------
+   FOOTER
+   ----------------------------- */
+
+footer{
+  border-top: var(--border);
+  background:
+    linear-gradient(90deg,
+      rgba(100,214,255,.12),
+      rgba(194,60,255,.10),
+      rgba(255,122,47,.10)),
+    rgba(10,14,32,.98);
+  box-shadow: 0 -12px 0 rgba(0,0,0,.22);
+  padding-top: 12px;
+  text-align: center;
+}
+
+/* -----------------------------
+   RESPONSIVE
+   ----------------------------- */
+
+@media (max-width: 600px){
+  body{ font-size: 16px; }
+  h1{ font-size: 32px; }
+  h4{ font-size: 18px; }
+}

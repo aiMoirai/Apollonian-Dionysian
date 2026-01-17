@@ -170,7 +170,7 @@ if (wineButton) {
     });
 }
 
-// Museum and narrratives glowing hovers 
+// Museum and narratives glowing hovers 
 const glowSections = ['narratives', 'museum'];
 
 glowSections.forEach(id => {

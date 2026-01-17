@@ -23,106 +23,129 @@
 }
 
 /* -----------------------------
-   PALETTE + GLOBAL VARIABLES
+   ROOT VARIABLES — PALETTE 70s
    ----------------------------- */
 
-:root{
+:root {
   /* Base */
-  --bg: #0f1530;                 /* notte/blu profondo */
-  --panel: rgba(255,255,255,.06);
-  --panel-strong: rgba(255,255,255,.10);
+  --bg-base: #0f0c2a;           /* viola notte */
+  --ink: #0b0b14;
 
-  /* Psychedelic palette (dall'immagine) */
+  /* Psychedelic palette */
   --cream: #fff3b0;
-  --sun:   #ffd84d;              /* giallo caldo */
-  --orange:#ff7a2f;
-  --red:   #ff3f55;
-  --magenta:#c23cff;
-  --violet:#6b3bff;
-  --aqua:  #64d6ff;
-  --sky:   #5aa7ff;
-  --lime:  #b8ff4a;
-  --green: #3fe37b;
+  --sun: #ffd84d;
+  --orange: #ff7a2f;
+  --magenta: #c23cff;
+  --violet: #6b3bff;
+  --aqua: #64d6ff;
+  --lime: #b8ff4a;
 
   /* Text */
-  --text: rgba(255,243,176,.92); /* crema caldo */
-  --muted: rgba(255,243,176,.78);
+  --text: rgba(255,243,176,0.92);
+  --muted: rgba(255,243,176,0.75);
 
   /* Accents */
-  --accent: var(--sun);
-  --accent2: var(--magenta);
   --link: var(--aqua);
+  --accent: var(--sun);
 
-  /* Outlines (stile “vector 70s”) */
-  --ink: rgba(12, 14, 22, .92);  /* contorno scuro */
+  /* UI */
   --border: 3px solid var(--ink);
-
-  /* Radii */
-  --r-lg: 22px;
-  --r-md: 16px;
-  --r-sm: 12px;
+  --radius-lg: 22px;
+  --radius-md: 16px;
 
   /* Shadows */
-  --shadow-pop: 0 14px 0 rgba(0,0,0,.28);
-  --shadow-soft: 0 18px 40px rgba(0,0,0,.35);
+  --shadow-pop: 0 12px 0 rgba(0,0,0,0.25);
+  --shadow-soft: 0 18px 40px rgba(0,0,0,0.35);
 
   /* Fonts */
   --general_font: "SoftRound", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  --h1_font: "GroovyTitle", ui-serif, Georgia, serif;
-
-  /* Background (solo CSS, senza immagine) */
-  --bgimg:
-    radial-gradient(900px 600px at 20% 15%, rgba(194,60,255,.35), transparent 60%),
-    radial-gradient(700px 520px at 80% 25%, rgba(100,214,255,.28), transparent 55%),
-    radial-gradient(680px 520px at 30% 85%, rgba(255,122,47,.25), transparent 60%),
-    radial-gradient(900px 700px at 80% 85%, rgba(184,255,74,.18), transparent 62%),
-    linear-gradient(180deg, rgba(15,21,48,1), rgba(10,14,32,1));
+  --h1_font: "GroovyTitle", serif;
 }
 
 /* -----------------------------
-   BASE TYPOGRAPHY
+   HTML / BODY
    ----------------------------- */
 
-html, body{ min-height: 100vh; }
+html,
+body {
+  min-height: 100vh;
+}
 
-body{
-  background: var(--bgimg);
-  background-color: var(--bg);
-  color: var(--text);
+body {
   margin: 0;
   padding: 0;
+
   font-family: var(--general_font);
-  font-size: 1.12em;
+  font-size: 1.15em;
+  color: var(--text);
   text-align: justify;
+
+  background-color: var(--bg-base);
+
+  /* BACKGROUND CON IMMAGINE + OVERLAY */
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(15,12,42,0.55),
+      rgba(15,12,42,0.70)
+    ),
+    radial-gradient(
+      circle at 45% 30%,
+      rgba(255,216,77,0.30),
+      transparent 65%
+    ),
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(194,60,255,0.30),
+      transparent 65%
+    ),
+    url("../../imgs/psychedelic 70s/psychedelic_wallpaper.png");
+
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
   display: flex;
   flex-direction: column;
 }
 
-/* Titoli “groovy” */
-h1, .title{
+/* -----------------------------
+   TYPOGRAPHY
+   ----------------------------- */
+
+h1,
+.title {
   font-family: var(--h1_font);
   color: var(--sun);
   text-transform: uppercase;
-  letter-spacing: .12em;
-  /* effetto “outline” stile poster */
+  letter-spacing: 0.14em;
+
   text-shadow:
     -2px -2px 0 var(--ink),
      2px -2px 0 var(--ink),
     -2px  2px 0 var(--ink),
      2px  2px 0 var(--ink),
-     0   10px 0 rgba(0,0,0,.22);
+     0 10px 0 rgba(0,0,0,0.25);
 }
 
-h4{ color: var(--text); }
+h4 {
+  color: var(--text);
+}
 
-p{ color: var(--text); }
+p {
+  color: var(--text);
+}
 
-a{
+a {
   color: var(--link);
   text-decoration-thickness: 3px;
   text-underline-offset: 4px;
 }
-a:hover{ color: var(--sun); }
+
+a:hover {
+  color: var(--sun);
+}
 
 /* -----------------------------
    NAVBAR (Bootstrap-friendly)

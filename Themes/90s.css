@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Belleza&family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cardo:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@400;700;900&family=Cinzel:wght@400..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Monsieur+La+Doulaise&family=Pixelify+Sans:wght@400..700&family=Quintessential&display=swap');
+
 /* ==========================================================================================
    BASE CSS ------ Ilaria
    =====================================================================
@@ -19,7 +21,7 @@
 
     /* Fonts */
     --general_font: "Press Start 2P", monospace;
-    --h1_font: "Press Start 2P", monospace;
+    --h1_font: "Pixelify Sans", sans-serif;
 
     /* Borders / UI */
     --border: 3px solid #FF1493;
@@ -115,6 +117,15 @@ a {
 }
 
 .navbar {
+    background-image:
+        url('../imgs/sfondo_nav90.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+    border-bottom: var(--border);
+    font-size: 1em;
+    position: fixed;
+    color: var(--text);
     background-color: var(--nav);
     border-bottom: var(--border);
     font-size: 1em;
@@ -192,7 +203,7 @@ a {
     width: 90%;
     text-align: center;
     transform-origin: 50% 100%;
-    animation: crawl 15s linear forwards;
+    animation: crawl 7s linear forwards;
     z-index: 2;
 }
 
@@ -282,10 +293,6 @@ a {
 }
 
 
-
-
-
-
 /* source: https://css-tricks.com/snippets/css/star-wars-crawl-text/ */
 
 .wine_button {
@@ -308,13 +315,16 @@ a {
 /* -----------Intro + narratives and museum cards--------------*/
 
 #quote {
+    font-family: var(--h1_font);
     background-color: var(--bg);
+    border-radius: 5%;
     margin-top: 3rem;
     margin-bottom: 5rem;
     padding: 0.5rem;
     font-size: 1.5rem;
     text-align: center;
     color: var(--yellow);
+    border: var(--border)
 }
 
 .quote {
@@ -337,6 +347,7 @@ a {
     font-size: 1.2rem;
     text-align: center;
     max-width: 80vw;
+    border-radius: 5%;
 }
 
 #museum {
@@ -392,6 +403,7 @@ a {
     padding: 1rem;
     background-color: var(--bg);
     max-width: 80vw;
+    border-radius: 5%;
 }
 
 .scroller {
@@ -1059,7 +1071,7 @@ html[data-theme="light"] {
     background: var(--bg);
     border-radius: 16px;
     overflow: hidden;
-    border: 1px solid rgba(184, 173, 167, 0.25);
+    border: var(--border);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -1227,7 +1239,7 @@ html[data-theme="light"] {
 }
 
 .museum-page {
-   
+
     --local-nav-desktop: 70px;
     --local-nav-mobile: 60px;
 
@@ -1264,16 +1276,17 @@ html[data-theme="light"] {
 
 /* Media queries per schermi piccoli */
 @media (max-width: 768px) {
+
     /* Riduce lo spazio sopra il titolo su mobile */
     .museum-page {
-        padding-top: calc(var(--local-nav-mobile)); 
+        padding-top: calc(var(--local-nav-mobile));
     }
 
     .museum-title {
         font-size: clamp(2rem, 8vw, 2.5rem);
         line-height: 1.2;
         /* Opzionale: riduce il margine superiore del titolo stesso */
-        margin-top: 0.5rem; 
+        margin-top: 0.5rem;
     }
 
     .museum-subtitle {
@@ -1922,22 +1935,22 @@ html[data-theme="light"] {
 
 .exhibition-hero {
 
-  padding-top: calc(6rem + var(--nav-offset)) !important;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;  
+    padding-top: calc(6rem + var(--nav-offset)) !important;
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
 }
 
 @media (max-width: 768px) {
-  .exhibition-hero {
-   
-    padding-top: calc(var(--nav-offset)) !important;
-    margin-bottom: 1rem !important;
-  }
-  
-  .exhibition-hero h1 {
-    margin-top: 0.5rem !important;
-    font-size: 2rem; 
-  }
+    .exhibition-hero {
+
+        padding-top: calc(var(--nav-offset)) !important;
+        margin-bottom: 1rem !important;
+    }
+
+    .exhibition-hero h1 {
+        margin-top: 0.5rem !important;
+        font-size: 2rem;
+    }
 }
 
 
@@ -1968,4 +1981,3 @@ html[data-theme="light"] {
 .narrative-page-header {
     scroll-margin-top: calc(var(--nav-offset) + 1rem);
 }
-

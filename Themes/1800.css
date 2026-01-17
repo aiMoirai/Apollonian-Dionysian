@@ -43,16 +43,13 @@
     --modal-header-border-color: #b21f2d;
     --modal-header-border-width: 2px;
 
-    --border-img1: url('../imgs/border-1800.png') 386 386 386 386 / 30px 40px 30px 40px / 0 repeat stretch;
-    --border-img2: url('../imgs/border2-1800.png') 386 386 386 386 / 20px 20px 20px 20px / 0 repeat stretch;
+    --border-img1: url('../imgs/border-1800.png') 370 370 370 370 / 30px 40px 30px 40px / 0 repeat stretch;
 
 }
 
 
 /* Glow generico */
-.glow,
-button,
-a:hover {
+.glow {
     border: 2px solid var(--highlight) !important;
     box-shadow: 0 0 20px var(--highlight) !important;
     transition: all 0s linear !important;
@@ -70,7 +67,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--general_font);
-    font-size: 1.2em;
+    font-size: 1.3em;
     text-align: justify;
     display: flex;
     flex-direction: column;
@@ -88,6 +85,7 @@ h1 {
 
 h4 {
     font-size: 1.2em;
+    font-family: var(--h1_font);
 }
 
 p {
@@ -148,7 +146,11 @@ a {
 }
 
 .navbar {
-    background-color: var(--nav);
+    background-image:
+        url('../imgs/sfondo_noir.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-bottom: var(--border);
     font-size: 1em;
     position: fixed;
@@ -195,78 +197,6 @@ a {
 
 /* -------------------------------*/
 
-/* -------Dark/light mode button--------*/
-
-.theme-switch {
-    position: fixed;
-    top: 10rem;
-    right: 2rem;
-    z-index: 9999;
-    width: 80px;
-    height: 40px;
-}
-
-.theme-switch input {
-    display: none;
-}
-
-.theme-switch label {
-    display: block;
-    width: 100%;
-    height: 100%;
-    background-color: var(--text);
-    border-radius: 40px;
-    cursor: pointer;
-    position: relative;
-    transition: background-color 0.3s ease;
-}
-
-.theme-switch label::after {
-    content: "☽";
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 34px;
-    height: 34px;
-    line-height: 34px;
-    text-align: center;
-    font-size: 20px;
-    background-color: var(--blackbg);
-    border-radius: 50%;
-    transition: 0.3s ease, transform 0.3s ease;
-}
-
-.theme-switch input:checked+label {
-    background-color: var(--yellow);
-}
-
-.theme-switch input:checked+label::after {
-    content: "☼";
-    transform: translateX(40px);
-}
-
-@media (max-width: 600px) {
-    .theme-switch {
-        width: 60px;
-        height: 30px;
-    }
-
-    .theme-switch label {
-        border-radius: 30px;
-    }
-
-    .theme-switch label::after {
-        width: 24px;
-        height: 24px;
-        line-height: 24px;
-        font-size: 16px;
-    }
-
-    .theme-switch input:checked+label::after {
-        transform: translateX(30px);
-    }
-}
-
 
 /* -----------Hero section (with button)--------------*/
 .hero {
@@ -299,7 +229,6 @@ a {
 /* -----------Intro + narratives and museum cards--------------*/
 
 #quote {
-    background-color: var(--bg);
     margin-top: 3rem;
     margin-bottom: 5rem;
     padding: 0.5rem;
@@ -308,7 +237,12 @@ a {
     color: var(--yellow);
     border-style: solid;
     border-image: var(--border-img1);
-    padding: 3rem;
+    padding: 2.5rem;
+    background-image:
+        url('../imgs/sfondo_noir.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
 }
 
 .quote {
@@ -327,13 +261,13 @@ a {
 }
 
 #intro {
-    background-color: var(--bg);
     font-size: 1.2rem;
-    text-align: center;
-    max-width: 80vw;
-    border-image: var(--border-img2);
-    padding: 3rem;
+    text-align: justify;
+    max-width: 85vw;
+    padding: 1rem;
+    margin: 1em;
 }
+
 
 #museum {
     margin-bottom: 5rem;
@@ -380,8 +314,14 @@ a {
     margin-top: 5rem;
     margin-bottom: 5rem;
     padding: 1rem;
-    background-color: var(--bg);
     max-width: 80vw;
+    border: 3px solid black;
+    border-radius: 10%;
+    background-image:
+        url('../imgs/sfondo_noir.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
 }
 
 .scroller {
@@ -690,9 +630,13 @@ footer .footer .col {
 }
 
 .narrative-card {
-    background: var(--bg);
-    border: var(--border);
-    border-radius: 16px;
+    border: 3px solid black;
+    border-radius: 10%;
+    background-image:
+        url('../imgs/sfondo_noir.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
     padding: 1.5rem;
     height: 100%;
 }
@@ -1046,10 +990,14 @@ html[data-theme="light"] {
 /* GALLERY CARDS */
 
 .exhibition-card {
-    background: var(--bg);
-    border-radius: 16px;
+    border: 3px solid black;
+    border-radius: 10%;
+    background-image:
+        url('../imgs/sfondo_noir.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
     overflow: hidden;
-    border: 1px solid rgba(184, 173, 167, 0.25);
     transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
@@ -1453,6 +1401,11 @@ html[data-theme="light"] {
 /* ========== COMMENTS SECTION ========== */
 #comments-section {
     margin-bottom: 1.5rem;
+    background-image:
+        url('../imgs/sfondo_noir.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
 }
 
 .comment-box textarea {

@@ -34,10 +34,10 @@ function populateModal(index) {
                             <b>Creation Date:</b> ${data.creation_date}<br>
                                 <b>Online Location:</b> <a href="${data.online_location.url}" target="_blank">${data.online_location.text}</a><br>
                                     `;
-
+    const fixedUrl = "/Apollonian-Dionysian/exhibition.html";
     document.querySelector('#modalTemplate .modal-text').innerHTML = `
                                     ${data.description}
-                                    <a class="modal-more" style="margin-top:1em; text-align:right;" href="${data.seeMore}">See more</a>
+                                    <a class="modal-more" style="margin-top:1em; text-align:right;" href="${fixedUrl}">See more</a>
                                     `;
 }
 

@@ -1121,6 +1121,11 @@ html[data-theme="light"] {
     padding-bottom: 0.5rem;
 }
 
+#imageModal .modal-title {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 /* image in modal */
 .modal-artwork-img {
     width: 100%;

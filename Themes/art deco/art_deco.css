@@ -976,14 +976,16 @@ html[data-theme="light"]{
    EXHIBITION ------ Mari
    ========================================================================================== */
 
-/* GALLERY CARDS */
+/* =========================
+   GALLERY CARDS (NO SCROLL)
+   ========================= */
 
 .exhibition-card{
   background: var(--bg);
   border-radius: 16px;
-  overflow: hidden;
   border: 1px solid rgba(184,173,167,0.25);
   transition: transform 0.15s ease, box-shadow 0.15s ease;
+  overflow: hidden;
 }
 
 .exhibition-card:hover{
@@ -1005,9 +1007,13 @@ html[data-theme="light"]{
 
 .exhibition-body{
   padding: 14px 16px 16px;
+  overflow: hidden;
 }
 
-/* Click to view */
+/* =========================
+   CLICK TO VIEW
+   ========================= */
+
 .click-to-view {
   display: inline-block;
   margin-top: 0.5rem;
@@ -1026,17 +1032,44 @@ html[data-theme="light"]{
   cursor: zoom-in;
 }
 
-/* modal box style */
+/* ==========================================================================================
+   MODAL – POPUP PIÙ PICCOLO + SCROLL INTERNO
+   ========================================================================================== */
+
+#imageModal .modal-dialog {
+  max-width: 90vw;
+}
+
 .modal-artwork-content {
   background: var(--bg);
   border: 3px solid var(--text);
+  max-height: 90vh;                 /* popup non fullscreen */
+  overflow: hidden;                 /* niente scrollbar esterna */
 }
 
+/* header */
 #imageModal .modal-header {
   border-bottom: 1px solid var(--text);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 }
 
-/* image in modal */
+#imageModal .modal-title {
+  margin: 0;
+}
+
+/* corpo modal */
+#imageModal .modal-body {
+  padding: 1rem;
+  padding-top: 2.5rem;
+  max-height: calc(90vh - 70px);    /* header escluso */
+  overflow: hidden;
+}
+
+/* =========================
+   IMMAGINE
+   ========================= */
+
 .modal-artwork-img {
   width: 100%;
   height: auto;
@@ -1046,15 +1079,68 @@ html[data-theme="light"]{
   margin: 0 auto;
 }
 
-/* right column text tuning */
-.modal-artwork-text {
+/* immagine flottante (desktop) */
+#imageModal .modal-artwork-img.modal-float-left{
+  float: left;
+  width: auto;
+  max-width: 52%;
+  max-height: 72vh;                 /* leggermente più piccola */
+  margin: 0 1.25rem 2rem 0;         /* spazio sotto l’immagine */
+  object-fit: contain;
+  display: block;
+  background: transparent;
+}
+
+#imageModal .modal-artwork-img.is-large.modal-float-left{
+  max-width: 55%;
+  max-height: 65vh;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* =========================
+   SCROLL FINO IN FONDO (QUI)
+   ========================= */
+
+#imageModal .modal-artwork-copy {
   font-size: 1.02rem;
   line-height: 1.7;
   color: var(--text);
-  max-height: 78vh;
+
+  max-height: calc(90vh - 110px);   /* include header + padding */
   overflow-y: auto;
+  overflow-x: hidden;
+
   padding-left: 0.25rem;
   padding-right: 2rem;
+  padding-bottom: 2rem;             /* spazio finale sotto il testo */
+
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  scrollbar-width: thin;            /* Firefox */
+}
+
+#imageModal .modal-artwork-copy::-webkit-scrollbar {
+  width: 7px;
+}
+
+#imageModal .modal-artwork-copy::-webkit-scrollbar-thumb {
+  background: rgba(184, 173, 167, 0.35);
+  border-radius: 999px;
+}
+
+#imageModal .modal-artwork-copy::-webkit-scrollbar-thumb:hover {
+  background: rgba(184, 173, 167, 0.55);
+}
+
+#imageModal .modal-artwork-copy::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* testo vero e proprio */
+#imageModalText {
+  margin-bottom: 0;
 }
 
 /* section label (Description) */
@@ -1074,60 +1160,17 @@ html[data-theme="light"]{
   outline: none;
 }
 
-/* Wrap text around the modal image */
-#imageModal .modal-body {
-  padding: 1rem;           
-}
-
-#imageModal .modal-artwork-img.modal-float-left{
-  float: left;
-
-  width: auto;
-  max-width: 52%;       
-  max-height: 80vh;     
-
-  margin: 0 1.25rem 0.75rem 0;
-  object-fit: contain;
-  display: block;
-  background: transparent;
-}
-
-#imageModal .modal-artwork-img.is-large.modal-float-left{
-  max-width: 55%;
-  max-height: 70vh;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-
-#imageModal .modal-artwork-copy {
-  font-size: 1.02rem;
-  line-height: 1.7;
-  color: var(--text);
-}
-
-/* Important: clear float at the end so layout non si rompe */
+/* clear float */
 #imageModal .modal-body::after {
   content: "";
   display: block;
   clear: both;
 }
 
-
-@media (max-width: 991.98px) {
-  #imageModal .modal-float-left {
-    float: none;
-    width: 100%;
-    max-width: 100%;
-    margin: 0 0 1rem 0;
-  }
-}
-
-
-
 /* ==========================================================================================
-    END EXHIBITION ------ Mari
+   END EXHIBITION ------ Mari
    ========================================================================================== */
- 
+
 /* ==========================================================================================
     MUSEUM ------ Silvia
    ========================================================================================== */

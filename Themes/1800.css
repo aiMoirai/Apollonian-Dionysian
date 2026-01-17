@@ -42,14 +42,20 @@
     --modal-border-radius: 0;
     --modal-header-border-color: #b21f2d;
     --modal-header-border-width: 2px;
+
+    --border-img1: url('../imgs/border-1800.png') 386 386 386 386 / 30px 40px 30px 40px / 0 repeat stretch;
+    --border-img2: url('../imgs/border2-1800.png') 386 386 386 386 / 20px 20px 20px 20px / 0 repeat stretch;
+
 }
 
 
 /* Glow generico */
-.glow {
-    border: 2px solid var(--highlight);
-    box-shadow: 0 0 20px var(--highlight);
-    transition: all 0s ease;
+.glow,
+button,
+a:hover {
+    border: 2px solid var(--highlight) !important;
+    box-shadow: 0 0 20px var(--highlight) !important;
+    transition: all 0s linear !important;
 }
 
 html,
@@ -300,6 +306,9 @@ a {
     font-size: 1.5rem;
     text-align: center;
     color: var(--yellow);
+    border-style: solid;
+    border-image: var(--border-img1);
+    padding: 3rem;
 }
 
 .quote {
@@ -322,6 +331,8 @@ a {
     font-size: 1.2rem;
     text-align: center;
     max-width: 80vw;
+    border-image: var(--border-img2);
+    padding: 3rem;
 }
 
 #museum {

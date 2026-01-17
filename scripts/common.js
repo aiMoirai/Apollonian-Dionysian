@@ -17,9 +17,9 @@ const themeConfigs = {
     '1800': {
         css: '/Apollonian-Dionysian/Themes/1800.css',
         imgs: [
-            '/Apollonian-Dionysian/imgs/',
-            '/Apollonian-Dionysian/imgs/',
-            '/Apollonian-Dionysian/imgs/'
+            '/Apollonian-Dionysian/imgs/col_sopra_noir.png',
+            '/Apollonian-Dionysian/imgs/col_centro_noir.png',
+            '/Apollonian-Dionysian/imgs/col_sotto_noir.png'
         ]
     },
     'rococo': {

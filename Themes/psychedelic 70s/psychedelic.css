@@ -1,11 +1,17 @@
 /* ==========================================================
-   THEME 70s PSYCHEDELIC
+   THEME 70s PSYCHEDELIC — FULL CSS (UPDATED)
+   Modifiche incluse:
+   - Background “psychedelic poster” SOLO in HERO + body neutro
+   - Navbar offset (come nei tuoi esempi ArtDeco) per abbassare titoli/header
+   - Narratives migliorate (index + detail) senza toccare main.css
+   - Exhibition + modal + museum + popup
+   - Footer: centra SOLO “The Project”
    ========================================================== */
 
-/* Optional: fonts (consigliate ma non obbligatorie)
-   - Body: "Quicksand" / "Nunito" vibe (soft 70s)
-   - Titles: "Cooper Black" vibe -> usa un font simile se lo hai
-*/
+
+/* =============================
+   FONTS
+   ============================= */
 @font-face {
   font-family: "GroovyTitle";
   src: url("fonts/GroovyTitle-Regular.ttf") format("truetype");
@@ -22,14 +28,15 @@
   font-display: swap;
 }
 
-/* -----------------------------
-   ROOT VARIABLES — PALETTE 70s
-   ----------------------------- */
 
-:root {
+/* =============================
+   ROOT VARIABLES — PALETTE 70s
+   ============================= */
+:root{
   /* Base */
-  --bg-base: #0f0c2a;           /* viola notte */
+  --bg-base: #0f0c2a;
   --ink: #0b0b14;
+  --bg-neutral: #0b0b14;
 
   /* Psychedelic palette */
   --cream: #fff3b0;
@@ -60,18 +67,23 @@
   /* Fonts */
   --general_font: "SoftRound", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
   --h1_font: "GroovyTitle", serif;
+
+  /* NAVBAR OFFSET (come ArtDeco) */
+  --nav-offset: 60px; /* desktop */
 }
 
-/* -----------------------------
+/* su mobile la navbar tende a essere più alta */
+@media (max-width: 991.98px){
+  :root{ --nav-offset: 96px; }
+}
+
+
+/* =============================
    HTML / BODY
-   ----------------------------- */
+   ============================= */
+html, body{ min-height: 100vh; }
 
-html,
-body {
-  min-height: 100vh;
-}
-
-body {
+body{
   margin: 0;
   padding: 0;
 
@@ -80,42 +92,20 @@ body {
   color: var(--text);
   text-align: justify;
 
-  background-color: var(--bg-base);
+  /* body neutro: wallpaper SOLO in hero */
+  background-color: var(--bg-neutral);
+  background-image: none;
+  background-attachment: scroll;
 
-  /* BACKGROUND CON IMMAGINE + OVERLAY */
-  background-image:
-    linear-gradient(
-      180deg,
-      rgba(15,12,42,0.55),
-      rgba(15,12,42,0.70)
-    ),
-    radial-gradient(
-      circle at 45% 30%,
-      rgba(255,216,77,0.30),
-      transparent 65%
-    ),
-    radial-gradient(
-      circle at 75% 20%,
-      rgba(194,60,255,0.30),
-      transparent 65%
-    ),
-    url("../../imgs/psychedelic 70s/psychedelic_wallpaper.png");
-
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-
-  display: flex;
+  display:flex;
   flex-direction: column;
 }
 
-/* -----------------------------
-   TYPOGRAPHY
-   ----------------------------- */
 
-h1,
-.title {
+/* =============================
+   TYPOGRAPHY
+   ============================= */
+h1, .title{
   font-family: var(--h1_font);
   color: var(--sun);
   text-transform: uppercase;
@@ -129,28 +119,20 @@ h1,
      0 10px 0 rgba(0,0,0,0.25);
 }
 
-h4 {
-  color: var(--text);
-}
+h4{ color: var(--text); }
+p{ color: var(--text); }
 
-p {
-  color: var(--text);
-}
-
-a {
+a{
   color: var(--link);
   text-decoration-thickness: 3px;
   text-underline-offset: 4px;
 }
+a:hover{ color: var(--sun); }
 
-a:hover {
-  color: var(--sun);
-}
 
-/* -----------------------------
+/* =============================
    NAVBAR (Bootstrap-friendly)
-   ----------------------------- */
-
+   ============================= */
 .navbar{
   background:
     linear-gradient(90deg,
@@ -175,7 +157,7 @@ a:hover {
 .dropdown-menu{
   background: rgba(15,21,48,.92);
   border: var(--border);
-  border-radius: var(--r-md);
+  border-radius: var(--radius-md);
   box-shadow: var(--shadow-soft);
 }
 .dropdown-item{ color: var(--text); }
@@ -185,7 +167,7 @@ a:hover {
   color: var(--sun);
 }
 
-/* Hamburger icon “cream” -> hover “sun” */
+/* Hamburger icon */
 .navbar-toggler-icon{
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23fff3b0' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
@@ -201,20 +183,27 @@ a:hover {
   filter: drop-shadow(0 6px 0 rgba(0,0,0,.35));
 }
 
-/* -----------------------------
-   HERO
-   ----------------------------- */
 
+/* =============================
+   HERO (psychedelic poster SOLO qui)
+   + offset per NON finire sotto navbar
+   ============================= */
 .hero{
   height: 100vh;
-  background:
-    radial-gradient(900px 650px at 25% 30%, rgba(255,216,77,.26), transparent 60%),
-    radial-gradient(800px 620px at 75% 45%, rgba(194,60,255,.22), transparent 62%),
-    radial-gradient(900px 720px at 55% 85%, rgba(100,214,255,.20), transparent 65%),
-    var(--bgimg);
+
+  --psy-img: url("../../imgs/psychedelic 70s/psychedelic_wallpaper.png");
+
+  background-image:
+    linear-gradient(180deg, rgba(15,12,42,0.55), rgba(15,12,42,0.70)),
+    radial-gradient(circle at 45% 30%, rgba(255,216,77,0.30), transparent 65%),
+    radial-gradient(circle at 75% 20%, rgba(194,60,255,0.30), transparent 65%),
+    radial-gradient(circle at 25% 60%, rgba(100,214,255,0.22), transparent 65%),
+    var(--psy-img);
+
   background-size: cover;
+  background-position: center top;
   background-repeat: no-repeat;
-  background-position: center;
+  background-attachment: scroll;
 
   display:flex;
   align-items:center;
@@ -233,19 +222,31 @@ a:hover {
   z-index:1;
 }
 
+/* Fade bottom verso neutro */
+.hero::after{
+  content:"";
+  position:absolute;
+  left:0; right:0; bottom:0;
+  height: 140px;
+  background: linear-gradient(to bottom, rgba(0,0,0,0), var(--bg-neutral));
+  pointer-events:none;
+  z-index:1;
+}
+
 .hero-content{
   position:relative;
   z-index:2;
   width: 92%;
+
+  /* NAVBAR OFFSET: spinge giù il contenuto della hero */
+  padding-top: var(--nav-offset);
 }
 
-/* Titolo più “poster” */
 .hero-content .title{
   font-size: clamp(40px, 6vw, 92px);
   margin-top: 3vw;
 }
 
-/* Button tondo (wine_button) */
 .wine_button{
   margin-top: 2vw;
   max-width: 110px;
@@ -265,10 +266,10 @@ a:hover {
   font-size: 1.05em;
 }
 
-/* -----------------------------
-   SECTIONS / BOXES (intro, museum, narratives, etc.)
-   ----------------------------- */
 
+/* =============================
+   SECTIONS / BOXES (home)
+   ============================= */
 #quote{
   background: rgba(255,243,176,.08);
   margin-top: 3rem;
@@ -278,7 +279,7 @@ a:hover {
   text-align: center;
   color: var(--sun);
   border: var(--border);
-  border-radius: var(--r-lg);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-pop);
 }
 
@@ -302,7 +303,7 @@ a:hover {
 .tickets{
   background: rgba(255,255,255,.05);
   border: var(--border);
-  border-radius: var(--r-lg);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-pop);
   max-width: 80vw;
   padding: 1rem;
@@ -312,7 +313,7 @@ a:hover {
   margin-bottom: 5rem;
   padding: 1rem;
   border: var(--border);
-  border-radius: var(--r-lg);
+  border-radius: var(--radius-lg);
   background:
     linear-gradient(135deg, rgba(100,214,255,.12), rgba(194,60,255,.10)),
     rgba(255,255,255,.05);
@@ -325,7 +326,7 @@ a:hover {
   margin-bottom: 3rem;
   padding: 1rem;
   border: var(--border);
-  border-radius: var(--r-lg);
+  border-radius: var(--radius-lg);
   background:
     linear-gradient(135deg, rgba(255,122,47,.16), rgba(255,216,77,.10)),
     rgba(255,255,255,.05);
@@ -343,24 +344,23 @@ a:hover {
      2px  2px 0 var(--ink);
 }
 
-/* -----------------------------
-   SCROLLER / SLIDES
-   ----------------------------- */
 
+/* =============================
+   SCROLLER / SLIDES
+   ============================= */
 .slide{
-  border-radius: var(--r-md);
+  border-radius: var(--radius-md);
   border: var(--border);
   box-shadow: var(--shadow-pop);
   background: rgba(255,255,255,.04);
 }
 
 .scroller-img{
-  border-radius: calc(var(--r-md) - 4px);
+  border-radius: calc(var(--radius-md) - 4px);
 }
 
 .overlay{
-  background:
-    linear-gradient(180deg, rgba(15,21,48,.92), rgba(10,14,32,.92));
+  background: linear-gradient(180deg, rgba(15,21,48,.92), rgba(10,14,32,.92));
   border-left: var(--border);
 }
 
@@ -372,12 +372,12 @@ a:hover {
   text-shadow: 0 2px 0 rgba(0,0,0,.45);
 }
 
-/* -----------------------------
-   MODALS (Bootstrap)
-   ----------------------------- */
 
+/* =============================
+   MODALS (Bootstrap)
+   ============================= */
 .modal-content{
-  border-radius: var(--r-lg);
+  border-radius: var(--radius-lg);
   background:
     radial-gradient(900px 420px at 20% 15%, rgba(255,216,77,.12), transparent 60%),
     radial-gradient(800px 520px at 80% 20%, rgba(194,60,255,.14), transparent 62%),
@@ -404,7 +404,7 @@ a:hover {
 }
 
 .modal-img{
-  border-radius: var(--r-md);
+  border-radius: var(--radius-md);
   border: var(--border);
   box-shadow: var(--shadow-pop);
 }
@@ -414,16 +414,16 @@ a:hover {
   box-shadow: 0 18px 0 rgba(0,0,0,.22);
 }
 
-/* -----------------------------
-   FORMS / TICKETS
-   ----------------------------- */
 
+/* =============================
+   FORMS / TICKETS
+   ============================= */
 label{ color: var(--muted); }
 
 input, select, textarea{
   background: rgba(255,255,255,.06);
   border: var(--border);
-  border-radius: var(--r-md);
+  border-radius: var(--radius-md);
   color: var(--cream);
   outline: none;
 }
@@ -437,14 +437,13 @@ input:focus, select:focus, textarea:focus{
 .book{
   width:100%;
   padding: 14px;
-  border-radius: var(--r-md);
+  border-radius: var(--radius-md);
   border: var(--border);
   font-weight: 800;
   letter-spacing: .04em;
   cursor:pointer;
   color: rgba(10,14,32,.95);
-  background:
-    linear-gradient(90deg, var(--sun), var(--orange), var(--magenta));
+  background: linear-gradient(90deg, var(--sun), var(--orange), var(--magenta));
   box-shadow: var(--shadow-pop);
   transition: transform .12s ease, filter .12s ease;
 }
@@ -453,71 +452,931 @@ input:focus, select:focus, textarea:focus{
   filter: saturate(1.08) contrast(1.05);
 }
 
-/* Pills (narratives) */
-.narrative-pill{
+
+/* ==========================================================================================
+   NARRATIVES — Psychedelic improved (index + detail)
+   (abbassa titoli con nav-offset, come nei tuoi css ArtDeco)
+   ========================================================================================== */
+
+/* HERO narratives/index */
+.narratives-hero{
+  padding-top: calc(2rem + var(--nav-offset));
+  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
+  margin-bottom: 0;
+
+  background:
+    radial-gradient(1000px 500px at 20% 10%, rgba(255,216,77,0.14), transparent 60%),
+    radial-gradient(900px 520px at 80% 20%, rgba(194,60,255,0.12), transparent 62%),
+    rgba(255,255,255,0.04);
+
   border: var(--border);
-  border-radius: 999px;
-  color: var(--cream);
-  background: rgba(255,255,255,.05);
-  box-shadow: 0 10px 0 rgba(0,0,0,.18);
-}
-.narrative-pill:hover{
-  color: var(--sun);
-  transform: translateY(-2px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
 }
 
-/* Cards */
-.narrative-card,
+/* se arrivi con anchor, non finisce sotto navbar */
+.narratives-hero,
+.narrative-page-header{
+  scroll-margin-top: calc(var(--nav-offset) + 1rem);
+}
+
+.narratives-hero p{
+  max-width: 62ch;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+.narratives-hero-img{
+  width: min(460px, 100%);
+  max-height: 340px;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+
+  border: var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-pop);
+  filter: saturate(1.02) contrast(1.02);
+}
+
+.sep-centro{
+  max-height: 120px;
+  opacity: 0.95;
+  filter: drop-shadow(0 10px 0 rgba(0,0,0,0.20));
+}
+
+/* grid overlap controllato */
+.narratives-grid{
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  transform: translateY(calc(-1 * clamp(18px, 5vw, 90px)));
+  padding-bottom: clamp(2rem, 6vw, 5rem);
+}
+
+/* card narratives */
+.narrative-card{
+  height: 100%;
+  padding: clamp(1.25rem, 2.4vw, 1.75rem);
+  border-radius: var(--radius-lg);
+
+  background:
+    radial-gradient(800px 320px at 20% 0%, rgba(255,216,77,0.14), transparent 55%),
+    radial-gradient(700px 340px at 85% 10%, rgba(194,60,255,0.12), transparent 60%),
+    radial-gradient(700px 360px at 40% 120%, rgba(100,214,255,0.10), transparent 62%),
+    rgba(255,255,255,0.045);
+
+  border: var(--border);
+  box-shadow: var(--shadow-pop);
+  transition: transform 0.16s ease, filter 0.16s ease, box-shadow 0.16s ease;
+}
+
+.narrative-card:hover{
+  transform: translateY(-3px);
+  filter: saturate(1.06) contrast(1.02);
+  box-shadow: 0 16px 0 rgba(0,0,0,0.28);
+}
+
+.narrative-card__header{ margin-bottom: 0.9rem; }
+
+.narrative-title{
+  margin: 0;
+  color: var(--sun);
+  font-family: var(--h1_font);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: clamp(1.2rem, 1.7vw, 1.6rem);
+}
+
+.narrative-subtitle{
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.98rem;
+  line-height: 1.45;
+}
+
+.narrative-actions{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.1rem;
+}
+
+/* pills narratives */
+.narrative-pill{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  text-decoration:none;
+
+  border-radius: 999px;
+  padding: 0.62rem 1.05rem;
+
+  border: var(--border);
+  color: var(--cream);
+  background: rgba(255,255,255,0.05);
+
+  box-shadow: 0 10px 0 rgba(0,0,0,0.18);
+  transition: transform .14s ease, box-shadow .14s ease, color .14s ease, background .14s ease;
+}
+
+.narrative-pill:hover,
+.narrative-pill:focus{
+  color: var(--sun);
+  background: rgba(255,216,77,0.08);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 0 rgba(0,0,0,0.22);
+  outline: none;
+}
+
+.narrative-pill:focus-visible{
+  outline: 3px solid rgba(255,216,77,0.28);
+  outline-offset: 2px;
+}
+
+.narrative-note{
+  margin-top: 1.15rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,243,176,0.22);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text);
+  opacity: 0.95;
+}
+
+.narratives-footnote{
+  font-size: 0.98rem;
+  opacity: 0.95;
+}
+
+/* detail pages header */
+.narrative-head{
+  display:flex;
+  align-items:center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.back-to-narratives{
+  margin-left: auto;
+  margin-right: 0;
+  margin-top: 0.25rem;
+}
+
+/* ATTENZIONE: in detail pages usi #quote come wrapper.
+   Lo “abbassiamo” SOLO se contiene cose tipiche delle pagine detail (richiede :has). */
+#quote:has(.narrative-head),
+#quote:has(.artwork-card),
+#quote:has(.carousel){
+  padding-top: calc(2rem + var(--nav-offset)) !important;
+}
+
+/* mobile */
+@media (max-width: 576px){
+  .narrative-pill{ width: 100%; justify-content: center; }
+  .back-to-narratives{ width: 100%; }
+}
+
+
+/* ==========================================================================================
+   ARTWORKS / ACCORDION (narratives detail)
+   ========================================================================================== */
+
+/* cards (narratives + artworks + exhibition) */
 .artwork-card,
 .exhibition-card{
   background: rgba(255,255,255,.05) !important;
   border: var(--border) !important;
-  border-radius: var(--r-lg);
+  border-radius: var(--radius-lg);
   box-shadow: var(--shadow-pop);
 }
 
-/* “Theme variants” se vuoi mantenerle */
+/* theme variants */
 .artwork-card--apollonian{ border-color: var(--sun) !important; }
 .artwork-card--dionysian{ border-color: var(--magenta) !important; }
 
-/* Accordion tweaks */
+/* accordion tweaks */
 .artwork-accordion{
   --bs-accordion-bg: transparent;
   --bs-accordion-border-color: rgba(255,243,176,.22);
   --bs-accordion-active-color: var(--sun);
   --bs-accordion-btn-color: var(--cream);
 }
+
 .artwork-accordion .accordion-button{
   box-shadow:none !important;
   border-bottom: 1px solid rgba(255,243,176,.18);
 }
+
 .artwork-accordion .accordion-button::after{
   filter: invert(96%) sepia(12%) saturate(1120%) hue-rotate(330deg) brightness(103%) contrast(97%);
 }
 
-/* -----------------------------
-   FOOTER
-   ----------------------------- */
 
-footer{
-  border-top: var(--border);
+/* ==========================================================================================
+   EXHIBITION — Psychedelic
+   ========================================================================================== */
+
+/* (se hai un header/hero exhibition) */
+.exhibition-hero{
+  padding-top: calc(5rem + var(--nav-offset)) !important;
+  scroll-margin-top: calc(var(--nav-offset) + 1rem);
+}
+
+.exhibition-card{
   background:
-    linear-gradient(90deg,
-      rgba(100,214,255,.12),
-      rgba(194,60,255,.10),
-      rgba(255,122,47,.10)),
-    rgba(10,14,32,.98);
-  box-shadow: 0 -12px 0 rgba(0,0,0,.22);
-  padding-top: 12px;
+    radial-gradient(800px 320px at 20% 0%, rgba(255,122,47,0.12), transparent 55%),
+    radial-gradient(700px 340px at 85% 10%, rgba(100,214,255,0.10), transparent 60%),
+    rgba(255,255,255,0.04) !important;
+
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.15s ease;
+  overflow: hidden;
+}
+
+.exhibition-card:hover{
+  transform: translateY(-2px);
+  filter: saturate(1.05) contrast(1.02);
+  box-shadow: 0 16px 0 rgba(0,0,0,0.28);
+}
+
+.exhibition-thumb{
+  padding: 14px;
+  background: rgba(0,0,0,0.10);
+}
+
+.exhibition-thumb img{
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 10px 0 rgba(0,0,0,0.22));
+}
+
+.exhibition-body{
+  padding: 14px 16px 16px;
+  overflow: hidden;
+}
+
+.click-to-view{
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--text);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.click-to-view:hover{ color: var(--sun); }
+
+.artwork-thumb{ cursor: zoom-in; }
+
+
+/* =============================
+   EXHIBITION MODAL (popup + scroll)
+   ============================= */
+#imageModal .modal-dialog{ max-width: 90vw; }
+
+.modal-artwork-content{
+  background: rgba(15,21,48,.96);
+  border: var(--border);
+  max-height: 90vh;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+#imageModal .modal-header{
+  border-bottom: 2px solid rgba(255,243,176,.22);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+#imageModal .modal-title{ margin: 0; }
+
+#imageModal .modal-body{
+  padding: 1rem;
+  padding-top: 2.5rem;
+  max-height: calc(90vh - 70px);
+  overflow: hidden;
+}
+
+.modal-artwork-img{
+  width: 100%;
+  height: auto;
+  max-height: 80vh;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+
+  border-radius: var(--radius-md);
+  border: var(--border);
+  box-shadow: var(--shadow-pop);
+}
+
+#imageModal .modal-artwork-img.modal-float-left{
+  float: left;
+  width: auto;
+  max-width: 52%;
+  max-height: 72vh;
+  margin: 0 1.25rem 2rem 0;
+  object-fit: contain;
+  display: block;
+  background: transparent;
+}
+
+#imageModal .modal-artwork-img.is-large.modal-float-left{
+  max-width: 55%;
+  max-height: 65vh;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+#imageModal .modal-artwork-copy{
+  font-size: 1.02rem;
+  line-height: 1.7;
+  color: var(--text);
+
+  max-height: calc(90vh - 110px);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  padding-left: 0.25rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+}
+
+#imageModal .modal-artwork-copy::-webkit-scrollbar{ width: 7px; }
+#imageModal .modal-artwork-copy::-webkit-scrollbar-thumb{
+  background: rgba(255,243,176,0.25);
+  border-radius: 999px;
+}
+#imageModal .modal-artwork-copy::-webkit-scrollbar-thumb:hover{
+  background: rgba(255,243,176,0.42);
+}
+#imageModal .modal-artwork-copy::-webkit-scrollbar-track{ background: transparent; }
+
+#imageModalText{ margin-bottom: 0; }
+
+.modal-section-title{
+  font-weight: 800;
+  color: var(--cream);
+  margin-top: 1.2rem;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+}
+
+#imageModal .modal-body::after{
+  content:"";
+  display:block;
+  clear:both;
+}
+
+/* close button */
+body{ --btn-close-filter: invert(1); }
+body.light,
+body.light-mode,
+body[data-theme="light"],
+html[data-theme="light"]{ --btn-close-filter: none; }
+
+#imageModal .btn-close{ filter: var(--btn-close-filter); }
+#imageModal .btn-close:focus,
+#imageModal .btn-close:active{
+  box-shadow: none;
+  outline: none;
+}
+
+
+/* MUSEO ==========================================================================================
+/* ==========================================================================================
+   THE MUSEUM — Psychedelic (COMPLETO)
+   Include: layout 80vw + navbar offset + MAPPA PIU GRANDE E CENTRATA
+            + celle tempio chiare (palette only) + map-info carousel
+            + comments + popups (rooms/artworks)
+   ========================================================================================== */
+
+/* 1) ALLINEAMENTO FASCIA CENTRALE (80vw come Home) */
+#museum-rooms .container,
+#rooms .container,
+#explanationbox .container,
+#map-info .container,
+#comments-section .container{
+  max-width: 80vw !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* 2) WRAPPER PAGINA + OFFSET NAVBAR */
+.museum-page{
+  --svg-shift-x: 0%; /* se il DISEGNO nell’SVG sembra decentrato: prova -4% / -6% / +4% */
+
+  padding-top: calc(var(--nav-offset) + 3rem);
+  padding-bottom: 2rem;
   text-align: center;
 }
 
-/* -----------------------------
-   RESPONSIVE
-   ----------------------------- */
+@media (max-width: 768px){
+  .museum-page{
+    padding-top: calc(var(--nav-offset));
+  }
+}
 
-@media (max-width: 600px){
-  body{ font-size: 16px; }
-  h1{ font-size: 32px; }
-  h4{ font-size: 18px; }
+/* 3) HEADER */
+.museum-header{
+  text-align: center;
+  margin-top: 2rem;
+  margin-bottom: 1%;
+}
+
+.museum-title{
+  font-size: clamp(2.4rem, 7vw, 4rem);
+  color: var(--sun);
+  font-family: var(--h1_font);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-shadow:
+    -2px -2px 0 var(--ink),
+     2px -2px 0 var(--ink),
+    -2px  2px 0 var(--ink),
+     2px  2px 0 var(--ink),
+     0 10px 0 rgba(0,0,0,0.25);
+}
+
+.museum-subtitle{
+  color: var(--muted);
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+/* 4) MAPPA SVG — PIU GRANDE E CENTRATA */
+.museum-map-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 3rem 0;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+#planimetria-svg{
+  display: block;
+  margin: 0 auto;
+
+  width: min(1200px, 100%); /* più grande */
+  max-height: 650px;
+  height: auto;
+
+  /* workaround se il viewBox è sbilanciato (lascia 0% se non serve) */
+  transform: translateX(var(--svg-shift-x));
+}
+
+@media (max-width: 768px){
+  #planimetria-svg{
+    width: 100%;
+    max-height: 70vh;
+  }
+  .museum-map-container{
+    padding: 2rem 0;
+  }
+}
+
+/* 5) CELLE DEL TEMPIO CHIARE (PALETTE ONLY) */
+.room{
+  cursor: pointer;
+  pointer-events: all;
+}
+
+.room .stanza{
+  fill: var(--cream);
+  stroke: var(--ink);
+  stroke-width: 2;
+  transition: fill .25s ease, stroke .25s ease, filter .25s ease;
+}
+
+.room:hover .stanza{
+  fill: var(--sun);
+  stroke: var(--ink);
+  filter: drop-shadow(0 0 10px var(--sun));
+}
+
+.room.selected .stanza{
+  fill: var(--lime);
+  stroke: var(--ink);
+  filter:
+    drop-shadow(0 0 12px var(--lime))
+    drop-shadow(0 0 22px var(--sun));
+}
+
+.non-interactive{
+  pointer-events: none;
+}
+
+.non-interactive .stanza{
+  fill: var(--cream);
+  stroke: var(--ink);
+  opacity: 0.35;
+  filter: none;
+}
+
+/* 6) DROP CAP TEXT */
+.museum-dropcap-text{
+  font-size: 1.2rem;
+  color: var(--text);
+  text-align: justify;
+  margin-top: 2.5rem;
+  line-height: 1.6;
+}
+
+.museum-dropcap-text strong{
+  color: var(--muted);
+}
+
+.museum-dropcap-text::first-letter{
+  float: left;
+  font-size: 7em;
+  line-height: 0.7;
+  color: var(--lime);
+  padding: 0.08em 0.12em 0 0;
+  font-family: var(--h1_font);
+  font-weight: 600;
+  text-shadow:
+    -2px -2px 0 var(--ink),
+     2px  2px 0 var(--ink);
+}
+
+/* 7) TITOLI VISITA */
+.visit-title{
+  margin: 2rem 0 1rem 0;
+  font-family: var(--h1_font);
+  color: var(--sun);
+  font-size: 2rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.visit-paragraph{
+  font-size: 1.2rem;
+  color: var(--text);
+  text-align: justify;
+}
+
+/* 8) WRAPPER MAPPA + CAROUSEL (map-info) */
+.map-carousel-wrapper{
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+  margin-bottom: 3rem;
+  height: 400px;
+}
+
+.content-box{
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  border: var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-pop);
+  background: rgba(255,255,255,.03);
+}
+
+@media (max-width: 768px){
+  .map-carousel-wrapper{
+    flex-direction: column;
+    gap: 1rem;
+    height: auto;
+  }
+}
+
+/* MAP BOX (iframe) */
+.map-box iframe{
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+/* 9) CAROUSEL CROSSFADE (map-info) */
+#map-info .map-carousel-wrapper .carousel-fade .carousel-item{
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+#map-info .map-carousel-wrapper .carousel-fade .carousel-item.active,
+#map-info .map-carousel-wrapper .carousel-fade .carousel-item-next.carousel-item-start,
+#map-info .map-carousel-wrapper .carousel-fade .carousel-item-prev.carousel-item-end{
+  opacity: 1;
+}
+
+#map-info .map-carousel-wrapper .carousel-fade .active.carousel-item-start,
+#map-info .map-carousel-wrapper .carousel-fade .active.carousel-item-end{
+  opacity: 0;
+}
+
+/* struttura carousel */
+#map-info .map-carousel-wrapper .carousel,
+#map-info .map-carousel-wrapper .carousel-inner,
+#map-info .map-carousel-wrapper .carousel-item{
+  width: 100%;
+  height: 100%;
+}
+
+#map-info .map-carousel-wrapper .carousel{
+  max-height: 70vh;
+}
+
+/* immagini */
+#map-info .map-carousel-wrapper .carousel-item img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: brightness(0.75) contrast(0.95) saturate(1.05);
+}
+
+/* caption */
+#map-info .map-carousel-wrapper .carousel-caption{
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+  text-align: center;
+}
+
+#map-info .map-carousel-wrapper .carousel-caption h5{
+  font-size: 1.5rem;
+  color: var(--sun);
+  margin-bottom: 0.5rem;
+  font-family: var(--h1_font);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* controlli */
+#map-info .map-carousel-wrapper .carousel-control-prev,
+#map-info .map-carousel-wrapper .carousel-control-next{
+  width: 50px;
+  opacity: 0.75;
+  z-index: 2;
+}
+
+#map-info .map-carousel-wrapper .carousel-control-prev:hover,
+#map-info .map-carousel-wrapper .carousel-control-next:hover{
+  opacity: 1;
+  filter: saturate(1.1) contrast(1.1);
+}
+
+/* 10) COMMENTS */
+#comments-section{
+  margin-bottom: 1.5rem;
+}
+
+.comment-box textarea{
+  width: 100%;
+  min-height: clamp(80px, 15vh, 120px);
+  background-color: rgba(0,0,0,0.30);
+  border: var(--border);
+  color: var(--text);
+  font-family: var(--general_font);
+  font-size: 1.2rem;
+  border-radius: var(--radius-md);
+}
+
+.comment-box textarea::placeholder{
+  color: var(--muted);
+}
+
+.comment-box button{
+  margin-top: 1rem;
+  background: rgba(255,255,255,0.04);
+  border: var(--border);
+  color: var(--sun);
+  padding: 0.7rem 1.5rem;
+  font-family: var(--h1_font);
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: all 0.2s ease;
+  min-width: 120px;
+  display: inline-block;
+  box-shadow: 0 10px 0 rgba(0,0,0,0.18);
+}
+
+.comment-box button:hover{
+  background: rgba(255,216,77,0.10);
+  transform: translateY(-2px);
+}
+
+#commentsList{
+  margin-top: 1.5rem;
+}
+
+.single-comment{
+  background: rgba(255,243,176,0.10);
+  padding: 0.7rem 1.5rem;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 999px;
+  border: 1px solid rgba(255,243,176,0.25);
+}
+
+/* 11) POPUP ROOMS / ARTWORKS */
+.rooms-popup{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(15,21,48,.96);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  z-index: 1001;
+
+  width: 85vw;
+  max-width: 1000px;
+  max-height: 55vh;
+
+  border: var(--border);
+  border-radius: 8px;
+
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.rooms-popup .room-title{
+  color: var(--sun);
+  font-family: var(--h1_font);
+  letter-spacing: 0.15em;
+  font-weight: 800;
+  text-align: center;
+  font-size: 1.8rem;
+  border-bottom: 6px double rgba(255,216,77,0.55);
+  margin-bottom: 1.2rem;
+  padding-bottom: 0.8rem;
+}
+
+.rooms-popup .room-description{
+  color: var(--text);
+  font-family: var(--general_font);
+  text-align: justify;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 0 0.5rem;
+}
+
+.artworks-popup{
+  display: none;
+  position: fixed;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(15,21,48,.96);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-soft);
+  z-index: 1001;
+
+  width: 60vw;
+  max-height: 80vh;
+
+  border: var(--border);
+  border-radius: 8px;
+
+  overflow-y: auto;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.artworks-popup .artwork-title{
+  color: var(--sun);
+  font-family: var(--h1_font);
+  text-align: center;
+  font-size: 2rem;
+  border-bottom: 6px double rgba(255,216,77,0.55);
+}
+
+.artworks-popup .artwork-container{
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.artworks-popup .artwork-image{
+  max-width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center center;
+  border: 8px double rgba(255,216,77,0.7);
+  border-radius: 8px;
+}
+
+.artworks-popup .artwork-metadata{
+  background: rgba(0,0,0,0.30);
+  padding: 1.5rem;
+  border-left: 3px solid rgba(255,216,77,0.75);
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.55);
+  font-size: 1.1rem;
+  border-radius: var(--radius-md);
+}
+
+.artworks-popup .artwork-metadata p{
+  color: var(--text);
+  font-family: var(--general_font);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+  padding: 0.3rem 0;
+}
+
+.artworks-popup .artwork-metadata p strong{
+  color: var(--sun);
+  font-weight: 800;
+  display: inline-block;
+  min-width: 120px;
+}
+
+.artworks-popup .artwork-metadata p:not(:last-child){
+  border-bottom: 1px solid rgba(255,243,176,0.18);
+  padding-bottom: 0.5rem;
+}
+
+/* close + backdrop */
+.close-btn{
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text);
+  transition: all 0.2s ease;
+  z-index: 1002;
+  line-height: 1;
+}
+
+.close-btn:hover{
+  color: var(--sun);
+  transform: scale(1.12);
+}
+
+.m{
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.70);
+  z-index: 1000;
+}
+
+/* responsive popup */
+@media (max-width: 576px){
+  .artworks-popup{
+    width: 96%;
+    max-height: 92vh;
+    padding: 0.9rem;
+  }
+
+  .artworks-popup .artwork-image{
+    height: clamp(130px, 22vh, 180px);
+    border-width: clamp(3px, 0.8vw, 6px);
+  }
+
+  .artworks-popup .artwork-metadata{
+    padding: 1rem;
+    margin-top: 0.5rem;
+    border-left-width: 3px;
+  }
+
+  .artworks-popup .artwork-metadata p{
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.6rem;
+  }
+
+  .artworks-popup .artwork-metadata p strong{
+    min-width: auto;
+    font-size: 1rem;
+    margin-bottom: 0.1rem;
+    display: block;
+  }
+
+  .close-btn{
+    background: rgba(15,12,42,0.95);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.30);
+  }
 }

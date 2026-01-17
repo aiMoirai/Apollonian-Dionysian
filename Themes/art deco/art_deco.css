@@ -765,6 +765,7 @@ footer .footer .col {
    ARTWORKS (Narratives detail pages: Apollo / Dionysus / Literature / ...)
    ========================================================================================== */
 
+
 .artwork-card{
     background: var(--bg) !important;
     color: var(--text);
@@ -775,7 +776,7 @@ footer .footer .col {
 
 /* Theme variants (use these instead of inline border colors) */
 .artwork-card--apollonian{ border-color: var(--yellow); }
-.artwork-card--dionysian{ border-color: var(--textred); }
+.artwork-card--dionysian{ border-color: var(--yellow); }
 
 /* Two-column layout helpers (left image+accordion, right text) */
 .artwork-left{ width: 400px; }
@@ -816,21 +817,11 @@ footer .footer .col {
     color: var(--bg);
 }
 .btn-theme--dionysian{
-    background: var(--textred);
-    border-color: var(--textred);
-    color: var(--text);
+    background: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--bg);
 }
 
-/* Dionysian: colore testo diverso SOLO in light mode */
-body.lightmode .btn-theme--dionysian{
-    color: var(--bg); 
-}
-
-/* evita che Bootstrap lo cambi in hover/focus */
-body.lightmode .btn-theme--dionysian:hover,
-body.lightmode .btn-theme--dionysian:focus{
-    color: var(--yellow);
-}
 
 /* Click to view link */
 .click-to-view {
@@ -926,11 +917,10 @@ body.lightmode .btn-theme--dionysian:focus{
    ========================================================================================== */
 
 #imageModal .modal-content{
-    background: var(--bg);
-    border: 3px solid rgba(184, 173, 167, 0.35);
+    border: none !important;
 }
 #imageModal.apollonian .modal-content{ border-color: var(--yellow); }
-#imageModal.dionysian .modal-content{ border-color: var(--textred); }
+#imageModal.dionysian .modal-content{ border-color: var(--yellow); }
 
 #imageModal .modal-header{
     border-bottom: 1px solid rgba(184, 173, 167, 0.35);
@@ -1760,7 +1750,7 @@ html[data-theme="light"]{
 }
 
 .art-nav-prev, .art-nav-next {
-    background: var(--textred);
+    background: var(--yellow);
     color: var(--text);
     border: none;
     padding: 0.6rem 1.2rem;

@@ -261,11 +261,10 @@ a {
 }
 
 #intro {
+    background-color: var(--bg);
     font-size: 1.2rem;
     text-align: justify;
-    max-width: 85vw;
-    padding: 1rem;
-    margin: 1em;
+    max-width: 90vw;
 }
 
 

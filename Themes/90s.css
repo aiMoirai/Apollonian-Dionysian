@@ -346,8 +346,7 @@ a {
     background-color: var(--bg);
     font-size: 1.2rem;
     text-align: justify;
-    max-width: 80vw;
-    border-radius: 5%;
+    max-width: 90vw;
 }
 
 #museum {

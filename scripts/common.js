@@ -20,7 +20,9 @@ const themeConfigs = {
             '/Apollonian-Dionysian/imgs/col_sopra_noir.png',
             '/Apollonian-Dionysian/imgs/col_centro_noir.png',
             '/Apollonian-Dionysian/imgs/col_sotto_noir.png'
-        ]
+        ],
+        button: '/Apollonian-Dionysian/imgs/assenzio_button.png'
+
     },
     'rococo': {
         css: '/Apollonian-Dionysian/Themes/rococo.css',

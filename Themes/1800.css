@@ -67,7 +67,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: var(--general_font);
-    font-size: 1.3em;
+    font-size: 1.2em;
     text-align: justify;
     display: flex;
     flex-direction: column;
@@ -1164,18 +1164,27 @@ html[data-theme="light"] {
     padding-right: 15px;
 }
 
-/* 2. TITOLI E HEADER */
-.museum-header {
-    padding: 2rem 0;
+.museum-page {
+
+    --local-nav-desktop: 80px;
+    --local-nav-mobile: 60px;
+
+    padding-top: calc(var(--local-nav-desktop) + 3rem);
+    padding-bottom: 2rem;
     text-align: center;
-    margin-top: 2%;
+}
+
+.museum-header {
+    text-align: center;
+    margin-top: 0;
 }
 
 .museum-title {
-    font-size: 4vw;
+    font-size: 4rem;
     color: var(--yellow);
     font-family: var(--h1_font);
     text-align: center;
+    margin-top: 0;
 }
 
 .museum-subtitle {
@@ -1186,18 +1195,10 @@ html[data-theme="light"] {
 
 /* Media queries per schermi piccoli */
 @media (max-width: 768px) {
-    .museum-header {
-        padding: 1.5rem 0;
-        max-height: none;
-    }
 
     .museum-title {
-        font-size: 2rem;
-        /* Dimensione fissa minima */
-        font-size: min(2.5rem, 8vw);
-        /* 8vw su mobile molto piccolo */
-        line-height: 1.3;
-        padding: 0 1rem;
+        font-size: clamp(2rem, 8vw, 2.5rem);
+        line-height: 1.2;
     }
 
     .museum-subtitle {
@@ -1245,8 +1246,6 @@ html[data-theme="light"] {
     font-family: var(--h1_font);
     font-weight: 600;
 }
-
-
 
 /* TITOLO - STILE ORIGINALE */
 .visit-title {

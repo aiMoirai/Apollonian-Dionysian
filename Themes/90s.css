@@ -345,7 +345,7 @@ a {
 #intro {
     background-color: var(--bg);
     font-size: 1.2rem;
-    text-align: center;
+    text-align: justify;
     max-width: 80vw;
     border-radius: 5%;
 }

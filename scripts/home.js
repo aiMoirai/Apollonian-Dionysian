@@ -67,6 +67,36 @@ function generateScroller() {
     });
 }
 
+let scrollerReadyDispatched = false;
+
+function notifyScrollerReady() {
+    if (scrollerReadyDispatched) return;
+    const scroller = document.getElementById('scrollerContainer');
+    if (!scroller) return;
+    const images = Array.from(scroller.querySelectorAll('img'));
+    if (images.length === 0) {
+        scrollerReadyDispatched = true;
+        window.dispatchEvent(new Event('home:scroller-ready'));
+        return;
+    }
+    let remaining = images.length;
+    const done = () => {
+        remaining -= 1;
+        if (remaining === 0 && !scrollerReadyDispatched) {
+            scrollerReadyDispatched = true;
+            window.dispatchEvent(new Event('home:scroller-ready'));
+        }
+    };
+    images.forEach(img => {
+        if (img.complete) {
+            done();
+        } else {
+            img.addEventListener('load', done, { once: true });
+            img.addEventListener('error', done, { once: true });
+        }
+    });
+}
+
 // Navigation events
 document.querySelector('.modal-prev').addEventListener('click', (e) => {
     e.preventDefault();
@@ -88,6 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             objectsData = data;
             generateScroller();
             populateModal(currentIndex);
+            notifyScrollerReady();
         })
         .catch(err => console.error('Errore caricamento JSON:', err));
 });
@@ -97,15 +128,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // ====================
 // Some animations :)
 // ====================
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
-    });
-});
-
 const sections = [
     document.querySelector('.hero'),
     document.getElementById('intro'),
@@ -180,4 +202,3 @@ glowSections.forEach(id => {
         el.addEventListener('mouseleave', () => el.classList.remove('glow'));
     }
 });
-

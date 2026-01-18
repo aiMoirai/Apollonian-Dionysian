@@ -167,4 +167,54 @@ window.addEventListener("DOMContentLoaded", () => {
             changeTheme(link.id.replace('theme-', ''));
         }
     });
+
+    const BASE_GAP = 12;
+    const BOOKING_EXTRA_GAP = 112;
+
+    const getNavHeight = () => {
+        const nav = document.querySelector('.navbar');
+        if (nav) return nav.offsetHeight;
+        const raw = getComputedStyle(document.documentElement).getPropertyValue('--nav-offset');
+        const parsed = parseFloat(raw);
+        return Number.isFinite(parsed) ? parsed : 0;
+    };
+
+    const getOffsetForTarget = (target) => {
+        const extra = target && target.id === 'booking' ? BOOKING_EXTRA_GAP : BASE_GAP;
+        return getNavHeight() + extra;
+    };
+
+    const scrollToHash = (behavior = 'auto') => {
+        if (!location.hash) return;
+        const target = document.querySelector(location.hash);
+        if (!target) return;
+        const offset = getOffsetForTarget(target);
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior });
+    };
+
+    // Smooth scroll con offset dinamico della navbar per le anchor interne
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (!href || href === '#') return;
+            const target = document.querySelector(href);
+            if (!target) return;
+            e.preventDefault();
+
+            const offset = getOffsetForTarget(target);
+            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top, behavior: 'smooth' });
+        });
+    });
+
+    // Allinea la posizione dopo che immagini/layout sono caricati
+    scrollToHash('auto');
+    window.addEventListener('load', () => {
+        scrollToHash('auto');
+    });
+
+    window.addEventListener('home:scroller-ready', () => {
+        scrollToHash('auto');
+    });
 });

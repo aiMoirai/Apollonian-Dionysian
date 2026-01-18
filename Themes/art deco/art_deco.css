@@ -917,7 +917,8 @@ footer .footer .col {
    ========================================================================================== */
 
 #imageModal .modal-content{
-    border: none !important;
+    background: var(--bg);
+    border: 3px solid rgba(184, 173, 167, 0.35);
 }
 #imageModal.apollonian .modal-content{ border-color: var(--yellow); }
 #imageModal.dionysian .modal-content{ border-color: var(--yellow); }

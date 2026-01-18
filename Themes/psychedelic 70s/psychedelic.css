@@ -1,11 +1,6 @@
 /* ==========================================================
-   THEME 70s PSYCHEDELIC — FULL CSS (UPDATED)
+   THEME 70s PSYCHEDELIC
    Modifiche incluse:
-   - Background “psychedelic poster” SOLO in HERO + body neutro
-   - Navbar offset (come nei tuoi esempi ArtDeco) per abbassare titoli/header
-   - Narratives migliorate (index + detail) senza toccare main.css
-   - Exhibition + modal + museum + popup
-   - Footer: centra SOLO “The Project”
    ========================================================== */
 
 
@@ -13,8 +8,8 @@
    FONTS
    ============================= */
 @font-face {
-  font-family: "GroovyTitle";
-  src: url("fonts/GroovyTitle-Regular.ttf") format("truetype");
+  font-family: "MeltSwashes";
+  src: url("fonts/Melt-Swashes.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -66,9 +61,9 @@
 
   /* Fonts */
   --general_font: "SoftRound", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-  --h1_font: "GroovyTitle", serif;
+  --h1_font: "MeltSwashes", serif;
 
-  /* NAVBAR OFFSET (come ArtDeco) */
+  /* NAVBAR OFFSET */
   --nav-offset: 60px; /* desktop */
 }
 
@@ -106,7 +101,7 @@ body{
    TYPOGRAPHY
    ============================= */
 h1, .title{
-  font-family: var(--h1_font);
+  font-family: var(--h1_font) !important; 
   color: var(--sun);
   text-transform: uppercase;
   letter-spacing: 0.14em;
@@ -247,18 +242,66 @@ a:hover{ color: var(--sun); }
   margin-top: 3vw;
 }
 
-.wine_button{
-  margin-top: 2vw;
-  max-width: 110px;
-  clip-path: circle(50%);
-  border: var(--border);
-  background: rgba(255,255,255,.04);
-  filter: drop-shadow(0 10px 0 rgba(0,0,0,.25));
-  transition: transform .15s ease, filter .15s ease;
+.wine-button{
+  --size: 110px;
+
+  width: var(--size);
+  height: var(--size);
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: none;           /* ✅ niente sfondo */
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+
+  cursor: pointer;
+  padding: 14px;
+
+  box-shadow:
+    0 10px 0 rgba(0,0,0,.25),
+    inset 0 0 0 3px rgba(255,243,176,.15);
+
+  transition:
+    transform .15s ease,
+    box-shadow .15s ease,
+    filter .15s ease;
 }
-.wine_button:hover{
-  transform: translateY(-2px) scale(1.03);
-  filter: drop-shadow(0 14px 0 rgba(0,0,0,.30));
+
+/* icona */
+.wine-button img{
+  width: 100%;
+  height: auto;
+
+  filter:
+    brightness(0) invert(95%)   /* cream */
+    drop-shadow(0 6px 0 rgba(0,0,0,.35));
+
+  transition: filter .15s ease;
+}
+
+/* hover */
+.wine-button:hover{
+  transform: translateY(-2px) scale(1.04);
+  box-shadow:
+    0 14px 0 rgba(0,0,0,.30),
+    inset 0 0 0 3px rgba(255,216,77,.45);
+}
+
+.wine-button:hover img{
+  filter:
+    brightness(0) invert(88%) sepia(60%) saturate(600%)
+    hue-rotate(10deg)          /* sun */
+    drop-shadow(0 8px 0 rgba(0,0,0,.4));
+}
+
+/* active */
+.wine-button:active{
+  transform: translateY(1px);
+  box-shadow:
+    0 6px 0 rgba(0,0,0,.35),
+    inset 0 0 0 3px rgba(184,255,74,.55); /* lime */
 }
 
 .subtitle{

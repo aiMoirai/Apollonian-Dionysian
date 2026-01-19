@@ -1253,6 +1253,45 @@ html[data-theme="light"]{
     max-height: 500px;
 }
 
+@media (max-width: 768px) {
+    /* Titolo e  testo allineati al resto della pagina */
+    #rooms .container {
+        max-width: 80vw !important; 
+        padding-left: 15px;
+        padding-right: 15px;
+        overflow: visible; /* Permette al contenuto interno di gestire lo scroll */
+    }
+
+    /* Isola lo scorrimento solo al contenitore della mappa */
+    .museum-map-container {
+        width: 100%;
+        margin-left: 10%; 
+        display: block;
+        overflow-x: auto; /* Lo scorrimento avviene SOLO qui dentro */
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 15px;
+    }
+
+    /* INGRANDIMENTO della planimetria senza influenzare l'esterno */
+    #planimetria-svg {
+        /* Aumentiamo la dimensione: essendo dentro un contenitore con overflow-x: auto, 
+           l'SVG si allargherà "sotto" il resto della pagina senza spostare i testi */
+        min-width: 800px; 
+        height: auto;
+        display: block;
+        max-height: none;
+        
+        /* Mantiene la qualità visiva */
+        shape-rendering: geometricPrecision;
+    }
+    
+    /* 4. ASSICURA che i testi mantengano lo stile originale */
+    .visit-paragraph, .museum-dropcap-text {
+        width: 100%;
+        margin-left: 0; /* Evita che ereditino margini non adeguati dalla mappa */
+    }
+}
 
 /* DROP CAP TEXT - STILE ORIGINALE */
 .museum-dropcap-text {

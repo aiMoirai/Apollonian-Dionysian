@@ -31,7 +31,7 @@
   /* Base */
   --bg-base: #0f0c2a;
   --ink: #0b0b14;
-  --bg-neutral: var(--violet);
+  --bg-neutral: var(--bg-base);
 
   /* Psychedelic palette */
   --cream: #fff3b0;
@@ -328,6 +328,9 @@ a:hover{ color: var(--sun); }
   border: var(--border);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-pop);
+  max-width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .dropcap::first-letter{
@@ -353,7 +356,25 @@ a:hover{ color: var(--sun); }
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-pop);
   max-width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
   padding: 1rem;
+}
+
+.browse,
+.tickets{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
+
+.tickets,
+.tickets p,
+.tickets label{
+  line-height: 1.6;
+}
+
+.scroller{
+  padding: 1rem 0;
 }
 
 #museum{
@@ -365,6 +386,7 @@ a:hover{ color: var(--sun); }
     linear-gradient(135deg, rgba(100,214,255,.12), rgba(194,60,255,.10)),
     rgba(255,255,255,.05);
   max-width: 80vw;
+  max-height: 25vw;
   box-shadow: var(--shadow-pop);
 }
 
@@ -378,7 +400,14 @@ a:hover{ color: var(--sun); }
     linear-gradient(135deg, rgba(255,122,47,.16), rgba(255,216,77,.10)),
     rgba(255,255,255,.05);
   max-width: 80vw;
+  max-height: 25vw;
   box-shadow: var(--shadow-pop);
+}
+
+.img-fluid{
+  height: 18vw;
+  width: 30vw;
+  object-fit: cover;
 }
 
 #museum-h1,
@@ -395,7 +424,21 @@ a:hover{ color: var(--sun); }
 /* =============================
    SCROLLER / SLIDES
    ============================= */
+.scroller{
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  padding: 1rem 0;
+  position: relative;
+  align-items: center;
+}
+
 .slide{
+  position: relative;
+  width: 200px;
+  flex: 0 0 auto;
+  overflow: hidden;
   border-radius: var(--radius-md);
   border: var(--border);
   box-shadow: var(--shadow-pop);
@@ -403,10 +446,25 @@ a:hover{ color: var(--sun); }
 }
 
 .scroller-img{
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  display: block;
   border-radius: calc(var(--radius-md) - 4px);
 }
 
 .overlay{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  width: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s ease;
   background: linear-gradient(180deg, rgba(15,21,48,.92), rgba(10,14,32,.92));
   border-left: var(--border);
 }
@@ -473,6 +531,16 @@ input, select, textarea{
   border-radius: var(--radius-md);
   color: var(--cream);
   outline: none;
+}
+
+.tickets label{
+  margin-bottom: 8px;
+}
+
+.tickets input,
+.tickets select,
+.tickets textarea{
+  margin-bottom: 12px;
 }
 
 input:focus, select:focus, textarea:focus{

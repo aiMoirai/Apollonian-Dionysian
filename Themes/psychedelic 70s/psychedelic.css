@@ -474,14 +474,14 @@ a:hover{ color: var(--sun); }
   align-items: center;
   justify-content: center;
   transition: .5s ease;
-  background: linear-gradient(180deg, rgba(15,21,48,.92), rgba(10,14,32,.92));
+  background: linear-gradient(90deg, var(--sun), var(--orange), var(--magenta));
   border-left: var(--border);
 }
 
 .slide:hover .overlay{ width: 100%; }
 
 .overlay > .text{
-  color: var(--cream);
+  color: var(--bg-base);
   font-size: .85em;
   text-shadow: 0 2px 0 rgba(0,0,0,.45);
 }

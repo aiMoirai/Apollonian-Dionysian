@@ -61,9 +61,9 @@ const themeConfigs = {
     '2035': {
         css: '/Apollonian-Dionysian/Themes/2035.css',
         imgs: [
-            '/Apollonian-Dionysian/imgs/sopra_col_futuristic.png',
-            '/Apollonian-Dionysian/imgs/centro_col_futuristic.png',
-            '/Apollonian-Dionysian/imgs/fine_col_futuristic.png'
+            '/Apollonian-Dionysian/imgs/2035_col (1).png',
+            '/Apollonian-Dionysian/imgs/2035_col (2).png',
+            '/Apollonian-Dionysian/imgs/2035_col (3).png'
         ]
     }
 };

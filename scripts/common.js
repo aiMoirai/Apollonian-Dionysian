@@ -62,7 +62,11 @@ const themeConfigs = {
     },
     '2035': {
         css: '/Apollonian-Dionysian/Themes/2035.css',
-
+        imgs: [
+            '/Apollonian-Dionysian/imgs/2035_col (1).png',
+            '/Apollonian-Dionysian/imgs/2035_col (2).png',
+            '/Apollonian-Dionysian/imgs/2035_col (3).png'
+        ],
         button: '/Apollonian-Dionysian/imgs/2035_glass.png'
     }
 };

@@ -521,6 +521,50 @@ footer .footer .col{
   footer .footer .col{ width: 90%; }
 }
 
+/* =============================
+   DOCUMENTATION / DISCLAIMER
+   ============================= */
+.doc-title{ color: var(--sun); }
+
+#disclaimer{
+  padding-top: calc(6rem + var(--nav-offset)) !important;
+  padding-bottom: 2rem;
+}
+
+@media (max-width: 768px){
+  #disclaimer{ padding-top: calc(var(--nav-offset)) !important; }
+}
+
+/* =============================
+   ABOUT / TEAM DETAILS
+   ============================= */
+#disclaimer + .container .card{
+  background:
+    radial-gradient(260px 180px at 20% 20%, rgba(255,216,77,0.18), transparent 60%),
+    radial-gradient(280px 200px at 85% 15%, rgba(194,60,255,0.18), transparent 62%),
+    radial-gradient(260px 220px at 50% 90%, rgba(100,214,255,0.12), transparent 65%),
+    rgba(15,12,42,0.85);
+  border: 2px solid rgba(255,216,77,0.6);
+  box-shadow: 0 16px 0 rgba(0,0,0,0.25);
+}
+
+#disclaimer + .container .card-title{
+  color: var(--sun);
+  letter-spacing: 0.06em;
+}
+
+#disclaimer + .container .card-text{
+  color: var(--cream);
+}
+
+#disclaimer + .container .card a{
+  color: var(--lime);
+}
+
+#disclaimer + .container .card a:hover{
+  color: var(--sun);
+}
+
 
 /* =============================
    MODALS (Bootstrap)
@@ -804,11 +848,52 @@ input:focus, select:focus, textarea:focus{
   border: var(--border) !important;
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-pop);
+  padding: 1.5rem;
 }
 
 /* theme variants */
 .artwork-card--apollonian{ border-color: var(--sun) !important; }
 .artwork-card--dionysian{ border-color: var(--magenta) !important; }
+
+/* two-column layout helpers (image + text) */
+.artwork-left{ width: 400px; }
+.artwork-right{
+  max-width: 520px;
+  text-align: left;
+}
+
+@media (max-width: 991.98px){
+  .artwork-left{ width: 100%; }
+  .artwork-right{ max-width: 100%; }
+}
+
+/* artwork image sizing inside detail cards */
+.artwork-img{
+  max-height: 320px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.desc-short,
+.desc-long{
+  font-size: 0.95rem;
+  line-height: 1.6;
+  text-align: left;
+  text-align: justify;
+}
+
+.artwork-right h2{
+  color: var(--lime);
+}
+
+.btn-theme,
+.btn-theme--apollonian,
+.btn-theme--dionysian{
+  background: var(--lime);
+  border-color: var(--lime);
+  color: var(--ink);
+}
 
 /* accordion tweaks */
 .artwork-accordion{
@@ -917,14 +1002,14 @@ input:focus, select:focus, textarea:focus{
 .modal-artwork-img{
   width: 100%;
   height: auto;
-  max-height: 80vh;
+  max-height: 72vh;
   object-fit: contain;
   display: block;
-  margin: 0 auto;
+  margin: 0.5rem auto;
 
   border-radius: var(--radius-md);
-  border: var(--border);
-  box-shadow: var(--shadow-pop);
+  border: none;
+  box-shadow: none;
 }
 
 #imageModal .modal-artwork-img.modal-float-left{

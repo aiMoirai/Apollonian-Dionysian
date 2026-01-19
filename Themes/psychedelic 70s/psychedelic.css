@@ -31,7 +31,7 @@
   /* Base */
   --bg-base: #0f0c2a;
   --ink: #0b0b14;
-  --bg-neutral: #0b0b14;
+  --bg-neutral: var(--violet);
 
   /* Psychedelic palette */
   --cream: #fff3b0;
@@ -232,9 +232,6 @@ a:hover{ color: var(--sun); }
   position:relative;
   z-index:2;
   width: 92%;
-
-  /* NAVBAR OFFSET: spinge giù il contenuto della hero */
-  padding-top: var(--nav-offset);
 }
 
 .hero-content .title{
@@ -243,7 +240,7 @@ a:hover{ color: var(--sun); }
 }
 
 .wine-button{
-  --size: 110px;
+  --size: 280px;
 
   width: var(--size);
   height: var(--size);
@@ -269,9 +266,16 @@ a:hover{ color: var(--sun); }
     filter .15s ease;
 }
 
+/* compat: index.html usa .wine_button (underscore) */
+.wine_button{
+  margin-top: 2vw;
+  max-width: 280px;
+  clip-path: circle(50%);
+}
+
 /* icona */
 .wine-button img{
-  width: 100%;
+  width: 300%;
   height: auto;
 
   filter:

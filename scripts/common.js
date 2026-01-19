@@ -50,6 +50,7 @@ const themeConfigs = {
             '/Apollonian-Dionysian/imgs/art deco/columns/centro_colonne_artdeco.jpeg',
             '/Apollonian-Dionysian/imgs/art deco/columns/sotto_colonne_artdeco.jpeg'
         ],
+        button: '/Apollonian-Dionysian/imgs/psychedelic 70s/psychedelic_wine_button.png'
     },
     '90s': {
         css: '/Apollonian-Dionysian/Themes/90s.css',

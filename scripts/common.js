@@ -30,7 +30,9 @@ const themeConfigs = {
             '/Apollonian-Dionysian/imgs/rococo_nuvole.png',
             '/Apollonian-Dionysian/imgs/rococo_nuvole.png',
             '/Apollonian-Dionysian/imgs/rococo_nuvole.png'
-        ]
+        ],
+        button: '/Apollonian-Dionysian/imgs/rococo_glass2.png'
+        
     },
     'artdeco': {
         css: '/Apollonian-Dionysian/Themes/art deco/art_deco.css',

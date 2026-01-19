@@ -1275,6 +1275,14 @@ html[data-theme="light"] {
     padding-right: 15px;
 }
 
+#rooms, #museum-rooms, #explanationbox, #map-info, #comments-section {
+    background-image: url("imgs/museum_sfondo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
 .museum-page {
 
     --local-nav-desktop: 80px;

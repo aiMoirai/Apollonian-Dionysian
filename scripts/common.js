@@ -32,7 +32,7 @@ const themeConfigs = {
             '/Apollonian-Dionysian/imgs/rococo_nuvole.png'
         ],
         button: '/Apollonian-Dionysian/imgs/rococo_glass2.png'
-        
+
     },
     'artdeco': {
         css: '/Apollonian-Dionysian/Themes/art deco/art_deco.css',
@@ -62,11 +62,7 @@ const themeConfigs = {
     },
     '2035': {
         css: '/Apollonian-Dionysian/Themes/2035.css',
-        imgs: [
-            '/Apollonian-Dionysian/imgs/2035_col (1).png',
-            '/Apollonian-Dionysian/imgs/2035_col (2).png',
-            '/Apollonian-Dionysian/imgs/2035_col (3).png'
-        ],
+
         button: '/Apollonian-Dionysian/imgs/2035_glass.png'
     }
 };

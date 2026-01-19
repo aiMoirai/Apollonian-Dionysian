@@ -16,8 +16,8 @@
 }
 
 @font-face {
-  font-family: "SoftRound";
-  src: url("fonts/SoftRound-Regular.ttf") format("truetype");
+  font-family: "CooperBlack";
+  src: url("fonts/CooperBlack.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -60,7 +60,7 @@
   --shadow-soft: 0 18px 40px rgba(0,0,0,0.35);
 
   /* Fonts */
-  --general_font: "SoftRound", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --general_font: "CooperBlack", serif;
   --h1_font: "MeltSwashes", serif;
 
   /* NAVBAR OFFSET */
@@ -86,6 +86,14 @@ body{
   font-size: 1.15em;
   color: var(--text);
   text-align: justify;
+
+  /* Cooper Black piu' elegante: respiro e kerning */
+  letter-spacing: 0.01em;
+  line-height: 1.6;
+  font-kerning: normal;
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 
   /* body neutro: wallpaper SOLO in hero */
   background-color: var(--bg-neutral);
@@ -113,6 +121,7 @@ h1, .title{
      2px  2px 0 var(--ink),
      0 10px 0 rgba(0,0,0,0.25);
 }
+
 
 h4{ color: var(--text); }
 p{ color: var(--text); }
@@ -477,6 +486,41 @@ a:hover{ color: var(--sun); }
   text-shadow: 0 2px 0 rgba(0,0,0,.45);
 }
 
+/* =============================
+   FOOTER
+   ============================= */
+footer{
+  border-top: 2px solid var(--magenta);
+  flex-direction: column;
+  margin: 0;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--bg-base);
+  padding-top: 10px;
+  text-align: center;
+  z-index: 1000;
+}
+
+footer .footer .row{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 1em;
+}
+
+footer .footer .col{
+  flex: 1;
+  min-width: 200px;
+  text-align: left;
+}
+
+@media (max-width: 600px){
+  footer .footer .row{ flex-direction: column; align-items: flex-start; }
+  footer .footer .col{ width: 90%; }
+}
+
 
 /* =============================
    MODALS (Bootstrap)
@@ -576,17 +620,14 @@ input:focus, select:focus, textarea:focus{
 /* HERO narratives/index */
 .narratives-hero{
   padding-top: calc(2rem + var(--nav-offset));
-  padding-bottom: clamp(1.25rem, 3vw, 2.25rem);
-  margin-bottom: 0;
+  padding-bottom: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
 
-  background:
-    radial-gradient(1000px 500px at 20% 10%, rgba(255,216,77,0.14), transparent 60%),
-    radial-gradient(900px 520px at 80% 20%, rgba(194,60,255,0.12), transparent 62%),
-    rgba(255,255,255,0.04);
-
-  border: var(--border);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-soft);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
 }
 
 /* se arrivi con anchor, non finisce sotto navbar */
@@ -602,8 +643,9 @@ input:focus, select:focus, textarea:focus{
 }
 
 .narratives-hero-img{
-  width: min(460px, 100%);
-  max-height: 340px;
+  width: min(380px, 100%);
+  max-height: 270px;
+  margin-top: 0.5rem;
   aspect-ratio: 4 / 3;
   object-fit: cover;
 
@@ -622,9 +664,9 @@ input:focus, select:focus, textarea:focus{
 /* grid overlap controllato */
 .narratives-grid{
   padding-top: 0 !important;
-  margin-top: 0 !important;
-  transform: translateY(calc(-1 * clamp(18px, 5vw, 90px)));
-  padding-bottom: clamp(2rem, 6vw, 5rem);
+  margin-top: -0.5rem !important;
+  transform: none;
+  padding-bottom: 2.5rem;
 }
 
 /* card narratives */

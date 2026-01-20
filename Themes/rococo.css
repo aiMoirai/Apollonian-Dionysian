@@ -1088,7 +1088,7 @@ footer .footer .col {
 /* ========== MUSEUM SECTION ========== */
 
 
-/* 1. ALLINEAMENTO FASCIA CENTRALE*/
+/* ALLINEAMENTO FASCIA CENTRALE*/
 #museum-rooms .container,
 #rooms .container,
 #explanationbox .container,
@@ -1099,14 +1099,6 @@ footer .footer .col {
     margin-right: auto;
     padding-left: 15px;
     padding-right: 15px;
-}
-
-#rooms, #museum-rooms, #explanationbox, #map-info, #comments-section {
-    background-image: url("imgs/rococo_sfondo_museo.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: repeat;
-    background-attachment: fixed;
 }
 
 .museum-page {
@@ -1147,7 +1139,6 @@ footer .footer .col {
 
 /* Media queries per schermi piccoli */
 @media (max-width: 768px) {
-    /* Riduce lo spazio sopra il titolo su mobile */
     .museum-page {
         padding-top: calc(var(--local-nav-mobile)); 
     }
@@ -1155,7 +1146,6 @@ footer .footer .col {
     .museum-title {
         font-size: clamp(2rem, 8vw, 2.5rem);
         line-height: 1.2;
-        /* Opzionale: riduce il margine superiore del titolo stesso */
         margin-top: 0.5rem; 
     }
 
@@ -1166,7 +1156,7 @@ footer .footer .col {
     }
 }
 
-/* 3. MAPPA SVG E INTERAZIONE */
+/* MAPPA SVG E INTERAZIONE */
 .museum-map-container {
     margin-left: 13%; 
     width: 100%;
@@ -1182,42 +1172,35 @@ footer .footer .col {
 }
 
 @media (max-width: 768px) {
-    /* Titolo e  testo allineati al resto della pagina */
     #rooms .container {
         max-width: 80vw !important; 
         padding-left: 15px;
         padding-right: 15px;
-        overflow: visible; /* Permette al contenuto interno di gestire lo scroll */
+        overflow: visible; 
     }
 
-    /* Isola lo scorrimento solo al contenitore della mappa */
     .museum-map-container {
         width: 100%;
         margin-left: 10%; 
         display: block;
-        overflow-x: auto; /* Lo scorrimento avviene SOLO qui dentro */
+        overflow-x: auto; 
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
         padding-bottom: 15px;
     }
 
-    /* INGRANDIMENTO della planimetria senza influenzare l'esterno */
+   
     #planimetria-svg {
-        /* Aumentiamo la dimensione: essendo dentro un contenitore con overflow-x: auto, 
-           l'SVG si allargherà "sotto" il resto della pagina senza spostare i testi */
         min-width: 800px; 
         height: auto;
         display: block;
         max-height: none;
-        
-        /* Mantiene la qualità visiva */
         shape-rendering: geometricPrecision;
     }
     
-    /* 4. ASSICURA che i testi mantengano lo stile originale */
     .visit-paragraph, .museum-dropcap-text {
         width: 100%;
-        margin-left: 0; /* Evita che ereditino margini non adeguati dalla mappa */
+        margin-left: 0; 
     }
 }
 
@@ -1828,3 +1811,4 @@ footer .footer .col {
 .narrative-page-header {
     scroll-margin-top: calc(var(--nav-offset) + 1rem);
 }
+

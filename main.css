@@ -1396,7 +1396,7 @@ html[data-theme="light"] {
 
 /* ========== MUSEUM SECTION ========== */
 
-/* 1. ALLINEAMENTO FASCIA CENTRALE (80vw come la Home) */
+/* ALLINEAMENTO FASCIA CENTRALE */
 #museum-rooms .container,
 #rooms .container,
 #explanationbox .container,
@@ -1454,7 +1454,7 @@ html[data-theme="light"] {
     }
 }
 
-/* 3. MAPPA SVG E INTERAZIONE */
+/* MAPPA SVG */
 .museum-map-container {
     margin-left: 13%;
     width: 100%;
@@ -1471,13 +1471,12 @@ html[data-theme="light"] {
 
 @media (max-width: 768px) {
 
-    /* Titolo e  testo allineati al resto della pagina */
     #rooms .container {
         max-width: 80vw !important;
         padding-left: 15px;
         padding-right: 15px;
         overflow: visible;
-        /* Permette al contenuto interno di gestire lo scroll */
+    
     }
 
     /* Isola lo scorrimento solo al contenitore della mappa */
@@ -1486,36 +1485,28 @@ html[data-theme="light"] {
         margin-left: 10%;
         display: block;
         overflow-x: auto;
-        /* Lo scorrimento avviene SOLO qui dentro */
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
         padding-bottom: 15px;
     }
 
-    /* INGRANDIMENTO della planimetria senza influenzare l'esterno */
     #planimetria-svg {
-        /* Aumentiamo la dimensione: essendo dentro un contenitore con overflow-x: auto, 
-           l'SVG si allargherà "sotto" il resto della pagina senza spostare i testi */
         min-width: 800px;
         height: auto;
         display: block;
         max-height: none;
-
-        /* Mantiene la qualità visiva */
         shape-rendering: geometricPrecision;
     }
 
-    /* 4. ASSICURA che i testi mantengano lo stile originale */
     .visit-paragraph,
     .museum-dropcap-text {
         width: 100%;
         margin-left: 0;
-        /* Evita che ereditino margini non adeguati dalla mappa */
     }
 }
 
 
-/* DROP CAP TEXT - STILE ORIGINALE */
+/* DROP CAP TEXT */
 .museum-dropcap-text {
     font-size: 1.2rem;
     color: var(--text);
@@ -1540,7 +1531,7 @@ html[data-theme="light"] {
 
 
 
-/* TITOLO - STILE ORIGINALE */
+/* TITOLO */
 .visit-title {
     margin: 2rem 0 1rem 0;
     font-family: var(--h1_font);
@@ -1589,7 +1580,7 @@ html[data-theme="light"] {
     display: block;
 }
 
-/* ========== CAROSELLO CROSSFADE (PULITO) ========== */
+/* ========== CAROSELLO CROSSFADE ========== */
 
 /* Crossfade Bootstrap */
 #map-info .map-carousel-wrapper .carousel-fade .carousel-item {
@@ -1616,7 +1607,6 @@ html[data-theme="light"] {
     height: 100%;
 }
 
-/* Altezza massima controllata */
 #map-info .map-carousel-wrapper .carousel {
     max-height: 70vh;
 }

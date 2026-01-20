@@ -968,6 +968,14 @@ input:focus, select:focus, textarea:focus{
   padding-top: calc(2rem + var(--nav-offset)) !important;
 }
 
+#quote .carousel-control-prev{
+  left: -2.25rem;
+}
+
+#quote .carousel-control-next{
+  right: -2.25rem;
+}
+
 /* mobile */
 @media (max-width: 576px){
   .narrative-pill{ width: 100%; justify-content: center; }
@@ -1143,7 +1151,8 @@ input:focus, select:focus, textarea:focus{
 
 #imageModal .modal-body{
   padding: 1rem;
-  padding-top: 2.5rem;
+  padding-top: 1.5rem;
+  padding-bottom: 2rem;
   max-height: calc(90vh - 70px);
   overflow: hidden;
 }
@@ -1151,10 +1160,10 @@ input:focus, select:focus, textarea:focus{
 .modal-artwork-img{
   width: 100%;
   height: auto;
-  max-height: 72vh;
+  max-height: 68vh;
   object-fit: contain;
   display: block;
-  margin: 0.5rem auto;
+  margin: 0.5rem auto 1.25rem;
 
   border-radius: var(--radius-md);
   border: none;

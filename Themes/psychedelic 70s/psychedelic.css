@@ -429,6 +429,72 @@ a:hover{ color: var(--sun); }
      2px  2px 0 var(--ink);
 }
 
+@media (max-width: 600px){
+  #narratives{
+    max-height: none;
+    max-width: 95vw;
+  }
+
+  #narratives .img-fluid{
+    display: none;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  #museum{
+    max-height: none;
+    max-width: 95vw;
+  }
+
+  #museum .img-fluid{
+    display: none;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  #museum-h1,
+  #narratives-h1{
+    text-align: center;
+    white-space: normal;
+    font-size: clamp(1.25rem, 6vw, 1.7rem);
+    line-height: 1.1;
+  }
+
+  #narratives,
+  #museum{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 160px;
+  }
+
+  #narratives .row,
+  #museum .row{
+    width: 100%;
+    justify-content: center;
+  }
+
+  #narratives .col,
+  #museum .col{
+    flex: 0 0 100%;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  #narratives .row > .col,
+  #museum .row > .col{
+    text-align: center;
+  }
+
+  #narratives .row > .col > .row,
+  #museum .row > .col > .row{
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 
 /* =============================
    SCROLLER / SLIDES
@@ -516,9 +582,33 @@ footer .footer .col{
   text-align: left;
 }
 
+footer .footer .about h4{
+  margin-top: 0;
+}
+
 @media (max-width: 600px){
   footer .footer .row{ flex-direction: column; align-items: flex-start; }
   footer .footer .col{ width: 90%; }
+  footer .footer .col + .col{ margin-top: 1.25rem; }
+  footer .footer .about{
+    column-count: 2;
+    column-gap: 1.25rem;
+    line-height: 1.35 !important;
+  }
+  footer .footer .about h4{
+    column-span: all;
+    margin-bottom: 0.5rem;
+  }
+  footer .footer .about a{
+    display: block;
+    margin: 0 0 0.2rem 0;
+    break-inside: avoid;
+  }
+  footer .footer .about a:nth-of-type(4){
+    break-after: column;
+    -webkit-column-break-after: always;
+  }
+  footer .footer .about br{ display: none; }
 }
 
 /* =============================
@@ -605,6 +695,54 @@ footer .footer .col{
 .modal-img:hover{
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 18px 0 rgba(0,0,0,.22);
+}
+
+.media-area{
+  display: flex;
+  gap: 1.5em;
+  align-items: flex-start;
+}
+
+.modal-info{
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 768px){
+  .modal-dialog{
+    max-width: 90% !important;
+    margin: 0 auto;
+  }
+
+  .media-area{
+    flex-direction: column;
+    gap: 1em;
+  }
+
+  .modal-img{
+    width: 200px;
+    height: auto;
+    margin: 0 auto 1em auto;
+  }
+
+  .modal-info{
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px){
+  .modal-dialog{
+    max-width: 95% !important;
+    margin: 0.5em auto;
+  }
+
+  .modal-img{
+    width: 150px;
+  }
+
+  .modal-title{
+    font-size: 1em;
+  }
 }
 
 
@@ -867,6 +1005,17 @@ input:focus, select:focus, textarea:focus{
   .artwork-right{ max-width: 100%; }
 }
 
+@media (max-width: 768px){
+  .artwork-card > .d-flex{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .artwork-right{
+    width: 100%;
+  }
+}
+
 /* artwork image sizing inside detail cards */
 .artwork-img{
   max-height: 320px;
@@ -1034,6 +1183,7 @@ input:focus, select:focus, textarea:focus{
   font-size: 1.02rem;
   line-height: 1.7;
   color: var(--text);
+  text-align: justify;
 
   max-height: calc(90vh - 110px);
   overflow-y: auto;
@@ -1073,6 +1223,37 @@ input:focus, select:focus, textarea:focus{
   content:"";
   display:block;
   clear:both;
+}
+
+@media (max-width: 768px){
+  #imageModal .modal-body{
+    padding-top: 1rem;
+    max-height: calc(90vh - 60px);
+    overflow-y: auto;
+  }
+
+  #imageModal .modal-artwork-img.modal-float-left,
+  #imageModal .modal-artwork-img.is-large.modal-float-left{
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    max-height: 45vh;
+    margin: 0 auto 1rem;
+  }
+
+  #imageModal .modal-artwork-copy{
+    max-height: none;
+    overflow: visible;
+    padding-right: 0;
+  }
+
+  #imageModal .modal-dialog{
+    max-width: 98vw;
+  }
+
+  #imageModal .modal-content{
+    border: none;
+  }
 }
 
 /* close button */

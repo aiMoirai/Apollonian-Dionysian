@@ -1370,22 +1370,25 @@ html[data-theme="light"]{ --btn-close-filter: none; }
     /* Isola lo scorrimento solo al contenitore della mappa */
     .museum-map-container {
         width: 100%;
-        margin-left: 10%; 
-        display: block;
-        overflow-x: auto; /* Lo scorrimento avviene SOLO qui dentro */
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 15px;
+        max-width: 100vw;
+        margin: 0 0 0 10vw;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+        padding: 1rem 0;
+        text-align: center;
     }
 
     /* INGRANDIMENTO della planimetria senza influenzare l'esterno */
     #planimetria-svg {
-        /* Aumentiamo la dimensione: essendo dentro un contenitore con overflow-x: auto, 
-           l'SVG si allargherà "sotto" il resto della pagina senza spostare i testi */
-        min-width: 800px; 
+        /* Adatta la mappa alla larghezza dello schermo */
+        min-width: 0;
         height: auto;
         display: block;
-        max-height: none;
+        width: 100%;
+        max-width: 100%;
+        max-height: 80vh;
+        margin: 0 auto;
         
         /* Mantiene la qualità visiva */
         shape-rendering: geometricPrecision;

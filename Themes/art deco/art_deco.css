@@ -620,10 +620,6 @@ footer .footer .col {
     text-align: left;
 }
 
-footer .footer .about h4 {
-    margin-top: 0;
-}
-
 /* Media query for mobile */
 @media (max-width: 600px) {
     footer .footer .row {
@@ -822,6 +818,13 @@ footer .footer .about h4 {
 
     .theme-switch input:checked+label::after {
         transform: translateX(30px);
+    }
+
+    .narratives-hero-img {
+        width: 100%;
+        max-height: none;
+        height: auto;
+        object-position: center;
     }
 }
 

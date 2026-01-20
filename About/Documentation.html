@@ -114,6 +114,8 @@
                         <li><a href="#7">The Exhibition Page</a></li>
                         <li><a href="#8">The Narratives Page</a></li>
                         <li><a href="#9">The Themes</a></li>
+                        <li><a href="#10">Technical Infrastructure</a></li>
+                        <li><a href="#11">References</a></li>
                     </ol>
                 </div>
 
@@ -223,12 +225,138 @@
                 <!-- 4 -->
                 <h4 class="doc-title" id="4"><b>4. The Aesthetic and Stylistic Choices</b></h4>
                 <p style="margin-bottom: 2.25rem;">
-                    bla bla bla.
-                    <!-- 5 -->
+                    Apollonian and Dionysian aesthetics have a well-established stylistic perception in the collective
+                    imagination. For this reason, the design of this website aims to reflect this shared perception,
+                    which is also evident in the art historically associated with these two archetypes. The primary
+                    visual approach of the site is therefore divided into Dark and Light modes, representing Dionysus
+                    and Apollo respectively. Users can switch between these modes via a toggle, implemented using
+                    JavaScript that updates the CSS custom properties defined in :root.<br>The CSS design has been
+                    carefully crafted to support this dual aesthetic. In Dark Mode (Dionysian), the palette is dominated
+                    by deep, muted tones—#2a2422 for backgrounds, warm highlights like #F4C430, and accent colors such
+                    as #9c2844 and #641527. This choice conveys intensity, mystery, and expressiveness, evoking the
+                    emotional and immersive qualities associated with Dionysus. Light Mode (Apollonian), in contrast,
+                    uses soft neutrals and warm shades—#F3E9DA for the background, #eba311 for titles, and #8B3A2F for
+                    links—promoting clarity, harmony, and balance, in line with Apollo’s rational and ordered aesthetic.
+
+                    Typography reinforces this duality: the serif font Cardo is used as the main text font, providing
+                    readability and classical elegance, while Cinzel is reserved for headings to communicate gravitas
+                    and formality. Font sizes are thoughtfully scaled across devices, ensuring hierarchy, legibility,
+                    and a consistent reading rhythm. For example, base font size is 1.2em with responsive adjustments
+                    for smaller screens, and headings are proportionally sized to emphasize content importance.
+
+                    Other stylistic details, such as button shapes, modal overlays, and hover effects, have been
+                    designed to complement the color palettes and enhance interactivity. The theme switch itself uses
+                    visual metaphors—☽ for night (Dionysian) and ☼ for day (Apollonian)—while smooth transitions,
+                    gradients, and shadows create a cohesive, polished user experience.<br>Below is an overview of the
+                    main stylistic choices made for the website, detailing colors,
+                    typography, and design rationale for both Apollonian (Light) and Dionysian (Dark) aesthetics.</p>
+
+                <h5>Color Palette</h5>
+
+                <h6>Dark Mode – Dionysian</h6>
+                <ul>
+                    <li><strong>Background (--bg):</strong> #2a2422 — a deep, warm neutral that evokes mystery and
+                        depth.</li>
+                    <li><strong>Text (--text):</strong> #B8ADA7 — soft off-white for readability against dark tones.
+                    </li>
+                    <li><strong>Highlight (--yellow):</strong> #F4C430 — golden accents suggest energy, vitality, and
+                        visual contrast.</li>
+                    <li><strong>Accent Reds (--linkred, --textred):</strong> #9c2844, #641527 — rich burgundy tones for
+                        links and emphasized text, reinforcing emotional intensity.</li>
+                    <li><strong>Modal Background (--modal-bg):</strong> rgba(42, 36, 34, 0.97) — semi-transparent dark
+                        overlay for focus and depth.</li>
+                </ul>
+
+                <h6>Light Mode – Apollonian</h6>
+                <ul>
+                    <li><strong>Background (--bg):</strong> #F3E9DA — soft neutral cream, symbolizing clarity, balance,
+                        and serenity.</li>
+                    <li><strong>Text (--text):</strong> #2a2422 — dark, structured for maximum readability and harmony.
+                    </li>
+                    <li><strong>Highlight (--yellow):</strong> #eba311 — warm golden accent to guide the eye and
+                        maintain visual cohesion.</li>
+                    <li><strong>Accent Reds (--linkred, --textred):</strong> #8B3A2F, #5D261C — earthy reds that
+                        maintain subtlety and refinement.</li>
+                    <li><strong>Modal Background (--modal-bg):</strong> rgba(175, 162, 146, 0.99) — soft overlay
+                        ensuring content remains legible and elegant.</li>
+                </ul>
+
+                <h5>Typography</h5>
+                <ul>
+                    <li><strong>Main text (--general_font):</strong> Cardo, serif — classical, readable, suitable for
+                        narrative and descriptive content.</li>
+                    <li><strong>Headings (--h1_font):</strong> Cinzel, serif — formal, sculptural, commanding attention
+                        without sacrificing elegance.</li>
+                </ul>
+
+                <h6>Hierarchy & Size</h6>
+                <ul>
+                    <li>Body: 1.2em (16px on small devices) for comfortable reading.</li>
+                    <li>H1: scaled with viewport width (6vw) for hero titles; H4: 1.2em for subheadings.</li>
+                    <li>Drop caps (.dropcap) use large, prominent letters (4.5em) for narrative emphasis.</li>
+                </ul>
+
+                <!-- 5 -->
                 <h4 class="doc-title" id="5"><b>5. The Home Page</b></h4>
-                <p style="margin-bottom: 2.25rem;">
-                    bla bla bla.
+                <p>
+                    The homepage of <strong>Tyrsos &amp; Lyre</strong> is built around <strong>simplicity and visual
+                        impact</strong>,
+                    drawing inspiration from major museum websites like the <strong>British Museum</strong>. At the top,
+                    the
+                    <strong>hero section</strong> features Caravaggio’s <em>Bacchus</em>, positioned on the left
+                    according to the
+                    <strong>golden ratio</strong>. This placement leaves the center for the title
+                    <strong>“Tyrsos &amp; Lyre”</strong> and an empty space to the right, creating balance and breathing
+                    room.
+                    The user is thus invited to take a glass of wine, immediately setting the
+                    <strong>immersive atmosphere of the symposium</strong>, and is then welcomed to the exhibition with
+                    a
+                    <strong>Nietzsche quotation</strong> on the Apollonian and Dionysian.
                 </p>
+
+                <p>
+                    Below the hero, a <strong>brief introduction</strong> guides the visitor. Conceived as the
+                    <strong>only purely textual part</strong>, it provides just the essential information, keeping the
+                    focus on
+                    <strong>images</strong> and a few carefully chosen elements.
+                </p>
+
+                <p>
+                    The homepage then presents <strong>two main sections</strong> as horizontal cards:
+                    <strong>“The Narratives”</strong> and <strong>“The Museum.”</strong> Each pairs an image with a
+                    link,
+                    making navigation intuitive while letting visuals speak for themselves.
+                </p>
+
+                <p>
+                    The <strong>collection section</strong> allows users to explore freely through a horizontal
+                    scroller,
+                    dynamically populated with <strong>JavaScript</strong> using a <strong>JSON file</strong>. Clicking
+                    on any
+                    object opens a <strong>modal with metadata</strong>, enabling deeper exploration without leaving the
+                    page.
+                    A <strong>ticket booking section</strong> follows, featuring a simple form and a confirmation modal
+                    to
+                    complete the experience.
+                </p>
+
+                <p>
+                    Navigation is always available via a <strong>fixed-top navbar</strong>, which includes options to
+                    switch
+                    <strong>visual themes</strong> and toggle between <strong>dark and light modes</strong>. The
+                    <strong>footer</strong>, large and comprehensive, is organized into three columns with practical
+                    information, links to all main sections, and details about the project and institution, with a
+                    <strong>rights note</strong> placed at the very bottom.
+                </p>
+
+                <p>
+                    Overall, the homepage balances <strong>minimal text</strong>, <strong>large visual
+                        sections</strong>, and
+                    <strong>interactive elements</strong>, guiding the visitor through the exhibition in a clear,
+                    immersive,
+                    and visually engaging way, while leaving space to explore freely at their own pace.
+                </p>
+
 
                 <!-- 6 -->
                 <h4 class="doc-title" id="6"><b>6. The Museum Page</b></h4>
@@ -247,8 +375,64 @@
 
                 <!-- 9 -->
                 <h4 class="doc-title" id="9"><b>9. The Themes</b></h4>
+                <h6>90s games</h6>
+                <p style="margin-bottom: 0;">
+                    This theme merges the bold, chaotic energy of 90s video games with a sense of nostalgic futurism.
+                    The color palette is central to this aesthetic. The deep indigo background (<span
+                        style="color:#0A0A50;">#0A0A50</span>), overlaid with subtle gradients, creates mystery and
+                    depth reminiscent of late-night arcade screens or neon-lit streets. Neon accents dominate the visual
+                    language: cyan (<span style="color:#00FFEA;">#00FFEA</span>) for main text ensures legibility,
+                    luminous green (<span style="color:#39FF14;">#39FF14</span>) for titles pops immediately, yellow
+                    (<span style="color:#FFFF00;">#FFFF00</span>) highlights guide the eye, and bold magentas (<span
+                        style="color:#FF00FF;">#FF00FF</span> and <span style="color:#FF1493;">#FF1493</span>) bring
+                    intensity to links, borders, and interactive elements.
+                    <br><br>
+                    The hero section features Bacchus, “Bac-man,” generated with ChatGPT, layered under a gradient that
+                    fades to black to enhance depth. The scrolling crawl animation, adapted and modified from <a
+                        href="https://css-tricks.com/snippets/css/star-wars-crawl-text/">CSS-Tricks</a>, creates a
+                    retro, theatrical introduction.
+                    <br><br>
+                    Navigation bars, buttons, and modals follow the same neon, high-contrast logic. Deep blues and
+                    purples form the background canvas, while glowing borders, overlays, and hover effects reinforce the
+                    arcade and retro-futuristic vibe. The combination of colors and the layered hero image creates
+                    movement and energy, evoking the excitement of booting up a game or watching a 90s cinematic
+                    opening.
+                    <br><br>
+                    In short, this 90s theme celebrates bold color, theatricality, and playful nostalgia, creating a
+                    website that feels energetic, vibrant, and a little rebellious. <br><br>
+                </p>
+
+                <h6>La Belle Époque</h6>
+                <p>
+                    Inspired by the Belle Époque, this theme conveys mystery, elegance, and poetic decadence. The
+                    background blends deep bottle green (<span style="color:#132018;">#132018</span>) into near-black
+                    (<span style="color:#0b0c0b;">#0b0c0b</span>), while text is warm ivory (<span
+                        style="color:#e8dfc9;">#e8dfc9</span>) for readability. Headings and titles use muted olive
+                    green (<span style="color:#3a4f2c;">#3a4f2c</span>) and golden highlights (<span
+                        style="color:#d1b24a;">#d1b24a</span>), while rich reds (<span
+                        style="color:#b21f2d;">#b21f2d</span> for links, <span style="color:#7b1b23;">#7b1b23</span> for
+                    emphasized text) punctuate the layout. Borders and modals incorporate subtle glows (<span
+                        style="color:#F4D06F;">#F4D06F</span>) and semi-transparent dark backgrounds
+                    (rgba(15,13,12,0.96)) for coherence.
+                    <br><br>
+                    The hero section features a Chat Noir–inspired image under a gradient overlay, with expressive
+                    typography and a circular “absinthe bottle” button referencing the decadent motifs of the era. The
+                    introductory text scrolls like a cinematic crawl, reminiscent of early video game openings and
+                    theatrical stage introductions. The composition balances color, texture, and interactive elements to
+                    immerse visitors in a world of elegance, mystery, and Belle Époque drama.
+                </p>
+
+
+                <h4 class="doc-title" id="10"><b>10. Technical Infrastructure</b></h4>
                 <p style="margin-bottom: 0;">
                     bla bla bla.
+                </p>
+                <h4 class="doc-title" id="11"><b>References</b></h4>
+                <p style="margin-bottom: 0;">
+                <ul>
+                    <li><a href="https://css-tricks.com/snippets/css/star-wars-crawl-text/">Star Wars Crawl Text</a>
+                    </li>
+                </ul>
                 </p>
 
             </div>

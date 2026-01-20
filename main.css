@@ -653,7 +653,7 @@ footer .footer .about h4 {
         width: 90%;
     }
 
-    footer .footer .col + .col {
+    footer .footer .col+.col {
         margin-top: 1.25rem;
     }
 
@@ -713,6 +713,9 @@ footer .footer .about h4 {
     padding-bottom: 2em;
 }
 
+.doc-title {
+    scroll-margin-top: calc(var(--nav-offset) + 112px)
+}
 
 /* ==========================================================================================
     NARRATIVES ------ Mari
@@ -930,7 +933,7 @@ footer .footer .about h4 {
 }
 
 @media (max-width: 768px) {
-    .artwork-card > .d-flex {
+    .artwork-card>.d-flex {
         flex-direction: column;
         align-items: stretch;
     }
@@ -1214,16 +1217,13 @@ html[data-theme="light"] {
     max-width: 90vw;
 }
 
-<<<<<<< ours
-@media (min-width: 601px) {
+<<<<<<< ours @media (min-width: 601px) {
     #imageModal .modal-dialog {
         margin-top: 3.5rem;
     }
 }
 
-=======
->>>>>>> theirs
-.modal-artwork-content {
+=======>>>>>>>theirs .modal-artwork-content {
     background: var(--bg);
     border: 3px solid var(--text);
     max-height: 90vh;
@@ -1456,7 +1456,7 @@ html[data-theme="light"] {
 
 /* 3. MAPPA SVG E INTERAZIONE */
 .museum-map-container {
-    margin-left: 13%; 
+    margin-left: 13%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -1470,20 +1470,23 @@ html[data-theme="light"] {
 }
 
 @media (max-width: 768px) {
+
     /* Titolo e  testo allineati al resto della pagina */
     #rooms .container {
-        max-width: 80vw !important; 
+        max-width: 80vw !important;
         padding-left: 15px;
         padding-right: 15px;
-        overflow: visible; /* Permette al contenuto interno di gestire lo scroll */
+        overflow: visible;
+        /* Permette al contenuto interno di gestire lo scroll */
     }
 
     /* Isola lo scorrimento solo al contenitore della mappa */
     .museum-map-container {
         width: 100%;
-        margin-left: 10%; 
+        margin-left: 10%;
         display: block;
-        overflow-x: auto; /* Lo scorrimento avviene SOLO qui dentro */
+        overflow-x: auto;
+        /* Lo scorrimento avviene SOLO qui dentro */
         overflow-y: hidden;
         -webkit-overflow-scrolling: touch;
         padding-bottom: 15px;
@@ -1493,19 +1496,21 @@ html[data-theme="light"] {
     #planimetria-svg {
         /* Aumentiamo la dimensione: essendo dentro un contenitore con overflow-x: auto, 
            l'SVG si allargherà "sotto" il resto della pagina senza spostare i testi */
-        min-width: 800px; 
+        min-width: 800px;
         height: auto;
         display: block;
         max-height: none;
-        
+
         /* Mantiene la qualità visiva */
         shape-rendering: geometricPrecision;
     }
-    
+
     /* 4. ASSICURA che i testi mantengano lo stile originale */
-    .visit-paragraph, .museum-dropcap-text {
+    .visit-paragraph,
+    .museum-dropcap-text {
         width: 100%;
-        margin-left: 0; /* Evita che ereditino margini non adeguati dalla mappa */
+        margin-left: 0;
+        /* Evita che ereditino margini non adeguati dalla mappa */
     }
 }
 
@@ -1739,6 +1744,7 @@ html[data-theme="light"] {
 }
 
 @media (max-width: 600px) {
+
     .visit-title,
     .visit-paragraph {
         text-align: left;

@@ -398,8 +398,6 @@
                     movement and energy, evoking the excitement of booting up a game or watching a 90s cinematic
                     opening.
                     <br><br>
-                    In short, this 90s theme celebrates bold color, theatricality, and playful nostalgia, creating a
-                    website that feels energetic, vibrant, and a little rebellious. <br><br>
                 </p>
 
                 <h6>La Belle Époque</h6>
@@ -417,18 +415,36 @@
                     <br><br>
                     The hero section features a Chat Noir–inspired image under a gradient overlay, with expressive
                     typography and a circular “absinthe bottle” button referencing the decadent motifs of the era. The
-                    introductory text scrolls like a cinematic crawl, reminiscent of early video game openings and
-                    theatrical stage introductions. The composition balances color, texture, and interactive elements to
+                    composition balances color, texture, and interactive elements to
                     immerse visitors in a world of elegance, mystery, and Belle Époque drama.
                 </p>
 
 
                 <h4 class="doc-title" id="10"><b>10. Technical Infrastructure</b></h4>
-                <p style="margin-bottom: 0;">
-                    bla bla bla.
+                <p>The project is organized around a modular file structure. Each web page is composed of
+                    multiple HTML files.<br><br>
+
+                    <b>The default styling</b> is handled globally through a single <b>main.css</b> file, supported by a
+                    shared external JavaScript file (<b>common.js</b>) used for common functionalities across pages.
+                    <b>The Museum section and the Homepage</b> rely on additional external JavaScript files for their
+                    specific behaviors, whereas <b>the narrative-related pages</b> do not use page-specific external
+                    scripts.<br><br>
+
+                    <b>Object descriptions and metadata</b> displayed in the <b>Exhibition section of the Homepage</b>
+                    are dynamically populated inside modals via an external JavaScript file (<b>scripts/home.js</b>) in
+                    combination with a <b>data.json</b> file. <b>Visual themes</b> are managed through separate CSS
+                    files stored in the <b>Themes</b> folder on GitHub, each building upon <b>main.css</b> with
+                    customized variations. <b>All images</b> are stored in the <b>imgs</b> directory, with the exception
+                    of the <b>1970s</b> and <b>Art Deco</b> themes, which use dedicated image folders.<br><br>
+
+                    <b>In general, external files</b> are used whenever reusability, maintainability, or dynamic
+                    behavior is required, while <b>inline code</b> is kept to a minimum and only used in specific cases
+                    such as the <b>About pages</b>, where few and highly repetitive elements made inline CSS a simpler
+                    and more efficient choice.
                 </p>
+
                 <h4 class="doc-title" id="11"><b>References</b></h4>
-                <p style="margin-bottom: 0;">
+                <p>
                 <ul>
                     <li><a href="https://css-tricks.com/snippets/css/star-wars-crawl-text/">Star Wars Crawl Text</a>
                     </li>

@@ -1478,6 +1478,13 @@ html[data-theme="light"]{ --btn-close-filter: none; }
   text-align: justify;
 }
 
+@media (max-width: 600px){
+  .visit-title,
+  .visit-paragraph{
+    text-align: left;
+  }
+}
+
 /* 8) WRAPPER MAPPA + CAROUSEL (map-info) */
 .map-carousel-wrapper{
   display: flex;

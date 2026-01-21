@@ -84,25 +84,6 @@ function applyLightMode(isOn) {
 
     localStorage.setItem("lightMode", isOn);
 }
-
-// Funzione per evidenziare il tema selezionato nel menu
-function highlightSelectedTheme(themeName) {
-    // Rimuovi l'evidenziazione da tutti gli elementi del menu
-    document.querySelectorAll('.dropdown-menu a[id^="theme-"]').forEach(item => {
-        item.classList.remove('active');
-        
-        // Rimuovi lo stile inline aggiunto
-        item.style.textDecoration = '';
-        item.style.textDecorationColor = '';
-        item.style.textDecorationThickness = '';
-        item.style.textUnderlineOffset = '';
-        
-        // Rimuovi il checkmark se presente
-        const checkmark = item.querySelector('.theme-checkmark');
-        if (checkmark) {
-            checkmark.remove();
-        }
-    });
     
     // Aggiungi l'evidenziazione all'elemento selezionato
     const selectedItem = document.getElementById(`theme-${themeName}`);

@@ -1217,13 +1217,13 @@ html[data-theme="light"] {
     max-width: 90vw;
 }
 
-<<<<<<< ours @media (min-width: 601px) {
+@media (min-width: 601px) {
     #imageModal .modal-dialog {
         margin-top: 3.5rem;
     }
 }
 
-=======>>>>>>>theirs .modal-artwork-content {
+#imageModal .modal-artwork-content {
     background: var(--bg);
     border: 3px solid var(--text);
     max-height: 90vh;

@@ -1,8 +1,14 @@
 const toggle = document.getElementById("switch");
+
 // Selezione dei separatori
 const separators = ["break1", "break2", "break3"].map(id => document.getElementById(id));
+
 // Bottone dinamico
 const themeWineButton = document.getElementById("wineButton");
+
+/* =========================
+   CONFIGURAZIONE TEMI
+========================= */
 
 const themeConfigs = {
     'default': {
@@ -69,26 +75,44 @@ const themeConfigs = {
     }
 };
 
-const lightModeImgs = ['imgs/sopra_col_light.png', 'imgs/centro_col_light.png', 'imgs/fine_col_light.png'];
+const lightModeImgs = [
+    'imgs/sopra_col_light.png',
+    'imgs/centro_col_light.png',
+    'imgs/fine_col_light.png'
+];
 
-// Funzione per gestire la sottolineatura dinamica nel menu
-function highlightSelectedTheme(themeName) {
-    // Rimuove la sottolineatura e la classe active da tutti i link
-    document.querySelectorAll('.dropdown-menu a[id^="theme-"]').forEach(item => {
-        item.classList.remove('theme-selected', 'active');
-        // Rimuove eventuali checkmark residui
-        const checkmark = item.querySelector('.theme-checkmark');
-        if (checkmark) checkmark.remove();
-    });
+/* =========================
+   SOTTOLINEATURA UNIFICATA
+   (ABOUT + THEME)
+========================= */
 
-    // Applica la classe al tema corrente
-    const selectedItem = document.getElementById(`theme-${themeName}`);
+function highlightDropdownItem(group, value) {
+    document
+        .querySelectorAll(`.dropdown-item[data-group="${group}"]`)
+        .forEach(item => item.classList.remove('is-selected'));
+
+    let selectedItem = null;
+
+    if (group === 'theme') {
+        selectedItem = document.getElementById(`theme-${value}`);
+    }
+
+    if (group === 'about') {
+        selectedItem = document.querySelector(
+            `.dropdown-item[data-group="about"][href="${value}"]`
+        );
+    }
+
     if (selectedItem) {
-        selectedItem.classList.add('theme-selected');
+        selectedItem.classList.add('is-selected');
+        sessionStorage.setItem(`selected-${group}`, value);
     }
 }
 
-// Funzione per applicare la light mode (solo per tema default)
+/* =========================
+   LIGHT MODE (DEFAULT)
+========================= */
+
 function applyLightMode(isOn) {
     document.body.classList.toggle("lightmode", isOn);
     separators.forEach((img, i) => {
@@ -97,26 +121,25 @@ function applyLightMode(isOn) {
     localStorage.setItem("lightMode", isOn);
 }
 
-// Funzione principale per cambiare tema
+/* =========================
+   CAMBIO TEMA (INTOCCATO)
+========================= */
+
 function changeTheme(themeName) {
     const config = themeConfigs[themeName];
-    if (!config) return console.error("Tema non trovato:", themeName);
+    if (!config) return;
 
-    // 1. Cambio file CSS (carica la nuova variabile --yellow)
     const themeLink = document.getElementById('theme-link');
     if (themeLink) themeLink.href = config.css;
 
-    // 2. Cambio immagini separatori
     separators.forEach((img, i) => {
         if (img) img.src = config.imgs[i];
     });
 
-    // 3. Cambio immagine bottone
     if (themeWineButton) {
         themeWineButton.src = config.button || "/Apollonian-Dionysian/imgs/wine_button.png";
     }
 
-    // 4. Gestione Toggle Light Mode
     const isDefault = themeName === 'default';
     if (toggle) {
         const toggleContainer = toggle.parentElement;
@@ -131,44 +154,42 @@ function changeTheme(themeName) {
         }
     }
 
-    // 5. Evidenziazione nel menu (sotto-lineatura colorata)
-    highlightSelectedTheme(themeName);
-
-    // Salvataggio sessione
-    sessionStorage.setItem('selectedTheme', themeName);
+    highlightDropdownItem('theme', themeName);
+    sessionStorage.setItem('selected-theme', themeName);
 }
 
-// Inizializzazione al caricamento
-window.addEventListener("DOMContentLoaded", () => {
-    const sessionTheme = sessionStorage.getItem('selectedTheme') || 'default';
-    changeTheme(sessionTheme);
+/* =========================
+   INIT
+========================= */
 
-    // Listener per il toggle light mode
+window.addEventListener("DOMContentLoaded", () => {
+
+    const savedTheme = sessionStorage.getItem('selected-theme') || 'default';
+    changeTheme(savedTheme);
+
+    const savedAbout = sessionStorage.getItem('selected-about');
+    if (savedAbout) {
+        highlightDropdownItem('about', savedAbout);
+    }
+
     if (toggle) {
         toggle.addEventListener("change", () => {
             applyLightMode(toggle.checked);
         });
     }
 
-    // Gestione click menu temi (Delegation)
+    // Click sui temi
     document.addEventListener('click', (e) => {
-        const link = e.target.closest('[id^="theme-"]');
-        if (link) {
+        const themeLink = e.target.closest('[id^="theme-"]');
+        if (themeLink) {
             e.preventDefault();
-            const themeID = link.id.replace('theme-', '');
+            const themeID = themeLink.id.replace('theme-', '');
             changeTheme(themeID);
         }
-    });
 
-    // Logica Scroll (opzionale, mantenuta dal tuo codice originale)
-    const scrollToHash = () => {
-        if (!location.hash) return;
-        const target = document.querySelector(location.hash);
-        if (target) {
-            const navHeight = document.querySelector('.navbar')?.offsetHeight || 0;
-            const top = target.getBoundingClientRect().top + window.pageYOffset - (navHeight + 12);
-            window.scrollTo({ top, behavior: 'smooth' });
+        const aboutLink = e.target.closest('.dropdown-item[data-group="about"]');
+        if (aboutLink) {
+            highlightDropdownItem('about', aboutLink.getAttribute('href'));
         }
-    };
-    scrollToHash();
+    });
 });

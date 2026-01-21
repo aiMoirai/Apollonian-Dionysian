@@ -615,6 +615,7 @@ footer .footer .about h4{
    DOCUMENTATION / DISCLAIMER
    ============================= */
 .doc-title{ color: var(--sun); }
+.doc-subtitle{ color: var(--sun); }
 
 #disclaimer{
   padding-top: calc(6rem + var(--nav-offset)) !important;

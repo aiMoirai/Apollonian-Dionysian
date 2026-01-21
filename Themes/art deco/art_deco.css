@@ -1964,6 +1964,10 @@ html[data-theme="light"]{
     color: var(--yellow);
 }
 
+.doc-subtitle {
+    color: var(--yellow);
+}
+
 /* -------Documentation / Disclaimer section -------------*/
 #disclaimer {
     padding-top: calc(6rem + var(--nav-offset)) !important;

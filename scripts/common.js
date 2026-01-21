@@ -139,6 +139,11 @@ function changeTheme(themeName) {
 
     // Salvo il tema selezionato solo per la sessione (rimane attivo tra pagine)
     sessionStorage.setItem('selectedTheme', themeName);
+    // Aggiorna classe active nel dropdown
+    document.querySelectorAll('.dropdown-item').forEach(item => {
+        item.classList.toggle('active', item.id === `theme-${themeName}`);
+    });
+
 }
 
 // Gestione toggle light mode

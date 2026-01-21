@@ -102,8 +102,13 @@ a {
 /* Navbar section --------------------*/
 
 .dropdown-menu {
-    background-color: var(--nav);
-    border-width: 1px;
+    background-color: var(--nav) !important;
+    border-width: 1px !important;
+}
+
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:active {
+    color: var(--bg) !important;
 }
 
 .navbar-toggler-icon {
@@ -113,7 +118,8 @@ a {
 
 .navbar-toggler:hover .navbar-toggler-icon,
 .navbar-toggler:focus .navbar-toggler-icon,
-.navbar-toggler:active .navbar-toggler-icon {
+.navbar-toggler:active .navbar-toggler-icon,
+.navbar-toggler.collapsed~.navbar-collapse.show+.navbar-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23F4C430' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
@@ -154,14 +160,18 @@ a {
     color: var(--text);
 }
 
-.dropdown-item:hover,
-.dropdown-item:focus {
-    background-color: var(--yellow);
+.navbar-nav .dropdown-item:hover,
+.navbar-nav .dropdown-item:focus {
+    background-color: var(--yellow) !important;
 }
 
-.dropdown-item:active {
-    background-color: var(--yellow);
+.dropdown-menu .dropdown-item.active,
+.dropdown-menu .dropdown-item.active:hover,
+.dropdown-menu .dropdown-item.active:focus {
+    background-color: var(--yellow) !important;
+    color: inherit !important;
 }
+
 
 .logo {
     height: 5vw;
@@ -171,6 +181,11 @@ a {
     padding: 5px;
     border-radius: 10px;
     display: inline-block;
+}
+
+.about-active {
+    background-color: var(--yellow) !important;
+    color: inherit !important;
 }
 
 /* -------------------------------*/

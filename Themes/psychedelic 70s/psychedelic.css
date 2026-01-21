@@ -1078,6 +1078,8 @@ input:focus, select:focus, textarea:focus{
 /* (se hai un header/hero exhibition) */
 .exhibition-hero{
   padding-top: calc(5rem + var(--nav-offset)) !important;
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
   scroll-margin-top: calc(var(--nav-offset) + 1rem);
 }
 

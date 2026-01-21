@@ -28,7 +28,7 @@ const themeConfigs = {
         css: '/Apollonian-Dionysian/Themes/rococo.css',
         imgs: [
             '/Apollonian-Dionysian/imgs/rococo_nuvole.png',
-            '/Apollonian-Dionysian/imgs/rococo_nuvole.png',
+            '/Apollonian-Dionysian/imgs/rococo_putti.png',
             '/Apollonian-Dionysian/imgs/rococo_nuvole.png'
         ],
         button: '/Apollonian-Dionysian/imgs/rococo_glass2.png'

@@ -179,6 +179,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Gestisce lo scroll alle anchor interne, compensando l'altezza della navbar (extra per #booking).
     const BASE_GAP = 12;
     const BOOKING_EXTRA_GAP = 112;
 

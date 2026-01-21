@@ -1,102 +1,63 @@
 const toggle = document.getElementById("switch");
-// Seleziona tutti i break in un colpo solo tramite gli ID
 const separators = ["break1", "break2", "break3"].map(id => document.getElementById(id));
-
-// Bottone (esiste nell'HTML come <img id="wineButton" ...>)
 const themeWineButton = document.getElementById("wineButton");
 
 const themeConfigs = {
     'default': {
         css: '/Apollonian-Dionysian/main.css',
-        imgs: [
-            '/Apollonian-Dionysian/imgs/sopra colonna.png',
-            '/Apollonian-Dionysian/imgs/centro colonna.png',
-            '/Apollonian-Dionysian/imgs/fine colonne.png'
-        ]
+        imgs: ['/Apollonian-Dionysian/imgs/sopra colonna.png', '/Apollonian-Dionysian/imgs/centro colonna.png', '/Apollonian-Dionysian/imgs/fine colonne.png']
     },
     '1800': {
         css: '/Apollonian-Dionysian/Themes/1800.css',
-        imgs: [
-            '/Apollonian-Dionysian/imgs/col_sopra_noir.png',
-            '/Apollonian-Dionysian/imgs/col_centro_noir.png',
-            '/Apollonian-Dionysian/imgs/col_sotto_noir.png'
-        ],
+        imgs: ['/Apollonian-Dionysian/imgs/col_sopra_noir.png', '/Apollonian-Dionysian/imgs/col_centro_noir.png', '/Apollonian-Dionysian/imgs/col_sotto_noir.png'],
         button: '/Apollonian-Dionysian/imgs/assenzio_button.png'
-
     },
     'rococo': {
         css: '/Apollonian-Dionysian/Themes/rococo.css',
-        imgs: [
-            '/Apollonian-Dionysian/imgs/rococo_nuvole.png',
-            '/Apollonian-Dionysian/imgs/rococo_nuvole.png',
-            '/Apollonian-Dionysian/imgs/rococo_nuvole.png'
-        ],
+        imgs: ['/Apollonian-Dionysian/imgs/rococo_nuvole.png', '/Apollonian-Dionysian/imgs/rococo_nuvole.png', '/Apollonian-Dionysian/imgs/rococo_nuvole.png'],
         button: '/Apollonian-Dionysian/imgs/rococo_glass2.png'
-
     },
     'artdeco': {
         css: '/Apollonian-Dionysian/Themes/art deco/art_deco.css',
-        imgs: [
-            '/Apollonian-Dionysian/imgs/art deco/columns/sopra_colonne_artdeco.jpeg',
-            '/Apollonian-Dionysian/imgs/art deco/columns/centro_colonne_artdeco.jpeg',
-            '/Apollonian-Dionysian/imgs/art deco/columns/sotto_colonne_artdeco.jpeg'
-        ],
+        imgs: ['/Apollonian-Dionysian/imgs/art deco/columns/sopra_colonne_artdeco.jpeg', '/Apollonian-Dionysian/imgs/art deco/columns/centro_colonne_artdeco.jpeg', '/Apollonian-Dionysian/imgs/art deco/columns/sotto_colonne_artdeco.jpeg'],
         button: '/Apollonian-Dionysian/imgs/art deco/champagne_button.png'
     },
     'psychedelic': {
         css: '/Apollonian-Dionysian/Themes/psychedelic 70s/psychedelic.css',
-        imgs: [
-            '/Apollonian-Dionysian/imgs/psychedelic 70s/columns/sopra_colonne_psychedelic.png',
-            '/Apollonian-Dionysian/imgs/psychedelic 70s/columns/centro_colonne_psychedelic.png',
-            '/Apollonian-Dionysian/imgs/psychedelic 70s/columns/sotto_colonne_psychedelic.png'
-        ],
+        imgs: ['/Apollonian-Dionysian/imgs/psychedelic 70s/columns/sopra_colonne_psychedelic.png', '/Apollonian-Dionysian/imgs/psychedelic 70s/columns/centro_colonne_psychedelic.png', '/Apollonian-Dionysian/imgs/psychedelic 70s/columns/sotto_colonne_psychedelic.png'],
         button: '/Apollonian-Dionysian/imgs/psychedelic 70s/psychedelic_wine_button.png'
     },
     '90s': {
         css: '/Apollonian-Dionysian/Themes/90s.css',
-        imgs: [
-            '/Apollonian-Dionysian/imgs/sopra_col_90.png',
-            '/Apollonian-Dionysian/imgs/centro_col_90.png',
-            '/Apollonian-Dionysian/imgs/sotto_col_90.png'
-        ],
+        imgs: ['/Apollonian-Dionysian/imgs/sopra_col_90.png', '/Apollonian-Dionysian/imgs/centro_col_90.png', '/Apollonian-Dionysian/imgs/sotto_col_90.png'],
         button: '/Apollonian-Dionysian/imgs/start_button.png'
     },
     '2035': {
         css: '/Apollonian-Dionysian/Themes/2035.css',
-        imgs: [
-            '/Apollonian-Dionysian/imgs/2035_col (1).png',
-            '/Apollonian-Dionysian/imgs/2035_col (2).png',
-            '/Apollonian-Dionysian/imgs/2035_col (3).png'
-        ],
+        imgs: ['/Apollonian-Dionysian/imgs/2035_col (1).png', '/Apollonian-Dionysian/imgs/2035_col (2).png', '/Apollonian-Dionysian/imgs/2035_col (3).png'],
         button: '/Apollonian-Dionysian/imgs/2035_glass.png'
     }
 };
 
 const lightModeImgs = ['imgs/sopra_col_light.png', 'imgs/centro_col_light.png', 'imgs/fine_col_light.png'];
 
-// Funzione per applicare la light mode
-function applyLightMode(isOn) {
-    document.body.classList.toggle("lightmode", isOn);
-
-    separators.forEach((img, i) => {
-        if (img) img.src = isOn ? lightModeImgs[i] : themeConfigs.default.imgs[i];
+// --- 1. FUNZIONE EVIDENZIAZIONE ---
+function highlightSelectedTheme(themeName) {
+    document.querySelectorAll('.dropdown-menu a[id^="theme-"]').forEach(item => {
+        item.classList.remove('active');
+        item.style.textDecoration = '';
+        const checkmark = item.querySelector('.theme-checkmark');
+        if (checkmark) checkmark.remove();
     });
 
-    localStorage.setItem("lightMode", isOn);
-}
-    
-    // Aggiungi l'evidenziazione all'elemento selezionato
     const selectedItem = document.getElementById(`theme-${themeName}`);
     if (selectedItem) {
         selectedItem.classList.add('active');
-        
-        // Applica lo stile specifico che hai richiesto
         selectedItem.style.textDecoration = 'underline';
         selectedItem.style.textDecorationColor = 'var(--yellow)';
         selectedItem.style.textDecorationThickness = '1px';
         selectedItem.style.textUnderlineOffset = '4px';
-        
-        // Aggiungi un checkmark
+
         const checkmark = document.createElement('span');
         checkmark.className = 'theme-checkmark ms-2';
         checkmark.textContent = '✓';
@@ -105,145 +66,72 @@ function applyLightMode(isOn) {
     }
 }
 
-// Funzione per cambiare tema
+// --- 2. FUNZIONE APPLICA LIGHT MODE ---
+function applyLightMode(isOn) {
+    document.body.classList.toggle("lightmode", isOn);
+    separators.forEach((img, i) => {
+        if (img) img.src = isOn ? lightModeImgs[i] : themeConfigs.default.imgs[i];
+    });
+    localStorage.setItem("lightMode", isOn);
+}
+
+// --- 3. FUNZIONE CAMBIO TEMA ---
 function changeTheme(themeName) {
     const config = themeConfigs[themeName];
-    if (!config) return console.error("Tema non trovato:", themeName);
+    if (!config) return;
 
-    // 1. Cambio CSS
+    // Cambio CSS
     const themeLink = document.getElementById('theme-link');
     if (themeLink) themeLink.href = config.css;
 
-    // 2. Cambio immagini separatori
+    // Cambio Immagini
     separators.forEach((img, i) => {
         if (img) img.src = config.imgs[i];
     });
 
-    // 3. Cambia immagine bottone bicchiere
+    // Bottone Bicchiere
     if (themeWineButton) {
-        themeWineButton.src = config.button || "imgs/wine_button.png";
-        themeWineButton.style.display = "block";
-        themeWineButton.style.marginLeft = "auto";
-        themeWineButton.style.marginRight = "auto";
+        themeWineButton.src = config.button || "/Apollonian-Dionysian/imgs/wine_button.png";
     }
 
-    // 4. Gestione Light Mode
-    const isDefault = themeName === 'default';
-
-    // --- NUOVA PARTE: rimuovo completamente il toggle se tema non è default ---
+    // Gestione Toggle Light Mode
+    const isDefault = (themeName === 'default');
     if (toggle) {
+        const toggleWrapper = toggle.parentElement;
         if (isDefault) {
-            // Reinserisco il toggle nella pagina se manca
-            if (!document.body.contains(toggle)) {
-                document.body.appendChild(toggle.parentElement); // inserisco il div che contiene l'input
-            }
+            toggleWrapper.style.display = "block"; // Invece di rimuovere, nascondiamo per stabilità
+            const wasLight = localStorage.getItem("lightMode") === "true";
+            applyLightMode(wasLight);
+            toggle.checked = wasLight;
         } else {
-            // Rimuovo completamente il toggle dal DOM
-            if (document.body.contains(toggle)) {
-                toggle.parentElement.remove();
-            }
+            toggleWrapper.style.display = "none";
+            document.body.classList.remove("lightmode");
         }
     }
 
-    if (!isDefault) {
-        document.body.classList.remove("lightmode");
-        localStorage.setItem("lightMode", false);
-        if (toggle) toggle.checked = false;
-    } else {
-        setTimeout(() => {
-            const wasLight = localStorage.getItem("lightMode") === "true";
-            applyLightMode(wasLight);
-            if (toggle) toggle.checked = wasLight;
-        }, 100);
-    }
-
-    // 5. Evidenzia il tema selezionato nel menu
     highlightSelectedTheme(themeName);
-
-    // Salvo il tema selezionato solo per la sessione (rimane attivo tra pagine)
     sessionStorage.setItem('selectedTheme', themeName);
 }
 
-// Gestione toggle light mode
-if (toggle) {
-    toggle.addEventListener("change", () => {
-        const currentTheme = sessionStorage.getItem('selectedTheme') || 'default';
-        if (currentTheme !== 'default') {
-            toggle.checked = false;
-            return alert("La modalità chiara è disponibile solo nel tema Default");
-        }
-        applyLightMode(toggle.checked);
-    });
-}
-
-// Inizializzazione al caricamento della pagina
+// --- 4. INIZIALIZZAZIONE E EVENTI ---
 window.addEventListener("DOMContentLoaded", () => {
-    // Controllo se esiste un tema salvato nella sessione (navigazione tra pagine)
-    const sessionTheme = sessionStorage.getItem('selectedTheme');
-    if (sessionTheme) {
-        // Navigazione tra pagine: riapplico il tema della sessione
-        changeTheme(sessionTheme);
-    } else {
-        // Primo caricamento del sito: forza default theme
-        changeTheme('default');
-    }
+    const savedTheme = sessionStorage.getItem('selectedTheme') || 'default';
+    changeTheme(savedTheme);
 
-    // Delega degli eventi per i link dei temi
+    // Click sui temi
     document.addEventListener('click', (e) => {
         const link = e.target.closest('[id^="theme-"]');
         if (link) {
             e.preventDefault();
-            changeTheme(link.id.replace('theme-', ''));
+            const themeName = link.id.replace('theme-', '');
+            changeTheme(themeName);
         }
     });
 
-    const BASE_GAP = 12;
-    const BOOKING_EXTRA_GAP = 112;
-
-    const getNavHeight = () => {
-        const nav = document.querySelector('.navbar');
-        if (nav) return nav.offsetHeight;
-        const raw = getComputedStyle(document.documentElement).getPropertyValue('--nav-offset');
-        const parsed = parseFloat(raw);
-        return Number.isFinite(parsed) ? parsed : 0;
-    };
-
-    const getOffsetForTarget = (target) => {
-        const extra = target && target.id === 'booking' ? BOOKING_EXTRA_GAP : BASE_GAP;
-        return getNavHeight() + extra;
-    };
-
-    const scrollToHash = (behavior = 'auto') => {
-        if (!location.hash) return;
-        const target = document.querySelector(location.hash);
-        if (!target) return;
-        const offset = getOffsetForTarget(target);
-        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-        window.scrollTo({ top, behavior });
-    };
-
-    // Smooth scroll con offset dinamico della navbar per le anchor interne
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (!href || href === '#') return;
-            const target = document.querySelector(href);
-            if (!target) return;
-            e.preventDefault();
-
-            const offset = getOffsetForTarget(target);
-            const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-            window.scrollTo({ top, behavior: 'smooth' });
+    // Toggle Light Mode
+    if (toggle) {
+        toggle.addEventListener("change", () => {
+            applyLightMode(toggle.checked);
         });
-    });
-
-    // Allinea la posizione dopo che immagini/layout sono caricati
-    scrollToHash('auto');
-    window.addEventListener('load', () => {
-        scrollToHash('auto');
-    });
-
-    window.addEventListener('home:scroller-ready', () => {
-        scrollToHash('auto');
-    });
+    }
 });

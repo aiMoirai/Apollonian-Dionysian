@@ -212,6 +212,22 @@ a {
     text-underline-offset: 4px;
 }
 
+/* Rimuove l'evidenziazione blu di default di Bootstrap/Browser */
+.dropdown-menu a.dropdown-item:active, 
+.dropdown-menu a.dropdown-item.active {
+    background-color: transparent !important;
+    color: inherit !important;
+}
+
+/* Classe per la sottolineatura dinamica */
+.theme-selected {
+    text-decoration: underline !important;
+    /* Usa la variabile --yellow che cambia con il file CSS caricato */
+    text-decoration-color: var(--yellow) !important;
+    text-decoration-thickness: 2px !important;
+    text-underline-offset: 5px !important;
+}
+
 /* -------------------------------*/
 
 /* -------Dark/light mode button--------*/

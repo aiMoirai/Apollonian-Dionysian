@@ -89,7 +89,13 @@ function applyLightMode(isOn) {
 function highlightSelectedTheme(themeName) {
     // Rimuovi l'evidenziazione da tutti gli elementi del menu
     document.querySelectorAll('.dropdown-menu a[id^="theme-"]').forEach(item => {
-        item.classList.remove('active', 'selected-theme');
+        item.classList.remove('active');
+        
+        // Rimuovi lo stile inline aggiunto
+        item.style.textDecoration = '';
+        item.style.textDecorationColor = '';
+        item.style.textDecorationThickness = '';
+        item.style.textUnderlineOffset = '';
         
         // Rimuovi il checkmark se presente
         const checkmark = item.querySelector('.theme-checkmark');
@@ -101,12 +107,19 @@ function highlightSelectedTheme(themeName) {
     // Aggiungi l'evidenziazione all'elemento selezionato
     const selectedItem = document.getElementById(`theme-${themeName}`);
     if (selectedItem) {
-        selectedItem.classList.add('active', 'selected-theme');
+        selectedItem.classList.add('active');
+        
+        // Applica lo stile specifico che hai richiesto
+        selectedItem.style.textDecoration = 'underline';
+        selectedItem.style.textDecorationColor = 'var(--yellow)';
+        selectedItem.style.textDecorationThickness = '1px';
+        selectedItem.style.textUnderlineOffset = '4px';
         
         // Aggiungi un checkmark
         const checkmark = document.createElement('span');
         checkmark.className = 'theme-checkmark ms-2';
         checkmark.textContent = '✓';
+        checkmark.style.color = 'var(--yellow)';
         selectedItem.appendChild(checkmark);
     }
 }

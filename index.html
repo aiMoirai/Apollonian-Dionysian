@@ -54,88 +54,64 @@
 </head>
 
 <body>
-    <!-- Navigation bar -->
-<nav class="navbar fixed-top navbar-expand-lg">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
-            <img src="imgs/logo_grigio_con_nome.png" class="logo" alt="Logo" width="30" height="24">
-        </a>
+    <!--Navigation bar-->
+    <nav class="navbar fixed-top navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">
+                <img src="imgs/logo_grigio_con_nome.png" class="logo" alt="Logo" width="30" height="24"
+                    href="index.html"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="the_museum.html">The Museum</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="exhibition.html">Exhibition</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="narratives/index.html">Narratives</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#booking">Book your visit</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            About
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="About/Team.html">The Team</a></li>
+                            <li><a class="dropdown-item" href="About/Documentation.html">The Documentation</a></li>
+                            <li><a class="dropdown-item" href="About/Disclaimer.html">The Disclaimer</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Choose your theme
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#" id="theme-default">Default</a></li>
+                            <li><a class="dropdown-item" href="#" id="theme-rococo">Rococo</a></li>
+                            <li><a class="dropdown-item" href="#" id="theme-1800">La Belle Époque</a></li>
+                            <li><a class="dropdown-item" href="#" id="theme-artdeco">Art Deco</a></li>
+                            <li><a class="dropdown-item" href="#" id="theme-psychedelic">Psychedelic 70s</a></li>
+                            <li><a class="dropdown-item" href="#" id="theme-90s">90</a></li>
+                            <li><a class="dropdown-item" href="#" id="theme-2035">The Future</a></li>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav">
-
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="the_museum.html">The Museum</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="exhibition.html">Exhibition</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="narratives/index.html">Narratives</a>
-                </li>
-
-                <li class="nav-item">
-                    <a class="nav-link" href="#booking">Book your visit</a>
-                </li>
-
-                <!-- ABOUT -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        About
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>
-                            <a class="dropdown-item" href="About/Team.html" data-group="about">
-                                The Team
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="About/Documentation.html" data-group="about">
-                                The Documentation
-                            </a>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="About/Disclaimer.html" data-group="about">
-                                The Disclaimer
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-
-                <!-- THEMES -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" role="button"
-                        data-bs-toggle="dropdown" aria-expanded="false">
-                        Choose your theme
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#" id="theme-default" data-group="theme">Default</a></li>
-                        <li><a class="dropdown-item" href="#" id="theme-rococo" data-group="theme">Rococo</a></li>
-                        <li><a class="dropdown-item" href="#" id="theme-1800" data-group="theme">La Belle Époque</a></li>
-                        <li><a class="dropdown-item" href="#" id="theme-artdeco" data-group="theme">Art Deco</a></li>
-                        <li><a class="dropdown-item" href="#" id="theme-psychedelic" data-group="theme">Psychedelic 70s</a></li>
-                        <li><a class="dropdown-item" href="#" id="theme-90s" data-group="theme">90s games</a></li>
-                        <li><a class="dropdown-item" href="#" id="theme-2035" data-group="theme">The Future</a></li>
-                    </ul>
-                </li>
-
-            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 
     <!--Dark/light button-->
     <div class="theme-switch">

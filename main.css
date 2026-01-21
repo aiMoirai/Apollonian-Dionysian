@@ -202,13 +202,6 @@ a {
     object-fit: contain;
 }
 
-/* Dropdown: elemento selezionato */
-.dropdown-item.is-selected {
-    text-decoration: underline;
-    text-decoration-color: var(--yellow);
-    text-underline-offset: 4px;
-    font-weight: 500;
-}
 
 /* -------------------------------*/
 

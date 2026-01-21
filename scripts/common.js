@@ -85,6 +85,32 @@ function applyLightMode(isOn) {
     localStorage.setItem("lightMode", isOn);
 }
 
+// Funzione per evidenziare il tema selezionato nel menu
+function highlightSelectedTheme(themeName) {
+    // Rimuovi l'evidenziazione da tutti gli elementi del menu
+    document.querySelectorAll('.dropdown-menu a[id^="theme-"]').forEach(item => {
+        item.classList.remove('active', 'selected-theme');
+        
+        // Rimuovi il checkmark se presente
+        const checkmark = item.querySelector('.theme-checkmark');
+        if (checkmark) {
+            checkmark.remove();
+        }
+    });
+    
+    // Aggiungi l'evidenziazione all'elemento selezionato
+    const selectedItem = document.getElementById(`theme-${themeName}`);
+    if (selectedItem) {
+        selectedItem.classList.add('active', 'selected-theme');
+        
+        // Aggiungi un checkmark
+        const checkmark = document.createElement('span');
+        checkmark.className = 'theme-checkmark ms-2';
+        checkmark.textContent = '✓';
+        selectedItem.appendChild(checkmark);
+    }
+}
+
 // Funzione per cambiare tema
 function changeTheme(themeName) {
     const config = themeConfigs[themeName];
@@ -136,6 +162,9 @@ function changeTheme(themeName) {
             if (toggle) toggle.checked = wasLight;
         }, 100);
     }
+
+    // 5. Evidenzia il tema selezionato nel menu
+    highlightSelectedTheme(themeName);
 
     // Salvo il tema selezionato solo per la sessione (rimane attivo tra pagine)
     sessionStorage.setItem('selectedTheme', themeName);

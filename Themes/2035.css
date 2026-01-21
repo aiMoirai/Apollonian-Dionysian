@@ -323,6 +323,11 @@ a:hover::after {
     border-width: 1px;
 }
 
+.dropdown-menu .dropdown-item:hover,
+.dropdown-menu .dropdown-item:active {
+    color: var(--bg) !important;
+}
+
 .navbar-toggler-icon {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23B8ADA7' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     transition: background-image 0.2s ease;
@@ -383,11 +388,14 @@ a:hover::after {
 
 .navbar-nav .dropdown-item:hover,
 .navbar-nav .dropdown-item:focus {
-    background-color: var(--yellow);
+    background-color: var(--yellow) !important;
 }
 
-.navbar-nav .dropdown-item:active {
-    background-color: var(--yellow);
+.dropdown-menu .dropdown-item.active,
+.dropdown-menu .dropdown-item.active:hover,
+.dropdown-menu .dropdown-item.active:focus {
+    background-color: var(--yellow) !important;
+    color: inherit !important;
 }
 
 .logo {
@@ -398,6 +406,11 @@ a:hover::after {
     padding: 5px; /* spazio intorno al logo */
     border-radius: 10px; /* angoli arrotondati */
     display: inline-block; /* necessario per applicare background e padding */
+}
+
+.about-active {
+    background-color: var(--yellow) !important;
+    color: inherit !important;
 }
 
 

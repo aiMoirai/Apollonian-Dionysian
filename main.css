@@ -202,6 +202,16 @@ a {
     object-fit: contain;
 }
 
+.navbar-nav .dropdown-item.active,
+.navbar-nav .dropdown-item:active {
+    color: var(--text) !important;
+    background-color: transparent;
+    text-decoration: underline;
+    text-decoration-color: var(--yellow);
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+}
+
 /* -------------------------------*/
 
 /* -------Dark/light mode button--------*/
@@ -1476,7 +1486,7 @@ html[data-theme="light"] {
         padding-left: 15px;
         padding-right: 15px;
         overflow: visible;
-    
+
     }
 
     /* Isola lo scorrimento solo al contenitore della mappa */

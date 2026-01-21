@@ -202,7 +202,6 @@ a {
     object-fit: contain;
 }
 
-
 /* -------------------------------*/
 
 /* -------Dark/light mode button--------*/
@@ -1477,7 +1476,7 @@ html[data-theme="light"] {
         padding-left: 15px;
         padding-right: 15px;
         overflow: visible;
-
+    
     }
 
     /* Isola lo scorrimento solo al contenitore della mappa */

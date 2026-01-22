@@ -484,6 +484,7 @@ a {
     flex-direction: column;
     padding: 20px;
     box-sizing: border-box;
+    scroll-margin-top: calc(var(--nav-offset) + 112px);
 }
 
 label {

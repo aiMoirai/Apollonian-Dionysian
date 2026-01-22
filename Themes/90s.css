@@ -117,7 +117,13 @@ a {
 }
 
 .navbar {
-    background-color: var(--nav) !important;
+    background-color: var(--nav);
+    background-image:
+        url('../imgs/sfondo_nav90.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: repeat;
+    border-bottom: var(--border);
     border-bottom: var(--border) !important;
     font-size: 1em;
     position: fixed;

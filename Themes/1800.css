@@ -146,7 +146,11 @@ a {
 }
 
 .navbar {
-    background-color: var(--nav) !important;
+    background-image:
+        url('../imgs/sfondo_noir.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     border-bottom: var(--border) !important;
     font-size: 1em;
     position: fixed;
